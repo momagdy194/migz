@@ -13,8 +13,8 @@ class AppConstants {
   static const String drawingBaseUrl = 'https://api.openrouteservice.org/';
   static const String googleApiKey = 'AIzaSyDZQUsmwnkCmD3HMNFCABo8YSE54FCTFYo';
   static const String privacyPolicyUrl = '$baseUrl/privacy-policy';
-  static const String adminPageUrl = 'https://admin.uzmart.org';
-  static const String webUrl = 'https://uzmart.org';
+  static const String adminPageUrl = 'https://admin.flonstore.com/';
+  static const String webUrl = 'https://admin.flonstore.com/';
   static const String firebaseWebKey =
       'AIzaSyAV3BYPU2xncEElk74aKVJtSRTf4oPY7eE';
   static const String urlPrefix = 'https://uzmart.page.link';

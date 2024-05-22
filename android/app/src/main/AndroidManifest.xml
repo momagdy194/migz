@@ -21,7 +21,7 @@
         </intent>
     </queries>
     <application
-        android:label="Uzmart"
+        android:label="Flon"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <meta-data
