@@ -12,7 +12,7 @@ part of 'map_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$MapEvent {
@@ -25,7 +25,6 @@ mixin _$MapEvent {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -43,7 +42,6 @@ mixin _$MapEvent {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -61,7 +59,6 @@ mixin _$MapEvent {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -80,7 +77,6 @@ mixin _$MapEvent {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -96,7 +92,6 @@ mixin _$MapEvent {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -112,7 +107,6 @@ mixin _$MapEvent {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -140,25 +134,25 @@ class _$MapEventCopyWithImpl<$Res, $Val extends MapEvent>
 }
 
 /// @nodoc
-abstract class _$$ClearSearchFieldCopyWith<$Res> {
-  factory _$$ClearSearchFieldCopyWith(
-          _$ClearSearchField value, $Res Function(_$ClearSearchField) then) =
-      __$$ClearSearchFieldCopyWithImpl<$Res>;
+abstract class _$$ClearSearchFieldImplCopyWith<$Res> {
+  factory _$$ClearSearchFieldImplCopyWith(_$ClearSearchFieldImpl value,
+          $Res Function(_$ClearSearchFieldImpl) then) =
+      __$$ClearSearchFieldImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClearSearchFieldCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$ClearSearchField>
-    implements _$$ClearSearchFieldCopyWith<$Res> {
-  __$$ClearSearchFieldCopyWithImpl(
-      _$ClearSearchField _value, $Res Function(_$ClearSearchField) _then)
+class __$$ClearSearchFieldImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$ClearSearchFieldImpl>
+    implements _$$ClearSearchFieldImplCopyWith<$Res> {
+  __$$ClearSearchFieldImplCopyWithImpl(_$ClearSearchFieldImpl _value,
+      $Res Function(_$ClearSearchFieldImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ClearSearchField implements ClearSearchField {
-  const _$ClearSearchField();
+class _$ClearSearchFieldImpl implements ClearSearchField {
+  const _$ClearSearchFieldImpl();
 
   @override
   String toString() {
@@ -166,9 +160,9 @@ class _$ClearSearchField implements ClearSearchField {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ClearSearchField);
+        (other.runtimeType == runtimeType && other is _$ClearSearchFieldImpl);
   }
 
   @override
@@ -184,7 +178,6 @@ class _$ClearSearchField implements ClearSearchField {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -205,7 +198,6 @@ class _$ClearSearchField implements ClearSearchField {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -226,7 +218,6 @@ class _$ClearSearchField implements ClearSearchField {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -251,7 +242,6 @@ class _$ClearSearchField implements ClearSearchField {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -270,7 +260,6 @@ class _$ClearSearchField implements ClearSearchField {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -289,7 +278,6 @@ class _$ClearSearchField implements ClearSearchField {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -304,23 +292,24 @@ class _$ClearSearchField implements ClearSearchField {
 }
 
 abstract class ClearSearchField implements MapEvent {
-  const factory ClearSearchField() = _$ClearSearchField;
+  const factory ClearSearchField() = _$ClearSearchFieldImpl;
 }
 
 /// @nodoc
-abstract class _$$SetQueryCopyWith<$Res> {
-  factory _$$SetQueryCopyWith(
-          _$SetQuery value, $Res Function(_$SetQuery) then) =
-      __$$SetQueryCopyWithImpl<$Res>;
+abstract class _$$SetQueryImplCopyWith<$Res> {
+  factory _$$SetQueryImplCopyWith(
+          _$SetQueryImpl value, $Res Function(_$SetQueryImpl) then) =
+      __$$SetQueryImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$SetQueryCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$SetQuery>
-    implements _$$SetQueryCopyWith<$Res> {
-  __$$SetQueryCopyWithImpl(_$SetQuery _value, $Res Function(_$SetQuery) _then)
+class __$$SetQueryImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$SetQueryImpl>
+    implements _$$SetQueryImplCopyWith<$Res> {
+  __$$SetQueryImplCopyWithImpl(
+      _$SetQueryImpl _value, $Res Function(_$SetQueryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -328,7 +317,7 @@ class __$$SetQueryCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$SetQuery(
+    return _then(_$SetQueryImpl(
       null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -339,8 +328,8 @@ class __$$SetQueryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetQuery implements SetQuery {
-  const _$SetQuery(this.context);
+class _$SetQueryImpl implements SetQuery {
+  const _$SetQueryImpl(this.context);
 
   @override
   final BuildContext context;
@@ -351,10 +340,10 @@ class _$SetQuery implements SetQuery {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetQuery &&
+            other is _$SetQueryImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -364,8 +353,8 @@ class _$SetQuery implements SetQuery {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetQueryCopyWith<_$SetQuery> get copyWith =>
-      __$$SetQueryCopyWithImpl<_$SetQuery>(this, _$identity);
+  _$$SetQueryImplCopyWith<_$SetQueryImpl> get copyWith =>
+      __$$SetQueryImplCopyWithImpl<_$SetQueryImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -377,7 +366,6 @@ class _$SetQuery implements SetQuery {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -398,7 +386,6 @@ class _$SetQuery implements SetQuery {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -419,7 +406,6 @@ class _$SetQuery implements SetQuery {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -444,7 +430,6 @@ class _$SetQuery implements SetQuery {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -463,7 +448,6 @@ class _$SetQuery implements SetQuery {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -482,7 +466,6 @@ class _$SetQuery implements SetQuery {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -497,34 +480,34 @@ class _$SetQuery implements SetQuery {
 }
 
 abstract class SetQuery implements MapEvent {
-  const factory SetQuery(final BuildContext context) = _$SetQuery;
+  const factory SetQuery(final BuildContext context) = _$SetQueryImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SetQueryCopyWith<_$SetQuery> get copyWith =>
+  _$$SetQueryImplCopyWith<_$SetQueryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchLocationsCopyWith<$Res> {
-  factory _$$SearchLocationsCopyWith(
-          _$SearchLocations value, $Res Function(_$SearchLocations) then) =
-      __$$SearchLocationsCopyWithImpl<$Res>;
+abstract class _$$SearchLocationsImplCopyWith<$Res> {
+  factory _$$SearchLocationsImplCopyWith(_$SearchLocationsImpl value,
+          $Res Function(_$SearchLocationsImpl) then) =
+      __$$SearchLocationsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SearchLocationsCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$SearchLocations>
-    implements _$$SearchLocationsCopyWith<$Res> {
-  __$$SearchLocationsCopyWithImpl(
-      _$SearchLocations _value, $Res Function(_$SearchLocations) _then)
+class __$$SearchLocationsImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$SearchLocationsImpl>
+    implements _$$SearchLocationsImplCopyWith<$Res> {
+  __$$SearchLocationsImplCopyWithImpl(
+      _$SearchLocationsImpl _value, $Res Function(_$SearchLocationsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SearchLocations implements SearchLocations {
-  const _$SearchLocations();
+class _$SearchLocationsImpl implements SearchLocations {
+  const _$SearchLocationsImpl();
 
   @override
   String toString() {
@@ -532,9 +515,9 @@ class _$SearchLocations implements SearchLocations {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SearchLocations);
+        (other.runtimeType == runtimeType && other is _$SearchLocationsImpl);
   }
 
   @override
@@ -550,7 +533,6 @@ class _$SearchLocations implements SearchLocations {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -571,7 +553,6 @@ class _$SearchLocations implements SearchLocations {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -592,7 +573,6 @@ class _$SearchLocations implements SearchLocations {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -617,7 +597,6 @@ class _$SearchLocations implements SearchLocations {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -636,7 +615,6 @@ class _$SearchLocations implements SearchLocations {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -655,7 +633,6 @@ class _$SearchLocations implements SearchLocations {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -670,24 +647,24 @@ class _$SearchLocations implements SearchLocations {
 }
 
 abstract class SearchLocations implements MapEvent {
-  const factory SearchLocations() = _$SearchLocations;
+  const factory SearchLocations() = _$SearchLocationsImpl;
 }
 
 /// @nodoc
-abstract class _$$SetMapControllerCopyWith<$Res> {
-  factory _$$SetMapControllerCopyWith(
-          _$SetMapController value, $Res Function(_$SetMapController) then) =
-      __$$SetMapControllerCopyWithImpl<$Res>;
+abstract class _$$SetMapControllerImplCopyWith<$Res> {
+  factory _$$SetMapControllerImplCopyWith(_$SetMapControllerImpl value,
+          $Res Function(_$SetMapControllerImpl) then) =
+      __$$SetMapControllerImplCopyWithImpl<$Res>;
   @useResult
   $Res call({GoogleMapController controller});
 }
 
 /// @nodoc
-class __$$SetMapControllerCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$SetMapController>
-    implements _$$SetMapControllerCopyWith<$Res> {
-  __$$SetMapControllerCopyWithImpl(
-      _$SetMapController _value, $Res Function(_$SetMapController) _then)
+class __$$SetMapControllerImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$SetMapControllerImpl>
+    implements _$$SetMapControllerImplCopyWith<$Res> {
+  __$$SetMapControllerImplCopyWithImpl(_$SetMapControllerImpl _value,
+      $Res Function(_$SetMapControllerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -695,7 +672,7 @@ class __$$SetMapControllerCopyWithImpl<$Res>
   $Res call({
     Object? controller = null,
   }) {
-    return _then(_$SetMapController(
+    return _then(_$SetMapControllerImpl(
       null == controller
           ? _value.controller
           : controller // ignore: cast_nullable_to_non_nullable
@@ -706,8 +683,8 @@ class __$$SetMapControllerCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetMapController implements SetMapController {
-  const _$SetMapController(this.controller);
+class _$SetMapControllerImpl implements SetMapController {
+  const _$SetMapControllerImpl(this.controller);
 
   @override
   final GoogleMapController controller;
@@ -718,10 +695,10 @@ class _$SetMapController implements SetMapController {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetMapController &&
+            other is _$SetMapControllerImpl &&
             (identical(other.controller, controller) ||
                 other.controller == controller));
   }
@@ -732,8 +709,9 @@ class _$SetMapController implements SetMapController {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetMapControllerCopyWith<_$SetMapController> get copyWith =>
-      __$$SetMapControllerCopyWithImpl<_$SetMapController>(this, _$identity);
+  _$$SetMapControllerImplCopyWith<_$SetMapControllerImpl> get copyWith =>
+      __$$SetMapControllerImplCopyWithImpl<_$SetMapControllerImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -745,7 +723,6 @@ class _$SetMapController implements SetMapController {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -766,7 +743,6 @@ class _$SetMapController implements SetMapController {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -787,7 +763,6 @@ class _$SetMapController implements SetMapController {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -812,7 +787,6 @@ class _$SetMapController implements SetMapController {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -831,7 +805,6 @@ class _$SetMapController implements SetMapController {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -850,7 +823,6 @@ class _$SetMapController implements SetMapController {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -866,29 +838,29 @@ class _$SetMapController implements SetMapController {
 
 abstract class SetMapController implements MapEvent {
   const factory SetMapController(final GoogleMapController controller) =
-      _$SetMapController;
+      _$SetMapControllerImpl;
 
   GoogleMapController get controller;
   @JsonKey(ignore: true)
-  _$$SetMapControllerCopyWith<_$SetMapController> get copyWith =>
+  _$$SetMapControllerImplCopyWith<_$SetMapControllerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetChoosingCopyWith<$Res> {
-  factory _$$SetChoosingCopyWith(
-          _$SetChoosing value, $Res Function(_$SetChoosing) then) =
-      __$$SetChoosingCopyWithImpl<$Res>;
+abstract class _$$SetChoosingImplCopyWith<$Res> {
+  factory _$$SetChoosingImplCopyWith(
+          _$SetChoosingImpl value, $Res Function(_$SetChoosingImpl) then) =
+      __$$SetChoosingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$SetChoosingCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$SetChoosing>
-    implements _$$SetChoosingCopyWith<$Res> {
-  __$$SetChoosingCopyWithImpl(
-      _$SetChoosing _value, $Res Function(_$SetChoosing) _then)
+class __$$SetChoosingImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$SetChoosingImpl>
+    implements _$$SetChoosingImplCopyWith<$Res> {
+  __$$SetChoosingImplCopyWithImpl(
+      _$SetChoosingImpl _value, $Res Function(_$SetChoosingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -896,7 +868,7 @@ class __$$SetChoosingCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$SetChoosing(
+    return _then(_$SetChoosingImpl(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -907,8 +879,8 @@ class __$$SetChoosingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetChoosing implements SetChoosing {
-  const _$SetChoosing(this.value);
+class _$SetChoosingImpl implements SetChoosing {
+  const _$SetChoosingImpl(this.value);
 
   @override
   final bool value;
@@ -919,10 +891,10 @@ class _$SetChoosing implements SetChoosing {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetChoosing &&
+            other is _$SetChoosingImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -932,8 +904,8 @@ class _$SetChoosing implements SetChoosing {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetChoosingCopyWith<_$SetChoosing> get copyWith =>
-      __$$SetChoosingCopyWithImpl<_$SetChoosing>(this, _$identity);
+  _$$SetChoosingImplCopyWith<_$SetChoosingImpl> get copyWith =>
+      __$$SetChoosingImplCopyWithImpl<_$SetChoosingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -945,7 +917,6 @@ class _$SetChoosing implements SetChoosing {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -966,7 +937,6 @@ class _$SetChoosing implements SetChoosing {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -987,7 +957,6 @@ class _$SetChoosing implements SetChoosing {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1012,7 +981,6 @@ class _$SetChoosing implements SetChoosing {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -1031,7 +999,6 @@ class _$SetChoosing implements SetChoosing {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1050,7 +1017,6 @@ class _$SetChoosing implements SetChoosing {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1065,29 +1031,29 @@ class _$SetChoosing implements SetChoosing {
 }
 
 abstract class SetChoosing implements MapEvent {
-  const factory SetChoosing(final bool value) = _$SetChoosing;
+  const factory SetChoosing(final bool value) = _$SetChoosingImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$SetChoosingCopyWith<_$SetChoosing> get copyWith =>
+  _$$SetChoosingImplCopyWith<_$SetChoosingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GoToLocationCopyWith<$Res> {
-  factory _$$GoToLocationCopyWith(
-          _$GoToLocation value, $Res Function(_$GoToLocation) then) =
-      __$$GoToLocationCopyWithImpl<$Res>;
+abstract class _$$GoToLocationImplCopyWith<$Res> {
+  factory _$$GoToLocationImplCopyWith(
+          _$GoToLocationImpl value, $Res Function(_$GoToLocationImpl) then) =
+      __$$GoToLocationImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Place place});
 }
 
 /// @nodoc
-class __$$GoToLocationCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$GoToLocation>
-    implements _$$GoToLocationCopyWith<$Res> {
-  __$$GoToLocationCopyWithImpl(
-      _$GoToLocation _value, $Res Function(_$GoToLocation) _then)
+class __$$GoToLocationImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$GoToLocationImpl>
+    implements _$$GoToLocationImplCopyWith<$Res> {
+  __$$GoToLocationImplCopyWithImpl(
+      _$GoToLocationImpl _value, $Res Function(_$GoToLocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1095,7 +1061,7 @@ class __$$GoToLocationCopyWithImpl<$Res>
   $Res call({
     Object? place = null,
   }) {
-    return _then(_$GoToLocation(
+    return _then(_$GoToLocationImpl(
       place: null == place
           ? _value.place
           : place // ignore: cast_nullable_to_non_nullable
@@ -1106,8 +1072,8 @@ class __$$GoToLocationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GoToLocation implements GoToLocation {
-  const _$GoToLocation({required this.place});
+class _$GoToLocationImpl implements GoToLocation {
+  const _$GoToLocationImpl({required this.place});
 
   @override
   final Place place;
@@ -1118,10 +1084,10 @@ class _$GoToLocation implements GoToLocation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoToLocation &&
+            other is _$GoToLocationImpl &&
             (identical(other.place, place) || other.place == place));
   }
 
@@ -1131,8 +1097,8 @@ class _$GoToLocation implements GoToLocation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GoToLocationCopyWith<_$GoToLocation> get copyWith =>
-      __$$GoToLocationCopyWithImpl<_$GoToLocation>(this, _$identity);
+  _$$GoToLocationImplCopyWith<_$GoToLocationImpl> get copyWith =>
+      __$$GoToLocationImplCopyWithImpl<_$GoToLocationImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1144,7 +1110,6 @@ class _$GoToLocation implements GoToLocation {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -1165,7 +1130,6 @@ class _$GoToLocation implements GoToLocation {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1186,7 +1150,6 @@ class _$GoToLocation implements GoToLocation {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1211,7 +1174,6 @@ class _$GoToLocation implements GoToLocation {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -1230,7 +1192,6 @@ class _$GoToLocation implements GoToLocation {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1249,7 +1210,6 @@ class _$GoToLocation implements GoToLocation {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1264,29 +1224,29 @@ class _$GoToLocation implements GoToLocation {
 }
 
 abstract class GoToLocation implements MapEvent {
-  const factory GoToLocation({required final Place place}) = _$GoToLocation;
+  const factory GoToLocation({required final Place place}) = _$GoToLocationImpl;
 
   Place get place;
   @JsonKey(ignore: true)
-  _$$GoToLocationCopyWith<_$GoToLocation> get copyWith =>
+  _$$GoToLocationImplCopyWith<_$GoToLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GoToMyLocationCopyWith<$Res> {
-  factory _$$GoToMyLocationCopyWith(
-          _$GoToMyLocation value, $Res Function(_$GoToMyLocation) then) =
-      __$$GoToMyLocationCopyWithImpl<$Res>;
+abstract class _$$GoToMyLocationImplCopyWith<$Res> {
+  factory _$$GoToMyLocationImplCopyWith(_$GoToMyLocationImpl value,
+          $Res Function(_$GoToMyLocationImpl) then) =
+      __$$GoToMyLocationImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LatLng location});
 }
 
 /// @nodoc
-class __$$GoToMyLocationCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$GoToMyLocation>
-    implements _$$GoToMyLocationCopyWith<$Res> {
-  __$$GoToMyLocationCopyWithImpl(
-      _$GoToMyLocation _value, $Res Function(_$GoToMyLocation) _then)
+class __$$GoToMyLocationImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$GoToMyLocationImpl>
+    implements _$$GoToMyLocationImplCopyWith<$Res> {
+  __$$GoToMyLocationImplCopyWithImpl(
+      _$GoToMyLocationImpl _value, $Res Function(_$GoToMyLocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1294,7 +1254,7 @@ class __$$GoToMyLocationCopyWithImpl<$Res>
   $Res call({
     Object? location = null,
   }) {
-    return _then(_$GoToMyLocation(
+    return _then(_$GoToMyLocationImpl(
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -1305,8 +1265,8 @@ class __$$GoToMyLocationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GoToMyLocation implements GoToMyLocation {
-  const _$GoToMyLocation({required this.location});
+class _$GoToMyLocationImpl implements GoToMyLocation {
+  const _$GoToMyLocationImpl({required this.location});
 
   @override
   final LatLng location;
@@ -1317,10 +1277,10 @@ class _$GoToMyLocation implements GoToMyLocation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoToMyLocation &&
+            other is _$GoToMyLocationImpl &&
             (identical(other.location, location) ||
                 other.location == location));
   }
@@ -1331,8 +1291,9 @@ class _$GoToMyLocation implements GoToMyLocation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GoToMyLocationCopyWith<_$GoToMyLocation> get copyWith =>
-      __$$GoToMyLocationCopyWithImpl<_$GoToMyLocation>(this, _$identity);
+  _$$GoToMyLocationImplCopyWith<_$GoToMyLocationImpl> get copyWith =>
+      __$$GoToMyLocationImplCopyWithImpl<_$GoToMyLocationImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1344,7 +1305,6 @@ class _$GoToMyLocation implements GoToMyLocation {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -1365,7 +1325,6 @@ class _$GoToMyLocation implements GoToMyLocation {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1386,7 +1345,6 @@ class _$GoToMyLocation implements GoToMyLocation {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1411,7 +1369,6 @@ class _$GoToMyLocation implements GoToMyLocation {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -1430,7 +1387,6 @@ class _$GoToMyLocation implements GoToMyLocation {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1449,7 +1405,6 @@ class _$GoToMyLocation implements GoToMyLocation {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1465,228 +1420,29 @@ class _$GoToMyLocation implements GoToMyLocation {
 
 abstract class GoToMyLocation implements MapEvent {
   const factory GoToMyLocation({required final LatLng location}) =
-      _$GoToMyLocation;
+      _$GoToMyLocationImpl;
 
   LatLng get location;
   @JsonKey(ignore: true)
-  _$$GoToMyLocationCopyWith<_$GoToMyLocation> get copyWith =>
+  _$$GoToMyLocationImplCopyWith<_$GoToMyLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FindMyLocationCopyWith<$Res> {
-  factory _$$FindMyLocationCopyWith(
-          _$FindMyLocation value, $Res Function(_$FindMyLocation) then) =
-      __$$FindMyLocationCopyWithImpl<$Res>;
-  @useResult
-  $Res call({BuildContext context});
-}
-
-/// @nodoc
-class __$$FindMyLocationCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$FindMyLocation>
-    implements _$$FindMyLocationCopyWith<$Res> {
-  __$$FindMyLocationCopyWithImpl(
-      _$FindMyLocation _value, $Res Function(_$FindMyLocation) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-  }) {
-    return _then(_$FindMyLocation(
-      null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FindMyLocation implements FindMyLocation {
-  const _$FindMyLocation(this.context);
-
-  @override
-  final BuildContext context;
-
-  @override
-  String toString() {
-    return 'MapEvent.findMyLocation(context: $context)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FindMyLocation &&
-            (identical(other.context, context) || other.context == context));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, context);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FindMyLocationCopyWith<_$FindMyLocation> get copyWith =>
-      __$$FindMyLocationCopyWithImpl<_$FindMyLocation>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() clearSearchField,
-    required TResult Function(BuildContext context) setQuery,
-    required TResult Function() searchLocations,
-    required TResult Function(GoogleMapController controller) setMapController,
-    required TResult Function(bool value) setChoosing,
-    required TResult Function(Place place) goToLocation,
-    required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
-    required TResult Function(LatLng latLng) goToTappedLocation,
-    required TResult Function(String title) setTitle,
-    required TResult Function(bool? hasBack, BuildContext context,
-            VoidCallback? onBack, VoidCallback? onGoMain)
-        saveLocalAddress,
-    required TResult Function(LatLng? latLng) fetchLocationName,
-  }) {
-    return findMyLocation(context);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? clearSearchField,
-    TResult? Function(BuildContext context)? setQuery,
-    TResult? Function()? searchLocations,
-    TResult? Function(GoogleMapController controller)? setMapController,
-    TResult? Function(bool value)? setChoosing,
-    TResult? Function(Place place)? goToLocation,
-    TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
-    TResult? Function(LatLng latLng)? goToTappedLocation,
-    TResult? Function(String title)? setTitle,
-    TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
-            VoidCallback? onGoMain)?
-        saveLocalAddress,
-    TResult? Function(LatLng? latLng)? fetchLocationName,
-  }) {
-    return findMyLocation?.call(context);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? clearSearchField,
-    TResult Function(BuildContext context)? setQuery,
-    TResult Function()? searchLocations,
-    TResult Function(GoogleMapController controller)? setMapController,
-    TResult Function(bool value)? setChoosing,
-    TResult Function(Place place)? goToLocation,
-    TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
-    TResult Function(LatLng latLng)? goToTappedLocation,
-    TResult Function(String title)? setTitle,
-    TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
-            VoidCallback? onGoMain)?
-        saveLocalAddress,
-    TResult Function(LatLng? latLng)? fetchLocationName,
-    required TResult orElse(),
-  }) {
-    if (findMyLocation != null) {
-      return findMyLocation(context);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ClearSearchField value) clearSearchField,
-    required TResult Function(SetQuery value) setQuery,
-    required TResult Function(SearchLocations value) searchLocations,
-    required TResult Function(SetMapController value) setMapController,
-    required TResult Function(SetChoosing value) setChoosing,
-    required TResult Function(GoToLocation value) goToLocation,
-    required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
-    required TResult Function(GoToTappedLocation value) goToTappedLocation,
-    required TResult Function(SetTitle value) setTitle,
-    required TResult Function(SaveLocalAddress value) saveLocalAddress,
-    required TResult Function(FetchLocationName value) fetchLocationName,
-  }) {
-    return findMyLocation(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClearSearchField value)? clearSearchField,
-    TResult? Function(SetQuery value)? setQuery,
-    TResult? Function(SearchLocations value)? searchLocations,
-    TResult? Function(SetMapController value)? setMapController,
-    TResult? Function(SetChoosing value)? setChoosing,
-    TResult? Function(GoToLocation value)? goToLocation,
-    TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
-    TResult? Function(GoToTappedLocation value)? goToTappedLocation,
-    TResult? Function(SetTitle value)? setTitle,
-    TResult? Function(SaveLocalAddress value)? saveLocalAddress,
-    TResult? Function(FetchLocationName value)? fetchLocationName,
-  }) {
-    return findMyLocation?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClearSearchField value)? clearSearchField,
-    TResult Function(SetQuery value)? setQuery,
-    TResult Function(SearchLocations value)? searchLocations,
-    TResult Function(SetMapController value)? setMapController,
-    TResult Function(SetChoosing value)? setChoosing,
-    TResult Function(GoToLocation value)? goToLocation,
-    TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
-    TResult Function(GoToTappedLocation value)? goToTappedLocation,
-    TResult Function(SetTitle value)? setTitle,
-    TResult Function(SaveLocalAddress value)? saveLocalAddress,
-    TResult Function(FetchLocationName value)? fetchLocationName,
-    required TResult orElse(),
-  }) {
-    if (findMyLocation != null) {
-      return findMyLocation(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class FindMyLocation implements MapEvent {
-  const factory FindMyLocation(final BuildContext context) = _$FindMyLocation;
-
-  BuildContext get context;
-  @JsonKey(ignore: true)
-  _$$FindMyLocationCopyWith<_$FindMyLocation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GoToTappedLocationCopyWith<$Res> {
-  factory _$$GoToTappedLocationCopyWith(_$GoToTappedLocation value,
-          $Res Function(_$GoToTappedLocation) then) =
-      __$$GoToTappedLocationCopyWithImpl<$Res>;
+abstract class _$$GoToTappedLocationImplCopyWith<$Res> {
+  factory _$$GoToTappedLocationImplCopyWith(_$GoToTappedLocationImpl value,
+          $Res Function(_$GoToTappedLocationImpl) then) =
+      __$$GoToTappedLocationImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LatLng latLng});
 }
 
 /// @nodoc
-class __$$GoToTappedLocationCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$GoToTappedLocation>
-    implements _$$GoToTappedLocationCopyWith<$Res> {
-  __$$GoToTappedLocationCopyWithImpl(
-      _$GoToTappedLocation _value, $Res Function(_$GoToTappedLocation) _then)
+class __$$GoToTappedLocationImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$GoToTappedLocationImpl>
+    implements _$$GoToTappedLocationImplCopyWith<$Res> {
+  __$$GoToTappedLocationImplCopyWithImpl(_$GoToTappedLocationImpl _value,
+      $Res Function(_$GoToTappedLocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1694,7 +1450,7 @@ class __$$GoToTappedLocationCopyWithImpl<$Res>
   $Res call({
     Object? latLng = null,
   }) {
-    return _then(_$GoToTappedLocation(
+    return _then(_$GoToTappedLocationImpl(
       null == latLng
           ? _value.latLng
           : latLng // ignore: cast_nullable_to_non_nullable
@@ -1705,8 +1461,8 @@ class __$$GoToTappedLocationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GoToTappedLocation implements GoToTappedLocation {
-  const _$GoToTappedLocation(this.latLng);
+class _$GoToTappedLocationImpl implements GoToTappedLocation {
+  const _$GoToTappedLocationImpl(this.latLng);
 
   @override
   final LatLng latLng;
@@ -1717,10 +1473,10 @@ class _$GoToTappedLocation implements GoToTappedLocation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoToTappedLocation &&
+            other is _$GoToTappedLocationImpl &&
             (identical(other.latLng, latLng) || other.latLng == latLng));
   }
 
@@ -1730,8 +1486,8 @@ class _$GoToTappedLocation implements GoToTappedLocation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GoToTappedLocationCopyWith<_$GoToTappedLocation> get copyWith =>
-      __$$GoToTappedLocationCopyWithImpl<_$GoToTappedLocation>(
+  _$$GoToTappedLocationImplCopyWith<_$GoToTappedLocationImpl> get copyWith =>
+      __$$GoToTappedLocationImplCopyWithImpl<_$GoToTappedLocationImpl>(
           this, _$identity);
 
   @override
@@ -1744,7 +1500,6 @@ class _$GoToTappedLocation implements GoToTappedLocation {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -1765,7 +1520,6 @@ class _$GoToTappedLocation implements GoToTappedLocation {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1786,7 +1540,6 @@ class _$GoToTappedLocation implements GoToTappedLocation {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1811,7 +1564,6 @@ class _$GoToTappedLocation implements GoToTappedLocation {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -1830,7 +1582,6 @@ class _$GoToTappedLocation implements GoToTappedLocation {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1849,7 +1600,6 @@ class _$GoToTappedLocation implements GoToTappedLocation {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -1864,28 +1614,30 @@ class _$GoToTappedLocation implements GoToTappedLocation {
 }
 
 abstract class GoToTappedLocation implements MapEvent {
-  const factory GoToTappedLocation(final LatLng latLng) = _$GoToTappedLocation;
+  const factory GoToTappedLocation(final LatLng latLng) =
+      _$GoToTappedLocationImpl;
 
   LatLng get latLng;
   @JsonKey(ignore: true)
-  _$$GoToTappedLocationCopyWith<_$GoToTappedLocation> get copyWith =>
+  _$$GoToTappedLocationImplCopyWith<_$GoToTappedLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetTitleCopyWith<$Res> {
-  factory _$$SetTitleCopyWith(
-          _$SetTitle value, $Res Function(_$SetTitle) then) =
-      __$$SetTitleCopyWithImpl<$Res>;
+abstract class _$$SetTitleImplCopyWith<$Res> {
+  factory _$$SetTitleImplCopyWith(
+          _$SetTitleImpl value, $Res Function(_$SetTitleImpl) then) =
+      __$$SetTitleImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String title});
 }
 
 /// @nodoc
-class __$$SetTitleCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$SetTitle>
-    implements _$$SetTitleCopyWith<$Res> {
-  __$$SetTitleCopyWithImpl(_$SetTitle _value, $Res Function(_$SetTitle) _then)
+class __$$SetTitleImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$SetTitleImpl>
+    implements _$$SetTitleImplCopyWith<$Res> {
+  __$$SetTitleImplCopyWithImpl(
+      _$SetTitleImpl _value, $Res Function(_$SetTitleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1893,7 +1645,7 @@ class __$$SetTitleCopyWithImpl<$Res>
   $Res call({
     Object? title = null,
   }) {
-    return _then(_$SetTitle(
+    return _then(_$SetTitleImpl(
       null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -1904,8 +1656,8 @@ class __$$SetTitleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetTitle implements SetTitle {
-  const _$SetTitle(this.title);
+class _$SetTitleImpl implements SetTitle {
+  const _$SetTitleImpl(this.title);
 
   @override
   final String title;
@@ -1916,10 +1668,10 @@ class _$SetTitle implements SetTitle {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetTitle &&
+            other is _$SetTitleImpl &&
             (identical(other.title, title) || other.title == title));
   }
 
@@ -1929,8 +1681,8 @@ class _$SetTitle implements SetTitle {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetTitleCopyWith<_$SetTitle> get copyWith =>
-      __$$SetTitleCopyWithImpl<_$SetTitle>(this, _$identity);
+  _$$SetTitleImplCopyWith<_$SetTitleImpl> get copyWith =>
+      __$$SetTitleImplCopyWithImpl<_$SetTitleImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1942,7 +1694,6 @@ class _$SetTitle implements SetTitle {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -1963,7 +1714,6 @@ class _$SetTitle implements SetTitle {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -1984,7 +1734,6 @@ class _$SetTitle implements SetTitle {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -2009,7 +1758,6 @@ class _$SetTitle implements SetTitle {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -2028,7 +1776,6 @@ class _$SetTitle implements SetTitle {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -2047,7 +1794,6 @@ class _$SetTitle implements SetTitle {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -2062,19 +1808,19 @@ class _$SetTitle implements SetTitle {
 }
 
 abstract class SetTitle implements MapEvent {
-  const factory SetTitle(final String title) = _$SetTitle;
+  const factory SetTitle(final String title) = _$SetTitleImpl;
 
   String get title;
   @JsonKey(ignore: true)
-  _$$SetTitleCopyWith<_$SetTitle> get copyWith =>
+  _$$SetTitleImplCopyWith<_$SetTitleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveLocalAddressCopyWith<$Res> {
-  factory _$$SaveLocalAddressCopyWith(
-          _$SaveLocalAddress value, $Res Function(_$SaveLocalAddress) then) =
-      __$$SaveLocalAddressCopyWithImpl<$Res>;
+abstract class _$$SaveLocalAddressImplCopyWith<$Res> {
+  factory _$$SaveLocalAddressImplCopyWith(_$SaveLocalAddressImpl value,
+          $Res Function(_$SaveLocalAddressImpl) then) =
+      __$$SaveLocalAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {bool? hasBack,
@@ -2084,11 +1830,11 @@ abstract class _$$SaveLocalAddressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SaveLocalAddressCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$SaveLocalAddress>
-    implements _$$SaveLocalAddressCopyWith<$Res> {
-  __$$SaveLocalAddressCopyWithImpl(
-      _$SaveLocalAddress _value, $Res Function(_$SaveLocalAddress) _then)
+class __$$SaveLocalAddressImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$SaveLocalAddressImpl>
+    implements _$$SaveLocalAddressImplCopyWith<$Res> {
+  __$$SaveLocalAddressImplCopyWithImpl(_$SaveLocalAddressImpl _value,
+      $Res Function(_$SaveLocalAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2099,7 +1845,7 @@ class __$$SaveLocalAddressCopyWithImpl<$Res>
     Object? onBack = freezed,
     Object? onGoMain = freezed,
   }) {
-    return _then(_$SaveLocalAddress(
+    return _then(_$SaveLocalAddressImpl(
       freezed == hasBack
           ? _value.hasBack
           : hasBack // ignore: cast_nullable_to_non_nullable
@@ -2122,8 +1868,8 @@ class __$$SaveLocalAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SaveLocalAddress implements SaveLocalAddress {
-  const _$SaveLocalAddress(this.hasBack,
+class _$SaveLocalAddressImpl implements SaveLocalAddress {
+  const _$SaveLocalAddressImpl(this.hasBack,
       {required this.context, this.onBack, this.onGoMain});
 
   @override
@@ -2141,10 +1887,10 @@ class _$SaveLocalAddress implements SaveLocalAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SaveLocalAddress &&
+            other is _$SaveLocalAddressImpl &&
             (identical(other.hasBack, hasBack) || other.hasBack == hasBack) &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.onBack, onBack) || other.onBack == onBack) &&
@@ -2159,8 +1905,9 @@ class _$SaveLocalAddress implements SaveLocalAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SaveLocalAddressCopyWith<_$SaveLocalAddress> get copyWith =>
-      __$$SaveLocalAddressCopyWithImpl<_$SaveLocalAddress>(this, _$identity);
+  _$$SaveLocalAddressImplCopyWith<_$SaveLocalAddressImpl> get copyWith =>
+      __$$SaveLocalAddressImplCopyWithImpl<_$SaveLocalAddressImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2172,7 +1919,6 @@ class _$SaveLocalAddress implements SaveLocalAddress {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -2193,7 +1939,6 @@ class _$SaveLocalAddress implements SaveLocalAddress {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -2214,7 +1959,6 @@ class _$SaveLocalAddress implements SaveLocalAddress {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -2239,7 +1983,6 @@ class _$SaveLocalAddress implements SaveLocalAddress {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -2258,7 +2001,6 @@ class _$SaveLocalAddress implements SaveLocalAddress {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -2277,7 +2019,6 @@ class _$SaveLocalAddress implements SaveLocalAddress {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -2295,32 +2036,32 @@ abstract class SaveLocalAddress implements MapEvent {
   const factory SaveLocalAddress(final bool? hasBack,
       {required final BuildContext context,
       final VoidCallback? onBack,
-      final VoidCallback? onGoMain}) = _$SaveLocalAddress;
+      final VoidCallback? onGoMain}) = _$SaveLocalAddressImpl;
 
   bool? get hasBack;
   BuildContext get context;
   VoidCallback? get onBack;
   VoidCallback? get onGoMain;
   @JsonKey(ignore: true)
-  _$$SaveLocalAddressCopyWith<_$SaveLocalAddress> get copyWith =>
+  _$$SaveLocalAddressImplCopyWith<_$SaveLocalAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchLocationNameCopyWith<$Res> {
-  factory _$$FetchLocationNameCopyWith(
-          _$FetchLocationName value, $Res Function(_$FetchLocationName) then) =
-      __$$FetchLocationNameCopyWithImpl<$Res>;
+abstract class _$$FetchLocationNameImplCopyWith<$Res> {
+  factory _$$FetchLocationNameImplCopyWith(_$FetchLocationNameImpl value,
+          $Res Function(_$FetchLocationNameImpl) then) =
+      __$$FetchLocationNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LatLng? latLng});
 }
 
 /// @nodoc
-class __$$FetchLocationNameCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res, _$FetchLocationName>
-    implements _$$FetchLocationNameCopyWith<$Res> {
-  __$$FetchLocationNameCopyWithImpl(
-      _$FetchLocationName _value, $Res Function(_$FetchLocationName) _then)
+class __$$FetchLocationNameImplCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$FetchLocationNameImpl>
+    implements _$$FetchLocationNameImplCopyWith<$Res> {
+  __$$FetchLocationNameImplCopyWithImpl(_$FetchLocationNameImpl _value,
+      $Res Function(_$FetchLocationNameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2328,7 +2069,7 @@ class __$$FetchLocationNameCopyWithImpl<$Res>
   $Res call({
     Object? latLng = freezed,
   }) {
-    return _then(_$FetchLocationName(
+    return _then(_$FetchLocationNameImpl(
       freezed == latLng
           ? _value.latLng
           : latLng // ignore: cast_nullable_to_non_nullable
@@ -2339,8 +2080,8 @@ class __$$FetchLocationNameCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchLocationName implements FetchLocationName {
-  const _$FetchLocationName(this.latLng);
+class _$FetchLocationNameImpl implements FetchLocationName {
+  const _$FetchLocationNameImpl(this.latLng);
 
   @override
   final LatLng? latLng;
@@ -2351,10 +2092,10 @@ class _$FetchLocationName implements FetchLocationName {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchLocationName &&
+            other is _$FetchLocationNameImpl &&
             (identical(other.latLng, latLng) || other.latLng == latLng));
   }
 
@@ -2364,8 +2105,9 @@ class _$FetchLocationName implements FetchLocationName {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchLocationNameCopyWith<_$FetchLocationName> get copyWith =>
-      __$$FetchLocationNameCopyWithImpl<_$FetchLocationName>(this, _$identity);
+  _$$FetchLocationNameImplCopyWith<_$FetchLocationNameImpl> get copyWith =>
+      __$$FetchLocationNameImplCopyWithImpl<_$FetchLocationNameImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2377,7 +2119,6 @@ class _$FetchLocationName implements FetchLocationName {
     required TResult Function(bool value) setChoosing,
     required TResult Function(Place place) goToLocation,
     required TResult Function(LatLng location) goToMyLocation,
-    required TResult Function(BuildContext context) findMyLocation,
     required TResult Function(LatLng latLng) goToTappedLocation,
     required TResult Function(String title) setTitle,
     required TResult Function(bool? hasBack, BuildContext context,
@@ -2398,7 +2139,6 @@ class _$FetchLocationName implements FetchLocationName {
     TResult? Function(bool value)? setChoosing,
     TResult? Function(Place place)? goToLocation,
     TResult? Function(LatLng location)? goToMyLocation,
-    TResult? Function(BuildContext context)? findMyLocation,
     TResult? Function(LatLng latLng)? goToTappedLocation,
     TResult? Function(String title)? setTitle,
     TResult? Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -2419,7 +2159,6 @@ class _$FetchLocationName implements FetchLocationName {
     TResult Function(bool value)? setChoosing,
     TResult Function(Place place)? goToLocation,
     TResult Function(LatLng location)? goToMyLocation,
-    TResult Function(BuildContext context)? findMyLocation,
     TResult Function(LatLng latLng)? goToTappedLocation,
     TResult Function(String title)? setTitle,
     TResult Function(bool? hasBack, BuildContext context, VoidCallback? onBack,
@@ -2444,7 +2183,6 @@ class _$FetchLocationName implements FetchLocationName {
     required TResult Function(SetChoosing value) setChoosing,
     required TResult Function(GoToLocation value) goToLocation,
     required TResult Function(GoToMyLocation value) goToMyLocation,
-    required TResult Function(FindMyLocation value) findMyLocation,
     required TResult Function(GoToTappedLocation value) goToTappedLocation,
     required TResult Function(SetTitle value) setTitle,
     required TResult Function(SaveLocalAddress value) saveLocalAddress,
@@ -2463,7 +2201,6 @@ class _$FetchLocationName implements FetchLocationName {
     TResult? Function(SetChoosing value)? setChoosing,
     TResult? Function(GoToLocation value)? goToLocation,
     TResult? Function(GoToMyLocation value)? goToMyLocation,
-    TResult? Function(FindMyLocation value)? findMyLocation,
     TResult? Function(GoToTappedLocation value)? goToTappedLocation,
     TResult? Function(SetTitle value)? setTitle,
     TResult? Function(SaveLocalAddress value)? saveLocalAddress,
@@ -2482,7 +2219,6 @@ class _$FetchLocationName implements FetchLocationName {
     TResult Function(SetChoosing value)? setChoosing,
     TResult Function(GoToLocation value)? goToLocation,
     TResult Function(GoToMyLocation value)? goToMyLocation,
-    TResult Function(FindMyLocation value)? findMyLocation,
     TResult Function(GoToTappedLocation value)? goToTappedLocation,
     TResult Function(SetTitle value)? setTitle,
     TResult Function(SaveLocalAddress value)? saveLocalAddress,
@@ -2497,11 +2233,12 @@ class _$FetchLocationName implements FetchLocationName {
 }
 
 abstract class FetchLocationName implements MapEvent {
-  const factory FetchLocationName(final LatLng? latLng) = _$FetchLocationName;
+  const factory FetchLocationName(final LatLng? latLng) =
+      _$FetchLocationNameImpl;
 
   LatLng? get latLng;
   @JsonKey(ignore: true)
-  _$$FetchLocationNameCopyWith<_$FetchLocationName> get copyWith =>
+  _$$FetchLocationNameImplCopyWith<_$FetchLocationNameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2598,10 +2335,11 @@ class _$MapStateCopyWithImpl<$Res, $Val extends MapState>
 }
 
 /// @nodoc
-abstract class _$$_MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
-  factory _$$_MapStateCopyWith(
-          _$_MapState value, $Res Function(_$_MapState) then) =
-      __$$_MapStateCopyWithImpl<$Res>;
+abstract class _$$MapStateImplCopyWith<$Res>
+    implements $MapStateCopyWith<$Res> {
+  factory _$$MapStateImplCopyWith(
+          _$MapStateImpl value, $Res Function(_$MapStateImpl) then) =
+      __$$MapStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -2616,11 +2354,11 @@ abstract class _$$_MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MapStateCopyWithImpl<$Res>
-    extends _$MapStateCopyWithImpl<$Res, _$_MapState>
-    implements _$$_MapStateCopyWith<$Res> {
-  __$$_MapStateCopyWithImpl(
-      _$_MapState _value, $Res Function(_$_MapState) _then)
+class __$$MapStateImplCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$MapStateImpl>
+    implements _$$MapStateImplCopyWith<$Res> {
+  __$$MapStateImplCopyWithImpl(
+      _$MapStateImpl _value, $Res Function(_$MapStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2635,7 +2373,7 @@ class __$$_MapStateCopyWithImpl<$Res>
     Object? mapController = freezed,
     Object? location = freezed,
   }) {
-    return _then(_$_MapState(
+    return _then(_$MapStateImpl(
       isSearching: null == isSearching
           ? _value.isSearching
           : isSearching // ignore: cast_nullable_to_non_nullable
@@ -2674,8 +2412,8 @@ class __$$_MapStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MapState implements _MapState {
-  const _$_MapState(
+class _$MapStateImpl implements _MapState {
+  const _$MapStateImpl(
       {this.isSearching = false,
       this.isSearchLoading = false,
       this.isChoosing = false,
@@ -2720,10 +2458,10 @@ class _$_MapState implements _MapState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MapState &&
+            other is _$MapStateImpl &&
             (identical(other.isSearching, isSearching) ||
                 other.isSearching == isSearching) &&
             (identical(other.isSearchLoading, isSearchLoading) ||
@@ -2756,8 +2494,8 @@ class _$_MapState implements _MapState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MapStateCopyWith<_$_MapState> get copyWith =>
-      __$$_MapStateCopyWithImpl<_$_MapState>(this, _$identity);
+  _$$MapStateImplCopyWith<_$MapStateImpl> get copyWith =>
+      __$$MapStateImplCopyWithImpl<_$MapStateImpl>(this, _$identity);
 }
 
 abstract class _MapState implements MapState {
@@ -2769,7 +2507,7 @@ abstract class _MapState implements MapState {
       final String title,
       final TextEditingController? textController,
       final GoogleMapController? mapController,
-      final LatLng? location}) = _$_MapState;
+      final LatLng? location}) = _$MapStateImpl;
 
   @override
   bool get isSearching;
@@ -2789,6 +2527,6 @@ abstract class _MapState implements MapState {
   LatLng? get location;
   @override
   @JsonKey(ignore: true)
-  _$$_MapStateCopyWith<_$_MapState> get copyWith =>
+  _$$MapStateImplCopyWith<_$MapStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

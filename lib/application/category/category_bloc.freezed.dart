@@ -12,7 +12,7 @@ part of 'category_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CategoryEvent {
@@ -113,11 +113,11 @@ class _$CategoryEventCopyWithImpl<$Res, $Val extends CategoryEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchCategoryCopyWith<$Res>
+abstract class _$$FetchCategoryImplCopyWith<$Res>
     implements $CategoryEventCopyWith<$Res> {
-  factory _$$FetchCategoryCopyWith(
-          _$FetchCategory value, $Res Function(_$FetchCategory) then) =
-      __$$FetchCategoryCopyWithImpl<$Res>;
+  factory _$$FetchCategoryImplCopyWith(
+          _$FetchCategoryImpl value, $Res Function(_$FetchCategoryImpl) then) =
+      __$$FetchCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -128,11 +128,11 @@ abstract class _$$FetchCategoryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchCategoryCopyWithImpl<$Res>
-    extends _$CategoryEventCopyWithImpl<$Res, _$FetchCategory>
-    implements _$$FetchCategoryCopyWith<$Res> {
-  __$$FetchCategoryCopyWithImpl(
-      _$FetchCategory _value, $Res Function(_$FetchCategory) _then)
+class __$$FetchCategoryImplCopyWithImpl<$Res>
+    extends _$CategoryEventCopyWithImpl<$Res, _$FetchCategoryImpl>
+    implements _$$FetchCategoryImplCopyWith<$Res> {
+  __$$FetchCategoryImplCopyWithImpl(
+      _$FetchCategoryImpl _value, $Res Function(_$FetchCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,7 +143,7 @@ class __$$FetchCategoryCopyWithImpl<$Res>
     Object? shopId = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchCategory(
+    return _then(_$FetchCategoryImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -166,8 +166,8 @@ class __$$FetchCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchCategory implements FetchCategory {
-  const _$FetchCategory(
+class _$FetchCategoryImpl implements FetchCategory {
+  const _$FetchCategoryImpl(
       {required this.context, this.isRefresh, this.shopId, this.controller});
 
   @override
@@ -185,10 +185,10 @@ class _$FetchCategory implements FetchCategory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchCategory &&
+            other is _$FetchCategoryImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -204,8 +204,8 @@ class _$FetchCategory implements FetchCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchCategoryCopyWith<_$FetchCategory> get copyWith =>
-      __$$FetchCategoryCopyWithImpl<_$FetchCategory>(this, _$identity);
+  _$$FetchCategoryImplCopyWith<_$FetchCategoryImpl> get copyWith =>
+      __$$FetchCategoryImplCopyWithImpl<_$FetchCategoryImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -293,7 +293,7 @@ abstract class FetchCategory implements CategoryEvent {
       {required final BuildContext context,
       final bool? isRefresh,
       final int? shopId,
-      final RefreshController? controller}) = _$FetchCategory;
+      final RefreshController? controller}) = _$FetchCategoryImpl;
 
   @override
   BuildContext get context;
@@ -302,27 +302,27 @@ abstract class FetchCategory implements CategoryEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchCategoryCopyWith<_$FetchCategory> get copyWith =>
+  _$$FetchCategoryImplCopyWith<_$FetchCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectCategoryCopyWith<$Res>
+abstract class _$$SelectCategoryImplCopyWith<$Res>
     implements $CategoryEventCopyWith<$Res> {
-  factory _$$SelectCategoryCopyWith(
-          _$SelectCategory value, $Res Function(_$SelectCategory) then) =
-      __$$SelectCategoryCopyWithImpl<$Res>;
+  factory _$$SelectCategoryImplCopyWith(_$SelectCategoryImpl value,
+          $Res Function(_$SelectCategoryImpl) then) =
+      __$$SelectCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, CategoryData? category});
 }
 
 /// @nodoc
-class __$$SelectCategoryCopyWithImpl<$Res>
-    extends _$CategoryEventCopyWithImpl<$Res, _$SelectCategory>
-    implements _$$SelectCategoryCopyWith<$Res> {
-  __$$SelectCategoryCopyWithImpl(
-      _$SelectCategory _value, $Res Function(_$SelectCategory) _then)
+class __$$SelectCategoryImplCopyWithImpl<$Res>
+    extends _$CategoryEventCopyWithImpl<$Res, _$SelectCategoryImpl>
+    implements _$$SelectCategoryImplCopyWith<$Res> {
+  __$$SelectCategoryImplCopyWithImpl(
+      _$SelectCategoryImpl _value, $Res Function(_$SelectCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -331,7 +331,7 @@ class __$$SelectCategoryCopyWithImpl<$Res>
     Object? context = null,
     Object? category = freezed,
   }) {
-    return _then(_$SelectCategory(
+    return _then(_$SelectCategoryImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -346,8 +346,8 @@ class __$$SelectCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectCategory implements SelectCategory {
-  const _$SelectCategory({required this.context, this.category});
+class _$SelectCategoryImpl implements SelectCategory {
+  const _$SelectCategoryImpl({required this.context, this.category});
 
   @override
   final BuildContext context;
@@ -360,10 +360,10 @@ class _$SelectCategory implements SelectCategory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectCategory &&
+            other is _$SelectCategoryImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.category, category) ||
                 other.category == category));
@@ -375,8 +375,9 @@ class _$SelectCategory implements SelectCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectCategoryCopyWith<_$SelectCategory> get copyWith =>
-      __$$SelectCategoryCopyWithImpl<_$SelectCategory>(this, _$identity);
+  _$$SelectCategoryImplCopyWith<_$SelectCategoryImpl> get copyWith =>
+      __$$SelectCategoryImplCopyWithImpl<_$SelectCategoryImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -462,34 +463,34 @@ class _$SelectCategory implements SelectCategory {
 abstract class SelectCategory implements CategoryEvent {
   const factory SelectCategory(
       {required final BuildContext context,
-      final CategoryData? category}) = _$SelectCategory;
+      final CategoryData? category}) = _$SelectCategoryImpl;
 
   @override
   BuildContext get context;
   CategoryData? get category;
   @override
   @JsonKey(ignore: true)
-  _$$SelectCategoryCopyWith<_$SelectCategory> get copyWith =>
+  _$$SelectCategoryImplCopyWith<_$SelectCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectCategoryTwoCopyWith<$Res>
+abstract class _$$SelectCategoryTwoImplCopyWith<$Res>
     implements $CategoryEventCopyWith<$Res> {
-  factory _$$SelectCategoryTwoCopyWith(
-          _$SelectCategoryTwo value, $Res Function(_$SelectCategoryTwo) then) =
-      __$$SelectCategoryTwoCopyWithImpl<$Res>;
+  factory _$$SelectCategoryTwoImplCopyWith(_$SelectCategoryTwoImpl value,
+          $Res Function(_$SelectCategoryTwoImpl) then) =
+      __$$SelectCategoryTwoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, CategoryData? category});
 }
 
 /// @nodoc
-class __$$SelectCategoryTwoCopyWithImpl<$Res>
-    extends _$CategoryEventCopyWithImpl<$Res, _$SelectCategoryTwo>
-    implements _$$SelectCategoryTwoCopyWith<$Res> {
-  __$$SelectCategoryTwoCopyWithImpl(
-      _$SelectCategoryTwo _value, $Res Function(_$SelectCategoryTwo) _then)
+class __$$SelectCategoryTwoImplCopyWithImpl<$Res>
+    extends _$CategoryEventCopyWithImpl<$Res, _$SelectCategoryTwoImpl>
+    implements _$$SelectCategoryTwoImplCopyWith<$Res> {
+  __$$SelectCategoryTwoImplCopyWithImpl(_$SelectCategoryTwoImpl _value,
+      $Res Function(_$SelectCategoryTwoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -498,7 +499,7 @@ class __$$SelectCategoryTwoCopyWithImpl<$Res>
     Object? context = null,
     Object? category = freezed,
   }) {
-    return _then(_$SelectCategoryTwo(
+    return _then(_$SelectCategoryTwoImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -513,8 +514,8 @@ class __$$SelectCategoryTwoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectCategoryTwo implements SelectCategoryTwo {
-  const _$SelectCategoryTwo({required this.context, this.category});
+class _$SelectCategoryTwoImpl implements SelectCategoryTwo {
+  const _$SelectCategoryTwoImpl({required this.context, this.category});
 
   @override
   final BuildContext context;
@@ -527,10 +528,10 @@ class _$SelectCategoryTwo implements SelectCategoryTwo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectCategoryTwo &&
+            other is _$SelectCategoryTwoImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.category, category) ||
                 other.category == category));
@@ -542,8 +543,9 @@ class _$SelectCategoryTwo implements SelectCategoryTwo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectCategoryTwoCopyWith<_$SelectCategoryTwo> get copyWith =>
-      __$$SelectCategoryTwoCopyWithImpl<_$SelectCategoryTwo>(this, _$identity);
+  _$$SelectCategoryTwoImplCopyWith<_$SelectCategoryTwoImpl> get copyWith =>
+      __$$SelectCategoryTwoImplCopyWithImpl<_$SelectCategoryTwoImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -629,14 +631,14 @@ class _$SelectCategoryTwo implements SelectCategoryTwo {
 abstract class SelectCategoryTwo implements CategoryEvent {
   const factory SelectCategoryTwo(
       {required final BuildContext context,
-      final CategoryData? category}) = _$SelectCategoryTwo;
+      final CategoryData? category}) = _$SelectCategoryTwoImpl;
 
   @override
   BuildContext get context;
   CategoryData? get category;
   @override
   @JsonKey(ignore: true)
-  _$$SelectCategoryTwoCopyWith<_$SelectCategoryTwo> get copyWith =>
+  _$$SelectCategoryTwoImplCopyWith<_$SelectCategoryTwoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -705,11 +707,11 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
 }
 
 /// @nodoc
-abstract class _$$_CategoryStateCopyWith<$Res>
+abstract class _$$CategoryStateImplCopyWith<$Res>
     implements $CategoryStateCopyWith<$Res> {
-  factory _$$_CategoryStateCopyWith(
-          _$_CategoryState value, $Res Function(_$_CategoryState) then) =
-      __$$_CategoryStateCopyWithImpl<$Res>;
+  factory _$$CategoryStateImplCopyWith(
+          _$CategoryStateImpl value, $Res Function(_$CategoryStateImpl) then) =
+      __$$CategoryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -720,11 +722,11 @@ abstract class _$$_CategoryStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CategoryStateCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$_CategoryState>
-    implements _$$_CategoryStateCopyWith<$Res> {
-  __$$_CategoryStateCopyWithImpl(
-      _$_CategoryState _value, $Res Function(_$_CategoryState) _then)
+class __$$CategoryStateImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryStateImpl>
+    implements _$$CategoryStateImplCopyWith<$Res> {
+  __$$CategoryStateImplCopyWithImpl(
+      _$CategoryStateImpl _value, $Res Function(_$CategoryStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -735,7 +737,7 @@ class __$$_CategoryStateCopyWithImpl<$Res>
     Object? selectCategory = freezed,
     Object? selectCategoryTwo = freezed,
   }) {
-    return _then(_$_CategoryState(
+    return _then(_$CategoryStateImpl(
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -758,8 +760,8 @@ class __$$_CategoryStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CategoryState implements _CategoryState {
-  const _$_CategoryState(
+class _$CategoryStateImpl implements _CategoryState {
+  const _$CategoryStateImpl(
       {final List<CategoryData> categories = const [],
       this.isLoadingCategory = true,
       this.selectCategory = null,
@@ -791,10 +793,10 @@ class _$_CategoryState implements _CategoryState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CategoryState &&
+            other is _$CategoryStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             (identical(other.isLoadingCategory, isLoadingCategory) ||
@@ -816,8 +818,8 @@ class _$_CategoryState implements _CategoryState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CategoryStateCopyWith<_$_CategoryState> get copyWith =>
-      __$$_CategoryStateCopyWithImpl<_$_CategoryState>(this, _$identity);
+  _$$CategoryStateImplCopyWith<_$CategoryStateImpl> get copyWith =>
+      __$$CategoryStateImplCopyWithImpl<_$CategoryStateImpl>(this, _$identity);
 }
 
 abstract class _CategoryState implements CategoryState {
@@ -825,7 +827,7 @@ abstract class _CategoryState implements CategoryState {
       {final List<CategoryData> categories,
       final bool isLoadingCategory,
       final CategoryData? selectCategory,
-      final CategoryData? selectCategoryTwo}) = _$_CategoryState;
+      final CategoryData? selectCategoryTwo}) = _$CategoryStateImpl;
 
   @override
   List<CategoryData> get categories;
@@ -837,6 +839,6 @@ abstract class _CategoryState implements CategoryState {
   CategoryData? get selectCategoryTwo;
   @override
   @JsonKey(ignore: true)
-  _$$_CategoryStateCopyWith<_$_CategoryState> get copyWith =>
+  _$$CategoryStateImplCopyWith<_$CategoryStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

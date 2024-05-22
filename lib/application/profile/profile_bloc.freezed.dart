@@ -12,7 +12,7 @@ part of 'profile_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProfileEvent {
@@ -172,20 +172,20 @@ class _$ProfileEventCopyWithImpl<$Res, $Val extends ProfileEvent>
 }
 
 /// @nodoc
-abstract class _$$UpdateImagePathCopyWith<$Res> {
-  factory _$$UpdateImagePathCopyWith(
-          _$UpdateImagePath value, $Res Function(_$UpdateImagePath) then) =
-      __$$UpdateImagePathCopyWithImpl<$Res>;
+abstract class _$$UpdateImagePathImplCopyWith<$Res> {
+  factory _$$UpdateImagePathImplCopyWith(_$UpdateImagePathImpl value,
+          $Res Function(_$UpdateImagePathImpl) then) =
+      __$$UpdateImagePathImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? imagePath});
 }
 
 /// @nodoc
-class __$$UpdateImagePathCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateImagePath>
-    implements _$$UpdateImagePathCopyWith<$Res> {
-  __$$UpdateImagePathCopyWithImpl(
-      _$UpdateImagePath _value, $Res Function(_$UpdateImagePath) _then)
+class __$$UpdateImagePathImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateImagePathImpl>
+    implements _$$UpdateImagePathImplCopyWith<$Res> {
+  __$$UpdateImagePathImplCopyWithImpl(
+      _$UpdateImagePathImpl _value, $Res Function(_$UpdateImagePathImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -193,7 +193,7 @@ class __$$UpdateImagePathCopyWithImpl<$Res>
   $Res call({
     Object? imagePath = freezed,
   }) {
-    return _then(_$UpdateImagePath(
+    return _then(_$UpdateImagePathImpl(
       imagePath: freezed == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -204,8 +204,8 @@ class __$$UpdateImagePathCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateImagePath implements UpdateImagePath {
-  const _$UpdateImagePath({required this.imagePath});
+class _$UpdateImagePathImpl implements UpdateImagePath {
+  const _$UpdateImagePathImpl({required this.imagePath});
 
   @override
   final String? imagePath;
@@ -216,10 +216,10 @@ class _$UpdateImagePath implements UpdateImagePath {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateImagePath &&
+            other is _$UpdateImagePathImpl &&
             (identical(other.imagePath, imagePath) ||
                 other.imagePath == imagePath));
   }
@@ -230,8 +230,9 @@ class _$UpdateImagePath implements UpdateImagePath {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateImagePathCopyWith<_$UpdateImagePath> get copyWith =>
-      __$$UpdateImagePathCopyWithImpl<_$UpdateImagePath>(this, _$identity);
+  _$$UpdateImagePathImplCopyWith<_$UpdateImagePathImpl> get copyWith =>
+      __$$UpdateImagePathImplCopyWithImpl<_$UpdateImagePathImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -395,19 +396,19 @@ class _$UpdateImagePath implements UpdateImagePath {
 
 abstract class UpdateImagePath implements ProfileEvent {
   const factory UpdateImagePath({required final String? imagePath}) =
-      _$UpdateImagePath;
+      _$UpdateImagePathImpl;
 
   String? get imagePath;
   @JsonKey(ignore: true)
-  _$$UpdateImagePathCopyWith<_$UpdateImagePath> get copyWith =>
+  _$$UpdateImagePathImplCopyWith<_$UpdateImagePathImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateUserCopyWith<$Res> {
-  factory _$$UpdateUserCopyWith(
-          _$UpdateUser value, $Res Function(_$UpdateUser) then) =
-      __$$UpdateUserCopyWithImpl<$Res>;
+abstract class _$$UpdateUserImplCopyWith<$Res> {
+  factory _$$UpdateUserImplCopyWith(
+          _$UpdateUserImpl value, $Res Function(_$UpdateUserImpl) then) =
+      __$$UpdateUserImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String firstName,
@@ -419,11 +420,11 @@ abstract class _$$UpdateUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UpdateUserCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateUser>
-    implements _$$UpdateUserCopyWith<$Res> {
-  __$$UpdateUserCopyWithImpl(
-      _$UpdateUser _value, $Res Function(_$UpdateUser) _then)
+class __$$UpdateUserImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateUserImpl>
+    implements _$$UpdateUserImplCopyWith<$Res> {
+  __$$UpdateUserImplCopyWithImpl(
+      _$UpdateUserImpl _value, $Res Function(_$UpdateUserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -436,7 +437,7 @@ class __$$UpdateUserCopyWithImpl<$Res>
     Object? context = null,
     Object? onSuccess = freezed,
   }) {
-    return _then(_$UpdateUser(
+    return _then(_$UpdateUserImpl(
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -467,8 +468,8 @@ class __$$UpdateUserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateUser implements UpdateUser {
-  const _$UpdateUser(
+class _$UpdateUserImpl implements UpdateUser {
+  const _$UpdateUserImpl(
       {required this.firstName,
       required this.lastName,
       required this.phone,
@@ -495,10 +496,10 @@ class _$UpdateUser implements UpdateUser {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateUser &&
+            other is _$UpdateUserImpl &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -517,8 +518,8 @@ class _$UpdateUser implements UpdateUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateUserCopyWith<_$UpdateUser> get copyWith =>
-      __$$UpdateUserCopyWithImpl<_$UpdateUser>(this, _$identity);
+  _$$UpdateUserImplCopyWith<_$UpdateUserImpl> get copyWith =>
+      __$$UpdateUserImplCopyWithImpl<_$UpdateUserImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -688,7 +689,7 @@ abstract class UpdateUser implements ProfileEvent {
       required final String phone,
       required final String email,
       required final BuildContext context,
-      final VoidCallback? onSuccess}) = _$UpdateUser;
+      final VoidCallback? onSuccess}) = _$UpdateUserImpl;
 
   String get firstName;
   String get lastName;
@@ -697,15 +698,15 @@ abstract class UpdateUser implements ProfileEvent {
   BuildContext get context;
   VoidCallback? get onSuccess;
   @JsonKey(ignore: true)
-  _$$UpdateUserCopyWith<_$UpdateUser> get copyWith =>
+  _$$UpdateUserImplCopyWith<_$UpdateUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdatePasswordCopyWith<$Res> {
-  factory _$$UpdatePasswordCopyWith(
-          _$UpdatePassword value, $Res Function(_$UpdatePassword) then) =
-      __$$UpdatePasswordCopyWithImpl<$Res>;
+abstract class _$$UpdatePasswordImplCopyWith<$Res> {
+  factory _$$UpdatePasswordImplCopyWith(_$UpdatePasswordImpl value,
+          $Res Function(_$UpdatePasswordImpl) then) =
+      __$$UpdatePasswordImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String newPassword,
@@ -715,11 +716,11 @@ abstract class _$$UpdatePasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UpdatePasswordCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$UpdatePassword>
-    implements _$$UpdatePasswordCopyWith<$Res> {
-  __$$UpdatePasswordCopyWithImpl(
-      _$UpdatePassword _value, $Res Function(_$UpdatePassword) _then)
+class __$$UpdatePasswordImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$UpdatePasswordImpl>
+    implements _$$UpdatePasswordImplCopyWith<$Res> {
+  __$$UpdatePasswordImplCopyWithImpl(
+      _$UpdatePasswordImpl _value, $Res Function(_$UpdatePasswordImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -730,7 +731,7 @@ class __$$UpdatePasswordCopyWithImpl<$Res>
     Object? context = null,
     Object? onSuccess = freezed,
   }) {
-    return _then(_$UpdatePassword(
+    return _then(_$UpdatePasswordImpl(
       newPassword: null == newPassword
           ? _value.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
@@ -753,8 +754,8 @@ class __$$UpdatePasswordCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdatePassword implements UpdatePassword {
-  const _$UpdatePassword(
+class _$UpdatePasswordImpl implements UpdatePassword {
+  const _$UpdatePasswordImpl(
       {required this.newPassword,
       required this.confirmPassword,
       required this.context,
@@ -775,10 +776,10 @@ class _$UpdatePassword implements UpdatePassword {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatePassword &&
+            other is _$UpdatePasswordImpl &&
             (identical(other.newPassword, newPassword) ||
                 other.newPassword == newPassword) &&
             (identical(other.confirmPassword, confirmPassword) ||
@@ -795,8 +796,9 @@ class _$UpdatePassword implements UpdatePassword {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdatePasswordCopyWith<_$UpdatePassword> get copyWith =>
-      __$$UpdatePasswordCopyWithImpl<_$UpdatePassword>(this, _$identity);
+  _$$UpdatePasswordImplCopyWith<_$UpdatePasswordImpl> get copyWith =>
+      __$$UpdatePasswordImplCopyWithImpl<_$UpdatePasswordImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -964,37 +966,37 @@ abstract class UpdatePassword implements ProfileEvent {
       {required final String newPassword,
       required final String confirmPassword,
       required final BuildContext context,
-      final VoidCallback? onSuccess}) = _$UpdatePassword;
+      final VoidCallback? onSuccess}) = _$UpdatePasswordImpl;
 
   String get newPassword;
   String get confirmPassword;
   BuildContext get context;
   VoidCallback? get onSuccess;
   @JsonKey(ignore: true)
-  _$$UpdatePasswordCopyWith<_$UpdatePassword> get copyWith =>
+  _$$UpdatePasswordImplCopyWith<_$UpdatePasswordImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ShowPasswordCopyWith<$Res> {
-  factory _$$ShowPasswordCopyWith(
-          _$ShowPassword value, $Res Function(_$ShowPassword) then) =
-      __$$ShowPasswordCopyWithImpl<$Res>;
+abstract class _$$ShowPasswordImplCopyWith<$Res> {
+  factory _$$ShowPasswordImplCopyWith(
+          _$ShowPasswordImpl value, $Res Function(_$ShowPasswordImpl) then) =
+      __$$ShowPasswordImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ShowPasswordCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$ShowPassword>
-    implements _$$ShowPasswordCopyWith<$Res> {
-  __$$ShowPasswordCopyWithImpl(
-      _$ShowPassword _value, $Res Function(_$ShowPassword) _then)
+class __$$ShowPasswordImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$ShowPasswordImpl>
+    implements _$$ShowPasswordImplCopyWith<$Res> {
+  __$$ShowPasswordImplCopyWithImpl(
+      _$ShowPasswordImpl _value, $Res Function(_$ShowPasswordImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ShowPassword implements ShowPassword {
-  const _$ShowPassword();
+class _$ShowPasswordImpl implements ShowPassword {
+  const _$ShowPasswordImpl();
 
   @override
   String toString() {
@@ -1002,9 +1004,9 @@ class _$ShowPassword implements ShowPassword {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShowPassword);
+        (other.runtimeType == runtimeType && other is _$ShowPasswordImpl);
   }
 
   @override
@@ -1171,29 +1173,29 @@ class _$ShowPassword implements ShowPassword {
 }
 
 abstract class ShowPassword implements ProfileEvent {
-  const factory ShowPassword() = _$ShowPassword;
+  const factory ShowPassword() = _$ShowPasswordImpl;
 }
 
 /// @nodoc
-abstract class _$$ShowConfirmPasswordCopyWith<$Res> {
-  factory _$$ShowConfirmPasswordCopyWith(_$ShowConfirmPassword value,
-          $Res Function(_$ShowConfirmPassword) then) =
-      __$$ShowConfirmPasswordCopyWithImpl<$Res>;
+abstract class _$$ShowConfirmPasswordImplCopyWith<$Res> {
+  factory _$$ShowConfirmPasswordImplCopyWith(_$ShowConfirmPasswordImpl value,
+          $Res Function(_$ShowConfirmPasswordImpl) then) =
+      __$$ShowConfirmPasswordImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ShowConfirmPasswordCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$ShowConfirmPassword>
-    implements _$$ShowConfirmPasswordCopyWith<$Res> {
-  __$$ShowConfirmPasswordCopyWithImpl(
-      _$ShowConfirmPassword _value, $Res Function(_$ShowConfirmPassword) _then)
+class __$$ShowConfirmPasswordImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$ShowConfirmPasswordImpl>
+    implements _$$ShowConfirmPasswordImplCopyWith<$Res> {
+  __$$ShowConfirmPasswordImplCopyWithImpl(_$ShowConfirmPasswordImpl _value,
+      $Res Function(_$ShowConfirmPasswordImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ShowConfirmPassword implements ShowConfirmPassword {
-  const _$ShowConfirmPassword();
+class _$ShowConfirmPasswordImpl implements ShowConfirmPassword {
+  const _$ShowConfirmPasswordImpl();
 
   @override
   String toString() {
@@ -1201,9 +1203,10 @@ class _$ShowConfirmPassword implements ShowConfirmPassword {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShowConfirmPassword);
+        (other.runtimeType == runtimeType &&
+            other is _$ShowConfirmPasswordImpl);
   }
 
   @override
@@ -1370,24 +1373,24 @@ class _$ShowConfirmPassword implements ShowConfirmPassword {
 }
 
 abstract class ShowConfirmPassword implements ProfileEvent {
-  const factory ShowConfirmPassword() = _$ShowConfirmPassword;
+  const factory ShowConfirmPassword() = _$ShowConfirmPasswordImpl;
 }
 
 /// @nodoc
-abstract class _$$GetLanguageCopyWith<$Res> {
-  factory _$$GetLanguageCopyWith(
-          _$GetLanguage value, $Res Function(_$GetLanguage) then) =
-      __$$GetLanguageCopyWithImpl<$Res>;
+abstract class _$$GetLanguageImplCopyWith<$Res> {
+  factory _$$GetLanguageImplCopyWith(
+          _$GetLanguageImpl value, $Res Function(_$GetLanguageImpl) then) =
+      __$$GetLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$GetLanguageCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$GetLanguage>
-    implements _$$GetLanguageCopyWith<$Res> {
-  __$$GetLanguageCopyWithImpl(
-      _$GetLanguage _value, $Res Function(_$GetLanguage) _then)
+class __$$GetLanguageImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$GetLanguageImpl>
+    implements _$$GetLanguageImplCopyWith<$Res> {
+  __$$GetLanguageImplCopyWithImpl(
+      _$GetLanguageImpl _value, $Res Function(_$GetLanguageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1395,7 +1398,7 @@ class __$$GetLanguageCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$GetLanguage(
+    return _then(_$GetLanguageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1406,8 +1409,8 @@ class __$$GetLanguageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetLanguage implements GetLanguage {
-  const _$GetLanguage({required this.context});
+class _$GetLanguageImpl implements GetLanguage {
+  const _$GetLanguageImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -1418,10 +1421,10 @@ class _$GetLanguage implements GetLanguage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetLanguage &&
+            other is _$GetLanguageImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -1431,8 +1434,8 @@ class _$GetLanguage implements GetLanguage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetLanguageCopyWith<_$GetLanguage> get copyWith =>
-      __$$GetLanguageCopyWithImpl<_$GetLanguage>(this, _$identity);
+  _$$GetLanguageImplCopyWith<_$GetLanguageImpl> get copyWith =>
+      __$$GetLanguageImplCopyWithImpl<_$GetLanguageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1596,29 +1599,29 @@ class _$GetLanguage implements GetLanguage {
 
 abstract class GetLanguage implements ProfileEvent {
   const factory GetLanguage({required final BuildContext context}) =
-      _$GetLanguage;
+      _$GetLanguageImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$GetLanguageCopyWith<_$GetLanguage> get copyWith =>
+  _$$GetLanguageImplCopyWith<_$GetLanguageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetCurrencyCopyWith<$Res> {
-  factory _$$GetCurrencyCopyWith(
-          _$GetCurrency value, $Res Function(_$GetCurrency) then) =
-      __$$GetCurrencyCopyWithImpl<$Res>;
+abstract class _$$GetCurrencyImplCopyWith<$Res> {
+  factory _$$GetCurrencyImplCopyWith(
+          _$GetCurrencyImpl value, $Res Function(_$GetCurrencyImpl) then) =
+      __$$GetCurrencyImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$GetCurrencyCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$GetCurrency>
-    implements _$$GetCurrencyCopyWith<$Res> {
-  __$$GetCurrencyCopyWithImpl(
-      _$GetCurrency _value, $Res Function(_$GetCurrency) _then)
+class __$$GetCurrencyImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$GetCurrencyImpl>
+    implements _$$GetCurrencyImplCopyWith<$Res> {
+  __$$GetCurrencyImplCopyWithImpl(
+      _$GetCurrencyImpl _value, $Res Function(_$GetCurrencyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1626,7 +1629,7 @@ class __$$GetCurrencyCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$GetCurrency(
+    return _then(_$GetCurrencyImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1637,8 +1640,8 @@ class __$$GetCurrencyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetCurrency implements GetCurrency {
-  const _$GetCurrency({required this.context});
+class _$GetCurrencyImpl implements GetCurrency {
+  const _$GetCurrencyImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -1649,10 +1652,10 @@ class _$GetCurrency implements GetCurrency {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetCurrency &&
+            other is _$GetCurrencyImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -1662,8 +1665,8 @@ class _$GetCurrency implements GetCurrency {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetCurrencyCopyWith<_$GetCurrency> get copyWith =>
-      __$$GetCurrencyCopyWithImpl<_$GetCurrency>(this, _$identity);
+  _$$GetCurrencyImplCopyWith<_$GetCurrencyImpl> get copyWith =>
+      __$$GetCurrencyImplCopyWithImpl<_$GetCurrencyImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1827,28 +1830,29 @@ class _$GetCurrency implements GetCurrency {
 
 abstract class GetCurrency implements ProfileEvent {
   const factory GetCurrency({required final BuildContext context}) =
-      _$GetCurrency;
+      _$GetCurrencyImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$GetCurrencyCopyWith<_$GetCurrency> get copyWith =>
+  _$$GetCurrencyImplCopyWith<_$GetCurrencyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetHelpsCopyWith<$Res> {
-  factory _$$GetHelpsCopyWith(
-          _$GetHelps value, $Res Function(_$GetHelps) then) =
-      __$$GetHelpsCopyWithImpl<$Res>;
+abstract class _$$GetHelpsImplCopyWith<$Res> {
+  factory _$$GetHelpsImplCopyWith(
+          _$GetHelpsImpl value, $Res Function(_$GetHelpsImpl) then) =
+      __$$GetHelpsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$GetHelpsCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$GetHelps>
-    implements _$$GetHelpsCopyWith<$Res> {
-  __$$GetHelpsCopyWithImpl(_$GetHelps _value, $Res Function(_$GetHelps) _then)
+class __$$GetHelpsImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$GetHelpsImpl>
+    implements _$$GetHelpsImplCopyWith<$Res> {
+  __$$GetHelpsImplCopyWithImpl(
+      _$GetHelpsImpl _value, $Res Function(_$GetHelpsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1856,7 +1860,7 @@ class __$$GetHelpsCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$GetHelps(
+    return _then(_$GetHelpsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1867,8 +1871,8 @@ class __$$GetHelpsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHelps implements GetHelps {
-  const _$GetHelps({required this.context});
+class _$GetHelpsImpl implements GetHelps {
+  const _$GetHelpsImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -1879,10 +1883,10 @@ class _$GetHelps implements GetHelps {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetHelps &&
+            other is _$GetHelpsImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -1892,8 +1896,8 @@ class _$GetHelps implements GetHelps {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetHelpsCopyWith<_$GetHelps> get copyWith =>
-      __$$GetHelpsCopyWithImpl<_$GetHelps>(this, _$identity);
+  _$$GetHelpsImplCopyWith<_$GetHelpsImpl> get copyWith =>
+      __$$GetHelpsImplCopyWithImpl<_$GetHelpsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2056,34 +2060,35 @@ class _$GetHelps implements GetHelps {
 }
 
 abstract class GetHelps implements ProfileEvent {
-  const factory GetHelps({required final BuildContext context}) = _$GetHelps;
+  const factory GetHelps({required final BuildContext context}) =
+      _$GetHelpsImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$GetHelpsCopyWith<_$GetHelps> get copyWith =>
+  _$$GetHelpsImplCopyWith<_$GetHelpsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateLanCopyWith<$Res> {
-  factory _$$UpdateLanCopyWith(
-          _$UpdateLan value, $Res Function(_$UpdateLan) then) =
-      __$$UpdateLanCopyWithImpl<$Res>;
+abstract class _$$UpdateLanImplCopyWith<$Res> {
+  factory _$$UpdateLanImplCopyWith(
+          _$UpdateLanImpl value, $Res Function(_$UpdateLanImpl) then) =
+      __$$UpdateLanImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateLanCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateLan>
-    implements _$$UpdateLanCopyWith<$Res> {
-  __$$UpdateLanCopyWithImpl(
-      _$UpdateLan _value, $Res Function(_$UpdateLan) _then)
+class __$$UpdateLanImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateLanImpl>
+    implements _$$UpdateLanImplCopyWith<$Res> {
+  __$$UpdateLanImplCopyWithImpl(
+      _$UpdateLanImpl _value, $Res Function(_$UpdateLanImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UpdateLan implements UpdateLan {
-  const _$UpdateLan();
+class _$UpdateLanImpl implements UpdateLan {
+  const _$UpdateLanImpl();
 
   @override
   String toString() {
@@ -2091,9 +2096,9 @@ class _$UpdateLan implements UpdateLan {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateLan);
+        (other.runtimeType == runtimeType && other is _$UpdateLanImpl);
   }
 
   @override
@@ -2260,24 +2265,24 @@ class _$UpdateLan implements UpdateLan {
 }
 
 abstract class UpdateLan implements ProfileEvent {
-  const factory UpdateLan() = _$UpdateLan;
+  const factory UpdateLan() = _$UpdateLanImpl;
 }
 
 /// @nodoc
-abstract class _$$FetchProfileCopyWith<$Res> {
-  factory _$$FetchProfileCopyWith(
-          _$FetchProfile value, $Res Function(_$FetchProfile) then) =
-      __$$FetchProfileCopyWithImpl<$Res>;
+abstract class _$$FetchProfileImplCopyWith<$Res> {
+  factory _$$FetchProfileImplCopyWith(
+          _$FetchProfileImpl value, $Res Function(_$FetchProfileImpl) then) =
+      __$$FetchProfileImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchProfileCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$FetchProfile>
-    implements _$$FetchProfileCopyWith<$Res> {
-  __$$FetchProfileCopyWithImpl(
-      _$FetchProfile _value, $Res Function(_$FetchProfile) _then)
+class __$$FetchProfileImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$FetchProfileImpl>
+    implements _$$FetchProfileImplCopyWith<$Res> {
+  __$$FetchProfileImplCopyWithImpl(
+      _$FetchProfileImpl _value, $Res Function(_$FetchProfileImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2285,7 +2290,7 @@ class __$$FetchProfileCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchProfile(
+    return _then(_$FetchProfileImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2296,8 +2301,8 @@ class __$$FetchProfileCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchProfile implements FetchProfile {
-  const _$FetchProfile({required this.context});
+class _$FetchProfileImpl implements FetchProfile {
+  const _$FetchProfileImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -2308,10 +2313,10 @@ class _$FetchProfile implements FetchProfile {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchProfile &&
+            other is _$FetchProfileImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -2321,8 +2326,8 @@ class _$FetchProfile implements FetchProfile {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchProfileCopyWith<_$FetchProfile> get copyWith =>
-      __$$FetchProfileCopyWithImpl<_$FetchProfile>(this, _$identity);
+  _$$FetchProfileImplCopyWith<_$FetchProfileImpl> get copyWith =>
+      __$$FetchProfileImplCopyWithImpl<_$FetchProfileImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2486,29 +2491,29 @@ class _$FetchProfile implements FetchProfile {
 
 abstract class FetchProfile implements ProfileEvent {
   const factory FetchProfile({required final BuildContext context}) =
-      _$FetchProfile;
+      _$FetchProfileImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$FetchProfileCopyWith<_$FetchProfile> get copyWith =>
+  _$$FetchProfileImplCopyWith<_$FetchProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchReferralCopyWith<$Res> {
-  factory _$$FetchReferralCopyWith(
-          _$FetchReferral value, $Res Function(_$FetchReferral) then) =
-      __$$FetchReferralCopyWithImpl<$Res>;
+abstract class _$$FetchReferralImplCopyWith<$Res> {
+  factory _$$FetchReferralImplCopyWith(
+          _$FetchReferralImpl value, $Res Function(_$FetchReferralImpl) then) =
+      __$$FetchReferralImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchReferralCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$FetchReferral>
-    implements _$$FetchReferralCopyWith<$Res> {
-  __$$FetchReferralCopyWithImpl(
-      _$FetchReferral _value, $Res Function(_$FetchReferral) _then)
+class __$$FetchReferralImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$FetchReferralImpl>
+    implements _$$FetchReferralImplCopyWith<$Res> {
+  __$$FetchReferralImplCopyWithImpl(
+      _$FetchReferralImpl _value, $Res Function(_$FetchReferralImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2516,7 +2521,7 @@ class __$$FetchReferralCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchReferral(
+    return _then(_$FetchReferralImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2527,8 +2532,8 @@ class __$$FetchReferralCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchReferral implements FetchReferral {
-  const _$FetchReferral({required this.context});
+class _$FetchReferralImpl implements FetchReferral {
+  const _$FetchReferralImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -2539,10 +2544,10 @@ class _$FetchReferral implements FetchReferral {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchReferral &&
+            other is _$FetchReferralImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -2552,8 +2557,8 @@ class _$FetchReferral implements FetchReferral {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchReferralCopyWith<_$FetchReferral> get copyWith =>
-      __$$FetchReferralCopyWithImpl<_$FetchReferral>(this, _$identity);
+  _$$FetchReferralImplCopyWith<_$FetchReferralImpl> get copyWith =>
+      __$$FetchReferralImplCopyWithImpl<_$FetchReferralImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2717,29 +2722,29 @@ class _$FetchReferral implements FetchReferral {
 
 abstract class FetchReferral implements ProfileEvent {
   const factory FetchReferral({required final BuildContext context}) =
-      _$FetchReferral;
+      _$FetchReferralImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$FetchReferralCopyWith<_$FetchReferral> get copyWith =>
+  _$$FetchReferralImplCopyWith<_$FetchReferralImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetProgressCopyWith<$Res> {
-  factory _$$SetProgressCopyWith(
-          _$SetProgress value, $Res Function(_$SetProgress) then) =
-      __$$SetProgressCopyWithImpl<$Res>;
+abstract class _$$SetProgressImplCopyWith<$Res> {
+  factory _$$SetProgressImplCopyWith(
+          _$SetProgressImpl value, $Res Function(_$SetProgressImpl) then) =
+      __$$SetProgressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? taskId, int? index, int progress});
 }
 
 /// @nodoc
-class __$$SetProgressCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$SetProgress>
-    implements _$$SetProgressCopyWith<$Res> {
-  __$$SetProgressCopyWithImpl(
-      _$SetProgress _value, $Res Function(_$SetProgress) _then)
+class __$$SetProgressImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$SetProgressImpl>
+    implements _$$SetProgressImplCopyWith<$Res> {
+  __$$SetProgressImplCopyWithImpl(
+      _$SetProgressImpl _value, $Res Function(_$SetProgressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2749,7 +2754,7 @@ class __$$SetProgressCopyWithImpl<$Res>
     Object? index = freezed,
     Object? progress = null,
   }) {
-    return _then(_$SetProgress(
+    return _then(_$SetProgressImpl(
       taskId: freezed == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
@@ -2768,8 +2773,8 @@ class __$$SetProgressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetProgress implements SetProgress {
-  const _$SetProgress({this.taskId, this.index, required this.progress});
+class _$SetProgressImpl implements SetProgress {
+  const _$SetProgressImpl({this.taskId, this.index, required this.progress});
 
   @override
   final String? taskId;
@@ -2784,10 +2789,10 @@ class _$SetProgress implements SetProgress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetProgress &&
+            other is _$SetProgressImpl &&
             (identical(other.taskId, taskId) || other.taskId == taskId) &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.progress, progress) ||
@@ -2800,8 +2805,8 @@ class _$SetProgress implements SetProgress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetProgressCopyWith<_$SetProgress> get copyWith =>
-      __$$SetProgressCopyWithImpl<_$SetProgress>(this, _$identity);
+  _$$SetProgressImplCopyWith<_$SetProgressImpl> get copyWith =>
+      __$$SetProgressImplCopyWithImpl<_$SetProgressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2967,32 +2972,32 @@ abstract class SetProgress implements ProfileEvent {
   const factory SetProgress(
       {final String? taskId,
       final int? index,
-      required final int progress}) = _$SetProgress;
+      required final int progress}) = _$SetProgressImpl;
 
   String? get taskId;
   int? get index;
   int get progress;
   @JsonKey(ignore: true)
-  _$$SetProgressCopyWith<_$SetProgress> get copyWith =>
+  _$$SetProgressImplCopyWith<_$SetProgressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchDigitalListCopyWith<$Res> {
-  factory _$$FetchDigitalListCopyWith(
-          _$FetchDigitalList value, $Res Function(_$FetchDigitalList) then) =
-      __$$FetchDigitalListCopyWithImpl<$Res>;
+abstract class _$$FetchDigitalListImplCopyWith<$Res> {
+  factory _$$FetchDigitalListImplCopyWith(_$FetchDigitalListImpl value,
+          $Res Function(_$FetchDigitalListImpl) then) =
+      __$$FetchDigitalListImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchDigitalListCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$FetchDigitalList>
-    implements _$$FetchDigitalListCopyWith<$Res> {
-  __$$FetchDigitalListCopyWithImpl(
-      _$FetchDigitalList _value, $Res Function(_$FetchDigitalList) _then)
+class __$$FetchDigitalListImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$FetchDigitalListImpl>
+    implements _$$FetchDigitalListImplCopyWith<$Res> {
+  __$$FetchDigitalListImplCopyWithImpl(_$FetchDigitalListImpl _value,
+      $Res Function(_$FetchDigitalListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3002,7 +3007,7 @@ class __$$FetchDigitalListCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchDigitalList(
+    return _then(_$FetchDigitalListImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -3021,8 +3026,8 @@ class __$$FetchDigitalListCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchDigitalList implements FetchDigitalList {
-  const _$FetchDigitalList(
+class _$FetchDigitalListImpl implements FetchDigitalList {
+  const _$FetchDigitalListImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -3038,10 +3043,10 @@ class _$FetchDigitalList implements FetchDigitalList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchDigitalList &&
+            other is _$FetchDigitalListImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -3055,8 +3060,9 @@ class _$FetchDigitalList implements FetchDigitalList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchDigitalListCopyWith<_$FetchDigitalList> get copyWith =>
-      __$$FetchDigitalListCopyWithImpl<_$FetchDigitalList>(this, _$identity);
+  _$$FetchDigitalListImplCopyWith<_$FetchDigitalListImpl> get copyWith =>
+      __$$FetchDigitalListImplCopyWithImpl<_$FetchDigitalListImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3222,31 +3228,31 @@ abstract class FetchDigitalList implements ProfileEvent {
   const factory FetchDigitalList(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchDigitalList;
+      final RefreshController? controller}) = _$FetchDigitalListImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchDigitalListCopyWith<_$FetchDigitalList> get copyWith =>
+  _$$FetchDigitalListImplCopyWith<_$FetchDigitalListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetPolicyCopyWith<$Res> {
-  factory _$$GetPolicyCopyWith(
-          _$GetPolicy value, $Res Function(_$GetPolicy) then) =
-      __$$GetPolicyCopyWithImpl<$Res>;
+abstract class _$$GetPolicyImplCopyWith<$Res> {
+  factory _$$GetPolicyImplCopyWith(
+          _$GetPolicyImpl value, $Res Function(_$GetPolicyImpl) then) =
+      __$$GetPolicyImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$GetPolicyCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$GetPolicy>
-    implements _$$GetPolicyCopyWith<$Res> {
-  __$$GetPolicyCopyWithImpl(
-      _$GetPolicy _value, $Res Function(_$GetPolicy) _then)
+class __$$GetPolicyImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$GetPolicyImpl>
+    implements _$$GetPolicyImplCopyWith<$Res> {
+  __$$GetPolicyImplCopyWithImpl(
+      _$GetPolicyImpl _value, $Res Function(_$GetPolicyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3254,7 +3260,7 @@ class __$$GetPolicyCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$GetPolicy(
+    return _then(_$GetPolicyImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -3265,8 +3271,8 @@ class __$$GetPolicyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetPolicy implements GetPolicy {
-  const _$GetPolicy({required this.context});
+class _$GetPolicyImpl implements GetPolicy {
+  const _$GetPolicyImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -3277,10 +3283,10 @@ class _$GetPolicy implements GetPolicy {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetPolicy &&
+            other is _$GetPolicyImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -3290,8 +3296,8 @@ class _$GetPolicy implements GetPolicy {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetPolicyCopyWith<_$GetPolicy> get copyWith =>
-      __$$GetPolicyCopyWithImpl<_$GetPolicy>(this, _$identity);
+  _$$GetPolicyImplCopyWith<_$GetPolicyImpl> get copyWith =>
+      __$$GetPolicyImplCopyWithImpl<_$GetPolicyImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3454,27 +3460,30 @@ class _$GetPolicy implements GetPolicy {
 }
 
 abstract class GetPolicy implements ProfileEvent {
-  const factory GetPolicy({required final BuildContext context}) = _$GetPolicy;
+  const factory GetPolicy({required final BuildContext context}) =
+      _$GetPolicyImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$GetPolicyCopyWith<_$GetPolicy> get copyWith =>
+  _$$GetPolicyImplCopyWith<_$GetPolicyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetTermCopyWith<$Res> {
-  factory _$$GetTermCopyWith(_$GetTerm value, $Res Function(_$GetTerm) then) =
-      __$$GetTermCopyWithImpl<$Res>;
+abstract class _$$GetTermImplCopyWith<$Res> {
+  factory _$$GetTermImplCopyWith(
+          _$GetTermImpl value, $Res Function(_$GetTermImpl) then) =
+      __$$GetTermImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$GetTermCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$GetTerm>
-    implements _$$GetTermCopyWith<$Res> {
-  __$$GetTermCopyWithImpl(_$GetTerm _value, $Res Function(_$GetTerm) _then)
+class __$$GetTermImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$GetTermImpl>
+    implements _$$GetTermImplCopyWith<$Res> {
+  __$$GetTermImplCopyWithImpl(
+      _$GetTermImpl _value, $Res Function(_$GetTermImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3482,7 +3491,7 @@ class __$$GetTermCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$GetTerm(
+    return _then(_$GetTermImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -3493,8 +3502,8 @@ class __$$GetTermCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetTerm implements GetTerm {
-  const _$GetTerm({required this.context});
+class _$GetTermImpl implements GetTerm {
+  const _$GetTermImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -3505,10 +3514,10 @@ class _$GetTerm implements GetTerm {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetTerm &&
+            other is _$GetTermImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -3518,8 +3527,8 @@ class _$GetTerm implements GetTerm {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetTermCopyWith<_$GetTerm> get copyWith =>
-      __$$GetTermCopyWithImpl<_$GetTerm>(this, _$identity);
+  _$$GetTermImplCopyWith<_$GetTermImpl> get copyWith =>
+      __$$GetTermImplCopyWithImpl<_$GetTermImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3682,11 +3691,11 @@ class _$GetTerm implements GetTerm {
 }
 
 abstract class GetTerm implements ProfileEvent {
-  const factory GetTerm({required final BuildContext context}) = _$GetTerm;
+  const factory GetTerm({required final BuildContext context}) = _$GetTermImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$GetTermCopyWith<_$GetTerm> get copyWith =>
+  _$$GetTermImplCopyWith<_$GetTermImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3853,11 +3862,11 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
 }
 
 /// @nodoc
-abstract class _$$_ProfileStateCopyWith<$Res>
+abstract class _$$ProfileStateImplCopyWith<$Res>
     implements $ProfileStateCopyWith<$Res> {
-  factory _$$_ProfileStateCopyWith(
-          _$_ProfileState value, $Res Function(_$_ProfileState) then) =
-      __$$_ProfileStateCopyWithImpl<$Res>;
+  factory _$$ProfileStateImplCopyWith(
+          _$ProfileStateImpl value, $Res Function(_$ProfileStateImpl) then) =
+      __$$ProfileStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -3882,11 +3891,11 @@ abstract class _$$_ProfileStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProfileStateCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$_ProfileState>
-    implements _$$_ProfileStateCopyWith<$Res> {
-  __$$_ProfileStateCopyWithImpl(
-      _$_ProfileState _value, $Res Function(_$_ProfileState) _then)
+class __$$ProfileStateImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileStateImpl>
+    implements _$$ProfileStateImplCopyWith<$Res> {
+  __$$ProfileStateImplCopyWithImpl(
+      _$ProfileStateImpl _value, $Res Function(_$ProfileStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3911,7 +3920,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
     Object? policy = freezed,
     Object? term = freezed,
   }) {
-    return _then(_$_ProfileState(
+    return _then(_$ProfileStateImpl(
       imagePath: freezed == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -3990,8 +3999,8 @@ class __$$_ProfileStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProfileState implements _ProfileState {
-  const _$_ProfileState(
+class _$ProfileStateImpl implements _ProfileState {
+  const _$ProfileStateImpl(
       {this.imagePath = null,
       this.isLoading = false,
       this.isLanguage = false,
@@ -4107,10 +4116,10 @@ class _$_ProfileState implements _ProfileState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProfileState &&
+            other is _$ProfileStateImpl &&
             (identical(other.imagePath, imagePath) ||
                 other.imagePath == imagePath) &&
             (identical(other.isLoading, isLoading) ||
@@ -4170,8 +4179,8 @@ class _$_ProfileState implements _ProfileState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProfileStateCopyWith<_$_ProfileState> get copyWith =>
-      __$$_ProfileStateCopyWithImpl<_$_ProfileState>(this, _$identity);
+  _$$ProfileStateImplCopyWith<_$ProfileStateImpl> get copyWith =>
+      __$$ProfileStateImplCopyWithImpl<_$ProfileStateImpl>(this, _$identity);
 }
 
 abstract class _ProfileState implements ProfileState {
@@ -4193,7 +4202,7 @@ abstract class _ProfileState implements ProfileState {
       final bool showConfirmPassword,
       final bool isPasswordLoading,
       final Translation? policy,
-      final Translation? term}) = _$_ProfileState;
+      final Translation? term}) = _$ProfileStateImpl;
 
   @override
   String? get imagePath;
@@ -4233,6 +4242,6 @@ abstract class _ProfileState implements ProfileState {
   Translation? get term;
   @override
   @JsonKey(ignore: true)
-  _$$_ProfileStateCopyWith<_$_ProfileState> get copyWith =>
+  _$$ProfileStateImplCopyWith<_$ProfileStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

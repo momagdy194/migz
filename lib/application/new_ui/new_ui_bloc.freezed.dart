@@ -12,7 +12,7 @@ part of 'new_ui_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NewUiEvent {
@@ -95,22 +95,22 @@ class _$NewUiEventCopyWithImpl<$Res, $Val extends NewUiEvent>
 }
 
 /// @nodoc
-abstract class _$$UpdateCartCopyWith<$Res>
+abstract class _$$UpdateCartImplCopyWith<$Res>
     implements $NewUiEventCopyWith<$Res> {
-  factory _$$UpdateCartCopyWith(
-          _$UpdateCart value, $Res Function(_$UpdateCart) then) =
-      __$$UpdateCartCopyWithImpl<$Res>;
+  factory _$$UpdateCartImplCopyWith(
+          _$UpdateCartImpl value, $Res Function(_$UpdateCartImpl) then) =
+      __$$UpdateCartImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double top, double left});
 }
 
 /// @nodoc
-class __$$UpdateCartCopyWithImpl<$Res>
-    extends _$NewUiEventCopyWithImpl<$Res, _$UpdateCart>
-    implements _$$UpdateCartCopyWith<$Res> {
-  __$$UpdateCartCopyWithImpl(
-      _$UpdateCart _value, $Res Function(_$UpdateCart) _then)
+class __$$UpdateCartImplCopyWithImpl<$Res>
+    extends _$NewUiEventCopyWithImpl<$Res, _$UpdateCartImpl>
+    implements _$$UpdateCartImplCopyWith<$Res> {
+  __$$UpdateCartImplCopyWithImpl(
+      _$UpdateCartImpl _value, $Res Function(_$UpdateCartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +119,7 @@ class __$$UpdateCartCopyWithImpl<$Res>
     Object? top = null,
     Object? left = null,
   }) {
-    return _then(_$UpdateCart(
+    return _then(_$UpdateCartImpl(
       top: null == top
           ? _value.top
           : top // ignore: cast_nullable_to_non_nullable
@@ -134,8 +134,8 @@ class __$$UpdateCartCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCart implements UpdateCart {
-  const _$UpdateCart({required this.top, required this.left});
+class _$UpdateCartImpl implements UpdateCart {
+  const _$UpdateCartImpl({required this.top, required this.left});
 
   @override
   final double top;
@@ -148,10 +148,10 @@ class _$UpdateCart implements UpdateCart {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateCart &&
+            other is _$UpdateCartImpl &&
             (identical(other.top, top) || other.top == top) &&
             (identical(other.left, left) || other.left == left));
   }
@@ -162,8 +162,8 @@ class _$UpdateCart implements UpdateCart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateCartCopyWith<_$UpdateCart> get copyWith =>
-      __$$UpdateCartCopyWithImpl<_$UpdateCart>(this, _$identity);
+  _$$UpdateCartImplCopyWith<_$UpdateCartImpl> get copyWith =>
+      __$$UpdateCartImplCopyWithImpl<_$UpdateCartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -224,7 +224,8 @@ class _$UpdateCart implements UpdateCart {
 
 abstract class UpdateCart implements NewUiEvent {
   const factory UpdateCart(
-      {required final double top, required final double left}) = _$UpdateCart;
+      {required final double top,
+      required final double left}) = _$UpdateCartImpl;
 
   @override
   double get top;
@@ -232,7 +233,7 @@ abstract class UpdateCart implements NewUiEvent {
   double get left;
   @override
   @JsonKey(ignore: true)
-  _$$UpdateCartCopyWith<_$UpdateCart> get copyWith =>
+  _$$UpdateCartImplCopyWith<_$UpdateCartImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -285,22 +286,22 @@ class _$NewUiStateCopyWithImpl<$Res, $Val extends NewUiState>
 }
 
 /// @nodoc
-abstract class _$$_NewUiStateCopyWith<$Res>
+abstract class _$$NewUiStateImplCopyWith<$Res>
     implements $NewUiStateCopyWith<$Res> {
-  factory _$$_NewUiStateCopyWith(
-          _$_NewUiState value, $Res Function(_$_NewUiState) then) =
-      __$$_NewUiStateCopyWithImpl<$Res>;
+  factory _$$NewUiStateImplCopyWith(
+          _$NewUiStateImpl value, $Res Function(_$NewUiStateImpl) then) =
+      __$$NewUiStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double top, double left});
 }
 
 /// @nodoc
-class __$$_NewUiStateCopyWithImpl<$Res>
-    extends _$NewUiStateCopyWithImpl<$Res, _$_NewUiState>
-    implements _$$_NewUiStateCopyWith<$Res> {
-  __$$_NewUiStateCopyWithImpl(
-      _$_NewUiState _value, $Res Function(_$_NewUiState) _then)
+class __$$NewUiStateImplCopyWithImpl<$Res>
+    extends _$NewUiStateCopyWithImpl<$Res, _$NewUiStateImpl>
+    implements _$$NewUiStateImplCopyWith<$Res> {
+  __$$NewUiStateImplCopyWithImpl(
+      _$NewUiStateImpl _value, $Res Function(_$NewUiStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -309,7 +310,7 @@ class __$$_NewUiStateCopyWithImpl<$Res>
     Object? top = null,
     Object? left = null,
   }) {
-    return _then(_$_NewUiState(
+    return _then(_$NewUiStateImpl(
       top: null == top
           ? _value.top
           : top // ignore: cast_nullable_to_non_nullable
@@ -324,8 +325,8 @@ class __$$_NewUiStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NewUiState implements _NewUiState {
-  const _$_NewUiState({this.top = 50, this.left = -200});
+class _$NewUiStateImpl implements _NewUiState {
+  const _$NewUiStateImpl({this.top = 50, this.left = -200});
 
   @override
   @JsonKey()
@@ -340,10 +341,10 @@ class _$_NewUiState implements _NewUiState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewUiState &&
+            other is _$NewUiStateImpl &&
             (identical(other.top, top) || other.top == top) &&
             (identical(other.left, left) || other.left == left));
   }
@@ -354,13 +355,13 @@ class _$_NewUiState implements _NewUiState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewUiStateCopyWith<_$_NewUiState> get copyWith =>
-      __$$_NewUiStateCopyWithImpl<_$_NewUiState>(this, _$identity);
+  _$$NewUiStateImplCopyWith<_$NewUiStateImpl> get copyWith =>
+      __$$NewUiStateImplCopyWithImpl<_$NewUiStateImpl>(this, _$identity);
 }
 
 abstract class _NewUiState implements NewUiState {
   const factory _NewUiState({final double top, final double left}) =
-      _$_NewUiState;
+      _$NewUiStateImpl;
 
   @override
   double get top;
@@ -368,6 +369,6 @@ abstract class _NewUiState implements NewUiState {
   double get left;
   @override
   @JsonKey(ignore: true)
-  _$$_NewUiStateCopyWith<_$_NewUiState> get copyWith =>
+  _$$NewUiStateImplCopyWith<_$NewUiStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

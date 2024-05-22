@@ -12,7 +12,7 @@ part of 'parcel_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ParcelEvent {
@@ -200,20 +200,20 @@ class _$ParcelEventCopyWithImpl<$Res, $Val extends ParcelEvent>
 }
 
 /// @nodoc
-abstract class _$$AddReviewCopyWith<$Res> {
-  factory _$$AddReviewCopyWith(
-          _$AddReview value, $Res Function(_$AddReview) then) =
-      __$$AddReviewCopyWithImpl<$Res>;
+abstract class _$$AddReviewImplCopyWith<$Res> {
+  factory _$$AddReviewImplCopyWith(
+          _$AddReviewImpl value, $Res Function(_$AddReviewImpl) then) =
+      __$$AddReviewImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, String comment, double rating});
 }
 
 /// @nodoc
-class __$$AddReviewCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$AddReview>
-    implements _$$AddReviewCopyWith<$Res> {
-  __$$AddReviewCopyWithImpl(
-      _$AddReview _value, $Res Function(_$AddReview) _then)
+class __$$AddReviewImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$AddReviewImpl>
+    implements _$$AddReviewImplCopyWith<$Res> {
+  __$$AddReviewImplCopyWithImpl(
+      _$AddReviewImpl _value, $Res Function(_$AddReviewImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -223,7 +223,7 @@ class __$$AddReviewCopyWithImpl<$Res>
     Object? comment = null,
     Object? rating = null,
   }) {
-    return _then(_$AddReview(
+    return _then(_$AddReviewImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -242,8 +242,8 @@ class __$$AddReviewCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AddReview implements AddReview {
-  const _$AddReview(
+class _$AddReviewImpl implements AddReview {
+  const _$AddReviewImpl(
       {required this.context, required this.comment, required this.rating});
 
   @override
@@ -259,10 +259,10 @@ class _$AddReview implements AddReview {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AddReview &&
+            other is _$AddReviewImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.rating, rating) || other.rating == rating));
@@ -274,8 +274,8 @@ class _$AddReview implements AddReview {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddReviewCopyWith<_$AddReview> get copyWith =>
-      __$$AddReviewCopyWithImpl<_$AddReview>(this, _$identity);
+  _$$AddReviewImplCopyWith<_$AddReviewImpl> get copyWith =>
+      __$$AddReviewImplCopyWithImpl<_$AddReviewImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -469,36 +469,36 @@ abstract class AddReview implements ParcelEvent {
   const factory AddReview(
       {required final BuildContext context,
       required final String comment,
-      required final double rating}) = _$AddReview;
+      required final double rating}) = _$AddReviewImpl;
 
   BuildContext get context;
   String get comment;
   double get rating;
   @JsonKey(ignore: true)
-  _$$AddReviewCopyWith<_$AddReview> get copyWith =>
+  _$$AddReviewImplCopyWith<_$AddReviewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeExpandCopyWith<$Res> {
-  factory _$$ChangeExpandCopyWith(
-          _$ChangeExpand value, $Res Function(_$ChangeExpand) then) =
-      __$$ChangeExpandCopyWithImpl<$Res>;
+abstract class _$$ChangeExpandImplCopyWith<$Res> {
+  factory _$$ChangeExpandImplCopyWith(
+          _$ChangeExpandImpl value, $Res Function(_$ChangeExpandImpl) then) =
+      __$$ChangeExpandImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChangeExpandCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$ChangeExpand>
-    implements _$$ChangeExpandCopyWith<$Res> {
-  __$$ChangeExpandCopyWithImpl(
-      _$ChangeExpand _value, $Res Function(_$ChangeExpand) _then)
+class __$$ChangeExpandImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$ChangeExpandImpl>
+    implements _$$ChangeExpandImplCopyWith<$Res> {
+  __$$ChangeExpandImplCopyWithImpl(
+      _$ChangeExpandImpl _value, $Res Function(_$ChangeExpandImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ChangeExpand implements ChangeExpand {
-  const _$ChangeExpand();
+class _$ChangeExpandImpl implements ChangeExpand {
+  const _$ChangeExpandImpl();
 
   @override
   String toString() {
@@ -506,9 +506,9 @@ class _$ChangeExpand implements ChangeExpand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeExpand);
+        (other.runtimeType == runtimeType && other is _$ChangeExpandImpl);
   }
 
   @override
@@ -703,24 +703,24 @@ class _$ChangeExpand implements ChangeExpand {
 }
 
 abstract class ChangeExpand implements ParcelEvent {
-  const factory ChangeExpand() = _$ChangeExpand;
+  const factory ChangeExpand() = _$ChangeExpandImpl;
 }
 
 /// @nodoc
-abstract class _$$ShowParcelCopyWith<$Res> {
-  factory _$$ShowParcelCopyWith(
-          _$ShowParcel value, $Res Function(_$ShowParcel) then) =
-      __$$ShowParcelCopyWithImpl<$Res>;
+abstract class _$$ShowParcelImplCopyWith<$Res> {
+  factory _$$ShowParcelImplCopyWith(
+          _$ShowParcelImpl value, $Res Function(_$ShowParcelImpl) then) =
+      __$$ShowParcelImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, int orderId, ParcelOrder? parcel});
 }
 
 /// @nodoc
-class __$$ShowParcelCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$ShowParcel>
-    implements _$$ShowParcelCopyWith<$Res> {
-  __$$ShowParcelCopyWithImpl(
-      _$ShowParcel _value, $Res Function(_$ShowParcel) _then)
+class __$$ShowParcelImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$ShowParcelImpl>
+    implements _$$ShowParcelImplCopyWith<$Res> {
+  __$$ShowParcelImplCopyWithImpl(
+      _$ShowParcelImpl _value, $Res Function(_$ShowParcelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -730,7 +730,7 @@ class __$$ShowParcelCopyWithImpl<$Res>
     Object? orderId = null,
     Object? parcel = freezed,
   }) {
-    return _then(_$ShowParcel(
+    return _then(_$ShowParcelImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -749,8 +749,8 @@ class __$$ShowParcelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ShowParcel implements ShowParcel {
-  const _$ShowParcel(
+class _$ShowParcelImpl implements ShowParcel {
+  const _$ShowParcelImpl(
       {required this.context, required this.orderId, this.parcel});
 
   @override
@@ -766,10 +766,10 @@ class _$ShowParcel implements ShowParcel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShowParcel &&
+            other is _$ShowParcelImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
             (identical(other.parcel, parcel) || other.parcel == parcel));
@@ -781,8 +781,8 @@ class _$ShowParcel implements ShowParcel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ShowParcelCopyWith<_$ShowParcel> get copyWith =>
-      __$$ShowParcelCopyWithImpl<_$ShowParcel>(this, _$identity);
+  _$$ShowParcelImplCopyWith<_$ShowParcelImpl> get copyWith =>
+      __$$ShowParcelImplCopyWithImpl<_$ShowParcelImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -976,29 +976,31 @@ abstract class ShowParcel implements ParcelEvent {
   const factory ShowParcel(
       {required final BuildContext context,
       required final int orderId,
-      final ParcelOrder? parcel}) = _$ShowParcel;
+      final ParcelOrder? parcel}) = _$ShowParcelImpl;
 
   BuildContext get context;
   int get orderId;
   ParcelOrder? get parcel;
   @JsonKey(ignore: true)
-  _$$ShowParcelCopyWith<_$ShowParcel> get copyWith =>
+  _$$ShowParcelImplCopyWith<_$ShowParcelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetTimeCopyWith<$Res> {
-  factory _$$SetTimeCopyWith(_$SetTime value, $Res Function(_$SetTime) then) =
-      __$$SetTimeCopyWithImpl<$Res>;
+abstract class _$$SetTimeImplCopyWith<$Res> {
+  factory _$$SetTimeImplCopyWith(
+          _$SetTimeImpl value, $Res Function(_$SetTimeImpl) then) =
+      __$$SetTimeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TimeOfDay time});
 }
 
 /// @nodoc
-class __$$SetTimeCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$SetTime>
-    implements _$$SetTimeCopyWith<$Res> {
-  __$$SetTimeCopyWithImpl(_$SetTime _value, $Res Function(_$SetTime) _then)
+class __$$SetTimeImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$SetTimeImpl>
+    implements _$$SetTimeImplCopyWith<$Res> {
+  __$$SetTimeImplCopyWithImpl(
+      _$SetTimeImpl _value, $Res Function(_$SetTimeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1006,7 +1008,7 @@ class __$$SetTimeCopyWithImpl<$Res>
   $Res call({
     Object? time = null,
   }) {
-    return _then(_$SetTime(
+    return _then(_$SetTimeImpl(
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1017,8 +1019,8 @@ class __$$SetTimeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetTime implements SetTime {
-  const _$SetTime({required this.time});
+class _$SetTimeImpl implements SetTime {
+  const _$SetTimeImpl({required this.time});
 
   @override
   final TimeOfDay time;
@@ -1029,10 +1031,10 @@ class _$SetTime implements SetTime {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetTime &&
+            other is _$SetTimeImpl &&
             (identical(other.time, time) || other.time == time));
   }
 
@@ -1042,8 +1044,8 @@ class _$SetTime implements SetTime {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetTimeCopyWith<_$SetTime> get copyWith =>
-      __$$SetTimeCopyWithImpl<_$SetTime>(this, _$identity);
+  _$$SetTimeImplCopyWith<_$SetTimeImpl> get copyWith =>
+      __$$SetTimeImplCopyWithImpl<_$SetTimeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1234,29 +1236,29 @@ class _$SetTime implements SetTime {
 }
 
 abstract class SetTime implements ParcelEvent {
-  const factory SetTime({required final TimeOfDay time}) = _$SetTime;
+  const factory SetTime({required final TimeOfDay time}) = _$SetTimeImpl;
 
   TimeOfDay get time;
   @JsonKey(ignore: true)
-  _$$SetTimeCopyWith<_$SetTime> get copyWith =>
+  _$$SetTimeImplCopyWith<_$SetTimeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SwitchAddressCopyWith<$Res> {
-  factory _$$SwitchAddressCopyWith(
-          _$SwitchAddress value, $Res Function(_$SwitchAddress) then) =
-      __$$SwitchAddressCopyWithImpl<$Res>;
+abstract class _$$SwitchAddressImplCopyWith<$Res> {
+  factory _$$SwitchAddressImplCopyWith(
+          _$SwitchAddressImpl value, $Res Function(_$SwitchAddressImpl) then) =
+      __$$SwitchAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$SwitchAddressCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$SwitchAddress>
-    implements _$$SwitchAddressCopyWith<$Res> {
-  __$$SwitchAddressCopyWithImpl(
-      _$SwitchAddress _value, $Res Function(_$SwitchAddress) _then)
+class __$$SwitchAddressImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$SwitchAddressImpl>
+    implements _$$SwitchAddressImplCopyWith<$Res> {
+  __$$SwitchAddressImplCopyWithImpl(
+      _$SwitchAddressImpl _value, $Res Function(_$SwitchAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1264,7 +1266,7 @@ class __$$SwitchAddressCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$SwitchAddress(
+    return _then(_$SwitchAddressImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1275,8 +1277,8 @@ class __$$SwitchAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SwitchAddress implements SwitchAddress {
-  const _$SwitchAddress({required this.context});
+class _$SwitchAddressImpl implements SwitchAddress {
+  const _$SwitchAddressImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -1287,10 +1289,10 @@ class _$SwitchAddress implements SwitchAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SwitchAddress &&
+            other is _$SwitchAddressImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -1300,8 +1302,8 @@ class _$SwitchAddress implements SwitchAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SwitchAddressCopyWith<_$SwitchAddress> get copyWith =>
-      __$$SwitchAddressCopyWithImpl<_$SwitchAddress>(this, _$identity);
+  _$$SwitchAddressImplCopyWith<_$SwitchAddressImpl> get copyWith =>
+      __$$SwitchAddressImplCopyWithImpl<_$SwitchAddressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1493,29 +1495,29 @@ class _$SwitchAddress implements SwitchAddress {
 
 abstract class SwitchAddress implements ParcelEvent {
   const factory SwitchAddress({required final BuildContext context}) =
-      _$SwitchAddress;
+      _$SwitchAddressImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SwitchAddressCopyWith<_$SwitchAddress> get copyWith =>
+  _$$SwitchAddressImplCopyWith<_$SwitchAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetFromAddressCopyWith<$Res> {
-  factory _$$SetFromAddressCopyWith(
-          _$SetFromAddress value, $Res Function(_$SetFromAddress) then) =
-      __$$SetFromAddressCopyWithImpl<$Res>;
+abstract class _$$SetFromAddressImplCopyWith<$Res> {
+  factory _$$SetFromAddressImplCopyWith(_$SetFromAddressImpl value,
+          $Res Function(_$SetFromAddressImpl) then) =
+      __$$SetFromAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? title, LocationModel? location, BuildContext context});
 }
 
 /// @nodoc
-class __$$SetFromAddressCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$SetFromAddress>
-    implements _$$SetFromAddressCopyWith<$Res> {
-  __$$SetFromAddressCopyWithImpl(
-      _$SetFromAddress _value, $Res Function(_$SetFromAddress) _then)
+class __$$SetFromAddressImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$SetFromAddressImpl>
+    implements _$$SetFromAddressImplCopyWith<$Res> {
+  __$$SetFromAddressImplCopyWithImpl(
+      _$SetFromAddressImpl _value, $Res Function(_$SetFromAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1525,7 +1527,7 @@ class __$$SetFromAddressCopyWithImpl<$Res>
     Object? location = freezed,
     Object? context = null,
   }) {
-    return _then(_$SetFromAddress(
+    return _then(_$SetFromAddressImpl(
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -1544,8 +1546,8 @@ class __$$SetFromAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetFromAddress implements SetFromAddress {
-  const _$SetFromAddress(
+class _$SetFromAddressImpl implements SetFromAddress {
+  const _$SetFromAddressImpl(
       {required this.title, required this.location, required this.context});
 
   @override
@@ -1561,10 +1563,10 @@ class _$SetFromAddress implements SetFromAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetFromAddress &&
+            other is _$SetFromAddressImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.location, location) ||
                 other.location == location) &&
@@ -1577,8 +1579,9 @@ class _$SetFromAddress implements SetFromAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetFromAddressCopyWith<_$SetFromAddress> get copyWith =>
-      __$$SetFromAddressCopyWithImpl<_$SetFromAddress>(this, _$identity);
+  _$$SetFromAddressImplCopyWith<_$SetFromAddressImpl> get copyWith =>
+      __$$SetFromAddressImplCopyWithImpl<_$SetFromAddressImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1772,31 +1775,31 @@ abstract class SetFromAddress implements ParcelEvent {
   const factory SetFromAddress(
       {required final String? title,
       required final LocationModel? location,
-      required final BuildContext context}) = _$SetFromAddress;
+      required final BuildContext context}) = _$SetFromAddressImpl;
 
   String? get title;
   LocationModel? get location;
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SetFromAddressCopyWith<_$SetFromAddress> get copyWith =>
+  _$$SetFromAddressImplCopyWith<_$SetFromAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetToAddressCopyWith<$Res> {
-  factory _$$SetToAddressCopyWith(
-          _$SetToAddress value, $Res Function(_$SetToAddress) then) =
-      __$$SetToAddressCopyWithImpl<$Res>;
+abstract class _$$SetToAddressImplCopyWith<$Res> {
+  factory _$$SetToAddressImplCopyWith(
+          _$SetToAddressImpl value, $Res Function(_$SetToAddressImpl) then) =
+      __$$SetToAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? title, LocationModel? location, BuildContext context});
 }
 
 /// @nodoc
-class __$$SetToAddressCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$SetToAddress>
-    implements _$$SetToAddressCopyWith<$Res> {
-  __$$SetToAddressCopyWithImpl(
-      _$SetToAddress _value, $Res Function(_$SetToAddress) _then)
+class __$$SetToAddressImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$SetToAddressImpl>
+    implements _$$SetToAddressImplCopyWith<$Res> {
+  __$$SetToAddressImplCopyWithImpl(
+      _$SetToAddressImpl _value, $Res Function(_$SetToAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1806,7 +1809,7 @@ class __$$SetToAddressCopyWithImpl<$Res>
     Object? location = freezed,
     Object? context = null,
   }) {
-    return _then(_$SetToAddress(
+    return _then(_$SetToAddressImpl(
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -1825,8 +1828,8 @@ class __$$SetToAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetToAddress implements SetToAddress {
-  const _$SetToAddress(
+class _$SetToAddressImpl implements SetToAddress {
+  const _$SetToAddressImpl(
       {required this.title, required this.location, required this.context});
 
   @override
@@ -1842,10 +1845,10 @@ class _$SetToAddress implements SetToAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetToAddress &&
+            other is _$SetToAddressImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.location, location) ||
                 other.location == location) &&
@@ -1858,8 +1861,8 @@ class _$SetToAddress implements SetToAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetToAddressCopyWith<_$SetToAddress> get copyWith =>
-      __$$SetToAddressCopyWithImpl<_$SetToAddress>(this, _$identity);
+  _$$SetToAddressImplCopyWith<_$SetToAddressImpl> get copyWith =>
+      __$$SetToAddressImplCopyWithImpl<_$SetToAddressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2053,31 +2056,31 @@ abstract class SetToAddress implements ParcelEvent {
   const factory SetToAddress(
       {required final String? title,
       required final LocationModel? location,
-      required final BuildContext context}) = _$SetToAddress;
+      required final BuildContext context}) = _$SetToAddressImpl;
 
   String? get title;
   LocationModel? get location;
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SetToAddressCopyWith<_$SetToAddress> get copyWith =>
+  _$$SetToAddressImplCopyWith<_$SetToAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectTypeCopyWith<$Res> {
-  factory _$$SelectTypeCopyWith(
-          _$SelectType value, $Res Function(_$SelectType) then) =
-      __$$SelectTypeCopyWithImpl<$Res>;
+abstract class _$$SelectTypeImplCopyWith<$Res> {
+  factory _$$SelectTypeImplCopyWith(
+          _$SelectTypeImpl value, $Res Function(_$SelectTypeImpl) then) =
+      __$$SelectTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index, BuildContext context});
 }
 
 /// @nodoc
-class __$$SelectTypeCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$SelectType>
-    implements _$$SelectTypeCopyWith<$Res> {
-  __$$SelectTypeCopyWithImpl(
-      _$SelectType _value, $Res Function(_$SelectType) _then)
+class __$$SelectTypeImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$SelectTypeImpl>
+    implements _$$SelectTypeImplCopyWith<$Res> {
+  __$$SelectTypeImplCopyWithImpl(
+      _$SelectTypeImpl _value, $Res Function(_$SelectTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2086,7 +2089,7 @@ class __$$SelectTypeCopyWithImpl<$Res>
     Object? index = null,
     Object? context = null,
   }) {
-    return _then(_$SelectType(
+    return _then(_$SelectTypeImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -2101,8 +2104,8 @@ class __$$SelectTypeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectType implements SelectType {
-  const _$SelectType({required this.index, required this.context});
+class _$SelectTypeImpl implements SelectType {
+  const _$SelectTypeImpl({required this.index, required this.context});
 
   @override
   final int index;
@@ -2115,10 +2118,10 @@ class _$SelectType implements SelectType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectType &&
+            other is _$SelectTypeImpl &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.context, context) || other.context == context));
   }
@@ -2129,8 +2132,8 @@ class _$SelectType implements SelectType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectTypeCopyWith<_$SelectType> get copyWith =>
-      __$$SelectTypeCopyWithImpl<_$SelectType>(this, _$identity);
+  _$$SelectTypeImplCopyWith<_$SelectTypeImpl> get copyWith =>
+      __$$SelectTypeImplCopyWithImpl<_$SelectTypeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2323,35 +2326,35 @@ class _$SelectType implements SelectType {
 abstract class SelectType implements ParcelEvent {
   const factory SelectType(
       {required final int index,
-      required final BuildContext context}) = _$SelectType;
+      required final BuildContext context}) = _$SelectTypeImpl;
 
   int get index;
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SelectTypeCopyWith<_$SelectType> get copyWith =>
+  _$$SelectTypeImplCopyWith<_$SelectTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeAnonymousCopyWith<$Res> {
-  factory _$$ChangeAnonymousCopyWith(
-          _$ChangeAnonymous value, $Res Function(_$ChangeAnonymous) then) =
-      __$$ChangeAnonymousCopyWithImpl<$Res>;
+abstract class _$$ChangeAnonymousImplCopyWith<$Res> {
+  factory _$$ChangeAnonymousImplCopyWith(_$ChangeAnonymousImpl value,
+          $Res Function(_$ChangeAnonymousImpl) then) =
+      __$$ChangeAnonymousImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChangeAnonymousCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$ChangeAnonymous>
-    implements _$$ChangeAnonymousCopyWith<$Res> {
-  __$$ChangeAnonymousCopyWithImpl(
-      _$ChangeAnonymous _value, $Res Function(_$ChangeAnonymous) _then)
+class __$$ChangeAnonymousImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$ChangeAnonymousImpl>
+    implements _$$ChangeAnonymousImplCopyWith<$Res> {
+  __$$ChangeAnonymousImplCopyWithImpl(
+      _$ChangeAnonymousImpl _value, $Res Function(_$ChangeAnonymousImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ChangeAnonymous implements ChangeAnonymous {
-  const _$ChangeAnonymous();
+class _$ChangeAnonymousImpl implements ChangeAnonymous {
+  const _$ChangeAnonymousImpl();
 
   @override
   String toString() {
@@ -2359,9 +2362,9 @@ class _$ChangeAnonymous implements ChangeAnonymous {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeAnonymous);
+        (other.runtimeType == runtimeType && other is _$ChangeAnonymousImpl);
   }
 
   @override
@@ -2556,24 +2559,24 @@ class _$ChangeAnonymous implements ChangeAnonymous {
 }
 
 abstract class ChangeAnonymous implements ParcelEvent {
-  const factory ChangeAnonymous() = _$ChangeAnonymous;
+  const factory ChangeAnonymous() = _$ChangeAnonymousImpl;
 }
 
 /// @nodoc
-abstract class _$$FetchTypesCopyWith<$Res> {
-  factory _$$FetchTypesCopyWith(
-          _$FetchTypes value, $Res Function(_$FetchTypes) then) =
-      __$$FetchTypesCopyWithImpl<$Res>;
+abstract class _$$FetchTypesImplCopyWith<$Res> {
+  factory _$$FetchTypesImplCopyWith(
+          _$FetchTypesImpl value, $Res Function(_$FetchTypesImpl) then) =
+      __$$FetchTypesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchTypesCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$FetchTypes>
-    implements _$$FetchTypesCopyWith<$Res> {
-  __$$FetchTypesCopyWithImpl(
-      _$FetchTypes _value, $Res Function(_$FetchTypes) _then)
+class __$$FetchTypesImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$FetchTypesImpl>
+    implements _$$FetchTypesImplCopyWith<$Res> {
+  __$$FetchTypesImplCopyWithImpl(
+      _$FetchTypesImpl _value, $Res Function(_$FetchTypesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2581,7 +2584,7 @@ class __$$FetchTypesCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchTypes(
+    return _then(_$FetchTypesImpl(
       null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2592,8 +2595,8 @@ class __$$FetchTypesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchTypes implements FetchTypes {
-  const _$FetchTypes(this.context);
+class _$FetchTypesImpl implements FetchTypes {
+  const _$FetchTypesImpl(this.context);
 
   @override
   final BuildContext context;
@@ -2604,10 +2607,10 @@ class _$FetchTypes implements FetchTypes {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchTypes &&
+            other is _$FetchTypesImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -2617,8 +2620,8 @@ class _$FetchTypes implements FetchTypes {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchTypesCopyWith<_$FetchTypes> get copyWith =>
-      __$$FetchTypesCopyWithImpl<_$FetchTypes>(this, _$identity);
+  _$$FetchTypesImplCopyWith<_$FetchTypesImpl> get copyWith =>
+      __$$FetchTypesImplCopyWithImpl<_$FetchTypesImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2809,29 +2812,29 @@ class _$FetchTypes implements FetchTypes {
 }
 
 abstract class FetchTypes implements ParcelEvent {
-  const factory FetchTypes(final BuildContext context) = _$FetchTypes;
+  const factory FetchTypes(final BuildContext context) = _$FetchTypesImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$FetchTypesCopyWith<_$FetchTypes> get copyWith =>
+  _$$FetchTypesImplCopyWith<_$FetchTypesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetCalculateCopyWith<$Res> {
-  factory _$$GetCalculateCopyWith(
-          _$GetCalculate value, $Res Function(_$GetCalculate) then) =
-      __$$GetCalculateCopyWithImpl<$Res>;
+abstract class _$$GetCalculateImplCopyWith<$Res> {
+  factory _$$GetCalculateImplCopyWith(
+          _$GetCalculateImpl value, $Res Function(_$GetCalculateImpl) then) =
+      __$$GetCalculateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$GetCalculateCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$GetCalculate>
-    implements _$$GetCalculateCopyWith<$Res> {
-  __$$GetCalculateCopyWithImpl(
-      _$GetCalculate _value, $Res Function(_$GetCalculate) _then)
+class __$$GetCalculateImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$GetCalculateImpl>
+    implements _$$GetCalculateImplCopyWith<$Res> {
+  __$$GetCalculateImplCopyWithImpl(
+      _$GetCalculateImpl _value, $Res Function(_$GetCalculateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2839,7 +2842,7 @@ class __$$GetCalculateCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$GetCalculate(
+    return _then(_$GetCalculateImpl(
       null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2850,8 +2853,8 @@ class __$$GetCalculateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetCalculate implements GetCalculate {
-  const _$GetCalculate(this.context);
+class _$GetCalculateImpl implements GetCalculate {
+  const _$GetCalculateImpl(this.context);
 
   @override
   final BuildContext context;
@@ -2862,10 +2865,10 @@ class _$GetCalculate implements GetCalculate {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetCalculate &&
+            other is _$GetCalculateImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -2875,8 +2878,8 @@ class _$GetCalculate implements GetCalculate {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetCalculateCopyWith<_$GetCalculate> get copyWith =>
-      __$$GetCalculateCopyWithImpl<_$GetCalculate>(this, _$identity);
+  _$$GetCalculateImplCopyWith<_$GetCalculateImpl> get copyWith =>
+      __$$GetCalculateImplCopyWithImpl<_$GetCalculateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3067,19 +3070,19 @@ class _$GetCalculate implements GetCalculate {
 }
 
 abstract class GetCalculate implements ParcelEvent {
-  const factory GetCalculate(final BuildContext context) = _$GetCalculate;
+  const factory GetCalculate(final BuildContext context) = _$GetCalculateImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$GetCalculateCopyWith<_$GetCalculate> get copyWith =>
+  _$$GetCalculateImplCopyWith<_$GetCalculateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OrderParcelCopyWith<$Res> {
-  factory _$$OrderParcelCopyWith(
-          _$OrderParcel value, $Res Function(_$OrderParcel) then) =
-      __$$OrderParcelCopyWithImpl<$Res>;
+abstract class _$$OrderParcelImplCopyWith<$Res> {
+  factory _$$OrderParcelImplCopyWith(
+          _$OrderParcelImpl value, $Res Function(_$OrderParcelImpl) then) =
+      __$$OrderParcelImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -3099,11 +3102,11 @@ abstract class _$$OrderParcelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$OrderParcelCopyWithImpl<$Res>
-    extends _$ParcelEventCopyWithImpl<$Res, _$OrderParcel>
-    implements _$$OrderParcelCopyWith<$Res> {
-  __$$OrderParcelCopyWithImpl(
-      _$OrderParcel _value, $Res Function(_$OrderParcel) _then)
+class __$$OrderParcelImplCopyWithImpl<$Res>
+    extends _$ParcelEventCopyWithImpl<$Res, _$OrderParcelImpl>
+    implements _$$OrderParcelImplCopyWith<$Res> {
+  __$$OrderParcelImplCopyWithImpl(
+      _$OrderParcelImpl _value, $Res Function(_$OrderParcelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3124,7 +3127,7 @@ class __$$OrderParcelCopyWithImpl<$Res>
     Object? instruction = null,
     Object? paymentData = null,
   }) {
-    return _then(_$OrderParcel(
+    return _then(_$OrderParcelImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -3187,8 +3190,8 @@ class __$$OrderParcelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OrderParcel implements OrderParcel {
-  const _$OrderParcel(
+class _$OrderParcelImpl implements OrderParcel {
+  const _$OrderParcelImpl(
       {required this.context,
       required this.note,
       required this.usernameTo,
@@ -3239,10 +3242,10 @@ class _$OrderParcel implements OrderParcel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OrderParcel &&
+            other is _$OrderParcelImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.note, note) || other.note == note) &&
             (identical(other.usernameTo, usernameTo) ||
@@ -3287,8 +3290,8 @@ class _$OrderParcel implements OrderParcel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OrderParcelCopyWith<_$OrderParcel> get copyWith =>
-      __$$OrderParcelCopyWithImpl<_$OrderParcel>(this, _$identity);
+  _$$OrderParcelImplCopyWith<_$OrderParcelImpl> get copyWith =>
+      __$$OrderParcelImplCopyWithImpl<_$OrderParcelImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3535,7 +3538,7 @@ abstract class OrderParcel implements ParcelEvent {
       required final String comment,
       required final String value,
       required final String instruction,
-      required final PaymentData paymentData}) = _$OrderParcel;
+      required final PaymentData paymentData}) = _$OrderParcelImpl;
 
   BuildContext get context;
   String get note;
@@ -3552,7 +3555,7 @@ abstract class OrderParcel implements ParcelEvent {
   String get instruction;
   PaymentData get paymentData;
   @JsonKey(ignore: true)
-  _$$OrderParcelCopyWith<_$OrderParcel> get copyWith =>
+  _$$OrderParcelImplCopyWith<_$OrderParcelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3698,11 +3701,11 @@ class _$ParcelStateCopyWithImpl<$Res, $Val extends ParcelState>
 }
 
 /// @nodoc
-abstract class _$$_ParcelStateCopyWith<$Res>
+abstract class _$$ParcelStateImplCopyWith<$Res>
     implements $ParcelStateCopyWith<$Res> {
-  factory _$$_ParcelStateCopyWith(
-          _$_ParcelState value, $Res Function(_$_ParcelState) then) =
-      __$$_ParcelStateCopyWithImpl<$Res>;
+  factory _$$ParcelStateImplCopyWith(
+          _$ParcelStateImpl value, $Res Function(_$ParcelStateImpl) then) =
+      __$$ParcelStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -3724,11 +3727,11 @@ abstract class _$$_ParcelStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ParcelStateCopyWithImpl<$Res>
-    extends _$ParcelStateCopyWithImpl<$Res, _$_ParcelState>
-    implements _$$_ParcelStateCopyWith<$Res> {
-  __$$_ParcelStateCopyWithImpl(
-      _$_ParcelState _value, $Res Function(_$_ParcelState) _then)
+class __$$ParcelStateImplCopyWithImpl<$Res>
+    extends _$ParcelStateCopyWithImpl<$Res, _$ParcelStateImpl>
+    implements _$$ParcelStateImplCopyWith<$Res> {
+  __$$ParcelStateImplCopyWithImpl(
+      _$ParcelStateImpl _value, $Res Function(_$ParcelStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3750,7 +3753,7 @@ class __$$_ParcelStateCopyWithImpl<$Res>
     Object? anonymous = null,
     Object? parcel = freezed,
   }) {
-    return _then(_$_ParcelState(
+    return _then(_$ParcelStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -3817,8 +3820,8 @@ class __$$_ParcelStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ParcelState implements _ParcelState {
-  const _$_ParcelState(
+class _$ParcelStateImpl implements _ParcelState {
+  const _$ParcelStateImpl(
       {this.isLoading = false,
       this.isButtonLoading = false,
       this.isMapLoading = false,
@@ -3894,10 +3897,10 @@ class _$_ParcelState implements _ParcelState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ParcelState &&
+            other is _$ParcelStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isButtonLoading, isButtonLoading) ||
@@ -3947,8 +3950,8 @@ class _$_ParcelState implements _ParcelState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ParcelStateCopyWith<_$_ParcelState> get copyWith =>
-      __$$_ParcelStateCopyWithImpl<_$_ParcelState>(this, _$identity);
+  _$$ParcelStateImplCopyWith<_$ParcelStateImpl> get copyWith =>
+      __$$ParcelStateImplCopyWithImpl<_$ParcelStateImpl>(this, _$identity);
 }
 
 abstract class _ParcelState implements ParcelState {
@@ -3967,7 +3970,7 @@ abstract class _ParcelState implements ParcelState {
       final int selectType,
       final bool expand,
       final bool anonymous,
-      final ParcelOrder? parcel}) = _$_ParcelState;
+      final ParcelOrder? parcel}) = _$ParcelStateImpl;
 
   @override
   bool get isLoading;
@@ -4001,6 +4004,6 @@ abstract class _ParcelState implements ParcelState {
   ParcelOrder? get parcel;
   @override
   @JsonKey(ignore: true)
-  _$$_ParcelStateCopyWith<_$_ParcelState> get copyWith =>
+  _$$ParcelStateImplCopyWith<_$ParcelStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

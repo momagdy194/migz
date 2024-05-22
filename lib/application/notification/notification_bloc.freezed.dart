@@ -12,7 +12,7 @@ part of 'notification_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NotificationEvent {
@@ -119,11 +119,11 @@ class _$NotificationEventCopyWithImpl<$Res, $Val extends NotificationEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchNotificationCopyWith<$Res>
+abstract class _$$FetchNotificationImplCopyWith<$Res>
     implements $NotificationEventCopyWith<$Res> {
-  factory _$$FetchNotificationCopyWith(
-          _$FetchNotification value, $Res Function(_$FetchNotification) then) =
-      __$$FetchNotificationCopyWithImpl<$Res>;
+  factory _$$FetchNotificationImplCopyWith(_$FetchNotificationImpl value,
+          $Res Function(_$FetchNotificationImpl) then) =
+      __$$FetchNotificationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$FetchNotificationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchNotificationCopyWithImpl<$Res>
-    extends _$NotificationEventCopyWithImpl<$Res, _$FetchNotification>
-    implements _$$FetchNotificationCopyWith<$Res> {
-  __$$FetchNotificationCopyWithImpl(
-      _$FetchNotification _value, $Res Function(_$FetchNotification) _then)
+class __$$FetchNotificationImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$FetchNotificationImpl>
+    implements _$$FetchNotificationImplCopyWith<$Res> {
+  __$$FetchNotificationImplCopyWithImpl(_$FetchNotificationImpl _value,
+      $Res Function(_$FetchNotificationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -145,7 +145,7 @@ class __$$FetchNotificationCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchNotification(
+    return _then(_$FetchNotificationImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -164,8 +164,8 @@ class __$$FetchNotificationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchNotification implements FetchNotification {
-  const _$FetchNotification(
+class _$FetchNotificationImpl implements FetchNotification {
+  const _$FetchNotificationImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -181,10 +181,10 @@ class _$FetchNotification implements FetchNotification {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchNotification &&
+            other is _$FetchNotificationImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -198,8 +198,9 @@ class _$FetchNotification implements FetchNotification {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchNotificationCopyWith<_$FetchNotification> get copyWith =>
-      __$$FetchNotificationCopyWithImpl<_$FetchNotification>(this, _$identity);
+  _$$FetchNotificationImplCopyWith<_$FetchNotificationImpl> get copyWith =>
+      __$$FetchNotificationImplCopyWithImpl<_$FetchNotificationImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -292,7 +293,7 @@ abstract class FetchNotification implements NotificationEvent {
   const factory FetchNotification(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchNotification;
+      final RefreshController? controller}) = _$FetchNotificationImpl;
 
   @override
   BuildContext get context;
@@ -300,25 +301,27 @@ abstract class FetchNotification implements NotificationEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchNotificationCopyWith<_$FetchNotification> get copyWith =>
+  _$$FetchNotificationImplCopyWith<_$FetchNotificationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReadAllCopyWith<$Res>
+abstract class _$$ReadAllImplCopyWith<$Res>
     implements $NotificationEventCopyWith<$Res> {
-  factory _$$ReadAllCopyWith(_$ReadAll value, $Res Function(_$ReadAll) then) =
-      __$$ReadAllCopyWithImpl<$Res>;
+  factory _$$ReadAllImplCopyWith(
+          _$ReadAllImpl value, $Res Function(_$ReadAllImpl) then) =
+      __$$ReadAllImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$ReadAllCopyWithImpl<$Res>
-    extends _$NotificationEventCopyWithImpl<$Res, _$ReadAll>
-    implements _$$ReadAllCopyWith<$Res> {
-  __$$ReadAllCopyWithImpl(_$ReadAll _value, $Res Function(_$ReadAll) _then)
+class __$$ReadAllImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$ReadAllImpl>
+    implements _$$ReadAllImplCopyWith<$Res> {
+  __$$ReadAllImplCopyWithImpl(
+      _$ReadAllImpl _value, $Res Function(_$ReadAllImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -326,7 +329,7 @@ class __$$ReadAllCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$ReadAll(
+    return _then(_$ReadAllImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -337,8 +340,8 @@ class __$$ReadAllCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReadAll implements ReadAll {
-  const _$ReadAll({required this.context});
+class _$ReadAllImpl implements ReadAll {
+  const _$ReadAllImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -349,10 +352,10 @@ class _$ReadAll implements ReadAll {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReadAll &&
+            other is _$ReadAllImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -362,8 +365,8 @@ class _$ReadAll implements ReadAll {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReadAllCopyWith<_$ReadAll> get copyWith =>
-      __$$ReadAllCopyWithImpl<_$ReadAll>(this, _$identity);
+  _$$ReadAllImplCopyWith<_$ReadAllImpl> get copyWith =>
+      __$$ReadAllImplCopyWithImpl<_$ReadAllImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -453,31 +456,33 @@ class _$ReadAll implements ReadAll {
 }
 
 abstract class ReadAll implements NotificationEvent {
-  const factory ReadAll({required final BuildContext context}) = _$ReadAll;
+  const factory ReadAll({required final BuildContext context}) = _$ReadAllImpl;
 
   @override
   BuildContext get context;
   @override
   @JsonKey(ignore: true)
-  _$$ReadAllCopyWith<_$ReadAll> get copyWith =>
+  _$$ReadAllImplCopyWith<_$ReadAllImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReadOneCopyWith<$Res>
+abstract class _$$ReadOneImplCopyWith<$Res>
     implements $NotificationEventCopyWith<$Res> {
-  factory _$$ReadOneCopyWith(_$ReadOne value, $Res Function(_$ReadOne) then) =
-      __$$ReadOneCopyWithImpl<$Res>;
+  factory _$$ReadOneImplCopyWith(
+          _$ReadOneImpl value, $Res Function(_$ReadOneImpl) then) =
+      __$$ReadOneImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int? id});
 }
 
 /// @nodoc
-class __$$ReadOneCopyWithImpl<$Res>
-    extends _$NotificationEventCopyWithImpl<$Res, _$ReadOne>
-    implements _$$ReadOneCopyWith<$Res> {
-  __$$ReadOneCopyWithImpl(_$ReadOne _value, $Res Function(_$ReadOne) _then)
+class __$$ReadOneImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$ReadOneImpl>
+    implements _$$ReadOneImplCopyWith<$Res> {
+  __$$ReadOneImplCopyWithImpl(
+      _$ReadOneImpl _value, $Res Function(_$ReadOneImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -486,7 +491,7 @@ class __$$ReadOneCopyWithImpl<$Res>
     Object? context = null,
     Object? id = freezed,
   }) {
-    return _then(_$ReadOne(
+    return _then(_$ReadOneImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -501,8 +506,8 @@ class __$$ReadOneCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReadOne implements ReadOne {
-  const _$ReadOne({required this.context, required this.id});
+class _$ReadOneImpl implements ReadOne {
+  const _$ReadOneImpl({required this.context, required this.id});
 
   @override
   final BuildContext context;
@@ -515,10 +520,10 @@ class _$ReadOne implements ReadOne {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReadOne &&
+            other is _$ReadOneImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id));
   }
@@ -529,8 +534,8 @@ class _$ReadOne implements ReadOne {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReadOneCopyWith<_$ReadOne> get copyWith =>
-      __$$ReadOneCopyWithImpl<_$ReadOne>(this, _$identity);
+  _$$ReadOneImplCopyWith<_$ReadOneImpl> get copyWith =>
+      __$$ReadOneImplCopyWithImpl<_$ReadOneImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -622,34 +627,34 @@ class _$ReadOne implements ReadOne {
 abstract class ReadOne implements NotificationEvent {
   const factory ReadOne(
       {required final BuildContext context,
-      required final int? id}) = _$ReadOne;
+      required final int? id}) = _$ReadOneImpl;
 
   @override
   BuildContext get context;
   int? get id;
   @override
   @JsonKey(ignore: true)
-  _$$ReadOneCopyWith<_$ReadOne> get copyWith =>
+  _$$ReadOneImplCopyWith<_$ReadOneImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RemoveItemCopyWith<$Res>
+abstract class _$$RemoveItemImplCopyWith<$Res>
     implements $NotificationEventCopyWith<$Res> {
-  factory _$$RemoveItemCopyWith(
-          _$RemoveItem value, $Res Function(_$RemoveItem) then) =
-      __$$RemoveItemCopyWithImpl<$Res>;
+  factory _$$RemoveItemImplCopyWith(
+          _$RemoveItemImpl value, $Res Function(_$RemoveItemImpl) then) =
+      __$$RemoveItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int? id});
 }
 
 /// @nodoc
-class __$$RemoveItemCopyWithImpl<$Res>
-    extends _$NotificationEventCopyWithImpl<$Res, _$RemoveItem>
-    implements _$$RemoveItemCopyWith<$Res> {
-  __$$RemoveItemCopyWithImpl(
-      _$RemoveItem _value, $Res Function(_$RemoveItem) _then)
+class __$$RemoveItemImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$RemoveItemImpl>
+    implements _$$RemoveItemImplCopyWith<$Res> {
+  __$$RemoveItemImplCopyWithImpl(
+      _$RemoveItemImpl _value, $Res Function(_$RemoveItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -658,7 +663,7 @@ class __$$RemoveItemCopyWithImpl<$Res>
     Object? context = null,
     Object? id = freezed,
   }) {
-    return _then(_$RemoveItem(
+    return _then(_$RemoveItemImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -673,8 +678,8 @@ class __$$RemoveItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RemoveItem implements RemoveItem {
-  const _$RemoveItem({required this.context, required this.id});
+class _$RemoveItemImpl implements RemoveItem {
+  const _$RemoveItemImpl({required this.context, required this.id});
 
   @override
   final BuildContext context;
@@ -687,10 +692,10 @@ class _$RemoveItem implements RemoveItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RemoveItem &&
+            other is _$RemoveItemImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id));
   }
@@ -701,8 +706,8 @@ class _$RemoveItem implements RemoveItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveItemCopyWith<_$RemoveItem> get copyWith =>
-      __$$RemoveItemCopyWithImpl<_$RemoveItem>(this, _$identity);
+  _$$RemoveItemImplCopyWith<_$RemoveItemImpl> get copyWith =>
+      __$$RemoveItemImplCopyWithImpl<_$RemoveItemImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -794,34 +799,34 @@ class _$RemoveItem implements RemoveItem {
 abstract class RemoveItem implements NotificationEvent {
   const factory RemoveItem(
       {required final BuildContext context,
-      required final int? id}) = _$RemoveItem;
+      required final int? id}) = _$RemoveItemImpl;
 
   @override
   BuildContext get context;
   int? get id;
   @override
   @JsonKey(ignore: true)
-  _$$RemoveItemCopyWith<_$RemoveItem> get copyWith =>
+  _$$RemoveItemImplCopyWith<_$RemoveItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchCountCopyWith<$Res>
+abstract class _$$FetchCountImplCopyWith<$Res>
     implements $NotificationEventCopyWith<$Res> {
-  factory _$$FetchCountCopyWith(
-          _$FetchCount value, $Res Function(_$FetchCount) then) =
-      __$$FetchCountCopyWithImpl<$Res>;
+  factory _$$FetchCountImplCopyWith(
+          _$FetchCountImpl value, $Res Function(_$FetchCountImpl) then) =
+      __$$FetchCountImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchCountCopyWithImpl<$Res>
-    extends _$NotificationEventCopyWithImpl<$Res, _$FetchCount>
-    implements _$$FetchCountCopyWith<$Res> {
-  __$$FetchCountCopyWithImpl(
-      _$FetchCount _value, $Res Function(_$FetchCount) _then)
+class __$$FetchCountImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$FetchCountImpl>
+    implements _$$FetchCountImplCopyWith<$Res> {
+  __$$FetchCountImplCopyWithImpl(
+      _$FetchCountImpl _value, $Res Function(_$FetchCountImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -829,7 +834,7 @@ class __$$FetchCountCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchCount(
+    return _then(_$FetchCountImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -840,8 +845,8 @@ class __$$FetchCountCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchCount implements FetchCount {
-  const _$FetchCount({required this.context});
+class _$FetchCountImpl implements FetchCount {
+  const _$FetchCountImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -852,10 +857,10 @@ class _$FetchCount implements FetchCount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchCount &&
+            other is _$FetchCountImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -865,8 +870,8 @@ class _$FetchCount implements FetchCount {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchCountCopyWith<_$FetchCount> get copyWith =>
-      __$$FetchCountCopyWithImpl<_$FetchCount>(this, _$identity);
+  _$$FetchCountImplCopyWith<_$FetchCountImpl> get copyWith =>
+      __$$FetchCountImplCopyWithImpl<_$FetchCountImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -957,13 +962,13 @@ class _$FetchCount implements FetchCount {
 
 abstract class FetchCount implements NotificationEvent {
   const factory FetchCount({required final BuildContext context}) =
-      _$FetchCount;
+      _$FetchCountImpl;
 
   @override
   BuildContext get context;
   @override
   @JsonKey(ignore: true)
-  _$$FetchCountCopyWith<_$FetchCount> get copyWith =>
+  _$$FetchCountImplCopyWith<_$FetchCountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1034,11 +1039,11 @@ class _$NotificationStateCopyWithImpl<$Res, $Val extends NotificationState>
 }
 
 /// @nodoc
-abstract class _$$_NotificationStateCopyWith<$Res>
+abstract class _$$NotificationStateImplCopyWith<$Res>
     implements $NotificationStateCopyWith<$Res> {
-  factory _$$_NotificationStateCopyWith(_$_NotificationState value,
-          $Res Function(_$_NotificationState) then) =
-      __$$_NotificationStateCopyWithImpl<$Res>;
+  factory _$$NotificationStateImplCopyWith(_$NotificationStateImpl value,
+          $Res Function(_$NotificationStateImpl) then) =
+      __$$NotificationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1049,11 +1054,11 @@ abstract class _$$_NotificationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotificationStateCopyWithImpl<$Res>
-    extends _$NotificationStateCopyWithImpl<$Res, _$_NotificationState>
-    implements _$$_NotificationStateCopyWith<$Res> {
-  __$$_NotificationStateCopyWithImpl(
-      _$_NotificationState _value, $Res Function(_$_NotificationState) _then)
+class __$$NotificationStateImplCopyWithImpl<$Res>
+    extends _$NotificationStateCopyWithImpl<$Res, _$NotificationStateImpl>
+    implements _$$NotificationStateImplCopyWith<$Res> {
+  __$$NotificationStateImplCopyWithImpl(_$NotificationStateImpl _value,
+      $Res Function(_$NotificationStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1064,7 +1069,7 @@ class __$$_NotificationStateCopyWithImpl<$Res>
     Object? countOfNotifications = freezed,
     Object? isReadAllLoading = null,
   }) {
-    return _then(_$_NotificationState(
+    return _then(_$NotificationStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -1087,8 +1092,8 @@ class __$$_NotificationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NotificationState implements _NotificationState {
-  const _$_NotificationState(
+class _$NotificationStateImpl implements _NotificationState {
+  const _$NotificationStateImpl(
       {this.isLoading = false,
       final List<NotificationModel> notifications = const [],
       this.countOfNotifications = null,
@@ -1120,10 +1125,10 @@ class _$_NotificationState implements _NotificationState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotificationState &&
+            other is _$NotificationStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality()
@@ -1145,8 +1150,8 @@ class _$_NotificationState implements _NotificationState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotificationStateCopyWith<_$_NotificationState> get copyWith =>
-      __$$_NotificationStateCopyWithImpl<_$_NotificationState>(
+  _$$NotificationStateImplCopyWith<_$NotificationStateImpl> get copyWith =>
+      __$$NotificationStateImplCopyWithImpl<_$NotificationStateImpl>(
           this, _$identity);
 }
 
@@ -1155,7 +1160,7 @@ abstract class _NotificationState implements NotificationState {
       {final bool isLoading,
       final List<NotificationModel> notifications,
       final CountNotificationModel? countOfNotifications,
-      final bool isReadAllLoading}) = _$_NotificationState;
+      final bool isReadAllLoading}) = _$NotificationStateImpl;
 
   @override
   bool get isLoading;
@@ -1167,6 +1172,6 @@ abstract class _NotificationState implements NotificationState {
   bool get isReadAllLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_NotificationStateCopyWith<_$_NotificationState> get copyWith =>
+  _$$NotificationStateImplCopyWith<_$NotificationStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

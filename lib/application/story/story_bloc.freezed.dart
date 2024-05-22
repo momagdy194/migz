@@ -12,7 +12,7 @@ part of 'story_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StoryEvent {
@@ -108,11 +108,11 @@ class _$StoryEventCopyWithImpl<$Res, $Val extends StoryEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchStoryCopyWith<$Res>
+abstract class _$$FetchStoryImplCopyWith<$Res>
     implements $StoryEventCopyWith<$Res> {
-  factory _$$FetchStoryCopyWith(
-          _$FetchStory value, $Res Function(_$FetchStory) then) =
-      __$$FetchStoryCopyWithImpl<$Res>;
+  factory _$$FetchStoryImplCopyWith(
+          _$FetchStoryImpl value, $Res Function(_$FetchStoryImpl) then) =
+      __$$FetchStoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -120,11 +120,11 @@ abstract class _$$FetchStoryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchStoryCopyWithImpl<$Res>
-    extends _$StoryEventCopyWithImpl<$Res, _$FetchStory>
-    implements _$$FetchStoryCopyWith<$Res> {
-  __$$FetchStoryCopyWithImpl(
-      _$FetchStory _value, $Res Function(_$FetchStory) _then)
+class __$$FetchStoryImplCopyWithImpl<$Res>
+    extends _$StoryEventCopyWithImpl<$Res, _$FetchStoryImpl>
+    implements _$$FetchStoryImplCopyWith<$Res> {
+  __$$FetchStoryImplCopyWithImpl(
+      _$FetchStoryImpl _value, $Res Function(_$FetchStoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -134,7 +134,7 @@ class __$$FetchStoryCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchStory(
+    return _then(_$FetchStoryImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -153,8 +153,9 @@ class __$$FetchStoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchStory implements FetchStory {
-  const _$FetchStory({required this.context, this.isRefresh, this.controller});
+class _$FetchStoryImpl implements FetchStory {
+  const _$FetchStoryImpl(
+      {required this.context, this.isRefresh, this.controller});
 
   @override
   final BuildContext context;
@@ -169,10 +170,10 @@ class _$FetchStory implements FetchStory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchStory &&
+            other is _$FetchStoryImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -186,8 +187,8 @@ class _$FetchStory implements FetchStory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchStoryCopyWith<_$FetchStory> get copyWith =>
-      __$$FetchStoryCopyWithImpl<_$FetchStory>(this, _$identity);
+  _$$FetchStoryImplCopyWith<_$FetchStoryImpl> get copyWith =>
+      __$$FetchStoryImplCopyWithImpl<_$FetchStoryImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -256,7 +257,7 @@ abstract class FetchStory implements StoryEvent {
   const factory FetchStory(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchStory;
+      final RefreshController? controller}) = _$FetchStoryImpl;
 
   @override
   BuildContext get context;
@@ -266,7 +267,7 @@ abstract class FetchStory implements StoryEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchStoryCopyWith<_$FetchStory> get copyWith =>
+  _$$FetchStoryImplCopyWith<_$FetchStoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -319,22 +320,22 @@ class _$StoryStateCopyWithImpl<$Res, $Val extends StoryState>
 }
 
 /// @nodoc
-abstract class _$$_StoryStateCopyWith<$Res>
+abstract class _$$StoryStateImplCopyWith<$Res>
     implements $StoryStateCopyWith<$Res> {
-  factory _$$_StoryStateCopyWith(
-          _$_StoryState value, $Res Function(_$_StoryState) then) =
-      __$$_StoryStateCopyWithImpl<$Res>;
+  factory _$$StoryStateImplCopyWith(
+          _$StoryStateImpl value, $Res Function(_$StoryStateImpl) then) =
+      __$$StoryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<List<StoryModel?>?> story, bool isLoadingBanner});
 }
 
 /// @nodoc
-class __$$_StoryStateCopyWithImpl<$Res>
-    extends _$StoryStateCopyWithImpl<$Res, _$_StoryState>
-    implements _$$_StoryStateCopyWith<$Res> {
-  __$$_StoryStateCopyWithImpl(
-      _$_StoryState _value, $Res Function(_$_StoryState) _then)
+class __$$StoryStateImplCopyWithImpl<$Res>
+    extends _$StoryStateCopyWithImpl<$Res, _$StoryStateImpl>
+    implements _$$StoryStateImplCopyWith<$Res> {
+  __$$StoryStateImplCopyWithImpl(
+      _$StoryStateImpl _value, $Res Function(_$StoryStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -343,7 +344,7 @@ class __$$_StoryStateCopyWithImpl<$Res>
     Object? story = null,
     Object? isLoadingBanner = null,
   }) {
-    return _then(_$_StoryState(
+    return _then(_$StoryStateImpl(
       story: null == story
           ? _value._story
           : story // ignore: cast_nullable_to_non_nullable
@@ -358,8 +359,8 @@ class __$$_StoryStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_StoryState implements _StoryState {
-  const _$_StoryState(
+class _$StoryStateImpl implements _StoryState {
+  const _$StoryStateImpl(
       {final List<List<StoryModel?>?> story = const [],
       this.isLoadingBanner = true})
       : _story = story;
@@ -383,10 +384,10 @@ class _$_StoryState implements _StoryState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StoryState &&
+            other is _$StoryStateImpl &&
             const DeepCollectionEquality().equals(other._story, _story) &&
             (identical(other.isLoadingBanner, isLoadingBanner) ||
                 other.isLoadingBanner == isLoadingBanner));
@@ -399,14 +400,14 @@ class _$_StoryState implements _StoryState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StoryStateCopyWith<_$_StoryState> get copyWith =>
-      __$$_StoryStateCopyWithImpl<_$_StoryState>(this, _$identity);
+  _$$StoryStateImplCopyWith<_$StoryStateImpl> get copyWith =>
+      __$$StoryStateImplCopyWithImpl<_$StoryStateImpl>(this, _$identity);
 }
 
 abstract class _StoryState implements StoryState {
   const factory _StoryState(
       {final List<List<StoryModel?>?> story,
-      final bool isLoadingBanner}) = _$_StoryState;
+      final bool isLoadingBanner}) = _$StoryStateImpl;
 
   @override
   List<List<StoryModel?>?> get story;
@@ -414,6 +415,6 @@ abstract class _StoryState implements StoryState {
   bool get isLoadingBanner;
   @override
   @JsonKey(ignore: true)
-  _$$_StoryStateCopyWith<_$_StoryState> get copyWith =>
+  _$$StoryStateImplCopyWith<_$StoryStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

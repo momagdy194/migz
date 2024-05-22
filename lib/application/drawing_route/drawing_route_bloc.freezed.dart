@@ -12,7 +12,7 @@ part of 'drawing_route_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DrawingRouteEvent {
@@ -119,22 +119,22 @@ class _$DrawingRouteEventCopyWithImpl<$Res, $Val extends DrawingRouteEvent>
 }
 
 /// @nodoc
-abstract class _$$GetRoutingAllCopyWith<$Res>
+abstract class _$$GetRoutingAllImplCopyWith<$Res>
     implements $DrawingRouteEventCopyWith<$Res> {
-  factory _$$GetRoutingAllCopyWith(
-          _$GetRoutingAll value, $Res Function(_$GetRoutingAll) then) =
-      __$$GetRoutingAllCopyWithImpl<$Res>;
+  factory _$$GetRoutingAllImplCopyWith(
+          _$GetRoutingAllImpl value, $Res Function(_$GetRoutingAllImpl) then) =
+      __$$GetRoutingAllImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, OrderShops? order, ParcelOrder? parcel});
 }
 
 /// @nodoc
-class __$$GetRoutingAllCopyWithImpl<$Res>
-    extends _$DrawingRouteEventCopyWithImpl<$Res, _$GetRoutingAll>
-    implements _$$GetRoutingAllCopyWith<$Res> {
-  __$$GetRoutingAllCopyWithImpl(
-      _$GetRoutingAll _value, $Res Function(_$GetRoutingAll) _then)
+class __$$GetRoutingAllImplCopyWithImpl<$Res>
+    extends _$DrawingRouteEventCopyWithImpl<$Res, _$GetRoutingAllImpl>
+    implements _$$GetRoutingAllImplCopyWith<$Res> {
+  __$$GetRoutingAllImplCopyWithImpl(
+      _$GetRoutingAllImpl _value, $Res Function(_$GetRoutingAllImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -144,7 +144,7 @@ class __$$GetRoutingAllCopyWithImpl<$Res>
     Object? order = freezed,
     Object? parcel = freezed,
   }) {
-    return _then(_$GetRoutingAll(
+    return _then(_$GetRoutingAllImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$GetRoutingAllCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetRoutingAll implements GetRoutingAll {
-  const _$GetRoutingAll({required this.context, this.order, this.parcel});
+class _$GetRoutingAllImpl implements GetRoutingAll {
+  const _$GetRoutingAllImpl({required this.context, this.order, this.parcel});
 
   @override
   final BuildContext context;
@@ -179,10 +179,10 @@ class _$GetRoutingAll implements GetRoutingAll {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetRoutingAll &&
+            other is _$GetRoutingAllImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.order, order) || other.order == order) &&
             (identical(other.parcel, parcel) || other.parcel == parcel));
@@ -194,8 +194,8 @@ class _$GetRoutingAll implements GetRoutingAll {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetRoutingAllCopyWith<_$GetRoutingAll> get copyWith =>
-      __$$GetRoutingAllCopyWithImpl<_$GetRoutingAll>(this, _$identity);
+  _$$GetRoutingAllImplCopyWith<_$GetRoutingAllImpl> get copyWith =>
+      __$$GetRoutingAllImplCopyWithImpl<_$GetRoutingAllImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -276,7 +276,7 @@ abstract class GetRoutingAll implements DrawingRouteEvent {
   const factory GetRoutingAll(
       {required final BuildContext context,
       final OrderShops? order,
-      final ParcelOrder? parcel}) = _$GetRoutingAll;
+      final ParcelOrder? parcel}) = _$GetRoutingAllImpl;
 
   @override
   BuildContext get context;
@@ -286,16 +286,16 @@ abstract class GetRoutingAll implements DrawingRouteEvent {
   ParcelOrder? get parcel;
   @override
   @JsonKey(ignore: true)
-  _$$GetRoutingAllCopyWith<_$GetRoutingAll> get copyWith =>
+  _$$GetRoutingAllImplCopyWith<_$GetRoutingAllImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetMarkersCopyWith<$Res>
+abstract class _$$SetMarkersImplCopyWith<$Res>
     implements $DrawingRouteEventCopyWith<$Res> {
-  factory _$$SetMarkersCopyWith(
-          _$SetMarkers value, $Res Function(_$SetMarkers) then) =
-      __$$SetMarkersCopyWithImpl<$Res>;
+  factory _$$SetMarkersImplCopyWith(
+          _$SetMarkersImpl value, $Res Function(_$SetMarkersImpl) then) =
+      __$$SetMarkersImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -306,11 +306,11 @@ abstract class _$$SetMarkersCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetMarkersCopyWithImpl<$Res>
-    extends _$DrawingRouteEventCopyWithImpl<$Res, _$SetMarkers>
-    implements _$$SetMarkersCopyWith<$Res> {
-  __$$SetMarkersCopyWithImpl(
-      _$SetMarkers _value, $Res Function(_$SetMarkers) _then)
+class __$$SetMarkersImplCopyWithImpl<$Res>
+    extends _$DrawingRouteEventCopyWithImpl<$Res, _$SetMarkersImpl>
+    implements _$$SetMarkersImplCopyWith<$Res> {
+  __$$SetMarkersImplCopyWithImpl(
+      _$SetMarkersImpl _value, $Res Function(_$SetMarkersImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -321,7 +321,7 @@ class __$$SetMarkersCopyWithImpl<$Res>
     Object? order = freezed,
     Object? parcel = freezed,
   }) {
-    return _then(_$SetMarkers(
+    return _then(_$SetMarkersImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -344,8 +344,8 @@ class __$$SetMarkersCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetMarkers implements SetMarkers {
-  const _$SetMarkers(
+class _$SetMarkersImpl implements SetMarkers {
+  const _$SetMarkersImpl(
       {required this.context, required this.colors, this.order, this.parcel});
 
   @override
@@ -363,10 +363,10 @@ class _$SetMarkers implements SetMarkers {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetMarkers &&
+            other is _$SetMarkersImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.colors, colors) || other.colors == colors) &&
             (identical(other.order, order) || other.order == order) &&
@@ -379,8 +379,8 @@ class _$SetMarkers implements SetMarkers {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetMarkersCopyWith<_$SetMarkers> get copyWith =>
-      __$$SetMarkersCopyWithImpl<_$SetMarkers>(this, _$identity);
+  _$$SetMarkersImplCopyWith<_$SetMarkersImpl> get copyWith =>
+      __$$SetMarkersImplCopyWithImpl<_$SetMarkersImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -462,7 +462,7 @@ abstract class SetMarkers implements DrawingRouteEvent {
       {required final BuildContext context,
       required final CustomColorSet colors,
       final OrderShops? order,
-      final ParcelOrder? parcel}) = _$SetMarkers;
+      final ParcelOrder? parcel}) = _$SetMarkersImpl;
 
   @override
   BuildContext get context;
@@ -473,7 +473,7 @@ abstract class SetMarkers implements DrawingRouteEvent {
   ParcelOrder? get parcel;
   @override
   @JsonKey(ignore: true)
-  _$$SetMarkersCopyWith<_$SetMarkers> get copyWith =>
+  _$$SetMarkersImplCopyWith<_$SetMarkersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -535,11 +535,11 @@ class _$DrawingRouteStateCopyWithImpl<$Res, $Val extends DrawingRouteState>
 }
 
 /// @nodoc
-abstract class _$$_DrawingRouteStateCopyWith<$Res>
+abstract class _$$DrawingRouteStateImplCopyWith<$Res>
     implements $DrawingRouteStateCopyWith<$Res> {
-  factory _$$_DrawingRouteStateCopyWith(_$_DrawingRouteState value,
-          $Res Function(_$_DrawingRouteState) then) =
-      __$$_DrawingRouteStateCopyWithImpl<$Res>;
+  factory _$$DrawingRouteStateImplCopyWith(_$DrawingRouteStateImpl value,
+          $Res Function(_$DrawingRouteStateImpl) then) =
+      __$$DrawingRouteStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -549,11 +549,11 @@ abstract class _$$_DrawingRouteStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DrawingRouteStateCopyWithImpl<$Res>
-    extends _$DrawingRouteStateCopyWithImpl<$Res, _$_DrawingRouteState>
-    implements _$$_DrawingRouteStateCopyWith<$Res> {
-  __$$_DrawingRouteStateCopyWithImpl(
-      _$_DrawingRouteState _value, $Res Function(_$_DrawingRouteState) _then)
+class __$$DrawingRouteStateImplCopyWithImpl<$Res>
+    extends _$DrawingRouteStateCopyWithImpl<$Res, _$DrawingRouteStateImpl>
+    implements _$$DrawingRouteStateImplCopyWith<$Res> {
+  __$$DrawingRouteStateImplCopyWithImpl(_$DrawingRouteStateImpl _value,
+      $Res Function(_$DrawingRouteStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -563,7 +563,7 @@ class __$$_DrawingRouteStateCopyWithImpl<$Res>
     Object? markers = null,
     Object? polylineCoordinates = null,
   }) {
-    return _then(_$_DrawingRouteState(
+    return _then(_$DrawingRouteStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -582,8 +582,8 @@ class __$$_DrawingRouteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DrawingRouteState implements _DrawingRouteState {
-  const _$_DrawingRouteState(
+class _$DrawingRouteStateImpl implements _DrawingRouteState {
+  const _$DrawingRouteStateImpl(
       {this.isLoading = false,
       final Map<MarkerId, Marker> markers = const {},
       final List<LatLng> polylineCoordinates = const []})
@@ -618,10 +618,10 @@ class _$_DrawingRouteState implements _DrawingRouteState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DrawingRouteState &&
+            other is _$DrawingRouteStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality().equals(other._markers, _markers) &&
@@ -639,8 +639,8 @@ class _$_DrawingRouteState implements _DrawingRouteState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DrawingRouteStateCopyWith<_$_DrawingRouteState> get copyWith =>
-      __$$_DrawingRouteStateCopyWithImpl<_$_DrawingRouteState>(
+  _$$DrawingRouteStateImplCopyWith<_$DrawingRouteStateImpl> get copyWith =>
+      __$$DrawingRouteStateImplCopyWithImpl<_$DrawingRouteStateImpl>(
           this, _$identity);
 }
 
@@ -648,7 +648,7 @@ abstract class _DrawingRouteState implements DrawingRouteState {
   const factory _DrawingRouteState(
       {final bool isLoading,
       final Map<MarkerId, Marker> markers,
-      final List<LatLng> polylineCoordinates}) = _$_DrawingRouteState;
+      final List<LatLng> polylineCoordinates}) = _$DrawingRouteStateImpl;
 
   @override
   bool get isLoading;
@@ -658,6 +658,6 @@ abstract class _DrawingRouteState implements DrawingRouteState {
   List<LatLng> get polylineCoordinates;
   @override
   @JsonKey(ignore: true)
-  _$$_DrawingRouteStateCopyWith<_$_DrawingRouteState> get copyWith =>
+  _$$DrawingRouteStateImplCopyWith<_$DrawingRouteStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

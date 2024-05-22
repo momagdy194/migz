@@ -12,7 +12,7 @@ part of 'blog_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BlogEvent {
@@ -103,10 +103,11 @@ class _$BlogEventCopyWithImpl<$Res, $Val extends BlogEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchBlogCopyWith<$Res> implements $BlogEventCopyWith<$Res> {
-  factory _$$FetchBlogCopyWith(
-          _$FetchBlog value, $Res Function(_$FetchBlog) then) =
-      __$$FetchBlogCopyWithImpl<$Res>;
+abstract class _$$FetchBlogImplCopyWith<$Res>
+    implements $BlogEventCopyWith<$Res> {
+  factory _$$FetchBlogImplCopyWith(
+          _$FetchBlogImpl value, $Res Function(_$FetchBlogImpl) then) =
+      __$$FetchBlogImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -114,11 +115,11 @@ abstract class _$$FetchBlogCopyWith<$Res> implements $BlogEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchBlogCopyWithImpl<$Res>
-    extends _$BlogEventCopyWithImpl<$Res, _$FetchBlog>
-    implements _$$FetchBlogCopyWith<$Res> {
-  __$$FetchBlogCopyWithImpl(
-      _$FetchBlog _value, $Res Function(_$FetchBlog) _then)
+class __$$FetchBlogImplCopyWithImpl<$Res>
+    extends _$BlogEventCopyWithImpl<$Res, _$FetchBlogImpl>
+    implements _$$FetchBlogImplCopyWith<$Res> {
+  __$$FetchBlogImplCopyWithImpl(
+      _$FetchBlogImpl _value, $Res Function(_$FetchBlogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +129,7 @@ class __$$FetchBlogCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchBlog(
+    return _then(_$FetchBlogImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -147,8 +148,9 @@ class __$$FetchBlogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchBlog implements FetchBlog {
-  const _$FetchBlog({required this.context, this.isRefresh, this.controller});
+class _$FetchBlogImpl implements FetchBlog {
+  const _$FetchBlogImpl(
+      {required this.context, this.isRefresh, this.controller});
 
   @override
   final BuildContext context;
@@ -163,10 +165,10 @@ class _$FetchBlog implements FetchBlog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchBlog &&
+            other is _$FetchBlogImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -180,8 +182,8 @@ class _$FetchBlog implements FetchBlog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchBlogCopyWith<_$FetchBlog> get copyWith =>
-      __$$FetchBlogCopyWithImpl<_$FetchBlog>(this, _$identity);
+  _$$FetchBlogImplCopyWith<_$FetchBlogImpl> get copyWith =>
+      __$$FetchBlogImplCopyWithImpl<_$FetchBlogImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -259,7 +261,7 @@ abstract class FetchBlog implements BlogEvent {
   const factory FetchBlog(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchBlog;
+      final RefreshController? controller}) = _$FetchBlogImpl;
 
   @override
   BuildContext get context;
@@ -267,27 +269,27 @@ abstract class FetchBlog implements BlogEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchBlogCopyWith<_$FetchBlog> get copyWith =>
+  _$$FetchBlogImplCopyWith<_$FetchBlogImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchBlogByIdCopyWith<$Res>
+abstract class _$$FetchBlogByIdImplCopyWith<$Res>
     implements $BlogEventCopyWith<$Res> {
-  factory _$$FetchBlogByIdCopyWith(
-          _$FetchBlogById value, $Res Function(_$FetchBlogById) then) =
-      __$$FetchBlogByIdCopyWithImpl<$Res>;
+  factory _$$FetchBlogByIdImplCopyWith(
+          _$FetchBlogByIdImpl value, $Res Function(_$FetchBlogByIdImpl) then) =
+      __$$FetchBlogByIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int id, BlogData? blog});
 }
 
 /// @nodoc
-class __$$FetchBlogByIdCopyWithImpl<$Res>
-    extends _$BlogEventCopyWithImpl<$Res, _$FetchBlogById>
-    implements _$$FetchBlogByIdCopyWith<$Res> {
-  __$$FetchBlogByIdCopyWithImpl(
-      _$FetchBlogById _value, $Res Function(_$FetchBlogById) _then)
+class __$$FetchBlogByIdImplCopyWithImpl<$Res>
+    extends _$BlogEventCopyWithImpl<$Res, _$FetchBlogByIdImpl>
+    implements _$$FetchBlogByIdImplCopyWith<$Res> {
+  __$$FetchBlogByIdImplCopyWithImpl(
+      _$FetchBlogByIdImpl _value, $Res Function(_$FetchBlogByIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -297,7 +299,7 @@ class __$$FetchBlogByIdCopyWithImpl<$Res>
     Object? id = null,
     Object? blog = freezed,
   }) {
-    return _then(_$FetchBlogById(
+    return _then(_$FetchBlogByIdImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -316,8 +318,9 @@ class __$$FetchBlogByIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchBlogById implements FetchBlogById {
-  const _$FetchBlogById({required this.context, required this.id, this.blog});
+class _$FetchBlogByIdImpl implements FetchBlogById {
+  const _$FetchBlogByIdImpl(
+      {required this.context, required this.id, this.blog});
 
   @override
   final BuildContext context;
@@ -332,10 +335,10 @@ class _$FetchBlogById implements FetchBlogById {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchBlogById &&
+            other is _$FetchBlogByIdImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.blog, blog) || other.blog == blog));
@@ -347,8 +350,8 @@ class _$FetchBlogById implements FetchBlogById {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchBlogByIdCopyWith<_$FetchBlogById> get copyWith =>
-      __$$FetchBlogByIdCopyWithImpl<_$FetchBlogById>(this, _$identity);
+  _$$FetchBlogByIdImplCopyWith<_$FetchBlogByIdImpl> get copyWith =>
+      __$$FetchBlogByIdImplCopyWithImpl<_$FetchBlogByIdImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -426,7 +429,7 @@ abstract class FetchBlogById implements BlogEvent {
   const factory FetchBlogById(
       {required final BuildContext context,
       required final int id,
-      final BlogData? blog}) = _$FetchBlogById;
+      final BlogData? blog}) = _$FetchBlogByIdImpl;
 
   @override
   BuildContext get context;
@@ -434,7 +437,7 @@ abstract class FetchBlogById implements BlogEvent {
   BlogData? get blog;
   @override
   @JsonKey(ignore: true)
-  _$$FetchBlogByIdCopyWith<_$FetchBlogById> get copyWith =>
+  _$$FetchBlogByIdImplCopyWith<_$FetchBlogByIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -502,10 +505,11 @@ class _$BlogStateCopyWithImpl<$Res, $Val extends BlogState>
 }
 
 /// @nodoc
-abstract class _$$_BlogStateCopyWith<$Res> implements $BlogStateCopyWith<$Res> {
-  factory _$$_BlogStateCopyWith(
-          _$_BlogState value, $Res Function(_$_BlogState) then) =
-      __$$_BlogStateCopyWithImpl<$Res>;
+abstract class _$$BlogStateImplCopyWith<$Res>
+    implements $BlogStateCopyWith<$Res> {
+  factory _$$BlogStateImplCopyWith(
+          _$BlogStateImpl value, $Res Function(_$BlogStateImpl) then) =
+      __$$BlogStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -516,11 +520,11 @@ abstract class _$$_BlogStateCopyWith<$Res> implements $BlogStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BlogStateCopyWithImpl<$Res>
-    extends _$BlogStateCopyWithImpl<$Res, _$_BlogState>
-    implements _$$_BlogStateCopyWith<$Res> {
-  __$$_BlogStateCopyWithImpl(
-      _$_BlogState _value, $Res Function(_$_BlogState) _then)
+class __$$BlogStateImplCopyWithImpl<$Res>
+    extends _$BlogStateCopyWithImpl<$Res, _$BlogStateImpl>
+    implements _$$BlogStateImplCopyWith<$Res> {
+  __$$BlogStateImplCopyWithImpl(
+      _$BlogStateImpl _value, $Res Function(_$BlogStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -531,7 +535,7 @@ class __$$_BlogStateCopyWithImpl<$Res>
     Object? isLoadingBlog = null,
     Object? isLoading = null,
   }) {
-    return _then(_$_BlogState(
+    return _then(_$BlogStateImpl(
       blogs: null == blogs
           ? _value._blogs
           : blogs // ignore: cast_nullable_to_non_nullable
@@ -554,8 +558,8 @@ class __$$_BlogStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BlogState implements _BlogState {
-  const _$_BlogState(
+class _$BlogStateImpl implements _BlogState {
+  const _$BlogStateImpl(
       {final List<BlogData> blogs = const [],
       this.blog = null,
       this.isLoadingBlog = true,
@@ -587,10 +591,10 @@ class _$_BlogState implements _BlogState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BlogState &&
+            other is _$BlogStateImpl &&
             const DeepCollectionEquality().equals(other._blogs, _blogs) &&
             (identical(other.blog, blog) || other.blog == blog) &&
             (identical(other.isLoadingBlog, isLoadingBlog) ||
@@ -610,8 +614,8 @@ class _$_BlogState implements _BlogState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BlogStateCopyWith<_$_BlogState> get copyWith =>
-      __$$_BlogStateCopyWithImpl<_$_BlogState>(this, _$identity);
+  _$$BlogStateImplCopyWith<_$BlogStateImpl> get copyWith =>
+      __$$BlogStateImplCopyWithImpl<_$BlogStateImpl>(this, _$identity);
 }
 
 abstract class _BlogState implements BlogState {
@@ -619,7 +623,7 @@ abstract class _BlogState implements BlogState {
       {final List<BlogData> blogs,
       final BlogData? blog,
       final bool isLoadingBlog,
-      final bool isLoading}) = _$_BlogState;
+      final bool isLoading}) = _$BlogStateImpl;
 
   @override
   List<BlogData> get blogs;
@@ -631,6 +635,6 @@ abstract class _BlogState implements BlogState {
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_BlogStateCopyWith<_$_BlogState> get copyWith =>
+  _$$BlogStateImplCopyWith<_$BlogStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

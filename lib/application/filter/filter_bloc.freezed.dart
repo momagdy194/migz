@@ -12,7 +12,7 @@ part of 'filter_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$FilterEvent {
@@ -111,20 +111,20 @@ class _$FilterEventCopyWithImpl<$Res, $Val extends FilterEvent>
 }
 
 /// @nodoc
-abstract class _$$SelectTypeCopyWith<$Res> {
-  factory _$$SelectTypeCopyWith(
-          _$SelectType value, $Res Function(_$SelectType) then) =
-      __$$SelectTypeCopyWithImpl<$Res>;
+abstract class _$$SelectTypeImplCopyWith<$Res> {
+  factory _$$SelectTypeImplCopyWith(
+          _$SelectTypeImpl value, $Res Function(_$SelectTypeImpl) then) =
+      __$$SelectTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LayoutType selectType});
 }
 
 /// @nodoc
-class __$$SelectTypeCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$SelectType>
-    implements _$$SelectTypeCopyWith<$Res> {
-  __$$SelectTypeCopyWithImpl(
-      _$SelectType _value, $Res Function(_$SelectType) _then)
+class __$$SelectTypeImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$SelectTypeImpl>
+    implements _$$SelectTypeImplCopyWith<$Res> {
+  __$$SelectTypeImplCopyWithImpl(
+      _$SelectTypeImpl _value, $Res Function(_$SelectTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$SelectTypeCopyWithImpl<$Res>
   $Res call({
     Object? selectType = null,
   }) {
-    return _then(_$SelectType(
+    return _then(_$SelectTypeImpl(
       selectType: null == selectType
           ? _value.selectType
           : selectType // ignore: cast_nullable_to_non_nullable
@@ -143,8 +143,8 @@ class __$$SelectTypeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectType implements SelectType {
-  const _$SelectType({required this.selectType});
+class _$SelectTypeImpl implements SelectType {
+  const _$SelectTypeImpl({required this.selectType});
 
   @override
   final LayoutType selectType;
@@ -155,10 +155,10 @@ class _$SelectType implements SelectType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectType &&
+            other is _$SelectTypeImpl &&
             (identical(other.selectType, selectType) ||
                 other.selectType == selectType));
   }
@@ -169,8 +169,8 @@ class _$SelectType implements SelectType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectTypeCopyWith<_$SelectType> get copyWith =>
-      __$$SelectTypeCopyWithImpl<_$SelectType>(this, _$identity);
+  _$$SelectTypeImplCopyWith<_$SelectTypeImpl> get copyWith =>
+      __$$SelectTypeImplCopyWithImpl<_$SelectTypeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -273,19 +273,19 @@ class _$SelectType implements SelectType {
 
 abstract class SelectType implements FilterEvent {
   const factory SelectType({required final LayoutType selectType}) =
-      _$SelectType;
+      _$SelectTypeImpl;
 
   LayoutType get selectType;
   @JsonKey(ignore: true)
-  _$$SelectTypeCopyWith<_$SelectType> get copyWith =>
+  _$$SelectTypeImplCopyWith<_$SelectTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchExtrasCopyWith<$Res> {
-  factory _$$FetchExtrasCopyWith(
-          _$FetchExtras value, $Res Function(_$FetchExtras) then) =
-      __$$FetchExtrasCopyWithImpl<$Res>;
+abstract class _$$FetchExtrasImplCopyWith<$Res> {
+  factory _$$FetchExtrasImplCopyWith(
+          _$FetchExtrasImpl value, $Res Function(_$FetchExtrasImpl) then) =
+      __$$FetchExtrasImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -296,11 +296,11 @@ abstract class _$$FetchExtrasCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchExtrasCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$FetchExtras>
-    implements _$$FetchExtrasCopyWith<$Res> {
-  __$$FetchExtrasCopyWithImpl(
-      _$FetchExtras _value, $Res Function(_$FetchExtras) _then)
+class __$$FetchExtrasImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$FetchExtrasImpl>
+    implements _$$FetchExtrasImplCopyWith<$Res> {
+  __$$FetchExtrasImplCopyWithImpl(
+      _$FetchExtrasImpl _value, $Res Function(_$FetchExtrasImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -312,7 +312,7 @@ class __$$FetchExtrasCopyWithImpl<$Res>
     Object? categoryId = freezed,
     Object? shopId = freezed,
   }) {
-    return _then(_$FetchExtras(
+    return _then(_$FetchExtrasImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -339,8 +339,8 @@ class __$$FetchExtrasCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchExtras implements FetchExtras {
-  const _$FetchExtras(
+class _$FetchExtrasImpl implements FetchExtras {
+  const _$FetchExtrasImpl(
       {required this.context,
       this.type,
       required this.isPrice,
@@ -364,10 +364,10 @@ class _$FetchExtras implements FetchExtras {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchExtras &&
+            other is _$FetchExtrasImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.isPrice, isPrice) || other.isPrice == isPrice) &&
@@ -383,8 +383,8 @@ class _$FetchExtras implements FetchExtras {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchExtrasCopyWith<_$FetchExtras> get copyWith =>
-      __$$FetchExtrasCopyWithImpl<_$FetchExtras>(this, _$identity);
+  _$$FetchExtrasImplCopyWith<_$FetchExtrasImpl> get copyWith =>
+      __$$FetchExtrasImplCopyWithImpl<_$FetchExtrasImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -491,7 +491,7 @@ abstract class FetchExtras implements FilterEvent {
       final String? type,
       required final bool isPrice,
       final int? categoryId,
-      final int? shopId}) = _$FetchExtras;
+      final int? shopId}) = _$FetchExtrasImpl;
 
   BuildContext get context;
   String? get type;
@@ -499,25 +499,25 @@ abstract class FetchExtras implements FilterEvent {
   int? get categoryId;
   int? get shopId;
   @JsonKey(ignore: true)
-  _$$FetchExtrasCopyWith<_$FetchExtras> get copyWith =>
+  _$$FetchExtrasImplCopyWith<_$FetchExtrasImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetExtrasCopyWith<$Res> {
-  factory _$$SetExtrasCopyWith(
-          _$SetExtras value, $Res Function(_$SetExtras) then) =
-      __$$SetExtrasCopyWithImpl<$Res>;
+abstract class _$$SetExtrasImplCopyWith<$Res> {
+  factory _$$SetExtrasImplCopyWith(
+          _$SetExtrasImpl value, $Res Function(_$SetExtrasImpl) then) =
+      __$$SetExtrasImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$SetExtrasCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$SetExtras>
-    implements _$$SetExtrasCopyWith<$Res> {
-  __$$SetExtrasCopyWithImpl(
-      _$SetExtras _value, $Res Function(_$SetExtras) _then)
+class __$$SetExtrasImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$SetExtrasImpl>
+    implements _$$SetExtrasImplCopyWith<$Res> {
+  __$$SetExtrasImplCopyWithImpl(
+      _$SetExtrasImpl _value, $Res Function(_$SetExtrasImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -525,7 +525,7 @@ class __$$SetExtrasCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$SetExtras(
+    return _then(_$SetExtrasImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -536,8 +536,8 @@ class __$$SetExtrasCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetExtras implements SetExtras {
-  const _$SetExtras({required this.id});
+class _$SetExtrasImpl implements SetExtras {
+  const _$SetExtrasImpl({required this.id});
 
   @override
   final int id;
@@ -548,10 +548,10 @@ class _$SetExtras implements SetExtras {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetExtras &&
+            other is _$SetExtrasImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -561,8 +561,8 @@ class _$SetExtras implements SetExtras {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetExtrasCopyWith<_$SetExtras> get copyWith =>
-      __$$SetExtrasCopyWithImpl<_$SetExtras>(this, _$identity);
+  _$$SetExtrasImplCopyWith<_$SetExtrasImpl> get copyWith =>
+      __$$SetExtrasImplCopyWithImpl<_$SetExtrasImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -664,29 +664,29 @@ class _$SetExtras implements SetExtras {
 }
 
 abstract class SetExtras implements FilterEvent {
-  const factory SetExtras({required final int id}) = _$SetExtras;
+  const factory SetExtras({required final int id}) = _$SetExtrasImpl;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$SetExtrasCopyWith<_$SetExtras> get copyWith =>
+  _$$SetExtrasImplCopyWith<_$SetExtrasImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetRangePriceCopyWith<$Res> {
-  factory _$$SetRangePriceCopyWith(
-          _$SetRangePrice value, $Res Function(_$SetRangePrice) then) =
-      __$$SetRangePriceCopyWithImpl<$Res>;
+abstract class _$$SetRangePriceImplCopyWith<$Res> {
+  factory _$$SetRangePriceImplCopyWith(
+          _$SetRangePriceImpl value, $Res Function(_$SetRangePriceImpl) then) =
+      __$$SetRangePriceImplCopyWithImpl<$Res>;
   @useResult
   $Res call({RangeValues price});
 }
 
 /// @nodoc
-class __$$SetRangePriceCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$SetRangePrice>
-    implements _$$SetRangePriceCopyWith<$Res> {
-  __$$SetRangePriceCopyWithImpl(
-      _$SetRangePrice _value, $Res Function(_$SetRangePrice) _then)
+class __$$SetRangePriceImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$SetRangePriceImpl>
+    implements _$$SetRangePriceImplCopyWith<$Res> {
+  __$$SetRangePriceImplCopyWithImpl(
+      _$SetRangePriceImpl _value, $Res Function(_$SetRangePriceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -694,7 +694,7 @@ class __$$SetRangePriceCopyWithImpl<$Res>
   $Res call({
     Object? price = null,
   }) {
-    return _then(_$SetRangePrice(
+    return _then(_$SetRangePriceImpl(
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -705,8 +705,8 @@ class __$$SetRangePriceCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetRangePrice implements SetRangePrice {
-  const _$SetRangePrice({required this.price});
+class _$SetRangePriceImpl implements SetRangePrice {
+  const _$SetRangePriceImpl({required this.price});
 
   @override
   final RangeValues price;
@@ -717,10 +717,10 @@ class _$SetRangePrice implements SetRangePrice {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetRangePrice &&
+            other is _$SetRangePriceImpl &&
             (identical(other.price, price) || other.price == price));
   }
 
@@ -730,8 +730,8 @@ class _$SetRangePrice implements SetRangePrice {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetRangePriceCopyWith<_$SetRangePrice> get copyWith =>
-      __$$SetRangePriceCopyWithImpl<_$SetRangePrice>(this, _$identity);
+  _$$SetRangePriceImplCopyWith<_$SetRangePriceImpl> get copyWith =>
+      __$$SetRangePriceImplCopyWithImpl<_$SetRangePriceImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -834,29 +834,29 @@ class _$SetRangePrice implements SetRangePrice {
 
 abstract class SetRangePrice implements FilterEvent {
   const factory SetRangePrice({required final RangeValues price}) =
-      _$SetRangePrice;
+      _$SetRangePriceImpl;
 
   RangeValues get price;
   @JsonKey(ignore: true)
-  _$$SetRangePriceCopyWith<_$SetRangePrice> get copyWith =>
+  _$$SetRangePriceImplCopyWith<_$SetRangePriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetCategoryCopyWith<$Res> {
-  factory _$$SetCategoryCopyWith(
-          _$SetCategory value, $Res Function(_$SetCategory) then) =
-      __$$SetCategoryCopyWithImpl<$Res>;
+abstract class _$$SetCategoryImplCopyWith<$Res> {
+  factory _$$SetCategoryImplCopyWith(
+          _$SetCategoryImpl value, $Res Function(_$SetCategoryImpl) then) =
+      __$$SetCategoryImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$SetCategoryCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$SetCategory>
-    implements _$$SetCategoryCopyWith<$Res> {
-  __$$SetCategoryCopyWithImpl(
-      _$SetCategory _value, $Res Function(_$SetCategory) _then)
+class __$$SetCategoryImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$SetCategoryImpl>
+    implements _$$SetCategoryImplCopyWith<$Res> {
+  __$$SetCategoryImplCopyWithImpl(
+      _$SetCategoryImpl _value, $Res Function(_$SetCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -864,7 +864,7 @@ class __$$SetCategoryCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$SetCategory(
+    return _then(_$SetCategoryImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -875,8 +875,8 @@ class __$$SetCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetCategory implements SetCategory {
-  const _$SetCategory({required this.id});
+class _$SetCategoryImpl implements SetCategory {
+  const _$SetCategoryImpl({required this.id});
 
   @override
   final int id;
@@ -887,10 +887,10 @@ class _$SetCategory implements SetCategory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetCategory &&
+            other is _$SetCategoryImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -900,8 +900,8 @@ class _$SetCategory implements SetCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetCategoryCopyWith<_$SetCategory> get copyWith =>
-      __$$SetCategoryCopyWithImpl<_$SetCategory>(this, _$identity);
+  _$$SetCategoryImplCopyWith<_$SetCategoryImpl> get copyWith =>
+      __$$SetCategoryImplCopyWithImpl<_$SetCategoryImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1003,29 +1003,29 @@ class _$SetCategory implements SetCategory {
 }
 
 abstract class SetCategory implements FilterEvent {
-  const factory SetCategory({required final int id}) = _$SetCategory;
+  const factory SetCategory({required final int id}) = _$SetCategoryImpl;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$SetCategoryCopyWith<_$SetCategory> get copyWith =>
+  _$$SetCategoryImplCopyWith<_$SetCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetBrandsCopyWith<$Res> {
-  factory _$$SetBrandsCopyWith(
-          _$SetBrands value, $Res Function(_$SetBrands) then) =
-      __$$SetBrandsCopyWithImpl<$Res>;
+abstract class _$$SetBrandsImplCopyWith<$Res> {
+  factory _$$SetBrandsImplCopyWith(
+          _$SetBrandsImpl value, $Res Function(_$SetBrandsImpl) then) =
+      __$$SetBrandsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$SetBrandsCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$SetBrands>
-    implements _$$SetBrandsCopyWith<$Res> {
-  __$$SetBrandsCopyWithImpl(
-      _$SetBrands _value, $Res Function(_$SetBrands) _then)
+class __$$SetBrandsImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$SetBrandsImpl>
+    implements _$$SetBrandsImplCopyWith<$Res> {
+  __$$SetBrandsImplCopyWithImpl(
+      _$SetBrandsImpl _value, $Res Function(_$SetBrandsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1033,7 +1033,7 @@ class __$$SetBrandsCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$SetBrands(
+    return _then(_$SetBrandsImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1044,8 +1044,8 @@ class __$$SetBrandsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetBrands implements SetBrands {
-  const _$SetBrands({required this.id});
+class _$SetBrandsImpl implements SetBrands {
+  const _$SetBrandsImpl({required this.id});
 
   @override
   final int id;
@@ -1056,10 +1056,10 @@ class _$SetBrands implements SetBrands {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetBrands &&
+            other is _$SetBrandsImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -1069,8 +1069,8 @@ class _$SetBrands implements SetBrands {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetBrandsCopyWith<_$SetBrands> get copyWith =>
-      __$$SetBrandsCopyWithImpl<_$SetBrands>(this, _$identity);
+  _$$SetBrandsImplCopyWith<_$SetBrandsImpl> get copyWith =>
+      __$$SetBrandsImplCopyWithImpl<_$SetBrandsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1172,34 +1172,34 @@ class _$SetBrands implements SetBrands {
 }
 
 abstract class SetBrands implements FilterEvent {
-  const factory SetBrands({required final int id}) = _$SetBrands;
+  const factory SetBrands({required final int id}) = _$SetBrandsImpl;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$SetBrandsCopyWith<_$SetBrands> get copyWith =>
+  _$$SetBrandsImplCopyWith<_$SetBrandsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ClearFilterCopyWith<$Res> {
-  factory _$$ClearFilterCopyWith(
-          _$ClearFilter value, $Res Function(_$ClearFilter) then) =
-      __$$ClearFilterCopyWithImpl<$Res>;
+abstract class _$$ClearFilterImplCopyWith<$Res> {
+  factory _$$ClearFilterImplCopyWith(
+          _$ClearFilterImpl value, $Res Function(_$ClearFilterImpl) then) =
+      __$$ClearFilterImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClearFilterCopyWithImpl<$Res>
-    extends _$FilterEventCopyWithImpl<$Res, _$ClearFilter>
-    implements _$$ClearFilterCopyWith<$Res> {
-  __$$ClearFilterCopyWithImpl(
-      _$ClearFilter _value, $Res Function(_$ClearFilter) _then)
+class __$$ClearFilterImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$ClearFilterImpl>
+    implements _$$ClearFilterImplCopyWith<$Res> {
+  __$$ClearFilterImplCopyWithImpl(
+      _$ClearFilterImpl _value, $Res Function(_$ClearFilterImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ClearFilter implements ClearFilter {
-  const _$ClearFilter();
+class _$ClearFilterImpl implements ClearFilter {
+  const _$ClearFilterImpl();
 
   @override
   String toString() {
@@ -1207,9 +1207,9 @@ class _$ClearFilter implements ClearFilter {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ClearFilter);
+        (other.runtimeType == runtimeType && other is _$ClearFilterImpl);
   }
 
   @override
@@ -1315,7 +1315,7 @@ class _$ClearFilter implements ClearFilter {
 }
 
 abstract class ClearFilter implements FilterEvent {
-  const factory ClearFilter() = _$ClearFilter;
+  const factory ClearFilter() = _$ClearFilterImpl;
 }
 
 /// @nodoc
@@ -1425,11 +1425,11 @@ class _$FilterStateCopyWithImpl<$Res, $Val extends FilterState>
 }
 
 /// @nodoc
-abstract class _$$_FilterStateCopyWith<$Res>
+abstract class _$$FilterStateImplCopyWith<$Res>
     implements $FilterStateCopyWith<$Res> {
-  factory _$$_FilterStateCopyWith(
-          _$_FilterState value, $Res Function(_$_FilterState) then) =
-      __$$_FilterStateCopyWithImpl<$Res>;
+  factory _$$FilterStateImplCopyWith(
+          _$FilterStateImpl value, $Res Function(_$FilterStateImpl) then) =
+      __$$FilterStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1446,11 +1446,11 @@ abstract class _$$_FilterStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FilterStateCopyWithImpl<$Res>
-    extends _$FilterStateCopyWithImpl<$Res, _$_FilterState>
-    implements _$$_FilterStateCopyWith<$Res> {
-  __$$_FilterStateCopyWithImpl(
-      _$_FilterState _value, $Res Function(_$_FilterState) _then)
+class __$$FilterStateImplCopyWithImpl<$Res>
+    extends _$FilterStateCopyWithImpl<$Res, _$FilterStateImpl>
+    implements _$$FilterStateImplCopyWith<$Res> {
+  __$$FilterStateImplCopyWithImpl(
+      _$FilterStateImpl _value, $Res Function(_$FilterStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1467,7 +1467,7 @@ class __$$_FilterStateCopyWithImpl<$Res>
     Object? prices = null,
     Object? rangeValues = freezed,
   }) {
-    return _then(_$_FilterState(
+    return _then(_$FilterStateImpl(
       selectType: null == selectType
           ? _value.selectType
           : selectType // ignore: cast_nullable_to_non_nullable
@@ -1514,8 +1514,8 @@ class __$$_FilterStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FilterState implements _FilterState {
-  const _$_FilterState(
+class _$FilterStateImpl implements _FilterState {
+  const _$FilterStateImpl(
       {this.selectType = LayoutType.twoH,
       this.isLoading = true,
       this.type = "category",
@@ -1598,10 +1598,10 @@ class _$_FilterState implements _FilterState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FilterState &&
+            other is _$FilterStateImpl &&
             (identical(other.selectType, selectType) ||
                 other.selectType == selectType) &&
             (identical(other.isLoading, isLoading) ||
@@ -1636,8 +1636,8 @@ class _$_FilterState implements _FilterState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FilterStateCopyWith<_$_FilterState> get copyWith =>
-      __$$_FilterStateCopyWithImpl<_$_FilterState>(this, _$identity);
+  _$$FilterStateImplCopyWith<_$FilterStateImpl> get copyWith =>
+      __$$FilterStateImplCopyWithImpl<_$FilterStateImpl>(this, _$identity);
 }
 
 abstract class _FilterState implements FilterState {
@@ -1651,7 +1651,7 @@ abstract class _FilterState implements FilterState {
       final List<int>? categories,
       final List<int>? brands,
       final List<int> prices,
-      final RangeValues? rangeValues}) = _$_FilterState;
+      final RangeValues? rangeValues}) = _$FilterStateImpl;
 
   @override
   LayoutType get selectType;
@@ -1675,6 +1675,6 @@ abstract class _FilterState implements FilterState {
   RangeValues? get rangeValues;
   @override
   @JsonKey(ignore: true)
-  _$$_FilterStateCopyWith<_$_FilterState> get copyWith =>
+  _$$FilterStateImplCopyWith<_$FilterStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

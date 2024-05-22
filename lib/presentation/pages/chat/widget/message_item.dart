@@ -135,7 +135,7 @@ class MessageItem extends StatelessWidget {
             ],
       child: SwipeTo(
         key: UniqueKey(),
-        onLeftSwipe: () {
+        onLeftSwipe: (_) {
           return reply(message);
         },
         child: Container(

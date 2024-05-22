@@ -12,7 +12,7 @@ part of 'product_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProductEvent {
@@ -205,21 +205,21 @@ class _$ProductEventCopyWithImpl<$Res, $Val extends ProductEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchMostSaleProductCopyWith<$Res> {
-  factory _$$FetchMostSaleProductCopyWith(_$FetchMostSaleProduct value,
-          $Res Function(_$FetchMostSaleProduct) then) =
-      __$$FetchMostSaleProductCopyWithImpl<$Res>;
+abstract class _$$FetchMostSaleProductImplCopyWith<$Res> {
+  factory _$$FetchMostSaleProductImplCopyWith(_$FetchMostSaleProductImpl value,
+          $Res Function(_$FetchMostSaleProductImpl) then) =
+      __$$FetchMostSaleProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchMostSaleProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchMostSaleProduct>
-    implements _$$FetchMostSaleProductCopyWith<$Res> {
-  __$$FetchMostSaleProductCopyWithImpl(_$FetchMostSaleProduct _value,
-      $Res Function(_$FetchMostSaleProduct) _then)
+class __$$FetchMostSaleProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchMostSaleProductImpl>
+    implements _$$FetchMostSaleProductImplCopyWith<$Res> {
+  __$$FetchMostSaleProductImplCopyWithImpl(_$FetchMostSaleProductImpl _value,
+      $Res Function(_$FetchMostSaleProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -229,7 +229,7 @@ class __$$FetchMostSaleProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchMostSaleProduct(
+    return _then(_$FetchMostSaleProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -248,8 +248,8 @@ class __$$FetchMostSaleProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchMostSaleProduct implements FetchMostSaleProduct {
-  const _$FetchMostSaleProduct(
+class _$FetchMostSaleProductImpl implements FetchMostSaleProduct {
+  const _$FetchMostSaleProductImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -265,10 +265,10 @@ class _$FetchMostSaleProduct implements FetchMostSaleProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchMostSaleProduct &&
+            other is _$FetchMostSaleProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -282,9 +282,10 @@ class _$FetchMostSaleProduct implements FetchMostSaleProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchMostSaleProductCopyWith<_$FetchMostSaleProduct> get copyWith =>
-      __$$FetchMostSaleProductCopyWithImpl<_$FetchMostSaleProduct>(
-          this, _$identity);
+  _$$FetchMostSaleProductImplCopyWith<_$FetchMostSaleProductImpl>
+      get copyWith =>
+          __$$FetchMostSaleProductImplCopyWithImpl<_$FetchMostSaleProductImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -483,32 +484,32 @@ abstract class FetchMostSaleProduct implements ProductEvent {
   const factory FetchMostSaleProduct(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchMostSaleProduct;
+      final RefreshController? controller}) = _$FetchMostSaleProductImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchMostSaleProductCopyWith<_$FetchMostSaleProduct> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchMostSaleProductImplCopyWith<_$FetchMostSaleProductImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchAllProductCopyWith<$Res> {
-  factory _$$FetchAllProductCopyWith(
-          _$FetchAllProduct value, $Res Function(_$FetchAllProduct) then) =
-      __$$FetchAllProductCopyWithImpl<$Res>;
+abstract class _$$FetchAllProductImplCopyWith<$Res> {
+  factory _$$FetchAllProductImplCopyWith(_$FetchAllProductImpl value,
+          $Res Function(_$FetchAllProductImpl) then) =
+      __$$FetchAllProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchAllProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchAllProduct>
-    implements _$$FetchAllProductCopyWith<$Res> {
-  __$$FetchAllProductCopyWithImpl(
-      _$FetchAllProduct _value, $Res Function(_$FetchAllProduct) _then)
+class __$$FetchAllProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchAllProductImpl>
+    implements _$$FetchAllProductImplCopyWith<$Res> {
+  __$$FetchAllProductImplCopyWithImpl(
+      _$FetchAllProductImpl _value, $Res Function(_$FetchAllProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -518,7 +519,7 @@ class __$$FetchAllProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchAllProduct(
+    return _then(_$FetchAllProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -537,8 +538,8 @@ class __$$FetchAllProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchAllProduct implements FetchAllProduct {
-  const _$FetchAllProduct(
+class _$FetchAllProductImpl implements FetchAllProduct {
+  const _$FetchAllProductImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -554,10 +555,10 @@ class _$FetchAllProduct implements FetchAllProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAllProduct &&
+            other is _$FetchAllProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -571,8 +572,9 @@ class _$FetchAllProduct implements FetchAllProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchAllProductCopyWith<_$FetchAllProduct> get copyWith =>
-      __$$FetchAllProductCopyWithImpl<_$FetchAllProduct>(this, _$identity);
+  _$$FetchAllProductImplCopyWith<_$FetchAllProductImpl> get copyWith =>
+      __$$FetchAllProductImplCopyWithImpl<_$FetchAllProductImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -771,32 +773,32 @@ abstract class FetchAllProduct implements ProductEvent {
   const factory FetchAllProduct(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchAllProduct;
+      final RefreshController? controller}) = _$FetchAllProductImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchAllProductCopyWith<_$FetchAllProduct> get copyWith =>
+  _$$FetchAllProductImplCopyWith<_$FetchAllProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchNewProductCopyWith<$Res> {
-  factory _$$FetchNewProductCopyWith(
-          _$FetchNewProduct value, $Res Function(_$FetchNewProduct) then) =
-      __$$FetchNewProductCopyWithImpl<$Res>;
+abstract class _$$FetchNewProductImplCopyWith<$Res> {
+  factory _$$FetchNewProductImplCopyWith(_$FetchNewProductImpl value,
+          $Res Function(_$FetchNewProductImpl) then) =
+      __$$FetchNewProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchNewProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchNewProduct>
-    implements _$$FetchNewProductCopyWith<$Res> {
-  __$$FetchNewProductCopyWithImpl(
-      _$FetchNewProduct _value, $Res Function(_$FetchNewProduct) _then)
+class __$$FetchNewProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchNewProductImpl>
+    implements _$$FetchNewProductImplCopyWith<$Res> {
+  __$$FetchNewProductImplCopyWithImpl(
+      _$FetchNewProductImpl _value, $Res Function(_$FetchNewProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -806,7 +808,7 @@ class __$$FetchNewProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchNewProduct(
+    return _then(_$FetchNewProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -825,8 +827,8 @@ class __$$FetchNewProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchNewProduct implements FetchNewProduct {
-  const _$FetchNewProduct(
+class _$FetchNewProductImpl implements FetchNewProduct {
+  const _$FetchNewProductImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -842,10 +844,10 @@ class _$FetchNewProduct implements FetchNewProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchNewProduct &&
+            other is _$FetchNewProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -859,8 +861,9 @@ class _$FetchNewProduct implements FetchNewProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchNewProductCopyWith<_$FetchNewProduct> get copyWith =>
-      __$$FetchNewProductCopyWithImpl<_$FetchNewProduct>(this, _$identity);
+  _$$FetchNewProductImplCopyWith<_$FetchNewProductImpl> get copyWith =>
+      __$$FetchNewProductImplCopyWithImpl<_$FetchNewProductImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1059,32 +1062,32 @@ abstract class FetchNewProduct implements ProductEvent {
   const factory FetchNewProduct(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchNewProduct;
+      final RefreshController? controller}) = _$FetchNewProductImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchNewProductCopyWith<_$FetchNewProduct> get copyWith =>
+  _$$FetchNewProductImplCopyWith<_$FetchNewProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchLikeProductCopyWith<$Res> {
-  factory _$$FetchLikeProductCopyWith(
-          _$FetchLikeProduct value, $Res Function(_$FetchLikeProduct) then) =
-      __$$FetchLikeProductCopyWithImpl<$Res>;
+abstract class _$$FetchLikeProductImplCopyWith<$Res> {
+  factory _$$FetchLikeProductImplCopyWith(_$FetchLikeProductImpl value,
+          $Res Function(_$FetchLikeProductImpl) then) =
+      __$$FetchLikeProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchLikeProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchLikeProduct>
-    implements _$$FetchLikeProductCopyWith<$Res> {
-  __$$FetchLikeProductCopyWithImpl(
-      _$FetchLikeProduct _value, $Res Function(_$FetchLikeProduct) _then)
+class __$$FetchLikeProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchLikeProductImpl>
+    implements _$$FetchLikeProductImplCopyWith<$Res> {
+  __$$FetchLikeProductImplCopyWithImpl(_$FetchLikeProductImpl _value,
+      $Res Function(_$FetchLikeProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1094,7 +1097,7 @@ class __$$FetchLikeProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchLikeProduct(
+    return _then(_$FetchLikeProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1113,8 +1116,8 @@ class __$$FetchLikeProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchLikeProduct implements FetchLikeProduct {
-  const _$FetchLikeProduct(
+class _$FetchLikeProductImpl implements FetchLikeProduct {
+  const _$FetchLikeProductImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -1130,10 +1133,10 @@ class _$FetchLikeProduct implements FetchLikeProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchLikeProduct &&
+            other is _$FetchLikeProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -1147,8 +1150,9 @@ class _$FetchLikeProduct implements FetchLikeProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchLikeProductCopyWith<_$FetchLikeProduct> get copyWith =>
-      __$$FetchLikeProductCopyWithImpl<_$FetchLikeProduct>(this, _$identity);
+  _$$FetchLikeProductImplCopyWith<_$FetchLikeProductImpl> get copyWith =>
+      __$$FetchLikeProductImplCopyWithImpl<_$FetchLikeProductImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1347,32 +1351,32 @@ abstract class FetchLikeProduct implements ProductEvent {
   const factory FetchLikeProduct(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchLikeProduct;
+      final RefreshController? controller}) = _$FetchLikeProductImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchLikeProductCopyWith<_$FetchLikeProduct> get copyWith =>
+  _$$FetchLikeProductImplCopyWith<_$FetchLikeProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchDiscountProductCopyWith<$Res> {
-  factory _$$FetchDiscountProductCopyWith(_$FetchDiscountProduct value,
-          $Res Function(_$FetchDiscountProduct) then) =
-      __$$FetchDiscountProductCopyWithImpl<$Res>;
+abstract class _$$FetchDiscountProductImplCopyWith<$Res> {
+  factory _$$FetchDiscountProductImplCopyWith(_$FetchDiscountProductImpl value,
+          $Res Function(_$FetchDiscountProductImpl) then) =
+      __$$FetchDiscountProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchDiscountProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchDiscountProduct>
-    implements _$$FetchDiscountProductCopyWith<$Res> {
-  __$$FetchDiscountProductCopyWithImpl(_$FetchDiscountProduct _value,
-      $Res Function(_$FetchDiscountProduct) _then)
+class __$$FetchDiscountProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchDiscountProductImpl>
+    implements _$$FetchDiscountProductImplCopyWith<$Res> {
+  __$$FetchDiscountProductImplCopyWithImpl(_$FetchDiscountProductImpl _value,
+      $Res Function(_$FetchDiscountProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1382,7 +1386,7 @@ class __$$FetchDiscountProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchDiscountProduct(
+    return _then(_$FetchDiscountProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1401,8 +1405,8 @@ class __$$FetchDiscountProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchDiscountProduct implements FetchDiscountProduct {
-  const _$FetchDiscountProduct(
+class _$FetchDiscountProductImpl implements FetchDiscountProduct {
+  const _$FetchDiscountProductImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -1418,10 +1422,10 @@ class _$FetchDiscountProduct implements FetchDiscountProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchDiscountProduct &&
+            other is _$FetchDiscountProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -1435,9 +1439,10 @@ class _$FetchDiscountProduct implements FetchDiscountProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchDiscountProductCopyWith<_$FetchDiscountProduct> get copyWith =>
-      __$$FetchDiscountProductCopyWithImpl<_$FetchDiscountProduct>(
-          this, _$identity);
+  _$$FetchDiscountProductImplCopyWith<_$FetchDiscountProductImpl>
+      get copyWith =>
+          __$$FetchDiscountProductImplCopyWithImpl<_$FetchDiscountProductImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1636,21 +1641,22 @@ abstract class FetchDiscountProduct implements ProductEvent {
   const factory FetchDiscountProduct(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchDiscountProduct;
+      final RefreshController? controller}) = _$FetchDiscountProductImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchDiscountProductCopyWith<_$FetchDiscountProduct> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchDiscountProductImplCopyWith<_$FetchDiscountProductImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchMostSaleShopProductCopyWith<$Res> {
-  factory _$$FetchMostSaleShopProductCopyWith(_$FetchMostSaleShopProduct value,
-          $Res Function(_$FetchMostSaleShopProduct) then) =
-      __$$FetchMostSaleShopProductCopyWithImpl<$Res>;
+abstract class _$$FetchMostSaleShopProductImplCopyWith<$Res> {
+  factory _$$FetchMostSaleShopProductImplCopyWith(
+          _$FetchMostSaleShopProductImpl value,
+          $Res Function(_$FetchMostSaleShopProductImpl) then) =
+      __$$FetchMostSaleShopProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -1660,11 +1666,12 @@ abstract class _$$FetchMostSaleShopProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchMostSaleShopProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchMostSaleShopProduct>
-    implements _$$FetchMostSaleShopProductCopyWith<$Res> {
-  __$$FetchMostSaleShopProductCopyWithImpl(_$FetchMostSaleShopProduct _value,
-      $Res Function(_$FetchMostSaleShopProduct) _then)
+class __$$FetchMostSaleShopProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchMostSaleShopProductImpl>
+    implements _$$FetchMostSaleShopProductImplCopyWith<$Res> {
+  __$$FetchMostSaleShopProductImplCopyWithImpl(
+      _$FetchMostSaleShopProductImpl _value,
+      $Res Function(_$FetchMostSaleShopProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1675,7 +1682,7 @@ class __$$FetchMostSaleShopProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchMostSaleShopProduct(
+    return _then(_$FetchMostSaleShopProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1698,8 +1705,8 @@ class __$$FetchMostSaleShopProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchMostSaleShopProduct implements FetchMostSaleShopProduct {
-  const _$FetchMostSaleShopProduct(
+class _$FetchMostSaleShopProductImpl implements FetchMostSaleShopProduct {
+  const _$FetchMostSaleShopProductImpl(
       {required this.context,
       required this.shopId,
       this.isRefresh,
@@ -1720,10 +1727,10 @@ class _$FetchMostSaleShopProduct implements FetchMostSaleShopProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchMostSaleShopProduct &&
+            other is _$FetchMostSaleShopProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.shopId, shopId) || other.shopId == shopId) &&
             (identical(other.isRefresh, isRefresh) ||
@@ -1739,10 +1746,9 @@ class _$FetchMostSaleShopProduct implements FetchMostSaleShopProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchMostSaleShopProductCopyWith<_$FetchMostSaleShopProduct>
-      get copyWith =>
-          __$$FetchMostSaleShopProductCopyWithImpl<_$FetchMostSaleShopProduct>(
-              this, _$identity);
+  _$$FetchMostSaleShopProductImplCopyWith<_$FetchMostSaleShopProductImpl>
+      get copyWith => __$$FetchMostSaleShopProductImplCopyWithImpl<
+          _$FetchMostSaleShopProductImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1943,22 +1949,22 @@ abstract class FetchMostSaleShopProduct implements ProductEvent {
       {required final BuildContext context,
       required final int? shopId,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchMostSaleShopProduct;
+      final RefreshController? controller}) = _$FetchMostSaleShopProductImpl;
 
   BuildContext get context;
   int? get shopId;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchMostSaleShopProductCopyWith<_$FetchMostSaleShopProduct>
+  _$$FetchMostSaleShopProductImplCopyWith<_$FetchMostSaleShopProductImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchNewShopProductCopyWith<$Res> {
-  factory _$$FetchNewShopProductCopyWith(_$FetchNewShopProduct value,
-          $Res Function(_$FetchNewShopProduct) then) =
-      __$$FetchNewShopProductCopyWithImpl<$Res>;
+abstract class _$$FetchNewShopProductImplCopyWith<$Res> {
+  factory _$$FetchNewShopProductImplCopyWith(_$FetchNewShopProductImpl value,
+          $Res Function(_$FetchNewShopProductImpl) then) =
+      __$$FetchNewShopProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -1968,11 +1974,11 @@ abstract class _$$FetchNewShopProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchNewShopProductCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchNewShopProduct>
-    implements _$$FetchNewShopProductCopyWith<$Res> {
-  __$$FetchNewShopProductCopyWithImpl(
-      _$FetchNewShopProduct _value, $Res Function(_$FetchNewShopProduct) _then)
+class __$$FetchNewShopProductImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchNewShopProductImpl>
+    implements _$$FetchNewShopProductImplCopyWith<$Res> {
+  __$$FetchNewShopProductImplCopyWithImpl(_$FetchNewShopProductImpl _value,
+      $Res Function(_$FetchNewShopProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1983,7 +1989,7 @@ class __$$FetchNewShopProductCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchNewShopProduct(
+    return _then(_$FetchNewShopProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2006,8 +2012,8 @@ class __$$FetchNewShopProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchNewShopProduct implements FetchNewShopProduct {
-  const _$FetchNewShopProduct(
+class _$FetchNewShopProductImpl implements FetchNewShopProduct {
+  const _$FetchNewShopProductImpl(
       {required this.context,
       required this.shopId,
       this.isRefresh,
@@ -2028,10 +2034,10 @@ class _$FetchNewShopProduct implements FetchNewShopProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchNewShopProduct &&
+            other is _$FetchNewShopProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.shopId, shopId) || other.shopId == shopId) &&
             (identical(other.isRefresh, isRefresh) ||
@@ -2047,8 +2053,8 @@ class _$FetchNewShopProduct implements FetchNewShopProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchNewShopProductCopyWith<_$FetchNewShopProduct> get copyWith =>
-      __$$FetchNewShopProductCopyWithImpl<_$FetchNewShopProduct>(
+  _$$FetchNewShopProductImplCopyWith<_$FetchNewShopProductImpl> get copyWith =>
+      __$$FetchNewShopProductImplCopyWithImpl<_$FetchNewShopProductImpl>(
           this, _$identity);
 
   @override
@@ -2249,22 +2255,22 @@ abstract class FetchNewShopProduct implements ProductEvent {
       {required final BuildContext context,
       required final int? shopId,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchNewShopProduct;
+      final RefreshController? controller}) = _$FetchNewShopProductImpl;
 
   BuildContext get context;
   int? get shopId;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchNewShopProductCopyWith<_$FetchNewShopProduct> get copyWith =>
+  _$$FetchNewShopProductImplCopyWith<_$FetchNewShopProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchProductsCopyWith<$Res> {
-  factory _$$FetchProductsCopyWith(
-          _$FetchProducts value, $Res Function(_$FetchProducts) then) =
-      __$$FetchProductsCopyWithImpl<$Res>;
+abstract class _$$FetchProductsImplCopyWith<$Res> {
+  factory _$$FetchProductsImplCopyWith(
+          _$FetchProductsImpl value, $Res Function(_$FetchProductsImpl) then) =
+      __$$FetchProductsImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -2284,11 +2290,11 @@ abstract class _$$FetchProductsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchProductsCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$FetchProducts>
-    implements _$$FetchProductsCopyWith<$Res> {
-  __$$FetchProductsCopyWithImpl(
-      _$FetchProducts _value, $Res Function(_$FetchProducts) _then)
+class __$$FetchProductsImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$FetchProductsImpl>
+    implements _$$FetchProductsImplCopyWith<$Res> {
+  __$$FetchProductsImplCopyWithImpl(
+      _$FetchProductsImpl _value, $Res Function(_$FetchProductsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2309,7 +2315,7 @@ class __$$FetchProductsCopyWithImpl<$Res>
     Object? priceTo = freezed,
     Object? priceFrom = freezed,
   }) {
-    return _then(_$FetchProducts(
+    return _then(_$FetchProductsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2372,8 +2378,8 @@ class __$$FetchProductsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchProducts implements FetchProducts {
-  const _$FetchProducts(
+class _$FetchProductsImpl implements FetchProducts {
+  const _$FetchProductsImpl(
       {required this.context,
       this.isRefresh,
       this.controller,
@@ -2460,10 +2466,10 @@ class _$FetchProducts implements FetchProducts {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchProducts &&
+            other is _$FetchProductsImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -2509,8 +2515,8 @@ class _$FetchProducts implements FetchProducts {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchProductsCopyWith<_$FetchProducts> get copyWith =>
-      __$$FetchProductsCopyWithImpl<_$FetchProducts>(this, _$identity);
+  _$$FetchProductsImplCopyWith<_$FetchProductsImpl> get copyWith =>
+      __$$FetchProductsImplCopyWithImpl<_$FetchProductsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2762,7 +2768,7 @@ abstract class FetchProducts implements ProductEvent {
       final List<int>? categoryIds,
       final List<int>? extrasId,
       final num? priceTo,
-      final num? priceFrom}) = _$FetchProducts;
+      final num? priceFrom}) = _$FetchProductsImpl;
 
   BuildContext get context;
   bool? get isRefresh;
@@ -2779,30 +2785,30 @@ abstract class FetchProducts implements ProductEvent {
   num? get priceTo;
   num? get priceFrom;
   @JsonKey(ignore: true)
-  _$$FetchProductsCopyWith<_$FetchProducts> get copyWith =>
+  _$$FetchProductsImplCopyWith<_$FetchProductsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateStateCopyWith<$Res> {
-  factory _$$UpdateStateCopyWith(
-          _$UpdateState value, $Res Function(_$UpdateState) then) =
-      __$$UpdateStateCopyWithImpl<$Res>;
+abstract class _$$UpdateStateImplCopyWith<$Res> {
+  factory _$$UpdateStateImplCopyWith(
+          _$UpdateStateImpl value, $Res Function(_$UpdateStateImpl) then) =
+      __$$UpdateStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateStateCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res, _$UpdateState>
-    implements _$$UpdateStateCopyWith<$Res> {
-  __$$UpdateStateCopyWithImpl(
-      _$UpdateState _value, $Res Function(_$UpdateState) _then)
+class __$$UpdateStateImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$UpdateStateImpl>
+    implements _$$UpdateStateImplCopyWith<$Res> {
+  __$$UpdateStateImplCopyWithImpl(
+      _$UpdateStateImpl _value, $Res Function(_$UpdateStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UpdateState implements UpdateState {
-  const _$UpdateState();
+class _$UpdateStateImpl implements UpdateState {
+  const _$UpdateStateImpl();
 
   @override
   String toString() {
@@ -2810,9 +2816,9 @@ class _$UpdateState implements UpdateState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateState);
+        (other.runtimeType == runtimeType && other is _$UpdateStateImpl);
   }
 
   @override
@@ -3012,7 +3018,7 @@ class _$UpdateState implements UpdateState {
 }
 
 abstract class UpdateState implements ProductEvent {
-  const factory UpdateState() = _$UpdateState;
+  const factory UpdateState() = _$UpdateStateImpl;
 }
 
 /// @nodoc
@@ -3165,11 +3171,11 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
 }
 
 /// @nodoc
-abstract class _$$_ProductStateCopyWith<$Res>
+abstract class _$$ProductStateImplCopyWith<$Res>
     implements $ProductStateCopyWith<$Res> {
-  factory _$$_ProductStateCopyWith(
-          _$_ProductState value, $Res Function(_$_ProductState) then) =
-      __$$_ProductStateCopyWithImpl<$Res>;
+  factory _$$ProductStateImplCopyWith(
+          _$ProductStateImpl value, $Res Function(_$ProductStateImpl) then) =
+      __$$ProductStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -3192,11 +3198,11 @@ abstract class _$$_ProductStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductStateCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res, _$_ProductState>
-    implements _$$_ProductStateCopyWith<$Res> {
-  __$$_ProductStateCopyWithImpl(
-      _$_ProductState _value, $Res Function(_$_ProductState) _then)
+class __$$ProductStateImplCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$ProductStateImpl>
+    implements _$$ProductStateImplCopyWith<$Res> {
+  __$$ProductStateImplCopyWithImpl(
+      _$ProductStateImpl _value, $Res Function(_$ProductStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3219,7 +3225,7 @@ class __$$_ProductStateCopyWithImpl<$Res>
     Object? mostSaleProductCount = null,
     Object? totalCount = null,
   }) {
-    return _then(_$_ProductState(
+    return _then(_$ProductStateImpl(
       mostSaleProduct: null == mostSaleProduct
           ? _value._mostSaleProduct
           : mostSaleProduct // ignore: cast_nullable_to_non_nullable
@@ -3290,8 +3296,8 @@ class __$$_ProductStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProductState implements _ProductState {
-  const _$_ProductState(
+class _$ProductStateImpl implements _ProductState {
+  const _$ProductStateImpl(
       {final List<ProductData> mostSaleProduct = const [],
       final List<ProductData> mostSaleShopProduct = const [],
       final List<ProductData> newProduct = const [],
@@ -3421,10 +3427,10 @@ class _$_ProductState implements _ProductState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductState &&
+            other is _$ProductStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._mostSaleProduct, _mostSaleProduct) &&
             const DeepCollectionEquality()
@@ -3482,8 +3488,8 @@ class _$_ProductState implements _ProductState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductStateCopyWith<_$_ProductState> get copyWith =>
-      __$$_ProductStateCopyWithImpl<_$_ProductState>(this, _$identity);
+  _$$ProductStateImplCopyWith<_$ProductStateImpl> get copyWith =>
+      __$$ProductStateImplCopyWithImpl<_$ProductStateImpl>(this, _$identity);
 }
 
 abstract class _ProductState implements ProductState {
@@ -3503,7 +3509,7 @@ abstract class _ProductState implements ProductState {
       final bool isLoadingDiscount,
       final int newProductCount,
       final int mostSaleProductCount,
-      final int totalCount}) = _$_ProductState;
+      final int totalCount}) = _$ProductStateImpl;
 
   @override
   List<ProductData> get mostSaleProduct;
@@ -3539,6 +3545,6 @@ abstract class _ProductState implements ProductState {
   int get totalCount;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductStateCopyWith<_$_ProductState> get copyWith =>
+  _$$ProductStateImplCopyWith<_$ProductStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

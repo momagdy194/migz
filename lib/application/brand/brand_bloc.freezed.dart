@@ -12,7 +12,7 @@ part of 'brand_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BrandEvent {
@@ -117,11 +117,11 @@ class _$BrandEventCopyWithImpl<$Res, $Val extends BrandEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchBrandsCopyWith<$Res>
+abstract class _$$FetchBrandsImplCopyWith<$Res>
     implements $BrandEventCopyWith<$Res> {
-  factory _$$FetchBrandsCopyWith(
-          _$FetchBrands value, $Res Function(_$FetchBrands) then) =
-      __$$FetchBrandsCopyWithImpl<$Res>;
+  factory _$$FetchBrandsImplCopyWith(
+          _$FetchBrandsImpl value, $Res Function(_$FetchBrandsImpl) then) =
+      __$$FetchBrandsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -132,11 +132,11 @@ abstract class _$$FetchBrandsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchBrandsCopyWithImpl<$Res>
-    extends _$BrandEventCopyWithImpl<$Res, _$FetchBrands>
-    implements _$$FetchBrandsCopyWith<$Res> {
-  __$$FetchBrandsCopyWithImpl(
-      _$FetchBrands _value, $Res Function(_$FetchBrands) _then)
+class __$$FetchBrandsImplCopyWithImpl<$Res>
+    extends _$BrandEventCopyWithImpl<$Res, _$FetchBrandsImpl>
+    implements _$$FetchBrandsImplCopyWith<$Res> {
+  __$$FetchBrandsImplCopyWithImpl(
+      _$FetchBrandsImpl _value, $Res Function(_$FetchBrandsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -147,7 +147,7 @@ class __$$FetchBrandsCopyWithImpl<$Res>
     Object? shopId = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchBrands(
+    return _then(_$FetchBrandsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -170,8 +170,8 @@ class __$$FetchBrandsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchBrands implements FetchBrands {
-  const _$FetchBrands(
+class _$FetchBrandsImpl implements FetchBrands {
+  const _$FetchBrandsImpl(
       {required this.context, this.isRefresh, this.shopId, this.controller});
 
   @override
@@ -189,10 +189,10 @@ class _$FetchBrands implements FetchBrands {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchBrands &&
+            other is _$FetchBrandsImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -208,8 +208,8 @@ class _$FetchBrands implements FetchBrands {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchBrandsCopyWith<_$FetchBrands> get copyWith =>
-      __$$FetchBrandsCopyWithImpl<_$FetchBrands>(this, _$identity);
+  _$$FetchBrandsImplCopyWith<_$FetchBrandsImpl> get copyWith =>
+      __$$FetchBrandsImplCopyWithImpl<_$FetchBrandsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -279,7 +279,7 @@ abstract class FetchBrands implements BrandEvent {
       {required final BuildContext context,
       final bool? isRefresh,
       final int? shopId,
-      final RefreshController? controller}) = _$FetchBrands;
+      final RefreshController? controller}) = _$FetchBrandsImpl;
 
   @override
   BuildContext get context;
@@ -291,7 +291,7 @@ abstract class FetchBrands implements BrandEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchBrandsCopyWith<_$FetchBrands> get copyWith =>
+  _$$FetchBrandsImplCopyWith<_$FetchBrandsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -344,22 +344,22 @@ class _$BrandStateCopyWithImpl<$Res, $Val extends BrandState>
 }
 
 /// @nodoc
-abstract class _$$_BrandStateCopyWith<$Res>
+abstract class _$$BrandStateImplCopyWith<$Res>
     implements $BrandStateCopyWith<$Res> {
-  factory _$$_BrandStateCopyWith(
-          _$_BrandState value, $Res Function(_$_BrandState) then) =
-      __$$_BrandStateCopyWithImpl<$Res>;
+  factory _$$BrandStateImplCopyWith(
+          _$BrandStateImpl value, $Res Function(_$BrandStateImpl) then) =
+      __$$BrandStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<BrandData> brands, bool isLoading});
 }
 
 /// @nodoc
-class __$$_BrandStateCopyWithImpl<$Res>
-    extends _$BrandStateCopyWithImpl<$Res, _$_BrandState>
-    implements _$$_BrandStateCopyWith<$Res> {
-  __$$_BrandStateCopyWithImpl(
-      _$_BrandState _value, $Res Function(_$_BrandState) _then)
+class __$$BrandStateImplCopyWithImpl<$Res>
+    extends _$BrandStateCopyWithImpl<$Res, _$BrandStateImpl>
+    implements _$$BrandStateImplCopyWith<$Res> {
+  __$$BrandStateImplCopyWithImpl(
+      _$BrandStateImpl _value, $Res Function(_$BrandStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -368,7 +368,7 @@ class __$$_BrandStateCopyWithImpl<$Res>
     Object? brands = null,
     Object? isLoading = null,
   }) {
-    return _then(_$_BrandState(
+    return _then(_$BrandStateImpl(
       brands: null == brands
           ? _value._brands
           : brands // ignore: cast_nullable_to_non_nullable
@@ -383,8 +383,8 @@ class __$$_BrandStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BrandState implements _BrandState {
-  const _$_BrandState(
+class _$BrandStateImpl implements _BrandState {
+  const _$BrandStateImpl(
       {final List<BrandData> brands = const [], this.isLoading = true})
       : _brands = brands;
 
@@ -407,10 +407,10 @@ class _$_BrandState implements _BrandState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BrandState &&
+            other is _$BrandStateImpl &&
             const DeepCollectionEquality().equals(other._brands, _brands) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
@@ -423,13 +423,13 @@ class _$_BrandState implements _BrandState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BrandStateCopyWith<_$_BrandState> get copyWith =>
-      __$$_BrandStateCopyWithImpl<_$_BrandState>(this, _$identity);
+  _$$BrandStateImplCopyWith<_$BrandStateImpl> get copyWith =>
+      __$$BrandStateImplCopyWithImpl<_$BrandStateImpl>(this, _$identity);
 }
 
 abstract class _BrandState implements BrandState {
   const factory _BrandState(
-      {final List<BrandData> brands, final bool isLoading}) = _$_BrandState;
+      {final List<BrandData> brands, final bool isLoading}) = _$BrandStateImpl;
 
   @override
   List<BrandData> get brands;
@@ -437,6 +437,6 @@ abstract class _BrandState implements BrandState {
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_BrandStateCopyWith<_$_BrandState> get copyWith =>
+  _$$BrandStateImplCopyWith<_$BrandStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

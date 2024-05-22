@@ -12,7 +12,7 @@ part of 'checkout_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CheckoutEvent {
@@ -150,20 +150,20 @@ class _$CheckoutEventCopyWithImpl<$Res, $Val extends CheckoutEvent>
 }
 
 /// @nodoc
-abstract class _$$DeleteAddressCopyWith<$Res> {
-  factory _$$DeleteAddressCopyWith(
-          _$DeleteAddress value, $Res Function(_$DeleteAddress) then) =
-      __$$DeleteAddressCopyWithImpl<$Res>;
+abstract class _$$DeleteAddressImplCopyWith<$Res> {
+  factory _$$DeleteAddressImplCopyWith(
+          _$DeleteAddressImpl value, $Res Function(_$DeleteAddressImpl) then) =
+      __$$DeleteAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, int addressId, int index});
 }
 
 /// @nodoc
-class __$$DeleteAddressCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$DeleteAddress>
-    implements _$$DeleteAddressCopyWith<$Res> {
-  __$$DeleteAddressCopyWithImpl(
-      _$DeleteAddress _value, $Res Function(_$DeleteAddress) _then)
+class __$$DeleteAddressImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$DeleteAddressImpl>
+    implements _$$DeleteAddressImplCopyWith<$Res> {
+  __$$DeleteAddressImplCopyWithImpl(
+      _$DeleteAddressImpl _value, $Res Function(_$DeleteAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -173,7 +173,7 @@ class __$$DeleteAddressCopyWithImpl<$Res>
     Object? addressId = null,
     Object? index = null,
   }) {
-    return _then(_$DeleteAddress(
+    return _then(_$DeleteAddressImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -192,8 +192,8 @@ class __$$DeleteAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteAddress implements DeleteAddress {
-  const _$DeleteAddress(
+class _$DeleteAddressImpl implements DeleteAddress {
+  const _$DeleteAddressImpl(
       {required this.context, required this.addressId, required this.index});
 
   @override
@@ -209,10 +209,10 @@ class _$DeleteAddress implements DeleteAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteAddress &&
+            other is _$DeleteAddressImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.addressId, addressId) ||
                 other.addressId == addressId) &&
@@ -225,8 +225,8 @@ class _$DeleteAddress implements DeleteAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeleteAddressCopyWith<_$DeleteAddress> get copyWith =>
-      __$$DeleteAddressCopyWithImpl<_$DeleteAddress>(this, _$identity);
+  _$$DeleteAddressImplCopyWith<_$DeleteAddressImpl> get copyWith =>
+      __$$DeleteAddressImplCopyWithImpl<_$DeleteAddressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -370,31 +370,31 @@ abstract class DeleteAddress implements CheckoutEvent {
   const factory DeleteAddress(
       {required final BuildContext context,
       required final int addressId,
-      required final int index}) = _$DeleteAddress;
+      required final int index}) = _$DeleteAddressImpl;
 
   BuildContext get context;
   int get addressId;
   int get index;
   @JsonKey(ignore: true)
-  _$$DeleteAddressCopyWith<_$DeleteAddress> get copyWith =>
+  _$$DeleteAddressImplCopyWith<_$DeleteAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectAddressCopyWith<$Res> {
-  factory _$$SelectAddressCopyWith(
-          _$SelectAddress value, $Res Function(_$SelectAddress) then) =
-      __$$SelectAddressCopyWithImpl<$Res>;
+abstract class _$$SelectAddressImplCopyWith<$Res> {
+  factory _$$SelectAddressImplCopyWith(
+          _$SelectAddressImpl value, $Res Function(_$SelectAddressImpl) then) =
+      __$$SelectAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$SelectAddressCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$SelectAddress>
-    implements _$$SelectAddressCopyWith<$Res> {
-  __$$SelectAddressCopyWithImpl(
-      _$SelectAddress _value, $Res Function(_$SelectAddress) _then)
+class __$$SelectAddressImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$SelectAddressImpl>
+    implements _$$SelectAddressImplCopyWith<$Res> {
+  __$$SelectAddressImplCopyWithImpl(
+      _$SelectAddressImpl _value, $Res Function(_$SelectAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -402,7 +402,7 @@ class __$$SelectAddressCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$SelectAddress(
+    return _then(_$SelectAddressImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -413,8 +413,8 @@ class __$$SelectAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectAddress implements SelectAddress {
-  const _$SelectAddress({required this.index});
+class _$SelectAddressImpl implements SelectAddress {
+  const _$SelectAddressImpl({required this.index});
 
   @override
   final int index;
@@ -425,10 +425,10 @@ class _$SelectAddress implements SelectAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectAddress &&
+            other is _$SelectAddressImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -438,8 +438,8 @@ class _$SelectAddress implements SelectAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectAddressCopyWith<_$SelectAddress> get copyWith =>
-      __$$SelectAddressCopyWithImpl<_$SelectAddress>(this, _$identity);
+  _$$SelectAddressImplCopyWith<_$SelectAddressImpl> get copyWith =>
+      __$$SelectAddressImplCopyWithImpl<_$SelectAddressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -580,30 +580,30 @@ class _$SelectAddress implements SelectAddress {
 }
 
 abstract class SelectAddress implements CheckoutEvent {
-  const factory SelectAddress({required final int index}) = _$SelectAddress;
+  const factory SelectAddress({required final int index}) = _$SelectAddressImpl;
 
   int get index;
   @JsonKey(ignore: true)
-  _$$SelectAddressCopyWith<_$SelectAddress> get copyWith =>
+  _$$SelectAddressImplCopyWith<_$SelectAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchUserAddressCopyWith<$Res> {
-  factory _$$FetchUserAddressCopyWith(
-          _$FetchUserAddress value, $Res Function(_$FetchUserAddress) then) =
-      __$$FetchUserAddressCopyWithImpl<$Res>;
+abstract class _$$FetchUserAddressImplCopyWith<$Res> {
+  factory _$$FetchUserAddressImplCopyWith(_$FetchUserAddressImpl value,
+          $Res Function(_$FetchUserAddressImpl) then) =
+      __$$FetchUserAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchUserAddressCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchUserAddress>
-    implements _$$FetchUserAddressCopyWith<$Res> {
-  __$$FetchUserAddressCopyWithImpl(
-      _$FetchUserAddress _value, $Res Function(_$FetchUserAddress) _then)
+class __$$FetchUserAddressImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchUserAddressImpl>
+    implements _$$FetchUserAddressImplCopyWith<$Res> {
+  __$$FetchUserAddressImplCopyWithImpl(_$FetchUserAddressImpl _value,
+      $Res Function(_$FetchUserAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -613,7 +613,7 @@ class __$$FetchUserAddressCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchUserAddress(
+    return _then(_$FetchUserAddressImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -632,8 +632,8 @@ class __$$FetchUserAddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchUserAddress implements FetchUserAddress {
-  const _$FetchUserAddress(
+class _$FetchUserAddressImpl implements FetchUserAddress {
+  const _$FetchUserAddressImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -649,10 +649,10 @@ class _$FetchUserAddress implements FetchUserAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchUserAddress &&
+            other is _$FetchUserAddressImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -666,8 +666,9 @@ class _$FetchUserAddress implements FetchUserAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchUserAddressCopyWith<_$FetchUserAddress> get copyWith =>
-      __$$FetchUserAddressCopyWithImpl<_$FetchUserAddress>(this, _$identity);
+  _$$FetchUserAddressImplCopyWith<_$FetchUserAddressImpl> get copyWith =>
+      __$$FetchUserAddressImplCopyWithImpl<_$FetchUserAddressImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -811,31 +812,31 @@ abstract class FetchUserAddress implements CheckoutEvent {
   const factory FetchUserAddress(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchUserAddress;
+      final RefreshController? controller}) = _$FetchUserAddressImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchUserAddressCopyWith<_$FetchUserAddress> get copyWith =>
+  _$$FetchUserAddressImplCopyWith<_$FetchUserAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeStepCopyWith<$Res> {
-  factory _$$ChangeStepCopyWith(
-          _$ChangeStep value, $Res Function(_$ChangeStep) then) =
-      __$$ChangeStepCopyWithImpl<$Res>;
+abstract class _$$ChangeStepImplCopyWith<$Res> {
+  factory _$$ChangeStepImplCopyWith(
+          _$ChangeStepImpl value, $Res Function(_$ChangeStepImpl) then) =
+      __$$ChangeStepImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, int? step});
 }
 
 /// @nodoc
-class __$$ChangeStepCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangeStep>
-    implements _$$ChangeStepCopyWith<$Res> {
-  __$$ChangeStepCopyWithImpl(
-      _$ChangeStep _value, $Res Function(_$ChangeStep) _then)
+class __$$ChangeStepImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangeStepImpl>
+    implements _$$ChangeStepImplCopyWith<$Res> {
+  __$$ChangeStepImplCopyWithImpl(
+      _$ChangeStepImpl _value, $Res Function(_$ChangeStepImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -844,7 +845,7 @@ class __$$ChangeStepCopyWithImpl<$Res>
     Object? context = null,
     Object? step = freezed,
   }) {
-    return _then(_$ChangeStep(
+    return _then(_$ChangeStepImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -859,8 +860,8 @@ class __$$ChangeStepCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeStep implements ChangeStep {
-  const _$ChangeStep({required this.context, this.step});
+class _$ChangeStepImpl implements ChangeStep {
+  const _$ChangeStepImpl({required this.context, this.step});
 
   @override
   final BuildContext context;
@@ -873,10 +874,10 @@ class _$ChangeStep implements ChangeStep {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeStep &&
+            other is _$ChangeStepImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.step, step) || other.step == step));
   }
@@ -887,8 +888,8 @@ class _$ChangeStep implements ChangeStep {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeStepCopyWith<_$ChangeStep> get copyWith =>
-      __$$ChangeStepCopyWithImpl<_$ChangeStep>(this, _$identity);
+  _$$ChangeStepImplCopyWith<_$ChangeStepImpl> get copyWith =>
+      __$$ChangeStepImplCopyWithImpl<_$ChangeStepImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1030,30 +1031,31 @@ class _$ChangeStep implements ChangeStep {
 
 abstract class ChangeStep implements CheckoutEvent {
   const factory ChangeStep(
-      {required final BuildContext context, final int? step}) = _$ChangeStep;
+      {required final BuildContext context,
+      final int? step}) = _$ChangeStepImpl;
 
   BuildContext get context;
   int? get step;
   @JsonKey(ignore: true)
-  _$$ChangeStepCopyWith<_$ChangeStep> get copyWith =>
+  _$$ChangeStepImplCopyWith<_$ChangeStepImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeActiveCopyWith<$Res> {
-  factory _$$ChangeActiveCopyWith(
-          _$ChangeActive value, $Res Function(_$ChangeActive) then) =
-      __$$ChangeActiveCopyWithImpl<$Res>;
+abstract class _$$ChangeActiveImplCopyWith<$Res> {
+  factory _$$ChangeActiveImplCopyWith(
+          _$ChangeActiveImpl value, $Res Function(_$ChangeActiveImpl) then) =
+      __$$ChangeActiveImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool active});
 }
 
 /// @nodoc
-class __$$ChangeActiveCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangeActive>
-    implements _$$ChangeActiveCopyWith<$Res> {
-  __$$ChangeActiveCopyWithImpl(
-      _$ChangeActive _value, $Res Function(_$ChangeActive) _then)
+class __$$ChangeActiveImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangeActiveImpl>
+    implements _$$ChangeActiveImplCopyWith<$Res> {
+  __$$ChangeActiveImplCopyWithImpl(
+      _$ChangeActiveImpl _value, $Res Function(_$ChangeActiveImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1061,7 +1063,7 @@ class __$$ChangeActiveCopyWithImpl<$Res>
   $Res call({
     Object? active = null,
   }) {
-    return _then(_$ChangeActive(
+    return _then(_$ChangeActiveImpl(
       active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
@@ -1072,8 +1074,8 @@ class __$$ChangeActiveCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeActive implements ChangeActive {
-  const _$ChangeActive({required this.active});
+class _$ChangeActiveImpl implements ChangeActive {
+  const _$ChangeActiveImpl({required this.active});
 
   @override
   final bool active;
@@ -1084,10 +1086,10 @@ class _$ChangeActive implements ChangeActive {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeActive &&
+            other is _$ChangeActiveImpl &&
             (identical(other.active, active) || other.active == active));
   }
 
@@ -1097,8 +1099,8 @@ class _$ChangeActive implements ChangeActive {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeActiveCopyWith<_$ChangeActive> get copyWith =>
-      __$$ChangeActiveCopyWithImpl<_$ChangeActive>(this, _$identity);
+  _$$ChangeActiveImplCopyWith<_$ChangeActiveImpl> get copyWith =>
+      __$$ChangeActiveImplCopyWithImpl<_$ChangeActiveImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1239,29 +1241,29 @@ class _$ChangeActive implements ChangeActive {
 }
 
 abstract class ChangeActive implements CheckoutEvent {
-  const factory ChangeActive({required final bool active}) = _$ChangeActive;
+  const factory ChangeActive({required final bool active}) = _$ChangeActiveImpl;
 
   bool get active;
   @JsonKey(ignore: true)
-  _$$ChangeActiveCopyWith<_$ChangeActive> get copyWith =>
+  _$$ChangeActiveImplCopyWith<_$ChangeActiveImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchPaymentsCopyWith<$Res> {
-  factory _$$FetchPaymentsCopyWith(
-          _$FetchPayments value, $Res Function(_$FetchPayments) then) =
-      __$$FetchPaymentsCopyWithImpl<$Res>;
+abstract class _$$FetchPaymentsImplCopyWith<$Res> {
+  factory _$$FetchPaymentsImplCopyWith(
+          _$FetchPaymentsImpl value, $Res Function(_$FetchPaymentsImpl) then) =
+      __$$FetchPaymentsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchPaymentsCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchPayments>
-    implements _$$FetchPaymentsCopyWith<$Res> {
-  __$$FetchPaymentsCopyWithImpl(
-      _$FetchPayments _value, $Res Function(_$FetchPayments) _then)
+class __$$FetchPaymentsImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchPaymentsImpl>
+    implements _$$FetchPaymentsImplCopyWith<$Res> {
+  __$$FetchPaymentsImplCopyWithImpl(
+      _$FetchPaymentsImpl _value, $Res Function(_$FetchPaymentsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1269,7 +1271,7 @@ class __$$FetchPaymentsCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchPayments(
+    return _then(_$FetchPaymentsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1280,8 +1282,8 @@ class __$$FetchPaymentsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchPayments implements FetchPayments {
-  const _$FetchPayments({required this.context});
+class _$FetchPaymentsImpl implements FetchPayments {
+  const _$FetchPaymentsImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -1292,10 +1294,10 @@ class _$FetchPayments implements FetchPayments {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchPayments &&
+            other is _$FetchPaymentsImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -1305,8 +1307,8 @@ class _$FetchPayments implements FetchPayments {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchPaymentsCopyWith<_$FetchPayments> get copyWith =>
-      __$$FetchPaymentsCopyWithImpl<_$FetchPayments>(this, _$identity);
+  _$$FetchPaymentsImplCopyWith<_$FetchPaymentsImpl> get copyWith =>
+      __$$FetchPaymentsImplCopyWithImpl<_$FetchPaymentsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1448,29 +1450,29 @@ class _$FetchPayments implements FetchPayments {
 
 abstract class FetchPayments implements CheckoutEvent {
   const factory FetchPayments({required final BuildContext context}) =
-      _$FetchPayments;
+      _$FetchPaymentsImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$FetchPaymentsCopyWith<_$FetchPayments> get copyWith =>
+  _$$FetchPaymentsImplCopyWith<_$FetchPaymentsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangePaymentCopyWith<$Res> {
-  factory _$$ChangePaymentCopyWith(
-          _$ChangePayment value, $Res Function(_$ChangePayment) then) =
-      __$$ChangePaymentCopyWithImpl<$Res>;
+abstract class _$$ChangePaymentImplCopyWith<$Res> {
+  factory _$$ChangePaymentImplCopyWith(
+          _$ChangePaymentImpl value, $Res Function(_$ChangePaymentImpl) then) =
+      __$$ChangePaymentImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$ChangePaymentCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangePayment>
-    implements _$$ChangePaymentCopyWith<$Res> {
-  __$$ChangePaymentCopyWithImpl(
-      _$ChangePayment _value, $Res Function(_$ChangePayment) _then)
+class __$$ChangePaymentImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangePaymentImpl>
+    implements _$$ChangePaymentImplCopyWith<$Res> {
+  __$$ChangePaymentImplCopyWithImpl(
+      _$ChangePaymentImpl _value, $Res Function(_$ChangePaymentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1478,7 +1480,7 @@ class __$$ChangePaymentCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$ChangePayment(
+    return _then(_$ChangePaymentImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1489,8 +1491,8 @@ class __$$ChangePaymentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangePayment implements ChangePayment {
-  const _$ChangePayment({required this.id});
+class _$ChangePaymentImpl implements ChangePayment {
+  const _$ChangePaymentImpl({required this.id});
 
   @override
   final int id;
@@ -1501,10 +1503,10 @@ class _$ChangePayment implements ChangePayment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangePayment &&
+            other is _$ChangePaymentImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -1514,8 +1516,8 @@ class _$ChangePayment implements ChangePayment {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangePaymentCopyWith<_$ChangePayment> get copyWith =>
-      __$$ChangePaymentCopyWithImpl<_$ChangePayment>(this, _$identity);
+  _$$ChangePaymentImplCopyWith<_$ChangePaymentImpl> get copyWith =>
+      __$$ChangePaymentImplCopyWithImpl<_$ChangePaymentImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1656,29 +1658,29 @@ class _$ChangePayment implements ChangePayment {
 }
 
 abstract class ChangePayment implements CheckoutEvent {
-  const factory ChangePayment({required final int id}) = _$ChangePayment;
+  const factory ChangePayment({required final int id}) = _$ChangePaymentImpl;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$ChangePaymentCopyWith<_$ChangePayment> get copyWith =>
+  _$$ChangePaymentImplCopyWith<_$ChangePaymentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeDateCopyWith<$Res> {
-  factory _$$ChangeDateCopyWith(
-          _$ChangeDate value, $Res Function(_$ChangeDate) then) =
-      __$$ChangeDateCopyWithImpl<$Res>;
+abstract class _$$ChangeDateImplCopyWith<$Res> {
+  factory _$$ChangeDateImplCopyWith(
+          _$ChangeDateImpl value, $Res Function(_$ChangeDateImpl) then) =
+      __$$ChangeDateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime date});
 }
 
 /// @nodoc
-class __$$ChangeDateCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangeDate>
-    implements _$$ChangeDateCopyWith<$Res> {
-  __$$ChangeDateCopyWithImpl(
-      _$ChangeDate _value, $Res Function(_$ChangeDate) _then)
+class __$$ChangeDateImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$ChangeDateImpl>
+    implements _$$ChangeDateImplCopyWith<$Res> {
+  __$$ChangeDateImplCopyWithImpl(
+      _$ChangeDateImpl _value, $Res Function(_$ChangeDateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1686,7 +1688,7 @@ class __$$ChangeDateCopyWithImpl<$Res>
   $Res call({
     Object? date = null,
   }) {
-    return _then(_$ChangeDate(
+    return _then(_$ChangeDateImpl(
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -1697,8 +1699,8 @@ class __$$ChangeDateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeDate implements ChangeDate {
-  const _$ChangeDate({required this.date});
+class _$ChangeDateImpl implements ChangeDate {
+  const _$ChangeDateImpl({required this.date});
 
   @override
   final DateTime date;
@@ -1709,10 +1711,10 @@ class _$ChangeDate implements ChangeDate {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeDate &&
+            other is _$ChangeDateImpl &&
             (identical(other.date, date) || other.date == date));
   }
 
@@ -1722,8 +1724,8 @@ class _$ChangeDate implements ChangeDate {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeDateCopyWith<_$ChangeDate> get copyWith =>
-      __$$ChangeDateCopyWithImpl<_$ChangeDate>(this, _$identity);
+  _$$ChangeDateImplCopyWith<_$ChangeDateImpl> get copyWith =>
+      __$$ChangeDateImplCopyWithImpl<_$ChangeDateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1864,30 +1866,30 @@ class _$ChangeDate implements ChangeDate {
 }
 
 abstract class ChangeDate implements CheckoutEvent {
-  const factory ChangeDate({required final DateTime date}) = _$ChangeDate;
+  const factory ChangeDate({required final DateTime date}) = _$ChangeDateImpl;
 
   DateTime get date;
   @JsonKey(ignore: true)
-  _$$ChangeDateCopyWith<_$ChangeDate> get copyWith =>
+  _$$ChangeDateImplCopyWith<_$ChangeDateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchDeliveryPointCopyWith<$Res> {
-  factory _$$FetchDeliveryPointCopyWith(_$FetchDeliveryPoint value,
-          $Res Function(_$FetchDeliveryPoint) then) =
-      __$$FetchDeliveryPointCopyWithImpl<$Res>;
+abstract class _$$FetchDeliveryPointImplCopyWith<$Res> {
+  factory _$$FetchDeliveryPointImplCopyWith(_$FetchDeliveryPointImpl value,
+          $Res Function(_$FetchDeliveryPointImpl) then) =
+      __$$FetchDeliveryPointImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchDeliveryPointCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchDeliveryPoint>
-    implements _$$FetchDeliveryPointCopyWith<$Res> {
-  __$$FetchDeliveryPointCopyWithImpl(
-      _$FetchDeliveryPoint _value, $Res Function(_$FetchDeliveryPoint) _then)
+class __$$FetchDeliveryPointImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchDeliveryPointImpl>
+    implements _$$FetchDeliveryPointImplCopyWith<$Res> {
+  __$$FetchDeliveryPointImplCopyWithImpl(_$FetchDeliveryPointImpl _value,
+      $Res Function(_$FetchDeliveryPointImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1897,7 +1899,7 @@ class __$$FetchDeliveryPointCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchDeliveryPoint(
+    return _then(_$FetchDeliveryPointImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1916,8 +1918,8 @@ class __$$FetchDeliveryPointCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchDeliveryPoint implements FetchDeliveryPoint {
-  const _$FetchDeliveryPoint(
+class _$FetchDeliveryPointImpl implements FetchDeliveryPoint {
+  const _$FetchDeliveryPointImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -1933,10 +1935,10 @@ class _$FetchDeliveryPoint implements FetchDeliveryPoint {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchDeliveryPoint &&
+            other is _$FetchDeliveryPointImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -1950,8 +1952,8 @@ class _$FetchDeliveryPoint implements FetchDeliveryPoint {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchDeliveryPointCopyWith<_$FetchDeliveryPoint> get copyWith =>
-      __$$FetchDeliveryPointCopyWithImpl<_$FetchDeliveryPoint>(
+  _$$FetchDeliveryPointImplCopyWith<_$FetchDeliveryPointImpl> get copyWith =>
+      __$$FetchDeliveryPointImplCopyWithImpl<_$FetchDeliveryPointImpl>(
           this, _$identity);
 
   @override
@@ -2096,31 +2098,31 @@ abstract class FetchDeliveryPoint implements CheckoutEvent {
   const factory FetchDeliveryPoint(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchDeliveryPoint;
+      final RefreshController? controller}) = _$FetchDeliveryPointImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchDeliveryPointCopyWith<_$FetchDeliveryPoint> get copyWith =>
+  _$$FetchDeliveryPointImplCopyWith<_$FetchDeliveryPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchDeliveryPriceCopyWith<$Res> {
-  factory _$$FetchDeliveryPriceCopyWith(_$FetchDeliveryPrice value,
-          $Res Function(_$FetchDeliveryPrice) then) =
-      __$$FetchDeliveryPriceCopyWithImpl<$Res>;
+abstract class _$$FetchDeliveryPriceImplCopyWith<$Res> {
+  factory _$$FetchDeliveryPriceImplCopyWith(_$FetchDeliveryPriceImpl value,
+          $Res Function(_$FetchDeliveryPriceImpl) then) =
+      __$$FetchDeliveryPriceImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchDeliveryPriceCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchDeliveryPrice>
-    implements _$$FetchDeliveryPriceCopyWith<$Res> {
-  __$$FetchDeliveryPriceCopyWithImpl(
-      _$FetchDeliveryPrice _value, $Res Function(_$FetchDeliveryPrice) _then)
+class __$$FetchDeliveryPriceImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$FetchDeliveryPriceImpl>
+    implements _$$FetchDeliveryPriceImplCopyWith<$Res> {
+  __$$FetchDeliveryPriceImplCopyWithImpl(_$FetchDeliveryPriceImpl _value,
+      $Res Function(_$FetchDeliveryPriceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2128,7 +2130,7 @@ class __$$FetchDeliveryPriceCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchDeliveryPrice(
+    return _then(_$FetchDeliveryPriceImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -2139,8 +2141,8 @@ class __$$FetchDeliveryPriceCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchDeliveryPrice implements FetchDeliveryPrice {
-  const _$FetchDeliveryPrice({required this.context});
+class _$FetchDeliveryPriceImpl implements FetchDeliveryPrice {
+  const _$FetchDeliveryPriceImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -2151,10 +2153,10 @@ class _$FetchDeliveryPrice implements FetchDeliveryPrice {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchDeliveryPrice &&
+            other is _$FetchDeliveryPriceImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -2164,8 +2166,8 @@ class _$FetchDeliveryPrice implements FetchDeliveryPrice {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchDeliveryPriceCopyWith<_$FetchDeliveryPrice> get copyWith =>
-      __$$FetchDeliveryPriceCopyWithImpl<_$FetchDeliveryPrice>(
+  _$$FetchDeliveryPriceImplCopyWith<_$FetchDeliveryPriceImpl> get copyWith =>
+      __$$FetchDeliveryPriceImplCopyWithImpl<_$FetchDeliveryPriceImpl>(
           this, _$identity);
 
   @override
@@ -2308,29 +2310,29 @@ class _$FetchDeliveryPrice implements FetchDeliveryPrice {
 
 abstract class FetchDeliveryPrice implements CheckoutEvent {
   const factory FetchDeliveryPrice({required final BuildContext context}) =
-      _$FetchDeliveryPrice;
+      _$FetchDeliveryPriceImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$FetchDeliveryPriceCopyWith<_$FetchDeliveryPrice> get copyWith =>
+  _$$FetchDeliveryPriceImplCopyWith<_$FetchDeliveryPriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectPointCopyWith<$Res> {
-  factory _$$SelectPointCopyWith(
-          _$SelectPoint value, $Res Function(_$SelectPoint) then) =
-      __$$SelectPointCopyWithImpl<$Res>;
+abstract class _$$SelectPointImplCopyWith<$Res> {
+  factory _$$SelectPointImplCopyWith(
+          _$SelectPointImpl value, $Res Function(_$SelectPointImpl) then) =
+      __$$SelectPointImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DeliveryPoint? point});
 }
 
 /// @nodoc
-class __$$SelectPointCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$SelectPoint>
-    implements _$$SelectPointCopyWith<$Res> {
-  __$$SelectPointCopyWithImpl(
-      _$SelectPoint _value, $Res Function(_$SelectPoint) _then)
+class __$$SelectPointImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$SelectPointImpl>
+    implements _$$SelectPointImplCopyWith<$Res> {
+  __$$SelectPointImplCopyWithImpl(
+      _$SelectPointImpl _value, $Res Function(_$SelectPointImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2338,7 +2340,7 @@ class __$$SelectPointCopyWithImpl<$Res>
   $Res call({
     Object? point = freezed,
   }) {
-    return _then(_$SelectPoint(
+    return _then(_$SelectPointImpl(
       point: freezed == point
           ? _value.point
           : point // ignore: cast_nullable_to_non_nullable
@@ -2349,8 +2351,8 @@ class __$$SelectPointCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectPoint implements SelectPoint {
-  const _$SelectPoint({required this.point});
+class _$SelectPointImpl implements SelectPoint {
+  const _$SelectPointImpl({required this.point});
 
   @override
   final DeliveryPoint? point;
@@ -2361,10 +2363,10 @@ class _$SelectPoint implements SelectPoint {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectPoint &&
+            other is _$SelectPointImpl &&
             (identical(other.point, point) || other.point == point));
   }
 
@@ -2374,8 +2376,8 @@ class _$SelectPoint implements SelectPoint {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectPointCopyWith<_$SelectPoint> get copyWith =>
-      __$$SelectPointCopyWithImpl<_$SelectPoint>(this, _$identity);
+  _$$SelectPointImplCopyWith<_$SelectPointImpl> get copyWith =>
+      __$$SelectPointImplCopyWithImpl<_$SelectPointImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2517,29 +2519,29 @@ class _$SelectPoint implements SelectPoint {
 
 abstract class SelectPoint implements CheckoutEvent {
   const factory SelectPoint({required final DeliveryPoint? point}) =
-      _$SelectPoint;
+      _$SelectPointImpl;
 
   DeliveryPoint? get point;
   @JsonKey(ignore: true)
-  _$$SelectPointCopyWith<_$SelectPoint> get copyWith =>
+  _$$SelectPointImplCopyWith<_$SelectPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetMapControllerCopyWith<$Res> {
-  factory _$$SetMapControllerCopyWith(
-          _$SetMapController value, $Res Function(_$SetMapController) then) =
-      __$$SetMapControllerCopyWithImpl<$Res>;
+abstract class _$$SetMapControllerImplCopyWith<$Res> {
+  factory _$$SetMapControllerImplCopyWith(_$SetMapControllerImpl value,
+          $Res Function(_$SetMapControllerImpl) then) =
+      __$$SetMapControllerImplCopyWithImpl<$Res>;
   @useResult
   $Res call({GoogleMapController controller});
 }
 
 /// @nodoc
-class __$$SetMapControllerCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$SetMapController>
-    implements _$$SetMapControllerCopyWith<$Res> {
-  __$$SetMapControllerCopyWithImpl(
-      _$SetMapController _value, $Res Function(_$SetMapController) _then)
+class __$$SetMapControllerImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$SetMapControllerImpl>
+    implements _$$SetMapControllerImplCopyWith<$Res> {
+  __$$SetMapControllerImplCopyWithImpl(_$SetMapControllerImpl _value,
+      $Res Function(_$SetMapControllerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2547,7 +2549,7 @@ class __$$SetMapControllerCopyWithImpl<$Res>
   $Res call({
     Object? controller = null,
   }) {
-    return _then(_$SetMapController(
+    return _then(_$SetMapControllerImpl(
       controller: null == controller
           ? _value.controller
           : controller // ignore: cast_nullable_to_non_nullable
@@ -2558,8 +2560,8 @@ class __$$SetMapControllerCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetMapController implements SetMapController {
-  const _$SetMapController({required this.controller});
+class _$SetMapControllerImpl implements SetMapController {
+  const _$SetMapControllerImpl({required this.controller});
 
   @override
   final GoogleMapController controller;
@@ -2570,10 +2572,10 @@ class _$SetMapController implements SetMapController {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetMapController &&
+            other is _$SetMapControllerImpl &&
             (identical(other.controller, controller) ||
                 other.controller == controller));
   }
@@ -2584,8 +2586,9 @@ class _$SetMapController implements SetMapController {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetMapControllerCopyWith<_$SetMapController> get copyWith =>
-      __$$SetMapControllerCopyWithImpl<_$SetMapController>(this, _$identity);
+  _$$SetMapControllerImplCopyWith<_$SetMapControllerImpl> get copyWith =>
+      __$$SetMapControllerImplCopyWithImpl<_$SetMapControllerImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2727,11 +2730,11 @@ class _$SetMapController implements SetMapController {
 
 abstract class SetMapController implements CheckoutEvent {
   const factory SetMapController(
-      {required final GoogleMapController controller}) = _$SetMapController;
+      {required final GoogleMapController controller}) = _$SetMapControllerImpl;
 
   GoogleMapController get controller;
   @JsonKey(ignore: true)
-  _$$SetMapControllerCopyWith<_$SetMapController> get copyWith =>
+  _$$SetMapControllerImplCopyWith<_$SetMapControllerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2870,11 +2873,11 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
 }
 
 /// @nodoc
-abstract class _$$_CheckoutStateCopyWith<$Res>
+abstract class _$$CheckoutStateImplCopyWith<$Res>
     implements $CheckoutStateCopyWith<$Res> {
-  factory _$$_CheckoutStateCopyWith(
-          _$_CheckoutState value, $Res Function(_$_CheckoutState) then) =
-      __$$_CheckoutStateCopyWithImpl<$Res>;
+  factory _$$CheckoutStateImplCopyWith(
+          _$CheckoutStateImpl value, $Res Function(_$CheckoutStateImpl) then) =
+      __$$CheckoutStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -2895,11 +2898,11 @@ abstract class _$$_CheckoutStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CheckoutStateCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$_CheckoutState>
-    implements _$$_CheckoutStateCopyWith<$Res> {
-  __$$_CheckoutStateCopyWithImpl(
-      _$_CheckoutState _value, $Res Function(_$_CheckoutState) _then)
+class __$$CheckoutStateImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$CheckoutStateImpl>
+    implements _$$CheckoutStateImplCopyWith<$Res> {
+  __$$CheckoutStateImplCopyWithImpl(
+      _$CheckoutStateImpl _value, $Res Function(_$CheckoutStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2920,7 +2923,7 @@ class __$$_CheckoutStateCopyWithImpl<$Res>
     Object? mapController = freezed,
     Object? markers = freezed,
   }) {
-    return _then(_$_CheckoutState(
+    return _then(_$CheckoutStateImpl(
       isLoadingPoint: null == isLoadingPoint
           ? _value.isLoadingPoint
           : isLoadingPoint // ignore: cast_nullable_to_non_nullable
@@ -2983,8 +2986,8 @@ class __$$_CheckoutStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CheckoutState implements _CheckoutState {
-  const _$_CheckoutState(
+class _$CheckoutStateImpl implements _CheckoutState {
+  const _$CheckoutStateImpl(
       {this.isLoadingPoint = true,
       this.isLoading = true,
       this.isActive = false,
@@ -3089,10 +3092,10 @@ class _$_CheckoutState implements _CheckoutState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CheckoutState &&
+            other is _$CheckoutStateImpl &&
             (identical(other.isLoadingPoint, isLoadingPoint) ||
                 other.isLoadingPoint == isLoadingPoint) &&
             (identical(other.isLoading, isLoading) ||
@@ -3140,8 +3143,8 @@ class _$_CheckoutState implements _CheckoutState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CheckoutStateCopyWith<_$_CheckoutState> get copyWith =>
-      __$$_CheckoutStateCopyWithImpl<_$_CheckoutState>(this, _$identity);
+  _$$CheckoutStateImplCopyWith<_$CheckoutStateImpl> get copyWith =>
+      __$$CheckoutStateImplCopyWithImpl<_$CheckoutStateImpl>(this, _$identity);
 }
 
 abstract class _CheckoutState implements CheckoutState {
@@ -3159,7 +3162,7 @@ abstract class _CheckoutState implements CheckoutState {
       final List<DeliveryPoint>? deliveryPrice,
       final List<UserAddress> address,
       final GoogleMapController? mapController,
-      final Set<Marker>? markers}) = _$_CheckoutState;
+      final Set<Marker>? markers}) = _$CheckoutStateImpl;
 
   @override
   bool get isLoadingPoint;
@@ -3191,6 +3194,6 @@ abstract class _CheckoutState implements CheckoutState {
   Set<Marker>? get markers;
   @override
   @JsonKey(ignore: true)
-  _$$_CheckoutStateCopyWith<_$_CheckoutState> get copyWith =>
+  _$$CheckoutStateImplCopyWith<_$CheckoutStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

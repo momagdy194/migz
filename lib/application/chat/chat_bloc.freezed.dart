@@ -12,7 +12,7 @@ part of 'chat_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChatEvent {
@@ -153,22 +153,22 @@ class _$ChatEventCopyWithImpl<$Res, $Val extends ChatEvent>
 }
 
 /// @nodoc
-abstract class _$$CheckChatIdCopyWith<$Res>
+abstract class _$$CheckChatIdImplCopyWith<$Res>
     implements $ChatEventCopyWith<$Res> {
-  factory _$$CheckChatIdCopyWith(
-          _$CheckChatId value, $Res Function(_$CheckChatId) then) =
-      __$$CheckChatIdCopyWithImpl<$Res>;
+  factory _$$CheckChatIdImplCopyWith(
+          _$CheckChatIdImpl value, $Res Function(_$CheckChatIdImpl) then) =
+      __$$CheckChatIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int sellerId});
 }
 
 /// @nodoc
-class __$$CheckChatIdCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$CheckChatId>
-    implements _$$CheckChatIdCopyWith<$Res> {
-  __$$CheckChatIdCopyWithImpl(
-      _$CheckChatId _value, $Res Function(_$CheckChatId) _then)
+class __$$CheckChatIdImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$CheckChatIdImpl>
+    implements _$$CheckChatIdImplCopyWith<$Res> {
+  __$$CheckChatIdImplCopyWithImpl(
+      _$CheckChatIdImpl _value, $Res Function(_$CheckChatIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -177,7 +177,7 @@ class __$$CheckChatIdCopyWithImpl<$Res>
     Object? context = null,
     Object? sellerId = null,
   }) {
-    return _then(_$CheckChatId(
+    return _then(_$CheckChatIdImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -192,8 +192,8 @@ class __$$CheckChatIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckChatId implements CheckChatId {
-  const _$CheckChatId({required this.context, required this.sellerId});
+class _$CheckChatIdImpl implements CheckChatId {
+  const _$CheckChatIdImpl({required this.context, required this.sellerId});
 
   @override
   final BuildContext context;
@@ -206,10 +206,10 @@ class _$CheckChatId implements CheckChatId {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckChatId &&
+            other is _$CheckChatIdImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.sellerId, sellerId) ||
                 other.sellerId == sellerId));
@@ -221,8 +221,8 @@ class _$CheckChatId implements CheckChatId {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckChatIdCopyWith<_$CheckChatId> get copyWith =>
-      __$$CheckChatIdCopyWithImpl<_$CheckChatId>(this, _$identity);
+  _$$CheckChatIdImplCopyWith<_$CheckChatIdImpl> get copyWith =>
+      __$$CheckChatIdImplCopyWithImpl<_$CheckChatIdImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -349,33 +349,34 @@ class _$CheckChatId implements CheckChatId {
 abstract class CheckChatId implements ChatEvent {
   const factory CheckChatId(
       {required final BuildContext context,
-      required final int sellerId}) = _$CheckChatId;
+      required final int sellerId}) = _$CheckChatIdImpl;
 
   @override
   BuildContext get context;
   int get sellerId;
   @override
   @JsonKey(ignore: true)
-  _$$CheckChatIdCopyWith<_$CheckChatId> get copyWith =>
+  _$$CheckChatIdImplCopyWith<_$CheckChatIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SendImageCopyWith<$Res> implements $ChatEventCopyWith<$Res> {
-  factory _$$SendImageCopyWith(
-          _$SendImage value, $Res Function(_$SendImage) then) =
-      __$$SendImageCopyWithImpl<$Res>;
+abstract class _$$SendImageImplCopyWith<$Res>
+    implements $ChatEventCopyWith<$Res> {
+  factory _$$SendImageImplCopyWith(
+          _$SendImageImpl value, $Res Function(_$SendImageImpl) then) =
+      __$$SendImageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, String file, String? chatId});
 }
 
 /// @nodoc
-class __$$SendImageCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$SendImage>
-    implements _$$SendImageCopyWith<$Res> {
-  __$$SendImageCopyWithImpl(
-      _$SendImage _value, $Res Function(_$SendImage) _then)
+class __$$SendImageImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$SendImageImpl>
+    implements _$$SendImageImplCopyWith<$Res> {
+  __$$SendImageImplCopyWithImpl(
+      _$SendImageImpl _value, $Res Function(_$SendImageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -385,7 +386,7 @@ class __$$SendImageCopyWithImpl<$Res>
     Object? file = null,
     Object? chatId = freezed,
   }) {
-    return _then(_$SendImage(
+    return _then(_$SendImageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -404,8 +405,8 @@ class __$$SendImageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SendImage implements SendImage {
-  const _$SendImage(
+class _$SendImageImpl implements SendImage {
+  const _$SendImageImpl(
       {required this.context, required this.file, required this.chatId});
 
   @override
@@ -421,10 +422,10 @@ class _$SendImage implements SendImage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendImage &&
+            other is _$SendImageImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.file, file) || other.file == file) &&
             (identical(other.chatId, chatId) || other.chatId == chatId));
@@ -436,8 +437,8 @@ class _$SendImage implements SendImage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SendImageCopyWith<_$SendImage> get copyWith =>
-      __$$SendImageCopyWithImpl<_$SendImage>(this, _$identity);
+  _$$SendImageImplCopyWith<_$SendImageImpl> get copyWith =>
+      __$$SendImageImplCopyWithImpl<_$SendImageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -565,7 +566,7 @@ abstract class SendImage implements ChatEvent {
   const factory SendImage(
       {required final BuildContext context,
       required final String file,
-      required final String? chatId}) = _$SendImage;
+      required final String? chatId}) = _$SendImageImpl;
 
   @override
   BuildContext get context;
@@ -573,27 +574,27 @@ abstract class SendImage implements ChatEvent {
   String? get chatId;
   @override
   @JsonKey(ignore: true)
-  _$$SendImageCopyWith<_$SendImage> get copyWith =>
+  _$$SendImageImplCopyWith<_$SendImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SendMessageCopyWith<$Res>
+abstract class _$$SendMessageImplCopyWith<$Res>
     implements $ChatEventCopyWith<$Res> {
-  factory _$$SendMessageCopyWith(
-          _$SendMessage value, $Res Function(_$SendMessage) then) =
-      __$$SendMessageCopyWithImpl<$Res>;
+  factory _$$SendMessageImplCopyWith(
+          _$SendMessageImpl value, $Res Function(_$SendMessageImpl) then) =
+      __$$SendMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, String message, String? chatId});
 }
 
 /// @nodoc
-class __$$SendMessageCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$SendMessage>
-    implements _$$SendMessageCopyWith<$Res> {
-  __$$SendMessageCopyWithImpl(
-      _$SendMessage _value, $Res Function(_$SendMessage) _then)
+class __$$SendMessageImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$SendMessageImpl>
+    implements _$$SendMessageImplCopyWith<$Res> {
+  __$$SendMessageImplCopyWithImpl(
+      _$SendMessageImpl _value, $Res Function(_$SendMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -603,7 +604,7 @@ class __$$SendMessageCopyWithImpl<$Res>
     Object? message = null,
     Object? chatId = freezed,
   }) {
-    return _then(_$SendMessage(
+    return _then(_$SendMessageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -622,8 +623,8 @@ class __$$SendMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SendMessage implements SendMessage {
-  const _$SendMessage(
+class _$SendMessageImpl implements SendMessage {
+  const _$SendMessageImpl(
       {required this.context, required this.message, required this.chatId});
 
   @override
@@ -639,10 +640,10 @@ class _$SendMessage implements SendMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendMessage &&
+            other is _$SendMessageImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.chatId, chatId) || other.chatId == chatId));
@@ -654,8 +655,8 @@ class _$SendMessage implements SendMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SendMessageCopyWith<_$SendMessage> get copyWith =>
-      __$$SendMessageCopyWithImpl<_$SendMessage>(this, _$identity);
+  _$$SendMessageImplCopyWith<_$SendMessageImpl> get copyWith =>
+      __$$SendMessageImplCopyWithImpl<_$SendMessageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -783,7 +784,7 @@ abstract class SendMessage implements ChatEvent {
   const factory SendMessage(
       {required final BuildContext context,
       required final String message,
-      required final String? chatId}) = _$SendMessage;
+      required final String? chatId}) = _$SendMessageImpl;
 
   @override
   BuildContext get context;
@@ -791,16 +792,16 @@ abstract class SendMessage implements ChatEvent {
   String? get chatId;
   @override
   @JsonKey(ignore: true)
-  _$$SendMessageCopyWith<_$SendMessage> get copyWith =>
+  _$$SendMessageImplCopyWith<_$SendMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EditMessageCopyWith<$Res>
+abstract class _$$EditMessageImplCopyWith<$Res>
     implements $ChatEventCopyWith<$Res> {
-  factory _$$EditMessageCopyWith(
-          _$EditMessage value, $Res Function(_$EditMessage) then) =
-      __$$EditMessageCopyWithImpl<$Res>;
+  factory _$$EditMessageImplCopyWith(
+          _$EditMessageImpl value, $Res Function(_$EditMessageImpl) then) =
+      __$$EditMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -808,11 +809,11 @@ abstract class _$$EditMessageCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$EditMessageCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$EditMessage>
-    implements _$$EditMessageCopyWith<$Res> {
-  __$$EditMessageCopyWithImpl(
-      _$EditMessage _value, $Res Function(_$EditMessage) _then)
+class __$$EditMessageImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$EditMessageImpl>
+    implements _$$EditMessageImplCopyWith<$Res> {
+  __$$EditMessageImplCopyWithImpl(
+      _$EditMessageImpl _value, $Res Function(_$EditMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -823,7 +824,7 @@ class __$$EditMessageCopyWithImpl<$Res>
     Object? messageId = null,
     Object? chatId = freezed,
   }) {
-    return _then(_$EditMessage(
+    return _then(_$EditMessageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -846,8 +847,8 @@ class __$$EditMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EditMessage implements EditMessage {
-  const _$EditMessage(
+class _$EditMessageImpl implements EditMessage {
+  const _$EditMessageImpl(
       {required this.context,
       required this.message,
       required this.messageId,
@@ -868,10 +869,10 @@ class _$EditMessage implements EditMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EditMessage &&
+            other is _$EditMessageImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.messageId, messageId) ||
@@ -886,8 +887,8 @@ class _$EditMessage implements EditMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EditMessageCopyWith<_$EditMessage> get copyWith =>
-      __$$EditMessageCopyWithImpl<_$EditMessage>(this, _$identity);
+  _$$EditMessageImplCopyWith<_$EditMessageImpl> get copyWith =>
+      __$$EditMessageImplCopyWithImpl<_$EditMessageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1016,7 +1017,7 @@ abstract class EditMessage implements ChatEvent {
       {required final BuildContext context,
       required final String message,
       required final String messageId,
-      required final String? chatId}) = _$EditMessage;
+      required final String? chatId}) = _$EditMessageImpl;
 
   @override
   BuildContext get context;
@@ -1025,16 +1026,16 @@ abstract class EditMessage implements ChatEvent {
   String? get chatId;
   @override
   @JsonKey(ignore: true)
-  _$$EditMessageCopyWith<_$EditMessage> get copyWith =>
+  _$$EditMessageImplCopyWith<_$EditMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReplyMessageCopyWith<$Res>
+abstract class _$$ReplyMessageImplCopyWith<$Res>
     implements $ChatEventCopyWith<$Res> {
-  factory _$$ReplyMessageCopyWith(
-          _$ReplyMessage value, $Res Function(_$ReplyMessage) then) =
-      __$$ReplyMessageCopyWithImpl<$Res>;
+  factory _$$ReplyMessageImplCopyWith(
+          _$ReplyMessageImpl value, $Res Function(_$ReplyMessageImpl) then) =
+      __$$ReplyMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1042,11 +1043,11 @@ abstract class _$$ReplyMessageCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReplyMessageCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$ReplyMessage>
-    implements _$$ReplyMessageCopyWith<$Res> {
-  __$$ReplyMessageCopyWithImpl(
-      _$ReplyMessage _value, $Res Function(_$ReplyMessage) _then)
+class __$$ReplyMessageImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$ReplyMessageImpl>
+    implements _$$ReplyMessageImplCopyWith<$Res> {
+  __$$ReplyMessageImplCopyWithImpl(
+      _$ReplyMessageImpl _value, $Res Function(_$ReplyMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1057,7 +1058,7 @@ class __$$ReplyMessageCopyWithImpl<$Res>
     Object? messageId = null,
     Object? chatId = freezed,
   }) {
-    return _then(_$ReplyMessage(
+    return _then(_$ReplyMessageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1080,8 +1081,8 @@ class __$$ReplyMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReplyMessage implements ReplyMessage {
-  const _$ReplyMessage(
+class _$ReplyMessageImpl implements ReplyMessage {
+  const _$ReplyMessageImpl(
       {required this.context,
       required this.message,
       required this.messageId,
@@ -1102,10 +1103,10 @@ class _$ReplyMessage implements ReplyMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReplyMessage &&
+            other is _$ReplyMessageImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.messageId, messageId) ||
@@ -1120,8 +1121,8 @@ class _$ReplyMessage implements ReplyMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReplyMessageCopyWith<_$ReplyMessage> get copyWith =>
-      __$$ReplyMessageCopyWithImpl<_$ReplyMessage>(this, _$identity);
+  _$$ReplyMessageImplCopyWith<_$ReplyMessageImpl> get copyWith =>
+      __$$ReplyMessageImplCopyWithImpl<_$ReplyMessageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1250,7 +1251,7 @@ abstract class ReplyMessage implements ChatEvent {
       {required final BuildContext context,
       required final String message,
       required final String messageId,
-      required final String? chatId}) = _$ReplyMessage;
+      required final String? chatId}) = _$ReplyMessageImpl;
 
   @override
   BuildContext get context;
@@ -1259,27 +1260,27 @@ abstract class ReplyMessage implements ChatEvent {
   String? get chatId;
   @override
   @JsonKey(ignore: true)
-  _$$ReplyMessageCopyWith<_$ReplyMessage> get copyWith =>
+  _$$ReplyMessageImplCopyWith<_$ReplyMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteMessageCopyWith<$Res>
+abstract class _$$DeleteMessageImplCopyWith<$Res>
     implements $ChatEventCopyWith<$Res> {
-  factory _$$DeleteMessageCopyWith(
-          _$DeleteMessage value, $Res Function(_$DeleteMessage) then) =
-      __$$DeleteMessageCopyWithImpl<$Res>;
+  factory _$$DeleteMessageImplCopyWith(
+          _$DeleteMessageImpl value, $Res Function(_$DeleteMessageImpl) then) =
+      __$$DeleteMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, String messageId, String? chatId});
 }
 
 /// @nodoc
-class __$$DeleteMessageCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$DeleteMessage>
-    implements _$$DeleteMessageCopyWith<$Res> {
-  __$$DeleteMessageCopyWithImpl(
-      _$DeleteMessage _value, $Res Function(_$DeleteMessage) _then)
+class __$$DeleteMessageImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$DeleteMessageImpl>
+    implements _$$DeleteMessageImplCopyWith<$Res> {
+  __$$DeleteMessageImplCopyWithImpl(
+      _$DeleteMessageImpl _value, $Res Function(_$DeleteMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1289,7 +1290,7 @@ class __$$DeleteMessageCopyWithImpl<$Res>
     Object? messageId = null,
     Object? chatId = freezed,
   }) {
-    return _then(_$DeleteMessage(
+    return _then(_$DeleteMessageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1308,8 +1309,8 @@ class __$$DeleteMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteMessage implements DeleteMessage {
-  const _$DeleteMessage(
+class _$DeleteMessageImpl implements DeleteMessage {
+  const _$DeleteMessageImpl(
       {required this.context, required this.messageId, required this.chatId});
 
   @override
@@ -1325,10 +1326,10 @@ class _$DeleteMessage implements DeleteMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteMessage &&
+            other is _$DeleteMessageImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.messageId, messageId) ||
                 other.messageId == messageId) &&
@@ -1341,8 +1342,8 @@ class _$DeleteMessage implements DeleteMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeleteMessageCopyWith<_$DeleteMessage> get copyWith =>
-      __$$DeleteMessageCopyWithImpl<_$DeleteMessage>(this, _$identity);
+  _$$DeleteMessageImplCopyWith<_$DeleteMessageImpl> get copyWith =>
+      __$$DeleteMessageImplCopyWithImpl<_$DeleteMessageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1470,7 +1471,7 @@ abstract class DeleteMessage implements ChatEvent {
   const factory DeleteMessage(
       {required final BuildContext context,
       required final String messageId,
-      required final String? chatId}) = _$DeleteMessage;
+      required final String? chatId}) = _$DeleteMessageImpl;
 
   @override
   BuildContext get context;
@@ -1478,16 +1479,16 @@ abstract class DeleteMessage implements ChatEvent {
   String? get chatId;
   @override
   @JsonKey(ignore: true)
-  _$$DeleteMessageCopyWith<_$DeleteMessage> get copyWith =>
+  _$$DeleteMessageImplCopyWith<_$DeleteMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CreateAndSendMessageCopyWith<$Res>
+abstract class _$$CreateAndSendMessageImplCopyWith<$Res>
     implements $ChatEventCopyWith<$Res> {
-  factory _$$CreateAndSendMessageCopyWith(_$CreateAndSendMessage value,
-          $Res Function(_$CreateAndSendMessage) then) =
-      __$$CreateAndSendMessageCopyWithImpl<$Res>;
+  factory _$$CreateAndSendMessageImplCopyWith(_$CreateAndSendMessageImpl value,
+          $Res Function(_$CreateAndSendMessageImpl) then) =
+      __$$CreateAndSendMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1495,11 +1496,11 @@ abstract class _$$CreateAndSendMessageCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateAndSendMessageCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$CreateAndSendMessage>
-    implements _$$CreateAndSendMessageCopyWith<$Res> {
-  __$$CreateAndSendMessageCopyWithImpl(_$CreateAndSendMessage _value,
-      $Res Function(_$CreateAndSendMessage) _then)
+class __$$CreateAndSendMessageImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$CreateAndSendMessageImpl>
+    implements _$$CreateAndSendMessageImplCopyWith<$Res> {
+  __$$CreateAndSendMessageImplCopyWithImpl(_$CreateAndSendMessageImpl _value,
+      $Res Function(_$CreateAndSendMessageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1510,7 +1511,7 @@ class __$$CreateAndSendMessageCopyWithImpl<$Res>
     Object? userId = null,
     Object? onSuccess = null,
   }) {
-    return _then(_$CreateAndSendMessage(
+    return _then(_$CreateAndSendMessageImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1533,8 +1534,8 @@ class __$$CreateAndSendMessageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CreateAndSendMessage implements CreateAndSendMessage {
-  const _$CreateAndSendMessage(
+class _$CreateAndSendMessageImpl implements CreateAndSendMessage {
+  const _$CreateAndSendMessageImpl(
       {required this.context,
       required this.message,
       required this.userId,
@@ -1555,10 +1556,10 @@ class _$CreateAndSendMessage implements CreateAndSendMessage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateAndSendMessage &&
+            other is _$CreateAndSendMessageImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.userId, userId) || other.userId == userId) &&
@@ -1573,9 +1574,10 @@ class _$CreateAndSendMessage implements CreateAndSendMessage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreateAndSendMessageCopyWith<_$CreateAndSendMessage> get copyWith =>
-      __$$CreateAndSendMessageCopyWithImpl<_$CreateAndSendMessage>(
-          this, _$identity);
+  _$$CreateAndSendMessageImplCopyWith<_$CreateAndSendMessageImpl>
+      get copyWith =>
+          __$$CreateAndSendMessageImplCopyWithImpl<_$CreateAndSendMessageImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1704,7 +1706,7 @@ abstract class CreateAndSendMessage implements ChatEvent {
       {required final BuildContext context,
       required final String message,
       required final int userId,
-      required final Function onSuccess}) = _$CreateAndSendMessage;
+      required final Function onSuccess}) = _$CreateAndSendMessageImpl;
 
   @override
   BuildContext get context;
@@ -1713,8 +1715,8 @@ abstract class CreateAndSendMessage implements ChatEvent {
   Function get onSuccess;
   @override
   @JsonKey(ignore: true)
-  _$$CreateAndSendMessageCopyWith<_$CreateAndSendMessage> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateAndSendMessageImplCopyWith<_$CreateAndSendMessageImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1781,10 +1783,11 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
 }
 
 /// @nodoc
-abstract class _$$_ChatStateCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
-  factory _$$_ChatStateCopyWith(
-          _$_ChatState value, $Res Function(_$_ChatState) then) =
-      __$$_ChatStateCopyWithImpl<$Res>;
+abstract class _$$ChatStateImplCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$ChatStateImplCopyWith(
+          _$ChatStateImpl value, $Res Function(_$ChatStateImpl) then) =
+      __$$ChatStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1795,11 +1798,11 @@ abstract class _$$_ChatStateCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ChatStateCopyWithImpl<$Res>
-    extends _$ChatStateCopyWithImpl<$Res, _$_ChatState>
-    implements _$$_ChatStateCopyWith<$Res> {
-  __$$_ChatStateCopyWithImpl(
-      _$_ChatState _value, $Res Function(_$_ChatState) _then)
+class __$$ChatStateImplCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$ChatStateImpl>
+    implements _$$ChatStateImplCopyWith<$Res> {
+  __$$ChatStateImplCopyWithImpl(
+      _$ChatStateImpl _value, $Res Function(_$ChatStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1810,7 +1813,7 @@ class __$$_ChatStateCopyWithImpl<$Res>
     Object? isMessageLoading = null,
     Object? chatModel = freezed,
   }) {
-    return _then(_$_ChatState(
+    return _then(_$ChatStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -1833,8 +1836,8 @@ class __$$_ChatStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ChatState implements _ChatState {
-  const _$_ChatState(
+class _$ChatStateImpl implements _ChatState {
+  const _$ChatStateImpl(
       {this.isLoading = true,
       this.isButtonLoading = false,
       this.isMessageLoading = true,
@@ -1859,10 +1862,10 @@ class _$_ChatState implements _ChatState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChatState &&
+            other is _$ChatStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isButtonLoading, isButtonLoading) ||
@@ -1880,8 +1883,8 @@ class _$_ChatState implements _ChatState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChatStateCopyWith<_$_ChatState> get copyWith =>
-      __$$_ChatStateCopyWithImpl<_$_ChatState>(this, _$identity);
+  _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
+      __$$ChatStateImplCopyWithImpl<_$ChatStateImpl>(this, _$identity);
 }
 
 abstract class _ChatState implements ChatState {
@@ -1889,7 +1892,7 @@ abstract class _ChatState implements ChatState {
       {final bool isLoading,
       final bool isButtonLoading,
       final bool isMessageLoading,
-      final ChatModel? chatModel}) = _$_ChatState;
+      final ChatModel? chatModel}) = _$ChatStateImpl;
 
   @override
   bool get isLoading;
@@ -1901,6 +1904,6 @@ abstract class _ChatState implements ChatState {
   ChatModel? get chatModel;
   @override
   @JsonKey(ignore: true)
-  _$$_ChatStateCopyWith<_$_ChatState> get copyWith =>
+  _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

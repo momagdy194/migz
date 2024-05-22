@@ -12,7 +12,7 @@ part of 'wallet_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$WalletEvent {
@@ -123,21 +123,21 @@ class _$WalletEventCopyWithImpl<$Res, $Val extends WalletEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchTransactionsCopyWith<$Res> {
-  factory _$$FetchTransactionsCopyWith(
-          _$FetchTransactions value, $Res Function(_$FetchTransactions) then) =
-      __$$FetchTransactionsCopyWithImpl<$Res>;
+abstract class _$$FetchTransactionsImplCopyWith<$Res> {
+  factory _$$FetchTransactionsImplCopyWith(_$FetchTransactionsImpl value,
+          $Res Function(_$FetchTransactionsImpl) then) =
+      __$$FetchTransactionsImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchTransactionsCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res, _$FetchTransactions>
-    implements _$$FetchTransactionsCopyWith<$Res> {
-  __$$FetchTransactionsCopyWithImpl(
-      _$FetchTransactions _value, $Res Function(_$FetchTransactions) _then)
+class __$$FetchTransactionsImplCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$FetchTransactionsImpl>
+    implements _$$FetchTransactionsImplCopyWith<$Res> {
+  __$$FetchTransactionsImplCopyWithImpl(_$FetchTransactionsImpl _value,
+      $Res Function(_$FetchTransactionsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -147,7 +147,7 @@ class __$$FetchTransactionsCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchTransactions(
+    return _then(_$FetchTransactionsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -166,8 +166,8 @@ class __$$FetchTransactionsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchTransactions implements FetchTransactions {
-  const _$FetchTransactions(
+class _$FetchTransactionsImpl implements FetchTransactions {
+  const _$FetchTransactionsImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -183,10 +183,10 @@ class _$FetchTransactions implements FetchTransactions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchTransactions &&
+            other is _$FetchTransactionsImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -200,8 +200,9 @@ class _$FetchTransactions implements FetchTransactions {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchTransactionsCopyWith<_$FetchTransactions> get copyWith =>
-      __$$FetchTransactionsCopyWithImpl<_$FetchTransactions>(this, _$identity);
+  _$$FetchTransactionsImplCopyWith<_$FetchTransactionsImpl> get copyWith =>
+      __$$FetchTransactionsImplCopyWithImpl<_$FetchTransactionsImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -318,31 +319,31 @@ abstract class FetchTransactions implements WalletEvent {
   const factory FetchTransactions(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchTransactions;
+      final RefreshController? controller}) = _$FetchTransactionsImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchTransactionsCopyWith<_$FetchTransactions> get copyWith =>
+  _$$FetchTransactionsImplCopyWith<_$FetchTransactionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchPaymentsCopyWith<$Res> {
-  factory _$$FetchPaymentsCopyWith(
-          _$FetchPayments value, $Res Function(_$FetchPayments) then) =
-      __$$FetchPaymentsCopyWithImpl<$Res>;
+abstract class _$$FetchPaymentsImplCopyWith<$Res> {
+  factory _$$FetchPaymentsImplCopyWith(
+          _$FetchPaymentsImpl value, $Res Function(_$FetchPaymentsImpl) then) =
+      __$$FetchPaymentsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$FetchPaymentsCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res, _$FetchPayments>
-    implements _$$FetchPaymentsCopyWith<$Res> {
-  __$$FetchPaymentsCopyWithImpl(
-      _$FetchPayments _value, $Res Function(_$FetchPayments) _then)
+class __$$FetchPaymentsImplCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$FetchPaymentsImpl>
+    implements _$$FetchPaymentsImplCopyWith<$Res> {
+  __$$FetchPaymentsImplCopyWithImpl(
+      _$FetchPaymentsImpl _value, $Res Function(_$FetchPaymentsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -350,7 +351,7 @@ class __$$FetchPaymentsCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$FetchPayments(
+    return _then(_$FetchPaymentsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -361,8 +362,8 @@ class __$$FetchPaymentsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchPayments implements FetchPayments {
-  const _$FetchPayments({required this.context});
+class _$FetchPaymentsImpl implements FetchPayments {
+  const _$FetchPaymentsImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -373,10 +374,10 @@ class _$FetchPayments implements FetchPayments {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchPayments &&
+            other is _$FetchPaymentsImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -386,8 +387,8 @@ class _$FetchPayments implements FetchPayments {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchPaymentsCopyWith<_$FetchPayments> get copyWith =>
-      __$$FetchPaymentsCopyWithImpl<_$FetchPayments>(this, _$identity);
+  _$$FetchPaymentsImplCopyWith<_$FetchPaymentsImpl> get copyWith =>
+      __$$FetchPaymentsImplCopyWithImpl<_$FetchPaymentsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,29 +503,29 @@ class _$FetchPayments implements FetchPayments {
 
 abstract class FetchPayments implements WalletEvent {
   const factory FetchPayments({required final BuildContext context}) =
-      _$FetchPayments;
+      _$FetchPaymentsImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$FetchPaymentsCopyWith<_$FetchPayments> get copyWith =>
+  _$$FetchPaymentsImplCopyWith<_$FetchPaymentsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectPaymentCopyWith<$Res> {
-  factory _$$SelectPaymentCopyWith(
-          _$SelectPayment value, $Res Function(_$SelectPayment) then) =
-      __$$SelectPaymentCopyWithImpl<$Res>;
+abstract class _$$SelectPaymentImplCopyWith<$Res> {
+  factory _$$SelectPaymentImplCopyWith(
+          _$SelectPaymentImpl value, $Res Function(_$SelectPaymentImpl) then) =
+      __$$SelectPaymentImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$SelectPaymentCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res, _$SelectPayment>
-    implements _$$SelectPaymentCopyWith<$Res> {
-  __$$SelectPaymentCopyWithImpl(
-      _$SelectPayment _value, $Res Function(_$SelectPayment) _then)
+class __$$SelectPaymentImplCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$SelectPaymentImpl>
+    implements _$$SelectPaymentImplCopyWith<$Res> {
+  __$$SelectPaymentImplCopyWithImpl(
+      _$SelectPaymentImpl _value, $Res Function(_$SelectPaymentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -532,7 +533,7 @@ class __$$SelectPaymentCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$SelectPayment(
+    return _then(_$SelectPaymentImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -543,8 +544,8 @@ class __$$SelectPaymentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectPayment implements SelectPayment {
-  const _$SelectPayment({required this.index});
+class _$SelectPaymentImpl implements SelectPayment {
+  const _$SelectPaymentImpl({required this.index});
 
   @override
   final int index;
@@ -555,10 +556,10 @@ class _$SelectPayment implements SelectPayment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectPayment &&
+            other is _$SelectPaymentImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -568,8 +569,8 @@ class _$SelectPayment implements SelectPayment {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectPaymentCopyWith<_$SelectPayment> get copyWith =>
-      __$$SelectPaymentCopyWithImpl<_$SelectPayment>(this, _$identity);
+  _$$SelectPaymentImplCopyWith<_$SelectPaymentImpl> get copyWith =>
+      __$$SelectPaymentImplCopyWithImpl<_$SelectPaymentImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -683,19 +684,19 @@ class _$SelectPayment implements SelectPayment {
 }
 
 abstract class SelectPayment implements WalletEvent {
-  const factory SelectPayment({required final int index}) = _$SelectPayment;
+  const factory SelectPayment({required final int index}) = _$SelectPaymentImpl;
 
   int get index;
   @JsonKey(ignore: true)
-  _$$SelectPaymentCopyWith<_$SelectPayment> get copyWith =>
+  _$$SelectPaymentImplCopyWith<_$SelectPaymentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchUserCopyWith<$Res> {
-  factory _$$SearchUserCopyWith(
-          _$SearchUser value, $Res Function(_$SearchUser) then) =
-      __$$SearchUserCopyWithImpl<$Res>;
+abstract class _$$SearchUserImplCopyWith<$Res> {
+  factory _$$SearchUserImplCopyWith(
+          _$SearchUserImpl value, $Res Function(_$SearchUserImpl) then) =
+      __$$SearchUserImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -705,11 +706,11 @@ abstract class _$$SearchUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SearchUserCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res, _$SearchUser>
-    implements _$$SearchUserCopyWith<$Res> {
-  __$$SearchUserCopyWithImpl(
-      _$SearchUser _value, $Res Function(_$SearchUser) _then)
+class __$$SearchUserImplCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$SearchUserImpl>
+    implements _$$SearchUserImplCopyWith<$Res> {
+  __$$SearchUserImplCopyWithImpl(
+      _$SearchUserImpl _value, $Res Function(_$SearchUserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -720,7 +721,7 @@ class __$$SearchUserCopyWithImpl<$Res>
     Object? controller = freezed,
     Object? search = null,
   }) {
-    return _then(_$SearchUser(
+    return _then(_$SearchUserImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -743,8 +744,8 @@ class __$$SearchUserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchUser implements SearchUser {
-  const _$SearchUser(
+class _$SearchUserImpl implements SearchUser {
+  const _$SearchUserImpl(
       {required this.context,
       this.isRefresh,
       this.controller,
@@ -765,10 +766,10 @@ class _$SearchUser implements SearchUser {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchUser &&
+            other is _$SearchUserImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -784,8 +785,8 @@ class _$SearchUser implements SearchUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchUserCopyWith<_$SearchUser> get copyWith =>
-      __$$SearchUserCopyWithImpl<_$SearchUser>(this, _$identity);
+  _$$SearchUserImplCopyWith<_$SearchUserImpl> get copyWith =>
+      __$$SearchUserImplCopyWithImpl<_$SearchUserImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -903,22 +904,22 @@ abstract class SearchUser implements WalletEvent {
       {required final BuildContext context,
       final bool? isRefresh,
       final RefreshController? controller,
-      required final String search}) = _$SearchUser;
+      required final String search}) = _$SearchUserImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   String get search;
   @JsonKey(ignore: true)
-  _$$SearchUserCopyWith<_$SearchUser> get copyWith =>
+  _$$SearchUserImplCopyWith<_$SearchUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FillWalletCopyWith<$Res> {
-  factory _$$FillWalletCopyWith(
-          _$FillWallet value, $Res Function(_$FillWallet) then) =
-      __$$FillWalletCopyWithImpl<$Res>;
+abstract class _$$FillWalletImplCopyWith<$Res> {
+  factory _$$FillWalletImplCopyWith(
+          _$FillWalletImpl value, $Res Function(_$FillWalletImpl) then) =
+      __$$FillWalletImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -928,11 +929,11 @@ abstract class _$$FillWalletCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FillWalletCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res, _$FillWallet>
-    implements _$$FillWalletCopyWith<$Res> {
-  __$$FillWalletCopyWithImpl(
-      _$FillWallet _value, $Res Function(_$FillWallet) _then)
+class __$$FillWalletImplCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$FillWalletImpl>
+    implements _$$FillWalletImplCopyWith<$Res> {
+  __$$FillWalletImplCopyWithImpl(
+      _$FillWalletImpl _value, $Res Function(_$FillWalletImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -943,7 +944,7 @@ class __$$FillWalletCopyWithImpl<$Res>
     Object? onSuccess = null,
     Object? price = null,
   }) {
-    return _then(_$FillWallet(
+    return _then(_$FillWalletImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -966,8 +967,8 @@ class __$$FillWalletCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FillWallet implements FillWallet {
-  const _$FillWallet(
+class _$FillWalletImpl implements FillWallet {
+  const _$FillWalletImpl(
       {required this.context,
       required this.walletId,
       required this.onSuccess,
@@ -988,10 +989,10 @@ class _$FillWallet implements FillWallet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FillWallet &&
+            other is _$FillWalletImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.walletId, walletId) ||
                 other.walletId == walletId) &&
@@ -1007,8 +1008,8 @@ class _$FillWallet implements FillWallet {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FillWalletCopyWith<_$FillWallet> get copyWith =>
-      __$$FillWalletCopyWithImpl<_$FillWallet>(this, _$identity);
+  _$$FillWalletImplCopyWith<_$FillWalletImpl> get copyWith =>
+      __$$FillWalletImplCopyWithImpl<_$FillWalletImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1126,22 +1127,22 @@ abstract class FillWallet implements WalletEvent {
       {required final BuildContext context,
       required final int walletId,
       required final VoidCallback onSuccess,
-      required final String price}) = _$FillWallet;
+      required final String price}) = _$FillWalletImpl;
 
   BuildContext get context;
   int get walletId;
   VoidCallback get onSuccess;
   String get price;
   @JsonKey(ignore: true)
-  _$$FillWalletCopyWith<_$FillWallet> get copyWith =>
+  _$$FillWalletImplCopyWith<_$FillWalletImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SendWalletCopyWith<$Res> {
-  factory _$$SendWalletCopyWith(
-          _$SendWallet value, $Res Function(_$SendWallet) then) =
-      __$$SendWalletCopyWithImpl<$Res>;
+abstract class _$$SendWalletImplCopyWith<$Res> {
+  factory _$$SendWalletImplCopyWith(
+          _$SendWalletImpl value, $Res Function(_$SendWalletImpl) then) =
+      __$$SendWalletImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -1151,11 +1152,11 @@ abstract class _$$SendWalletCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SendWalletCopyWithImpl<$Res>
-    extends _$WalletEventCopyWithImpl<$Res, _$SendWallet>
-    implements _$$SendWalletCopyWith<$Res> {
-  __$$SendWalletCopyWithImpl(
-      _$SendWallet _value, $Res Function(_$SendWallet) _then)
+class __$$SendWalletImplCopyWithImpl<$Res>
+    extends _$WalletEventCopyWithImpl<$Res, _$SendWalletImpl>
+    implements _$$SendWalletImplCopyWith<$Res> {
+  __$$SendWalletImplCopyWithImpl(
+      _$SendWalletImpl _value, $Res Function(_$SendWalletImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1166,7 +1167,7 @@ class __$$SendWalletCopyWithImpl<$Res>
     Object? onSuccess = null,
     Object? uuid = null,
   }) {
-    return _then(_$SendWallet(
+    return _then(_$SendWalletImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1189,8 +1190,8 @@ class __$$SendWalletCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SendWallet implements SendWallet {
-  const _$SendWallet(
+class _$SendWalletImpl implements SendWallet {
+  const _$SendWalletImpl(
       {required this.context,
       required this.price,
       required this.onSuccess,
@@ -1211,10 +1212,10 @@ class _$SendWallet implements SendWallet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendWallet &&
+            other is _$SendWalletImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.onSuccess, onSuccess) ||
@@ -1228,8 +1229,8 @@ class _$SendWallet implements SendWallet {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SendWalletCopyWith<_$SendWallet> get copyWith =>
-      __$$SendWalletCopyWithImpl<_$SendWallet>(this, _$identity);
+  _$$SendWalletImplCopyWith<_$SendWalletImpl> get copyWith =>
+      __$$SendWalletImplCopyWithImpl<_$SendWalletImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1347,14 +1348,14 @@ abstract class SendWallet implements WalletEvent {
       {required final BuildContext context,
       required final String price,
       required final VoidCallback onSuccess,
-      required final String uuid}) = _$SendWallet;
+      required final String uuid}) = _$SendWalletImpl;
 
   BuildContext get context;
   String get price;
   VoidCallback get onSuccess;
   String get uuid;
   @JsonKey(ignore: true)
-  _$$SendWalletCopyWith<_$SendWallet> get copyWith =>
+  _$$SendWalletImplCopyWith<_$SendWalletImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1444,11 +1445,11 @@ class _$WalletStateCopyWithImpl<$Res, $Val extends WalletState>
 }
 
 /// @nodoc
-abstract class _$$_WalletStateCopyWith<$Res>
+abstract class _$$WalletStateImplCopyWith<$Res>
     implements $WalletStateCopyWith<$Res> {
-  factory _$$_WalletStateCopyWith(
-          _$_WalletState value, $Res Function(_$_WalletState) then) =
-      __$$_WalletStateCopyWithImpl<$Res>;
+  factory _$$WalletStateImplCopyWith(
+          _$WalletStateImpl value, $Res Function(_$WalletStateImpl) then) =
+      __$$WalletStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1462,11 +1463,11 @@ abstract class _$$_WalletStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_WalletStateCopyWithImpl<$Res>
-    extends _$WalletStateCopyWithImpl<$Res, _$_WalletState>
-    implements _$$_WalletStateCopyWith<$Res> {
-  __$$_WalletStateCopyWithImpl(
-      _$_WalletState _value, $Res Function(_$_WalletState) _then)
+class __$$WalletStateImplCopyWithImpl<$Res>
+    extends _$WalletStateCopyWithImpl<$Res, _$WalletStateImpl>
+    implements _$$WalletStateImplCopyWith<$Res> {
+  __$$WalletStateImplCopyWithImpl(
+      _$WalletStateImpl _value, $Res Function(_$WalletStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1480,7 +1481,7 @@ class __$$_WalletStateCopyWithImpl<$Res>
     Object? list = freezed,
     Object? listOfUser = freezed,
   }) {
-    return _then(_$_WalletState(
+    return _then(_$WalletStateImpl(
       isTransactionLoading: null == isTransactionLoading
           ? _value.isTransactionLoading
           : isTransactionLoading // ignore: cast_nullable_to_non_nullable
@@ -1515,8 +1516,8 @@ class __$$_WalletStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_WalletState implements _WalletState {
-  const _$_WalletState(
+class _$WalletStateImpl implements _WalletState {
+  const _$WalletStateImpl(
       {this.isTransactionLoading = false,
       this.isButtonLoading = false,
       this.isSearchingLoading = false,
@@ -1577,10 +1578,10 @@ class _$_WalletState implements _WalletState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WalletState &&
+            other is _$WalletStateImpl &&
             (identical(other.isTransactionLoading, isTransactionLoading) ||
                 other.isTransactionLoading == isTransactionLoading) &&
             (identical(other.isButtonLoading, isButtonLoading) ||
@@ -1610,8 +1611,8 @@ class _$_WalletState implements _WalletState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WalletStateCopyWith<_$_WalletState> get copyWith =>
-      __$$_WalletStateCopyWithImpl<_$_WalletState>(this, _$identity);
+  _$$WalletStateImplCopyWith<_$WalletStateImpl> get copyWith =>
+      __$$WalletStateImplCopyWithImpl<_$WalletStateImpl>(this, _$identity);
 }
 
 abstract class _WalletState implements WalletState {
@@ -1622,7 +1623,7 @@ abstract class _WalletState implements WalletState {
       final int selectPayment,
       final List<TransactionModel> transactions,
       final List<PaymentData>? list,
-      final List<UserModel>? listOfUser}) = _$_WalletState;
+      final List<UserModel>? listOfUser}) = _$WalletStateImpl;
 
   @override
   bool get isTransactionLoading;
@@ -1640,6 +1641,6 @@ abstract class _WalletState implements WalletState {
   List<UserModel>? get listOfUser;
   @override
   @JsonKey(ignore: true)
-  _$$_WalletStateCopyWith<_$_WalletState> get copyWith =>
+  _$$WalletStateImplCopyWith<_$WalletStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

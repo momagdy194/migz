@@ -12,7 +12,7 @@ part of 'banner_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BannerEvent {
@@ -129,21 +129,21 @@ class _$BannerEventCopyWithImpl<$Res, $Val extends BannerEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchBannerCopyWith<$Res> {
-  factory _$$FetchBannerCopyWith(
-          _$FetchBanner value, $Res Function(_$FetchBanner) then) =
-      __$$FetchBannerCopyWithImpl<$Res>;
+abstract class _$$FetchBannerImplCopyWith<$Res> {
+  factory _$$FetchBannerImplCopyWith(
+          _$FetchBannerImpl value, $Res Function(_$FetchBannerImpl) then) =
+      __$$FetchBannerImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchBannerCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$FetchBanner>
-    implements _$$FetchBannerCopyWith<$Res> {
-  __$$FetchBannerCopyWithImpl(
-      _$FetchBanner _value, $Res Function(_$FetchBanner) _then)
+class __$$FetchBannerImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchBannerImpl>
+    implements _$$FetchBannerImplCopyWith<$Res> {
+  __$$FetchBannerImplCopyWithImpl(
+      _$FetchBannerImpl _value, $Res Function(_$FetchBannerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,7 +153,7 @@ class __$$FetchBannerCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchBanner(
+    return _then(_$FetchBannerImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -172,8 +172,9 @@ class __$$FetchBannerCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchBanner implements FetchBanner {
-  const _$FetchBanner({required this.context, this.isRefresh, this.controller});
+class _$FetchBannerImpl implements FetchBanner {
+  const _$FetchBannerImpl(
+      {required this.context, this.isRefresh, this.controller});
 
   @override
   final BuildContext context;
@@ -188,10 +189,10 @@ class _$FetchBanner implements FetchBanner {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchBanner &&
+            other is _$FetchBannerImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -205,8 +206,8 @@ class _$FetchBanner implements FetchBanner {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchBannerCopyWith<_$FetchBanner> get copyWith =>
-      __$$FetchBannerCopyWithImpl<_$FetchBanner>(this, _$identity);
+  _$$FetchBannerImplCopyWith<_$FetchBannerImpl> get copyWith =>
+      __$$FetchBannerImplCopyWithImpl<_$FetchBannerImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -329,32 +330,32 @@ abstract class FetchBanner implements BannerEvent {
   const factory FetchBanner(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchBanner;
+      final RefreshController? controller}) = _$FetchBannerImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchBannerCopyWith<_$FetchBanner> get copyWith =>
+  _$$FetchBannerImplCopyWith<_$FetchBannerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchAdsBannerCopyWith<$Res> {
-  factory _$$FetchAdsBannerCopyWith(
-          _$FetchAdsBanner value, $Res Function(_$FetchAdsBanner) then) =
-      __$$FetchAdsBannerCopyWithImpl<$Res>;
+abstract class _$$FetchAdsBannerImplCopyWith<$Res> {
+  factory _$$FetchAdsBannerImplCopyWith(_$FetchAdsBannerImpl value,
+          $Res Function(_$FetchAdsBannerImpl) then) =
+      __$$FetchAdsBannerImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchAdsBannerCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$FetchAdsBanner>
-    implements _$$FetchAdsBannerCopyWith<$Res> {
-  __$$FetchAdsBannerCopyWithImpl(
-      _$FetchAdsBanner _value, $Res Function(_$FetchAdsBanner) _then)
+class __$$FetchAdsBannerImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchAdsBannerImpl>
+    implements _$$FetchAdsBannerImplCopyWith<$Res> {
+  __$$FetchAdsBannerImplCopyWithImpl(
+      _$FetchAdsBannerImpl _value, $Res Function(_$FetchAdsBannerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -364,7 +365,7 @@ class __$$FetchAdsBannerCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchAdsBanner(
+    return _then(_$FetchAdsBannerImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -383,8 +384,8 @@ class __$$FetchAdsBannerCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchAdsBanner implements FetchAdsBanner {
-  const _$FetchAdsBanner(
+class _$FetchAdsBannerImpl implements FetchAdsBanner {
+  const _$FetchAdsBannerImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -400,10 +401,10 @@ class _$FetchAdsBanner implements FetchAdsBanner {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAdsBanner &&
+            other is _$FetchAdsBannerImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -417,8 +418,9 @@ class _$FetchAdsBanner implements FetchAdsBanner {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchAdsBannerCopyWith<_$FetchAdsBanner> get copyWith =>
-      __$$FetchAdsBannerCopyWithImpl<_$FetchAdsBanner>(this, _$identity);
+  _$$FetchAdsBannerImplCopyWith<_$FetchAdsBannerImpl> get copyWith =>
+      __$$FetchAdsBannerImplCopyWithImpl<_$FetchAdsBannerImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -541,21 +543,21 @@ abstract class FetchAdsBanner implements BannerEvent {
   const factory FetchAdsBanner(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchAdsBanner;
+      final RefreshController? controller}) = _$FetchAdsBannerImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchAdsBannerCopyWith<_$FetchAdsBanner> get copyWith =>
+  _$$FetchAdsBannerImplCopyWith<_$FetchAdsBannerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchLooksCopyWith<$Res> {
-  factory _$$FetchLooksCopyWith(
-          _$FetchLooks value, $Res Function(_$FetchLooks) then) =
-      __$$FetchLooksCopyWithImpl<$Res>;
+abstract class _$$FetchLooksImplCopyWith<$Res> {
+  factory _$$FetchLooksImplCopyWith(
+          _$FetchLooksImpl value, $Res Function(_$FetchLooksImpl) then) =
+      __$$FetchLooksImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -565,11 +567,11 @@ abstract class _$$FetchLooksCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchLooksCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$FetchLooks>
-    implements _$$FetchLooksCopyWith<$Res> {
-  __$$FetchLooksCopyWithImpl(
-      _$FetchLooks _value, $Res Function(_$FetchLooks) _then)
+class __$$FetchLooksImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchLooksImpl>
+    implements _$$FetchLooksImplCopyWith<$Res> {
+  __$$FetchLooksImplCopyWithImpl(
+      _$FetchLooksImpl _value, $Res Function(_$FetchLooksImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -580,7 +582,7 @@ class __$$FetchLooksCopyWithImpl<$Res>
     Object? shopId = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchLooks(
+    return _then(_$FetchLooksImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -603,8 +605,8 @@ class __$$FetchLooksCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchLooks implements FetchLooks {
-  const _$FetchLooks(
+class _$FetchLooksImpl implements FetchLooks {
+  const _$FetchLooksImpl(
       {required this.context, this.isRefresh, this.shopId, this.controller});
 
   @override
@@ -622,10 +624,10 @@ class _$FetchLooks implements FetchLooks {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchLooks &&
+            other is _$FetchLooksImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -641,8 +643,8 @@ class _$FetchLooks implements FetchLooks {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchLooksCopyWith<_$FetchLooks> get copyWith =>
-      __$$FetchLooksCopyWithImpl<_$FetchLooks>(this, _$identity);
+  _$$FetchLooksImplCopyWith<_$FetchLooksImpl> get copyWith =>
+      __$$FetchLooksImplCopyWithImpl<_$FetchLooksImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -766,32 +768,32 @@ abstract class FetchLooks implements BannerEvent {
       {required final BuildContext context,
       final bool? isRefresh,
       final int? shopId,
-      final RefreshController? controller}) = _$FetchLooks;
+      final RefreshController? controller}) = _$FetchLooksImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   int? get shopId;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchLooksCopyWith<_$FetchLooks> get copyWith =>
+  _$$FetchLooksImplCopyWith<_$FetchLooksImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchProductCopyWith<$Res> {
-  factory _$$FetchProductCopyWith(
-          _$FetchProduct value, $Res Function(_$FetchProduct) then) =
-      __$$FetchProductCopyWithImpl<$Res>;
+abstract class _$$FetchProductImplCopyWith<$Res> {
+  factory _$$FetchProductImplCopyWith(
+          _$FetchProductImpl value, $Res Function(_$FetchProductImpl) then) =
+      __$$FetchProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, int id});
 }
 
 /// @nodoc
-class __$$FetchProductCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$FetchProduct>
-    implements _$$FetchProductCopyWith<$Res> {
-  __$$FetchProductCopyWithImpl(
-      _$FetchProduct _value, $Res Function(_$FetchProduct) _then)
+class __$$FetchProductImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchProductImpl>
+    implements _$$FetchProductImplCopyWith<$Res> {
+  __$$FetchProductImplCopyWithImpl(
+      _$FetchProductImpl _value, $Res Function(_$FetchProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -800,7 +802,7 @@ class __$$FetchProductCopyWithImpl<$Res>
     Object? context = null,
     Object? id = null,
   }) {
-    return _then(_$FetchProduct(
+    return _then(_$FetchProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -815,8 +817,8 @@ class __$$FetchProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchProduct implements FetchProduct {
-  const _$FetchProduct({required this.context, required this.id});
+class _$FetchProductImpl implements FetchProduct {
+  const _$FetchProductImpl({required this.context, required this.id});
 
   @override
   final BuildContext context;
@@ -829,10 +831,10 @@ class _$FetchProduct implements FetchProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchProduct &&
+            other is _$FetchProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id));
   }
@@ -843,8 +845,8 @@ class _$FetchProduct implements FetchProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchProductCopyWith<_$FetchProduct> get copyWith =>
-      __$$FetchProductCopyWithImpl<_$FetchProduct>(this, _$identity);
+  _$$FetchProductImplCopyWith<_$FetchProductImpl> get copyWith =>
+      __$$FetchProductImplCopyWithImpl<_$FetchProductImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -966,35 +968,35 @@ class _$FetchProduct implements FetchProduct {
 abstract class FetchProduct implements BannerEvent {
   const factory FetchProduct(
       {required final BuildContext context,
-      required final int id}) = _$FetchProduct;
+      required final int id}) = _$FetchProductImpl;
 
   BuildContext get context;
   int get id;
   @JsonKey(ignore: true)
-  _$$FetchProductCopyWith<_$FetchProduct> get copyWith =>
+  _$$FetchProductImplCopyWith<_$FetchProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateProductCopyWith<$Res> {
-  factory _$$UpdateProductCopyWith(
-          _$UpdateProduct value, $Res Function(_$UpdateProduct) then) =
-      __$$UpdateProductCopyWithImpl<$Res>;
+abstract class _$$UpdateProductImplCopyWith<$Res> {
+  factory _$$UpdateProductImplCopyWith(
+          _$UpdateProductImpl value, $Res Function(_$UpdateProductImpl) then) =
+      __$$UpdateProductImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateProductCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$UpdateProduct>
-    implements _$$UpdateProductCopyWith<$Res> {
-  __$$UpdateProductCopyWithImpl(
-      _$UpdateProduct _value, $Res Function(_$UpdateProduct) _then)
+class __$$UpdateProductImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$UpdateProductImpl>
+    implements _$$UpdateProductImplCopyWith<$Res> {
+  __$$UpdateProductImplCopyWithImpl(
+      _$UpdateProductImpl _value, $Res Function(_$UpdateProductImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UpdateProduct implements UpdateProduct {
-  const _$UpdateProduct();
+class _$UpdateProductImpl implements UpdateProduct {
+  const _$UpdateProductImpl();
 
   @override
   String toString() {
@@ -1002,9 +1004,9 @@ class _$UpdateProduct implements UpdateProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateProduct);
+        (other.runtimeType == runtimeType && other is _$UpdateProductImpl);
   }
 
   @override
@@ -1128,24 +1130,24 @@ class _$UpdateProduct implements UpdateProduct {
 }
 
 abstract class UpdateProduct implements BannerEvent {
-  const factory UpdateProduct() = _$UpdateProduct;
+  const factory UpdateProduct() = _$UpdateProductImpl;
 }
 
 /// @nodoc
-abstract class _$$FetchAdsProductCopyWith<$Res> {
-  factory _$$FetchAdsProductCopyWith(
-          _$FetchAdsProduct value, $Res Function(_$FetchAdsProduct) then) =
-      __$$FetchAdsProductCopyWithImpl<$Res>;
+abstract class _$$FetchAdsProductImplCopyWith<$Res> {
+  factory _$$FetchAdsProductImplCopyWith(_$FetchAdsProductImpl value,
+          $Res Function(_$FetchAdsProductImpl) then) =
+      __$$FetchAdsProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, int id});
 }
 
 /// @nodoc
-class __$$FetchAdsProductCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$FetchAdsProduct>
-    implements _$$FetchAdsProductCopyWith<$Res> {
-  __$$FetchAdsProductCopyWithImpl(
-      _$FetchAdsProduct _value, $Res Function(_$FetchAdsProduct) _then)
+class __$$FetchAdsProductImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchAdsProductImpl>
+    implements _$$FetchAdsProductImplCopyWith<$Res> {
+  __$$FetchAdsProductImplCopyWithImpl(
+      _$FetchAdsProductImpl _value, $Res Function(_$FetchAdsProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1154,7 +1156,7 @@ class __$$FetchAdsProductCopyWithImpl<$Res>
     Object? context = null,
     Object? id = null,
   }) {
-    return _then(_$FetchAdsProduct(
+    return _then(_$FetchAdsProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1169,8 +1171,8 @@ class __$$FetchAdsProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchAdsProduct implements FetchAdsProduct {
-  const _$FetchAdsProduct({required this.context, required this.id});
+class _$FetchAdsProductImpl implements FetchAdsProduct {
+  const _$FetchAdsProductImpl({required this.context, required this.id});
 
   @override
   final BuildContext context;
@@ -1183,10 +1185,10 @@ class _$FetchAdsProduct implements FetchAdsProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAdsProduct &&
+            other is _$FetchAdsProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id));
   }
@@ -1197,8 +1199,9 @@ class _$FetchAdsProduct implements FetchAdsProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchAdsProductCopyWith<_$FetchAdsProduct> get copyWith =>
-      __$$FetchAdsProductCopyWithImpl<_$FetchAdsProduct>(this, _$identity);
+  _$$FetchAdsProductImplCopyWith<_$FetchAdsProductImpl> get copyWith =>
+      __$$FetchAdsProductImplCopyWithImpl<_$FetchAdsProductImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1320,20 +1323,20 @@ class _$FetchAdsProduct implements FetchAdsProduct {
 abstract class FetchAdsProduct implements BannerEvent {
   const factory FetchAdsProduct(
       {required final BuildContext context,
-      required final int id}) = _$FetchAdsProduct;
+      required final int id}) = _$FetchAdsProductImpl;
 
   BuildContext get context;
   int get id;
   @JsonKey(ignore: true)
-  _$$FetchAdsProductCopyWith<_$FetchAdsProduct> get copyWith =>
+  _$$FetchAdsProductImplCopyWith<_$FetchAdsProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchAdsListProductCopyWith<$Res> {
-  factory _$$FetchAdsListProductCopyWith(_$FetchAdsListProduct value,
-          $Res Function(_$FetchAdsListProduct) then) =
-      __$$FetchAdsListProductCopyWithImpl<$Res>;
+abstract class _$$FetchAdsListProductImplCopyWith<$Res> {
+  factory _$$FetchAdsListProductImplCopyWith(_$FetchAdsListProductImpl value,
+          $Res Function(_$FetchAdsListProductImpl) then) =
+      __$$FetchAdsListProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -1343,11 +1346,11 @@ abstract class _$$FetchAdsListProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchAdsListProductCopyWithImpl<$Res>
-    extends _$BannerEventCopyWithImpl<$Res, _$FetchAdsListProduct>
-    implements _$$FetchAdsListProductCopyWith<$Res> {
-  __$$FetchAdsListProductCopyWithImpl(
-      _$FetchAdsListProduct _value, $Res Function(_$FetchAdsListProduct) _then)
+class __$$FetchAdsListProductImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchAdsListProductImpl>
+    implements _$$FetchAdsListProductImplCopyWith<$Res> {
+  __$$FetchAdsListProductImplCopyWithImpl(_$FetchAdsListProductImpl _value,
+      $Res Function(_$FetchAdsListProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1358,7 +1361,7 @@ class __$$FetchAdsListProductCopyWithImpl<$Res>
     Object? shopId = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchAdsListProduct(
+    return _then(_$FetchAdsListProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1381,8 +1384,8 @@ class __$$FetchAdsListProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchAdsListProduct implements FetchAdsListProduct {
-  const _$FetchAdsListProduct(
+class _$FetchAdsListProductImpl implements FetchAdsListProduct {
+  const _$FetchAdsListProductImpl(
       {required this.context, this.isRefresh, this.shopId, this.controller});
 
   @override
@@ -1400,10 +1403,10 @@ class _$FetchAdsListProduct implements FetchAdsListProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAdsListProduct &&
+            other is _$FetchAdsListProductImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -1419,8 +1422,8 @@ class _$FetchAdsListProduct implements FetchAdsListProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchAdsListProductCopyWith<_$FetchAdsListProduct> get copyWith =>
-      __$$FetchAdsListProductCopyWithImpl<_$FetchAdsListProduct>(
+  _$$FetchAdsListProductImplCopyWith<_$FetchAdsListProductImpl> get copyWith =>
+      __$$FetchAdsListProductImplCopyWithImpl<_$FetchAdsListProductImpl>(
           this, _$identity);
 
   @override
@@ -1545,14 +1548,14 @@ abstract class FetchAdsListProduct implements BannerEvent {
       {required final BuildContext context,
       final bool? isRefresh,
       final int? shopId,
-      final RefreshController? controller}) = _$FetchAdsListProduct;
+      final RefreshController? controller}) = _$FetchAdsListProductImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   int? get shopId;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchAdsListProductCopyWith<_$FetchAdsListProduct> get copyWith =>
+  _$$FetchAdsListProductImplCopyWith<_$FetchAdsListProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1649,11 +1652,11 @@ class _$BannerStateCopyWithImpl<$Res, $Val extends BannerState>
 }
 
 /// @nodoc
-abstract class _$$_BannerStateCopyWith<$Res>
+abstract class _$$BannerStateImplCopyWith<$Res>
     implements $BannerStateCopyWith<$Res> {
-  factory _$$_BannerStateCopyWith(
-          _$_BannerState value, $Res Function(_$_BannerState) then) =
-      __$$_BannerStateCopyWithImpl<$Res>;
+  factory _$$BannerStateImplCopyWith(
+          _$BannerStateImpl value, $Res Function(_$BannerStateImpl) then) =
+      __$$BannerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1668,11 +1671,11 @@ abstract class _$$_BannerStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BannerStateCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$_BannerState>
-    implements _$$_BannerStateCopyWith<$Res> {
-  __$$_BannerStateCopyWithImpl(
-      _$_BannerState _value, $Res Function(_$_BannerState) _then)
+class __$$BannerStateImplCopyWithImpl<$Res>
+    extends _$BannerStateCopyWithImpl<$Res, _$BannerStateImpl>
+    implements _$$BannerStateImplCopyWith<$Res> {
+  __$$BannerStateImplCopyWithImpl(
+      _$BannerStateImpl _value, $Res Function(_$BannerStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1687,7 +1690,7 @@ class __$$_BannerStateCopyWithImpl<$Res>
     Object? isLoadingBanner = null,
     Object? isLoadingProduct = null,
   }) {
-    return _then(_$_BannerState(
+    return _then(_$BannerStateImpl(
       banners: null == banners
           ? _value._banners
           : banners // ignore: cast_nullable_to_non_nullable
@@ -1726,8 +1729,8 @@ class __$$_BannerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BannerState implements _BannerState {
-  const _$_BannerState(
+class _$BannerStateImpl implements _BannerState {
+  const _$BannerStateImpl(
       {final List<BannerData> banners = const [],
       final List<BannerData> adsBanners = const [],
       final List<BannerData> looks = const [],
@@ -1810,10 +1813,10 @@ class _$_BannerState implements _BannerState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BannerState &&
+            other is _$BannerStateImpl &&
             const DeepCollectionEquality().equals(other._banners, _banners) &&
             const DeepCollectionEquality()
                 .equals(other._adsBanners, _adsBanners) &&
@@ -1843,8 +1846,8 @@ class _$_BannerState implements _BannerState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BannerStateCopyWith<_$_BannerState> get copyWith =>
-      __$$_BannerStateCopyWithImpl<_$_BannerState>(this, _$identity);
+  _$$BannerStateImplCopyWith<_$BannerStateImpl> get copyWith =>
+      __$$BannerStateImplCopyWithImpl<_$BannerStateImpl>(this, _$identity);
 }
 
 abstract class _BannerState implements BannerState {
@@ -1856,7 +1859,7 @@ abstract class _BannerState implements BannerState {
       final List<ShopAdsPackage> shopAds,
       final List<AdModel> shopListAds,
       final bool isLoadingBanner,
-      final bool isLoadingProduct}) = _$_BannerState;
+      final bool isLoadingProduct}) = _$BannerStateImpl;
 
   @override
   List<BannerData> get banners;
@@ -1876,6 +1879,6 @@ abstract class _BannerState implements BannerState {
   bool get isLoadingProduct;
   @override
   @JsonKey(ignore: true)
-  _$$_BannerStateCopyWith<_$_BannerState> get copyWith =>
+  _$$BannerStateImplCopyWith<_$BannerStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

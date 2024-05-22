@@ -12,7 +12,7 @@ part of 'game_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GameEvent {
@@ -141,22 +141,24 @@ class _$GameEventCopyWithImpl<$Res, $Val extends GameEvent>
 }
 
 /// @nodoc
-abstract class _$$InitCopyWith<$Res> {
-  factory _$$InitCopyWith(_$Init value, $Res Function(_$Init) then) =
-      __$$InitCopyWithImpl<$Res>;
+abstract class _$$InitImplCopyWith<$Res> {
+  factory _$$InitImplCopyWith(
+          _$InitImpl value, $Res Function(_$InitImpl) then) =
+      __$$InitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Init>
-    implements _$$InitCopyWith<$Res> {
-  __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
+class __$$InitImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$InitImpl>
+    implements _$$InitImplCopyWith<$Res> {
+  __$$InitImplCopyWithImpl(_$InitImpl _value, $Res Function(_$InitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Init implements Init {
-  const _$Init();
+class _$InitImpl implements Init {
+  const _$InitImpl();
 
   @override
   String toString() {
@@ -164,9 +166,9 @@ class _$Init implements Init {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Init);
+        (other.runtimeType == runtimeType && other is _$InitImpl);
   }
 
   @override
@@ -303,27 +305,29 @@ class _$Init implements Init {
 }
 
 abstract class Init implements GameEvent {
-  const factory Init() = _$Init;
+  const factory Init() = _$InitImpl;
 }
 
 /// @nodoc
-abstract class _$$NewGameCopyWith<$Res> {
-  factory _$$NewGameCopyWith(_$NewGame value, $Res Function(_$NewGame) then) =
-      __$$NewGameCopyWithImpl<$Res>;
+abstract class _$$NewGameImplCopyWith<$Res> {
+  factory _$$NewGameImplCopyWith(
+          _$NewGameImpl value, $Res Function(_$NewGameImpl) then) =
+      __$$NewGameImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NewGameCopyWithImpl<$Res>
-    extends _$GameEventCopyWithImpl<$Res, _$NewGame>
-    implements _$$NewGameCopyWith<$Res> {
-  __$$NewGameCopyWithImpl(_$NewGame _value, $Res Function(_$NewGame) _then)
+class __$$NewGameImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$NewGameImpl>
+    implements _$$NewGameImplCopyWith<$Res> {
+  __$$NewGameImplCopyWithImpl(
+      _$NewGameImpl _value, $Res Function(_$NewGameImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$NewGame implements NewGame {
-  const _$NewGame();
+class _$NewGameImpl implements NewGame {
+  const _$NewGameImpl();
 
   @override
   String toString() {
@@ -331,9 +335,9 @@ class _$NewGame implements NewGame {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NewGame);
+        (other.runtimeType == runtimeType && other is _$NewGameImpl);
   }
 
   @override
@@ -470,22 +474,24 @@ class _$NewGame implements NewGame {
 }
 
 abstract class NewGame implements GameEvent {
-  const factory NewGame() = _$NewGame;
+  const factory NewGame() = _$NewGameImpl;
 }
 
 /// @nodoc
-abstract class _$$MoveCopyWith<$Res> {
-  factory _$$MoveCopyWith(_$Move value, $Res Function(_$Move) then) =
-      __$$MoveCopyWithImpl<$Res>;
+abstract class _$$MoveImplCopyWith<$Res> {
+  factory _$$MoveImplCopyWith(
+          _$MoveImpl value, $Res Function(_$MoveImpl) then) =
+      __$$MoveImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {SwipeDirection direction, VoidCallback onSuccess, VoidCallback onFail});
 }
 
 /// @nodoc
-class __$$MoveCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Move>
-    implements _$$MoveCopyWith<$Res> {
-  __$$MoveCopyWithImpl(_$Move _value, $Res Function(_$Move) _then)
+class __$$MoveImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$MoveImpl>
+    implements _$$MoveImplCopyWith<$Res> {
+  __$$MoveImplCopyWithImpl(_$MoveImpl _value, $Res Function(_$MoveImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -495,7 +501,7 @@ class __$$MoveCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Move>
     Object? onSuccess = null,
     Object? onFail = null,
   }) {
-    return _then(_$Move(
+    return _then(_$MoveImpl(
       direction: null == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
@@ -514,8 +520,8 @@ class __$$MoveCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Move>
 
 /// @nodoc
 
-class _$Move implements Move {
-  const _$Move(
+class _$MoveImpl implements Move {
+  const _$MoveImpl(
       {required this.direction, required this.onSuccess, required this.onFail});
 
   @override
@@ -531,10 +537,10 @@ class _$Move implements Move {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Move &&
+            other is _$MoveImpl &&
             (identical(other.direction, direction) ||
                 other.direction == direction) &&
             (identical(other.onSuccess, onSuccess) ||
@@ -548,8 +554,8 @@ class _$Move implements Move {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MoveCopyWith<_$Move> get copyWith =>
-      __$$MoveCopyWithImpl<_$Move>(this, _$identity);
+  _$$MoveImplCopyWith<_$MoveImpl> get copyWith =>
+      __$$MoveImplCopyWithImpl<_$MoveImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -685,32 +691,36 @@ abstract class Move implements GameEvent {
   const factory Move(
       {required final SwipeDirection direction,
       required final VoidCallback onSuccess,
-      required final VoidCallback onFail}) = _$Move;
+      required final VoidCallback onFail}) = _$MoveImpl;
 
   SwipeDirection get direction;
   VoidCallback get onSuccess;
   VoidCallback get onFail;
   @JsonKey(ignore: true)
-  _$$MoveCopyWith<_$Move> get copyWith => throw _privateConstructorUsedError;
+  _$$MoveImplCopyWith<_$MoveImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MergeCopyWith<$Res> {
-  factory _$$MergeCopyWith(_$Merge value, $Res Function(_$Merge) then) =
-      __$$MergeCopyWithImpl<$Res>;
+abstract class _$$MergeImplCopyWith<$Res> {
+  factory _$$MergeImplCopyWith(
+          _$MergeImpl value, $Res Function(_$MergeImpl) then) =
+      __$$MergeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$MergeCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Merge>
-    implements _$$MergeCopyWith<$Res> {
-  __$$MergeCopyWithImpl(_$Merge _value, $Res Function(_$Merge) _then)
+class __$$MergeImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$MergeImpl>
+    implements _$$MergeImplCopyWith<$Res> {
+  __$$MergeImplCopyWithImpl(
+      _$MergeImpl _value, $Res Function(_$MergeImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Merge implements Merge {
-  const _$Merge();
+class _$MergeImpl implements Merge {
+  const _$MergeImpl();
 
   @override
   String toString() {
@@ -718,9 +728,9 @@ class _$Merge implements Merge {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Merge);
+        (other.runtimeType == runtimeType && other is _$MergeImpl);
   }
 
   @override
@@ -857,26 +867,28 @@ class _$Merge implements Merge {
 }
 
 abstract class Merge implements GameEvent {
-  const factory Merge() = _$Merge;
+  const factory Merge() = _$MergeImpl;
 }
 
 /// @nodoc
-abstract class _$$UndoCopyWith<$Res> {
-  factory _$$UndoCopyWith(_$Undo value, $Res Function(_$Undo) then) =
-      __$$UndoCopyWithImpl<$Res>;
+abstract class _$$UndoImplCopyWith<$Res> {
+  factory _$$UndoImplCopyWith(
+          _$UndoImpl value, $Res Function(_$UndoImpl) then) =
+      __$$UndoImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UndoCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Undo>
-    implements _$$UndoCopyWith<$Res> {
-  __$$UndoCopyWithImpl(_$Undo _value, $Res Function(_$Undo) _then)
+class __$$UndoImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$UndoImpl>
+    implements _$$UndoImplCopyWith<$Res> {
+  __$$UndoImplCopyWithImpl(_$UndoImpl _value, $Res Function(_$UndoImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Undo implements Undo {
-  const _$Undo();
+class _$UndoImpl implements Undo {
+  const _$UndoImpl();
 
   @override
   String toString() {
@@ -884,9 +896,9 @@ class _$Undo implements Undo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Undo);
+        (other.runtimeType == runtimeType && other is _$UndoImpl);
   }
 
   @override
@@ -1023,21 +1035,24 @@ class _$Undo implements Undo {
 }
 
 abstract class Undo implements GameEvent {
-  const factory Undo() = _$Undo;
+  const factory Undo() = _$UndoImpl;
 }
 
 /// @nodoc
-abstract class _$$OnKeyCopyWith<$Res> {
-  factory _$$OnKeyCopyWith(_$OnKey value, $Res Function(_$OnKey) then) =
-      __$$OnKeyCopyWithImpl<$Res>;
+abstract class _$$OnKeyImplCopyWith<$Res> {
+  factory _$$OnKeyImplCopyWith(
+          _$OnKeyImpl value, $Res Function(_$OnKeyImpl) then) =
+      __$$OnKeyImplCopyWithImpl<$Res>;
   @useResult
   $Res call({RawKeyEvent event, VoidCallback onSuccess, VoidCallback onFail});
 }
 
 /// @nodoc
-class __$$OnKeyCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$OnKey>
-    implements _$$OnKeyCopyWith<$Res> {
-  __$$OnKeyCopyWithImpl(_$OnKey _value, $Res Function(_$OnKey) _then)
+class __$$OnKeyImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$OnKeyImpl>
+    implements _$$OnKeyImplCopyWith<$Res> {
+  __$$OnKeyImplCopyWithImpl(
+      _$OnKeyImpl _value, $Res Function(_$OnKeyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1047,7 +1062,7 @@ class __$$OnKeyCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$OnKey>
     Object? onSuccess = null,
     Object? onFail = null,
   }) {
-    return _then(_$OnKey(
+    return _then(_$OnKeyImpl(
       event: null == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
@@ -1066,8 +1081,8 @@ class __$$OnKeyCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$OnKey>
 
 /// @nodoc
 
-class _$OnKey implements OnKey {
-  const _$OnKey(
+class _$OnKeyImpl implements OnKey {
+  const _$OnKeyImpl(
       {required this.event, required this.onSuccess, required this.onFail});
 
   @override
@@ -1083,10 +1098,10 @@ class _$OnKey implements OnKey {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnKey &&
+            other is _$OnKeyImpl &&
             (identical(other.event, event) || other.event == event) &&
             (identical(other.onSuccess, onSuccess) ||
                 other.onSuccess == onSuccess) &&
@@ -1099,8 +1114,8 @@ class _$OnKey implements OnKey {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnKeyCopyWith<_$OnKey> get copyWith =>
-      __$$OnKeyCopyWithImpl<_$OnKey>(this, _$identity);
+  _$$OnKeyImplCopyWith<_$OnKeyImpl> get copyWith =>
+      __$$OnKeyImplCopyWithImpl<_$OnKeyImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1236,29 +1251,31 @@ abstract class OnKey implements GameEvent {
   const factory OnKey(
       {required final RawKeyEvent event,
       required final VoidCallback onSuccess,
-      required final VoidCallback onFail}) = _$OnKey;
+      required final VoidCallback onFail}) = _$OnKeyImpl;
 
   RawKeyEvent get event;
   VoidCallback get onSuccess;
   VoidCallback get onFail;
   @JsonKey(ignore: true)
-  _$$OnKeyCopyWith<_$OnKey> get copyWith => throw _privateConstructorUsedError;
+  _$$OnKeyImplCopyWith<_$OnKeyImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndRoundCopyWith<$Res> {
-  factory _$$EndRoundCopyWith(
-          _$EndRound value, $Res Function(_$EndRound) then) =
-      __$$EndRoundCopyWithImpl<$Res>;
+abstract class _$$EndRoundImplCopyWith<$Res> {
+  factory _$$EndRoundImplCopyWith(
+          _$EndRoundImpl value, $Res Function(_$EndRoundImpl) then) =
+      __$$EndRoundImplCopyWithImpl<$Res>;
   @useResult
   $Res call({VoidCallback onSuccess, VoidCallback onFail});
 }
 
 /// @nodoc
-class __$$EndRoundCopyWithImpl<$Res>
-    extends _$GameEventCopyWithImpl<$Res, _$EndRound>
-    implements _$$EndRoundCopyWith<$Res> {
-  __$$EndRoundCopyWithImpl(_$EndRound _value, $Res Function(_$EndRound) _then)
+class __$$EndRoundImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$EndRoundImpl>
+    implements _$$EndRoundImplCopyWith<$Res> {
+  __$$EndRoundImplCopyWithImpl(
+      _$EndRoundImpl _value, $Res Function(_$EndRoundImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1267,7 +1284,7 @@ class __$$EndRoundCopyWithImpl<$Res>
     Object? onSuccess = null,
     Object? onFail = null,
   }) {
-    return _then(_$EndRound(
+    return _then(_$EndRoundImpl(
       onSuccess: null == onSuccess
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
@@ -1282,8 +1299,8 @@ class __$$EndRoundCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EndRound implements EndRound {
-  const _$EndRound({required this.onSuccess, required this.onFail});
+class _$EndRoundImpl implements EndRound {
+  const _$EndRoundImpl({required this.onSuccess, required this.onFail});
 
   @override
   final VoidCallback onSuccess;
@@ -1296,10 +1313,10 @@ class _$EndRound implements EndRound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndRound &&
+            other is _$EndRoundImpl &&
             (identical(other.onSuccess, onSuccess) ||
                 other.onSuccess == onSuccess) &&
             (identical(other.onFail, onFail) || other.onFail == onFail));
@@ -1311,8 +1328,8 @@ class _$EndRound implements EndRound {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndRoundCopyWith<_$EndRound> get copyWith =>
-      __$$EndRoundCopyWithImpl<_$EndRound>(this, _$identity);
+  _$$EndRoundImplCopyWith<_$EndRoundImpl> get copyWith =>
+      __$$EndRoundImplCopyWithImpl<_$EndRoundImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1447,32 +1464,34 @@ class _$EndRound implements EndRound {
 abstract class EndRound implements GameEvent {
   const factory EndRound(
       {required final VoidCallback onSuccess,
-      required final VoidCallback onFail}) = _$EndRound;
+      required final VoidCallback onFail}) = _$EndRoundImpl;
 
   VoidCallback get onSuccess;
   VoidCallback get onFail;
   @JsonKey(ignore: true)
-  _$$EndRoundCopyWith<_$EndRound> get copyWith =>
+  _$$EndRoundImplCopyWith<_$EndRoundImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveCopyWith<$Res> {
-  factory _$$SaveCopyWith(_$Save value, $Res Function(_$Save) then) =
-      __$$SaveCopyWithImpl<$Res>;
+abstract class _$$SaveImplCopyWith<$Res> {
+  factory _$$SaveImplCopyWith(
+          _$SaveImpl value, $Res Function(_$SaveImpl) then) =
+      __$$SaveImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SaveCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Save>
-    implements _$$SaveCopyWith<$Res> {
-  __$$SaveCopyWithImpl(_$Save _value, $Res Function(_$Save) _then)
+class __$$SaveImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$SaveImpl>
+    implements _$$SaveImplCopyWith<$Res> {
+  __$$SaveImplCopyWithImpl(_$SaveImpl _value, $Res Function(_$SaveImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Save implements Save {
-  const _$Save();
+class _$SaveImpl implements Save {
+  const _$SaveImpl();
 
   @override
   String toString() {
@@ -1480,9 +1499,9 @@ class _$Save implements Save {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Save);
+        (other.runtimeType == runtimeType && other is _$SaveImpl);
   }
 
   @override
@@ -1619,21 +1638,24 @@ class _$Save implements Save {
 }
 
 abstract class Save implements GameEvent {
-  const factory Save() = _$Save;
+  const factory Save() = _$SaveImpl;
 }
 
 /// @nodoc
-abstract class _$$QueueCopyWith<$Res> {
-  factory _$$QueueCopyWith(_$Queue value, $Res Function(_$Queue) then) =
-      __$$QueueCopyWithImpl<$Res>;
+abstract class _$$QueueImplCopyWith<$Res> {
+  factory _$$QueueImplCopyWith(
+          _$QueueImpl value, $Res Function(_$QueueImpl) then) =
+      __$$QueueImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SwipeDirection direction});
 }
 
 /// @nodoc
-class __$$QueueCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Queue>
-    implements _$$QueueCopyWith<$Res> {
-  __$$QueueCopyWithImpl(_$Queue _value, $Res Function(_$Queue) _then)
+class __$$QueueImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$QueueImpl>
+    implements _$$QueueImplCopyWith<$Res> {
+  __$$QueueImplCopyWithImpl(
+      _$QueueImpl _value, $Res Function(_$QueueImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1641,7 +1663,7 @@ class __$$QueueCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Queue>
   $Res call({
     Object? direction = null,
   }) {
-    return _then(_$Queue(
+    return _then(_$QueueImpl(
       null == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
@@ -1652,8 +1674,8 @@ class __$$QueueCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Queue>
 
 /// @nodoc
 
-class _$Queue implements Queue {
-  const _$Queue(this.direction);
+class _$QueueImpl implements Queue {
+  const _$QueueImpl(this.direction);
 
   @override
   final SwipeDirection direction;
@@ -1664,10 +1686,10 @@ class _$Queue implements Queue {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Queue &&
+            other is _$QueueImpl &&
             (identical(other.direction, direction) ||
                 other.direction == direction));
   }
@@ -1678,8 +1700,8 @@ class _$Queue implements Queue {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QueueCopyWith<_$Queue> get copyWith =>
-      __$$QueueCopyWithImpl<_$Queue>(this, _$identity);
+  _$$QueueImplCopyWith<_$QueueImpl> get copyWith =>
+      __$$QueueImplCopyWithImpl<_$QueueImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1812,30 +1834,34 @@ class _$Queue implements Queue {
 }
 
 abstract class Queue implements GameEvent {
-  const factory Queue(final SwipeDirection direction) = _$Queue;
+  const factory Queue(final SwipeDirection direction) = _$QueueImpl;
 
   SwipeDirection get direction;
   @JsonKey(ignore: true)
-  _$$QueueCopyWith<_$Queue> get copyWith => throw _privateConstructorUsedError;
+  _$$QueueImplCopyWith<_$QueueImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ClearCopyWith<$Res> {
-  factory _$$ClearCopyWith(_$Clear value, $Res Function(_$Clear) then) =
-      __$$ClearCopyWithImpl<$Res>;
+abstract class _$$ClearImplCopyWith<$Res> {
+  factory _$$ClearImplCopyWith(
+          _$ClearImpl value, $Res Function(_$ClearImpl) then) =
+      __$$ClearImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClearCopyWithImpl<$Res> extends _$GameEventCopyWithImpl<$Res, _$Clear>
-    implements _$$ClearCopyWith<$Res> {
-  __$$ClearCopyWithImpl(_$Clear _value, $Res Function(_$Clear) _then)
+class __$$ClearImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$ClearImpl>
+    implements _$$ClearImplCopyWith<$Res> {
+  __$$ClearImplCopyWithImpl(
+      _$ClearImpl _value, $Res Function(_$ClearImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Clear implements Clear {
-  const _$Clear();
+class _$ClearImpl implements Clear {
+  const _$ClearImpl();
 
   @override
   String toString() {
@@ -1843,9 +1869,9 @@ class _$Clear implements Clear {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Clear);
+        (other.runtimeType == runtimeType && other is _$ClearImpl);
   }
 
   @override
@@ -1982,24 +2008,24 @@ class _$Clear implements Clear {
 }
 
 abstract class Clear implements GameEvent {
-  const factory Clear() = _$Clear;
+  const factory Clear() = _$ClearImpl;
 }
 
 /// @nodoc
-abstract class _$$ChangePositionCopyWith<$Res> {
-  factory _$$ChangePositionCopyWith(
-          _$ChangePosition value, $Res Function(_$ChangePosition) then) =
-      __$$ChangePositionCopyWithImpl<$Res>;
+abstract class _$$ChangePositionImplCopyWith<$Res> {
+  factory _$$ChangePositionImplCopyWith(_$ChangePositionImpl value,
+          $Res Function(_$ChangePositionImpl) then) =
+      __$$ChangePositionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$ChangePositionCopyWithImpl<$Res>
-    extends _$GameEventCopyWithImpl<$Res, _$ChangePosition>
-    implements _$$ChangePositionCopyWith<$Res> {
-  __$$ChangePositionCopyWithImpl(
-      _$ChangePosition _value, $Res Function(_$ChangePosition) _then)
+class __$$ChangePositionImplCopyWithImpl<$Res>
+    extends _$GameEventCopyWithImpl<$Res, _$ChangePositionImpl>
+    implements _$$ChangePositionImplCopyWith<$Res> {
+  __$$ChangePositionImplCopyWithImpl(
+      _$ChangePositionImpl _value, $Res Function(_$ChangePositionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2007,7 +2033,7 @@ class __$$ChangePositionCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ChangePosition(
+    return _then(_$ChangePositionImpl(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -2018,8 +2044,8 @@ class __$$ChangePositionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangePosition implements ChangePosition {
-  const _$ChangePosition(this.value);
+class _$ChangePositionImpl implements ChangePosition {
+  const _$ChangePositionImpl(this.value);
 
   @override
   final bool value;
@@ -2030,10 +2056,10 @@ class _$ChangePosition implements ChangePosition {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangePosition &&
+            other is _$ChangePositionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -2043,8 +2069,9 @@ class _$ChangePosition implements ChangePosition {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangePositionCopyWith<_$ChangePosition> get copyWith =>
-      __$$ChangePositionCopyWithImpl<_$ChangePosition>(this, _$identity);
+  _$$ChangePositionImplCopyWith<_$ChangePositionImpl> get copyWith =>
+      __$$ChangePositionImplCopyWithImpl<_$ChangePositionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2177,11 +2204,11 @@ class _$ChangePosition implements ChangePosition {
 }
 
 abstract class ChangePosition implements GameEvent {
-  const factory ChangePosition(final bool value) = _$ChangePosition;
+  const factory ChangePosition(final bool value) = _$ChangePositionImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$ChangePositionCopyWith<_$ChangePosition> get copyWith =>
+  _$$ChangePositionImplCopyWith<_$ChangePositionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2239,21 +2266,22 @@ class _$GameStateCopyWithImpl<$Res, $Val extends GameState>
 }
 
 /// @nodoc
-abstract class _$$_GameStateCopyWith<$Res> implements $GameStateCopyWith<$Res> {
-  factory _$$_GameStateCopyWith(
-          _$_GameState value, $Res Function(_$_GameState) then) =
-      __$$_GameStateCopyWithImpl<$Res>;
+abstract class _$$GameStateImplCopyWith<$Res>
+    implements $GameStateCopyWith<$Res> {
+  factory _$$GameStateImplCopyWith(
+          _$GameStateImpl value, $Res Function(_$GameStateImpl) then) =
+      __$$GameStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Board? board, SwipeDirection? swipeDirection, bool position});
 }
 
 /// @nodoc
-class __$$_GameStateCopyWithImpl<$Res>
-    extends _$GameStateCopyWithImpl<$Res, _$_GameState>
-    implements _$$_GameStateCopyWith<$Res> {
-  __$$_GameStateCopyWithImpl(
-      _$_GameState _value, $Res Function(_$_GameState) _then)
+class __$$GameStateImplCopyWithImpl<$Res>
+    extends _$GameStateCopyWithImpl<$Res, _$GameStateImpl>
+    implements _$$GameStateImplCopyWith<$Res> {
+  __$$GameStateImplCopyWithImpl(
+      _$GameStateImpl _value, $Res Function(_$GameStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2263,7 +2291,7 @@ class __$$_GameStateCopyWithImpl<$Res>
     Object? swipeDirection = freezed,
     Object? position = null,
   }) {
-    return _then(_$_GameState(
+    return _then(_$GameStateImpl(
       board: freezed == board
           ? _value.board
           : board // ignore: cast_nullable_to_non_nullable
@@ -2282,8 +2310,8 @@ class __$$_GameStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GameState implements _GameState {
-  const _$_GameState(
+class _$GameStateImpl implements _GameState {
+  const _$GameStateImpl(
       {this.board = null, this.swipeDirection = null, this.position = true});
 
   @override
@@ -2302,10 +2330,10 @@ class _$_GameState implements _GameState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GameState &&
+            other is _$GameStateImpl &&
             (identical(other.board, board) || other.board == board) &&
             (identical(other.swipeDirection, swipeDirection) ||
                 other.swipeDirection == swipeDirection) &&
@@ -2319,15 +2347,15 @@ class _$_GameState implements _GameState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GameStateCopyWith<_$_GameState> get copyWith =>
-      __$$_GameStateCopyWithImpl<_$_GameState>(this, _$identity);
+  _$$GameStateImplCopyWith<_$GameStateImpl> get copyWith =>
+      __$$GameStateImplCopyWithImpl<_$GameStateImpl>(this, _$identity);
 }
 
 abstract class _GameState implements GameState {
   const factory _GameState(
       {final Board? board,
       final SwipeDirection? swipeDirection,
-      final bool position}) = _$_GameState;
+      final bool position}) = _$GameStateImpl;
 
   @override
   Board? get board;
@@ -2337,6 +2365,6 @@ abstract class _GameState implements GameState {
   bool get position;
   @override
   @JsonKey(ignore: true)
-  _$$_GameStateCopyWith<_$_GameState> get copyWith =>
+  _$$GameStateImplCopyWith<_$GameStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

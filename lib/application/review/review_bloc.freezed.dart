@@ -12,7 +12,7 @@ part of 'review_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ReviewEvent {
@@ -147,20 +147,20 @@ class _$ReviewEventCopyWithImpl<$Res, $Val extends ReviewEvent>
 }
 
 /// @nodoc
-abstract class _$$SetReviewCopyWith<$Res> {
-  factory _$$SetReviewCopyWith(
-          _$SetReview value, $Res Function(_$SetReview) then) =
-      __$$SetReviewCopyWithImpl<$Res>;
+abstract class _$$SetReviewImplCopyWith<$Res> {
+  factory _$$SetReviewImplCopyWith(
+          _$SetReviewImpl value, $Res Function(_$SetReviewImpl) then) =
+      __$$SetReviewImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double review});
 }
 
 /// @nodoc
-class __$$SetReviewCopyWithImpl<$Res>
-    extends _$ReviewEventCopyWithImpl<$Res, _$SetReview>
-    implements _$$SetReviewCopyWith<$Res> {
-  __$$SetReviewCopyWithImpl(
-      _$SetReview _value, $Res Function(_$SetReview) _then)
+class __$$SetReviewImplCopyWithImpl<$Res>
+    extends _$ReviewEventCopyWithImpl<$Res, _$SetReviewImpl>
+    implements _$$SetReviewImplCopyWith<$Res> {
+  __$$SetReviewImplCopyWithImpl(
+      _$SetReviewImpl _value, $Res Function(_$SetReviewImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -168,7 +168,7 @@ class __$$SetReviewCopyWithImpl<$Res>
   $Res call({
     Object? review = null,
   }) {
-    return _then(_$SetReview(
+    return _then(_$SetReviewImpl(
       review: null == review
           ? _value.review
           : review // ignore: cast_nullable_to_non_nullable
@@ -179,8 +179,8 @@ class __$$SetReviewCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetReview implements SetReview {
-  const _$SetReview({required this.review});
+class _$SetReviewImpl implements SetReview {
+  const _$SetReviewImpl({required this.review});
 
   @override
   final double review;
@@ -191,10 +191,10 @@ class _$SetReview implements SetReview {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetReview &&
+            other is _$SetReviewImpl &&
             (identical(other.review, review) || other.review == review));
   }
 
@@ -204,8 +204,8 @@ class _$SetReview implements SetReview {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetReviewCopyWith<_$SetReview> get copyWith =>
-      __$$SetReviewCopyWithImpl<_$SetReview>(this, _$identity);
+  _$$SetReviewImplCopyWith<_$SetReviewImpl> get copyWith =>
+      __$$SetReviewImplCopyWithImpl<_$SetReviewImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -343,19 +343,19 @@ class _$SetReview implements SetReview {
 }
 
 abstract class SetReview implements ReviewEvent {
-  const factory SetReview({required final double review}) = _$SetReview;
+  const factory SetReview({required final double review}) = _$SetReviewImpl;
 
   double get review;
   @JsonKey(ignore: true)
-  _$$SetReviewCopyWith<_$SetReview> get copyWith =>
+  _$$SetReviewImplCopyWith<_$SetReviewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SendReviewCopyWith<$Res> {
-  factory _$$SendReviewCopyWith(
-          _$SendReview value, $Res Function(_$SendReview) then) =
-      __$$SendReviewCopyWithImpl<$Res>;
+abstract class _$$SendReviewImplCopyWith<$Res> {
+  factory _$$SendReviewImplCopyWith(
+          _$SendReviewImpl value, $Res Function(_$SendReviewImpl) then) =
+      __$$SendReviewImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -368,11 +368,11 @@ abstract class _$$SendReviewCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SendReviewCopyWithImpl<$Res>
-    extends _$ReviewEventCopyWithImpl<$Res, _$SendReview>
-    implements _$$SendReviewCopyWith<$Res> {
-  __$$SendReviewCopyWithImpl(
-      _$SendReview _value, $Res Function(_$SendReview) _then)
+class __$$SendReviewImplCopyWithImpl<$Res>
+    extends _$ReviewEventCopyWithImpl<$Res, _$SendReviewImpl>
+    implements _$$SendReviewImplCopyWith<$Res> {
+  __$$SendReviewImplCopyWithImpl(
+      _$SendReviewImpl _value, $Res Function(_$SendReviewImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -386,7 +386,7 @@ class __$$SendReviewCopyWithImpl<$Res>
     Object? orderId = freezed,
     Object? onSuccess = null,
   }) {
-    return _then(_$SendReview(
+    return _then(_$SendReviewImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -421,8 +421,8 @@ class __$$SendReviewCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SendReview implements SendReview {
-  const _$SendReview(
+class _$SendReviewImpl implements SendReview {
+  const _$SendReviewImpl(
       {required this.context,
       required this.comment,
       this.shopId,
@@ -452,10 +452,10 @@ class _$SendReview implements SendReview {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendReview &&
+            other is _$SendReviewImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.shopId, shopId) || other.shopId == shopId) &&
@@ -474,8 +474,8 @@ class _$SendReview implements SendReview {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SendReviewCopyWith<_$SendReview> get copyWith =>
-      __$$SendReviewCopyWithImpl<_$SendReview>(this, _$identity);
+  _$$SendReviewImplCopyWith<_$SendReviewImpl> get copyWith =>
+      __$$SendReviewImplCopyWithImpl<_$SendReviewImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -623,7 +623,7 @@ abstract class SendReview implements ReviewEvent {
       final String? productUuid,
       final int? blogId,
       final int? orderId,
-      required final VoidCallback onSuccess}) = _$SendReview;
+      required final VoidCallback onSuccess}) = _$SendReviewImpl;
 
   BuildContext get context;
   String get comment;
@@ -633,15 +633,15 @@ abstract class SendReview implements ReviewEvent {
   int? get orderId;
   VoidCallback get onSuccess;
   @JsonKey(ignore: true)
-  _$$SendReviewCopyWith<_$SendReview> get copyWith =>
+  _$$SendReviewImplCopyWith<_$SendReviewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchReviewCopyWith<$Res> {
-  factory _$$FetchReviewCopyWith(
-          _$FetchReview value, $Res Function(_$FetchReview) then) =
-      __$$FetchReviewCopyWithImpl<$Res>;
+abstract class _$$FetchReviewImplCopyWith<$Res> {
+  factory _$$FetchReviewImplCopyWith(
+          _$FetchReviewImpl value, $Res Function(_$FetchReviewImpl) then) =
+      __$$FetchReviewImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -652,11 +652,11 @@ abstract class _$$FetchReviewCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchReviewCopyWithImpl<$Res>
-    extends _$ReviewEventCopyWithImpl<$Res, _$FetchReview>
-    implements _$$FetchReviewCopyWith<$Res> {
-  __$$FetchReviewCopyWithImpl(
-      _$FetchReview _value, $Res Function(_$FetchReview) _then)
+class __$$FetchReviewImplCopyWithImpl<$Res>
+    extends _$ReviewEventCopyWithImpl<$Res, _$FetchReviewImpl>
+    implements _$$FetchReviewImplCopyWith<$Res> {
+  __$$FetchReviewImplCopyWithImpl(
+      _$FetchReviewImpl _value, $Res Function(_$FetchReviewImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -668,7 +668,7 @@ class __$$FetchReviewCopyWithImpl<$Res>
     Object? driverId = freezed,
     Object? productId = freezed,
   }) {
-    return _then(_$FetchReview(
+    return _then(_$FetchReviewImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -695,8 +695,8 @@ class __$$FetchReviewCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchReview implements FetchReview {
-  const _$FetchReview(
+class _$FetchReviewImpl implements FetchReview {
+  const _$FetchReviewImpl(
       {required this.context,
       this.shopId,
       this.blogId,
@@ -720,10 +720,10 @@ class _$FetchReview implements FetchReview {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchReview &&
+            other is _$FetchReviewImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.shopId, shopId) || other.shopId == shopId) &&
             (identical(other.blogId, blogId) || other.blogId == blogId) &&
@@ -740,8 +740,8 @@ class _$FetchReview implements FetchReview {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchReviewCopyWith<_$FetchReview> get copyWith =>
-      __$$FetchReviewCopyWithImpl<_$FetchReview>(this, _$identity);
+  _$$FetchReviewImplCopyWith<_$FetchReviewImpl> get copyWith =>
+      __$$FetchReviewImplCopyWithImpl<_$FetchReviewImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -884,7 +884,7 @@ abstract class FetchReview implements ReviewEvent {
       final int? shopId,
       final int? blogId,
       final int? driverId,
-      final int? productId}) = _$FetchReview;
+      final int? productId}) = _$FetchReviewImpl;
 
   BuildContext get context;
   int? get shopId;
@@ -892,24 +892,25 @@ abstract class FetchReview implements ReviewEvent {
   int? get driverId;
   int? get productId;
   @JsonKey(ignore: true)
-  _$$FetchReviewCopyWith<_$FetchReview> get copyWith =>
+  _$$FetchReviewImplCopyWith<_$FetchReviewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetImageCopyWith<$Res> {
-  factory _$$SetImageCopyWith(
-          _$SetImage value, $Res Function(_$SetImage) then) =
-      __$$SetImageCopyWithImpl<$Res>;
+abstract class _$$SetImageImplCopyWith<$Res> {
+  factory _$$SetImageImplCopyWith(
+          _$SetImageImpl value, $Res Function(_$SetImageImpl) then) =
+      __$$SetImageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String imagePath});
 }
 
 /// @nodoc
-class __$$SetImageCopyWithImpl<$Res>
-    extends _$ReviewEventCopyWithImpl<$Res, _$SetImage>
-    implements _$$SetImageCopyWith<$Res> {
-  __$$SetImageCopyWithImpl(_$SetImage _value, $Res Function(_$SetImage) _then)
+class __$$SetImageImplCopyWithImpl<$Res>
+    extends _$ReviewEventCopyWithImpl<$Res, _$SetImageImpl>
+    implements _$$SetImageImplCopyWith<$Res> {
+  __$$SetImageImplCopyWithImpl(
+      _$SetImageImpl _value, $Res Function(_$SetImageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -917,7 +918,7 @@ class __$$SetImageCopyWithImpl<$Res>
   $Res call({
     Object? imagePath = null,
   }) {
-    return _then(_$SetImage(
+    return _then(_$SetImageImpl(
       imagePath: null == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -928,8 +929,8 @@ class __$$SetImageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetImage implements SetImage {
-  const _$SetImage({required this.imagePath});
+class _$SetImageImpl implements SetImage {
+  const _$SetImageImpl({required this.imagePath});
 
   @override
   final String imagePath;
@@ -940,10 +941,10 @@ class _$SetImage implements SetImage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetImage &&
+            other is _$SetImageImpl &&
             (identical(other.imagePath, imagePath) ||
                 other.imagePath == imagePath));
   }
@@ -954,8 +955,8 @@ class _$SetImage implements SetImage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetImageCopyWith<_$SetImage> get copyWith =>
-      __$$SetImageCopyWithImpl<_$SetImage>(this, _$identity);
+  _$$SetImageImplCopyWith<_$SetImageImpl> get copyWith =>
+      __$$SetImageImplCopyWithImpl<_$SetImageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1093,19 +1094,19 @@ class _$SetImage implements SetImage {
 }
 
 abstract class SetImage implements ReviewEvent {
-  const factory SetImage({required final String imagePath}) = _$SetImage;
+  const factory SetImage({required final String imagePath}) = _$SetImageImpl;
 
   String get imagePath;
   @JsonKey(ignore: true)
-  _$$SetImageCopyWith<_$SetImage> get copyWith =>
+  _$$SetImageImplCopyWith<_$SetImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchReviewListCopyWith<$Res> {
-  factory _$$FetchReviewListCopyWith(
-          _$FetchReviewList value, $Res Function(_$FetchReviewList) then) =
-      __$$FetchReviewListCopyWithImpl<$Res>;
+abstract class _$$FetchReviewListImplCopyWith<$Res> {
+  factory _$$FetchReviewListImplCopyWith(_$FetchReviewListImpl value,
+          $Res Function(_$FetchReviewListImpl) then) =
+      __$$FetchReviewListImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -1118,11 +1119,11 @@ abstract class _$$FetchReviewListCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchReviewListCopyWithImpl<$Res>
-    extends _$ReviewEventCopyWithImpl<$Res, _$FetchReviewList>
-    implements _$$FetchReviewListCopyWith<$Res> {
-  __$$FetchReviewListCopyWithImpl(
-      _$FetchReviewList _value, $Res Function(_$FetchReviewList) _then)
+class __$$FetchReviewListImplCopyWithImpl<$Res>
+    extends _$ReviewEventCopyWithImpl<$Res, _$FetchReviewListImpl>
+    implements _$$FetchReviewListImplCopyWith<$Res> {
+  __$$FetchReviewListImplCopyWithImpl(
+      _$FetchReviewListImpl _value, $Res Function(_$FetchReviewListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1136,7 +1137,7 @@ class __$$FetchReviewListCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchReviewList(
+    return _then(_$FetchReviewListImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1171,8 +1172,8 @@ class __$$FetchReviewListCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchReviewList implements FetchReviewList {
-  const _$FetchReviewList(
+class _$FetchReviewListImpl implements FetchReviewList {
+  const _$FetchReviewListImpl(
       {required this.context,
       this.shopId,
       this.blogId,
@@ -1202,10 +1203,10 @@ class _$FetchReviewList implements FetchReviewList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchReviewList &&
+            other is _$FetchReviewListImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.shopId, shopId) || other.shopId == shopId) &&
             (identical(other.blogId, blogId) || other.blogId == blogId) &&
@@ -1226,8 +1227,9 @@ class _$FetchReviewList implements FetchReviewList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchReviewListCopyWith<_$FetchReviewList> get copyWith =>
-      __$$FetchReviewListCopyWithImpl<_$FetchReviewList>(this, _$identity);
+  _$$FetchReviewListImplCopyWith<_$FetchReviewListImpl> get copyWith =>
+      __$$FetchReviewListImplCopyWithImpl<_$FetchReviewListImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1375,7 +1377,7 @@ abstract class FetchReviewList implements ReviewEvent {
       final int? driverId,
       final String? productUuid,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchReviewList;
+      final RefreshController? controller}) = _$FetchReviewListImpl;
 
   BuildContext get context;
   int? get shopId;
@@ -1385,7 +1387,7 @@ abstract class FetchReviewList implements ReviewEvent {
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchReviewListCopyWith<_$FetchReviewList> get copyWith =>
+  _$$FetchReviewListImplCopyWith<_$FetchReviewListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1475,11 +1477,11 @@ class _$ReviewStateCopyWithImpl<$Res, $Val extends ReviewState>
 }
 
 /// @nodoc
-abstract class _$$_ReviewStateCopyWith<$Res>
+abstract class _$$ReviewStateImplCopyWith<$Res>
     implements $ReviewStateCopyWith<$Res> {
-  factory _$$_ReviewStateCopyWith(
-          _$_ReviewState value, $Res Function(_$_ReviewState) then) =
-      __$$_ReviewStateCopyWithImpl<$Res>;
+  factory _$$ReviewStateImplCopyWith(
+          _$ReviewStateImpl value, $Res Function(_$ReviewStateImpl) then) =
+      __$$ReviewStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1493,11 +1495,11 @@ abstract class _$$_ReviewStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ReviewStateCopyWithImpl<$Res>
-    extends _$ReviewStateCopyWithImpl<$Res, _$_ReviewState>
-    implements _$$_ReviewStateCopyWith<$Res> {
-  __$$_ReviewStateCopyWithImpl(
-      _$_ReviewState _value, $Res Function(_$_ReviewState) _then)
+class __$$ReviewStateImplCopyWithImpl<$Res>
+    extends _$ReviewStateCopyWithImpl<$Res, _$ReviewStateImpl>
+    implements _$$ReviewStateImplCopyWith<$Res> {
+  __$$ReviewStateImplCopyWithImpl(
+      _$ReviewStateImpl _value, $Res Function(_$ReviewStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1511,7 +1513,7 @@ class __$$_ReviewStateCopyWithImpl<$Res>
     Object? listOfImage = null,
     Object? reviewCount = freezed,
   }) {
-    return _then(_$_ReviewState(
+    return _then(_$ReviewStateImpl(
       review: null == review
           ? _value.review
           : review // ignore: cast_nullable_to_non_nullable
@@ -1546,8 +1548,8 @@ class __$$_ReviewStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReviewState implements _ReviewState {
-  const _$_ReviewState(
+class _$ReviewStateImpl implements _ReviewState {
+  const _$ReviewStateImpl(
       {this.review = 3,
       this.isAddButton = false,
       this.isLoading = false,
@@ -1598,10 +1600,10 @@ class _$_ReviewState implements _ReviewState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReviewState &&
+            other is _$ReviewStateImpl &&
             (identical(other.review, review) || other.review == review) &&
             (identical(other.isAddButton, isAddButton) ||
                 other.isAddButton == isAddButton) &&
@@ -1630,8 +1632,8 @@ class _$_ReviewState implements _ReviewState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReviewStateCopyWith<_$_ReviewState> get copyWith =>
-      __$$_ReviewStateCopyWithImpl<_$_ReviewState>(this, _$identity);
+  _$$ReviewStateImplCopyWith<_$ReviewStateImpl> get copyWith =>
+      __$$ReviewStateImplCopyWithImpl<_$ReviewStateImpl>(this, _$identity);
 }
 
 abstract class _ReviewState implements ReviewState {
@@ -1642,7 +1644,7 @@ abstract class _ReviewState implements ReviewState {
       final bool isButtonLoading,
       final List<ReviewModel> list,
       final List<String> listOfImage,
-      final ReviewCountModel? reviewCount}) = _$_ReviewState;
+      final ReviewCountModel? reviewCount}) = _$ReviewStateImpl;
 
   @override
   double get review;
@@ -1660,6 +1662,6 @@ abstract class _ReviewState implements ReviewState {
   ReviewCountModel? get reviewCount;
   @override
   @JsonKey(ignore: true)
-  _$$_ReviewStateCopyWith<_$_ReviewState> get copyWith =>
+  _$$ReviewStateImplCopyWith<_$ReviewStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

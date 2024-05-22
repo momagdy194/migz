@@ -12,7 +12,7 @@ part of 'search_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SearchEvent {
@@ -99,19 +99,20 @@ class _$SearchEventCopyWithImpl<$Res, $Val extends SearchEvent>
 }
 
 /// @nodoc
-abstract class _$$SetQueryCopyWith<$Res> {
-  factory _$$SetQueryCopyWith(
-          _$SetQuery value, $Res Function(_$SetQuery) then) =
-      __$$SetQueryCopyWithImpl<$Res>;
+abstract class _$$SetQueryImplCopyWith<$Res> {
+  factory _$$SetQueryImplCopyWith(
+          _$SetQueryImpl value, $Res Function(_$SetQueryImpl) then) =
+      __$$SetQueryImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String query, int? shopId});
 }
 
 /// @nodoc
-class __$$SetQueryCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$SetQuery>
-    implements _$$SetQueryCopyWith<$Res> {
-  __$$SetQueryCopyWithImpl(_$SetQuery _value, $Res Function(_$SetQuery) _then)
+class __$$SetQueryImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SetQueryImpl>
+    implements _$$SetQueryImplCopyWith<$Res> {
+  __$$SetQueryImplCopyWithImpl(
+      _$SetQueryImpl _value, $Res Function(_$SetQueryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -120,7 +121,7 @@ class __$$SetQueryCopyWithImpl<$Res>
     Object? query = null,
     Object? shopId = freezed,
   }) {
-    return _then(_$SetQuery(
+    return _then(_$SetQueryImpl(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -135,8 +136,8 @@ class __$$SetQueryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetQuery implements SetQuery {
-  const _$SetQuery({required this.query, this.shopId});
+class _$SetQueryImpl implements SetQuery {
+  const _$SetQueryImpl({required this.query, this.shopId});
 
   @override
   final String query;
@@ -149,10 +150,10 @@ class _$SetQuery implements SetQuery {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetQuery &&
+            other is _$SetQueryImpl &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.shopId, shopId) || other.shopId == shopId));
   }
@@ -163,8 +164,8 @@ class _$SetQuery implements SetQuery {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetQueryCopyWith<_$SetQuery> get copyWith =>
-      __$$SetQueryCopyWithImpl<_$SetQuery>(this, _$identity);
+  _$$SetQueryImplCopyWith<_$SetQueryImpl> get copyWith =>
+      __$$SetQueryImplCopyWithImpl<_$SetQueryImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -255,30 +256,30 @@ class _$SetQuery implements SetQuery {
 
 abstract class SetQuery implements SearchEvent {
   const factory SetQuery({required final String query, final int? shopId}) =
-      _$SetQuery;
+      _$SetQueryImpl;
 
   String get query;
   int? get shopId;
   @JsonKey(ignore: true)
-  _$$SetQueryCopyWith<_$SetQuery> get copyWith =>
+  _$$SetQueryImplCopyWith<_$SetQueryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchShopsCopyWith<$Res> {
-  factory _$$SearchShopsCopyWith(
-          _$SearchShops value, $Res Function(_$SearchShops) then) =
-      __$$SearchShopsCopyWithImpl<$Res>;
+abstract class _$$SearchShopsImplCopyWith<$Res> {
+  factory _$$SearchShopsImplCopyWith(
+          _$SearchShopsImpl value, $Res Function(_$SearchShopsImpl) then) =
+      __$$SearchShopsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$SearchShopsCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$SearchShops>
-    implements _$$SearchShopsCopyWith<$Res> {
-  __$$SearchShopsCopyWithImpl(
-      _$SearchShops _value, $Res Function(_$SearchShops) _then)
+class __$$SearchShopsImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SearchShopsImpl>
+    implements _$$SearchShopsImplCopyWith<$Res> {
+  __$$SearchShopsImplCopyWithImpl(
+      _$SearchShopsImpl _value, $Res Function(_$SearchShopsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -286,7 +287,7 @@ class __$$SearchShopsCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$SearchShops(
+    return _then(_$SearchShopsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -297,8 +298,8 @@ class __$$SearchShopsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchShops implements SearchShops {
-  const _$SearchShops({required this.context});
+class _$SearchShopsImpl implements SearchShops {
+  const _$SearchShopsImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -309,10 +310,10 @@ class _$SearchShops implements SearchShops {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchShops &&
+            other is _$SearchShopsImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -322,8 +323,8 @@ class _$SearchShops implements SearchShops {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchShopsCopyWith<_$SearchShops> get copyWith =>
-      __$$SearchShopsCopyWithImpl<_$SearchShops>(this, _$identity);
+  _$$SearchShopsImplCopyWith<_$SearchShopsImpl> get copyWith =>
+      __$$SearchShopsImplCopyWithImpl<_$SearchShopsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -414,29 +415,29 @@ class _$SearchShops implements SearchShops {
 
 abstract class SearchShops implements SearchEvent {
   const factory SearchShops({required final BuildContext context}) =
-      _$SearchShops;
+      _$SearchShopsImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SearchShopsCopyWith<_$SearchShops> get copyWith =>
+  _$$SearchShopsImplCopyWith<_$SearchShopsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchProductCopyWith<$Res> {
-  factory _$$SearchProductCopyWith(
-          _$SearchProduct value, $Res Function(_$SearchProduct) then) =
-      __$$SearchProductCopyWithImpl<$Res>;
+abstract class _$$SearchProductImplCopyWith<$Res> {
+  factory _$$SearchProductImplCopyWith(
+          _$SearchProductImpl value, $Res Function(_$SearchProductImpl) then) =
+      __$$SearchProductImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$SearchProductCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$SearchProduct>
-    implements _$$SearchProductCopyWith<$Res> {
-  __$$SearchProductCopyWithImpl(
-      _$SearchProduct _value, $Res Function(_$SearchProduct) _then)
+class __$$SearchProductImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SearchProductImpl>
+    implements _$$SearchProductImplCopyWith<$Res> {
+  __$$SearchProductImplCopyWithImpl(
+      _$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -444,7 +445,7 @@ class __$$SearchProductCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$SearchProduct(
+    return _then(_$SearchProductImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -455,8 +456,8 @@ class __$$SearchProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchProduct implements SearchProduct {
-  const _$SearchProduct({required this.context});
+class _$SearchProductImpl implements SearchProduct {
+  const _$SearchProductImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -467,10 +468,10 @@ class _$SearchProduct implements SearchProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchProduct &&
+            other is _$SearchProductImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -480,8 +481,8 @@ class _$SearchProduct implements SearchProduct {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchProductCopyWith<_$SearchProduct> get copyWith =>
-      __$$SearchProductCopyWithImpl<_$SearchProduct>(this, _$identity);
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
+      __$$SearchProductImplCopyWithImpl<_$SearchProductImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -572,29 +573,29 @@ class _$SearchProduct implements SearchProduct {
 
 abstract class SearchProduct implements SearchEvent {
   const factory SearchProduct({required final BuildContext context}) =
-      _$SearchProduct;
+      _$SearchProductImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SearchProductCopyWith<_$SearchProduct> get copyWith =>
+  _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchCategoryCopyWith<$Res> {
-  factory _$$SearchCategoryCopyWith(
-          _$SearchCategory value, $Res Function(_$SearchCategory) then) =
-      __$$SearchCategoryCopyWithImpl<$Res>;
+abstract class _$$SearchCategoryImplCopyWith<$Res> {
+  factory _$$SearchCategoryImplCopyWith(_$SearchCategoryImpl value,
+          $Res Function(_$SearchCategoryImpl) then) =
+      __$$SearchCategoryImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$SearchCategoryCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$SearchCategory>
-    implements _$$SearchCategoryCopyWith<$Res> {
-  __$$SearchCategoryCopyWithImpl(
-      _$SearchCategory _value, $Res Function(_$SearchCategory) _then)
+class __$$SearchCategoryImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SearchCategoryImpl>
+    implements _$$SearchCategoryImplCopyWith<$Res> {
+  __$$SearchCategoryImplCopyWithImpl(
+      _$SearchCategoryImpl _value, $Res Function(_$SearchCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -602,7 +603,7 @@ class __$$SearchCategoryCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$SearchCategory(
+    return _then(_$SearchCategoryImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -613,8 +614,8 @@ class __$$SearchCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchCategory implements SearchCategory {
-  const _$SearchCategory({required this.context});
+class _$SearchCategoryImpl implements SearchCategory {
+  const _$SearchCategoryImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -625,10 +626,10 @@ class _$SearchCategory implements SearchCategory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchCategory &&
+            other is _$SearchCategoryImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -638,8 +639,9 @@ class _$SearchCategory implements SearchCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchCategoryCopyWith<_$SearchCategory> get copyWith =>
-      __$$SearchCategoryCopyWithImpl<_$SearchCategory>(this, _$identity);
+  _$$SearchCategoryImplCopyWith<_$SearchCategoryImpl> get copyWith =>
+      __$$SearchCategoryImplCopyWithImpl<_$SearchCategoryImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -730,29 +732,29 @@ class _$SearchCategory implements SearchCategory {
 
 abstract class SearchCategory implements SearchEvent {
   const factory SearchCategory({required final BuildContext context}) =
-      _$SearchCategory;
+      _$SearchCategoryImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SearchCategoryCopyWith<_$SearchCategory> get copyWith =>
+  _$$SearchCategoryImplCopyWith<_$SearchCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SearchBrandCopyWith<$Res> {
-  factory _$$SearchBrandCopyWith(
-          _$SearchBrand value, $Res Function(_$SearchBrand) then) =
-      __$$SearchBrandCopyWithImpl<$Res>;
+abstract class _$$SearchBrandImplCopyWith<$Res> {
+  factory _$$SearchBrandImplCopyWith(
+          _$SearchBrandImpl value, $Res Function(_$SearchBrandImpl) then) =
+      __$$SearchBrandImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
 
 /// @nodoc
-class __$$SearchBrandCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$SearchBrand>
-    implements _$$SearchBrandCopyWith<$Res> {
-  __$$SearchBrandCopyWithImpl(
-      _$SearchBrand _value, $Res Function(_$SearchBrand) _then)
+class __$$SearchBrandImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SearchBrandImpl>
+    implements _$$SearchBrandImplCopyWith<$Res> {
+  __$$SearchBrandImplCopyWithImpl(
+      _$SearchBrandImpl _value, $Res Function(_$SearchBrandImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -760,7 +762,7 @@ class __$$SearchBrandCopyWithImpl<$Res>
   $Res call({
     Object? context = null,
   }) {
-    return _then(_$SearchBrand(
+    return _then(_$SearchBrandImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -771,8 +773,8 @@ class __$$SearchBrandCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchBrand implements SearchBrand {
-  const _$SearchBrand({required this.context});
+class _$SearchBrandImpl implements SearchBrand {
+  const _$SearchBrandImpl({required this.context});
 
   @override
   final BuildContext context;
@@ -783,10 +785,10 @@ class _$SearchBrand implements SearchBrand {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchBrand &&
+            other is _$SearchBrandImpl &&
             (identical(other.context, context) || other.context == context));
   }
 
@@ -796,8 +798,8 @@ class _$SearchBrand implements SearchBrand {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchBrandCopyWith<_$SearchBrand> get copyWith =>
-      __$$SearchBrandCopyWithImpl<_$SearchBrand>(this, _$identity);
+  _$$SearchBrandImplCopyWith<_$SearchBrandImpl> get copyWith =>
+      __$$SearchBrandImplCopyWithImpl<_$SearchBrandImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -888,34 +890,34 @@ class _$SearchBrand implements SearchBrand {
 
 abstract class SearchBrand implements SearchEvent {
   const factory SearchBrand({required final BuildContext context}) =
-      _$SearchBrand;
+      _$SearchBrandImpl;
 
   BuildContext get context;
   @JsonKey(ignore: true)
-  _$$SearchBrandCopyWith<_$SearchBrand> get copyWith =>
+  _$$SearchBrandImplCopyWith<_$SearchBrandImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateRecentlyCopyWith<$Res> {
-  factory _$$UpdateRecentlyCopyWith(
-          _$UpdateRecently value, $Res Function(_$UpdateRecently) then) =
-      __$$UpdateRecentlyCopyWithImpl<$Res>;
+abstract class _$$UpdateRecentlyImplCopyWith<$Res> {
+  factory _$$UpdateRecentlyImplCopyWith(_$UpdateRecentlyImpl value,
+          $Res Function(_$UpdateRecentlyImpl) then) =
+      __$$UpdateRecentlyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateRecentlyCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$UpdateRecently>
-    implements _$$UpdateRecentlyCopyWith<$Res> {
-  __$$UpdateRecentlyCopyWithImpl(
-      _$UpdateRecently _value, $Res Function(_$UpdateRecently) _then)
+class __$$UpdateRecentlyImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$UpdateRecentlyImpl>
+    implements _$$UpdateRecentlyImplCopyWith<$Res> {
+  __$$UpdateRecentlyImplCopyWithImpl(
+      _$UpdateRecentlyImpl _value, $Res Function(_$UpdateRecentlyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UpdateRecently implements UpdateRecently {
-  const _$UpdateRecently();
+class _$UpdateRecentlyImpl implements UpdateRecently {
+  const _$UpdateRecentlyImpl();
 
   @override
   String toString() {
@@ -923,9 +925,9 @@ class _$UpdateRecently implements UpdateRecently {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateRecently);
+        (other.runtimeType == runtimeType && other is _$UpdateRecentlyImpl);
   }
 
   @override
@@ -1019,7 +1021,7 @@ class _$UpdateRecently implements UpdateRecently {
 }
 
 abstract class UpdateRecently implements SearchEvent {
-  const factory UpdateRecently() = _$UpdateRecently;
+  const factory UpdateRecently() = _$UpdateRecentlyImpl;
 }
 
 /// @nodoc
@@ -1122,11 +1124,11 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
 }
 
 /// @nodoc
-abstract class _$$_SearchStateCopyWith<$Res>
+abstract class _$$SearchStateImplCopyWith<$Res>
     implements $SearchStateCopyWith<$Res> {
-  factory _$$_SearchStateCopyWith(
-          _$_SearchState value, $Res Function(_$_SearchState) then) =
-      __$$_SearchStateCopyWithImpl<$Res>;
+  factory _$$SearchStateImplCopyWith(
+          _$SearchStateImpl value, $Res Function(_$SearchStateImpl) then) =
+      __$$SearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1142,11 +1144,11 @@ abstract class _$$_SearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$_SearchState>
-    implements _$$_SearchStateCopyWith<$Res> {
-  __$$_SearchStateCopyWithImpl(
-      _$_SearchState _value, $Res Function(_$_SearchState) _then)
+class __$$SearchStateImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$SearchStateImpl>
+    implements _$$SearchStateImplCopyWith<$Res> {
+  __$$SearchStateImplCopyWithImpl(
+      _$SearchStateImpl _value, $Res Function(_$SearchStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1162,7 +1164,7 @@ class __$$_SearchStateCopyWithImpl<$Res>
     Object? isBrandLoading = null,
     Object? query = null,
   }) {
-    return _then(_$_SearchState(
+    return _then(_$SearchStateImpl(
       shops: null == shops
           ? _value._shops
           : shops // ignore: cast_nullable_to_non_nullable
@@ -1205,8 +1207,8 @@ class __$$_SearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchState implements _SearchState {
-  const _$_SearchState(
+class _$SearchStateImpl implements _SearchState {
+  const _$SearchStateImpl(
       {final List<ShopData> shops = const [],
       final List<ProductData> products = const [],
       final List<CategoryData> categories = const [],
@@ -1279,10 +1281,10 @@ class _$_SearchState implements _SearchState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchState &&
+            other is _$SearchStateImpl &&
             const DeepCollectionEquality().equals(other._shops, _shops) &&
             const DeepCollectionEquality().equals(other._products, _products) &&
             const DeepCollectionEquality()
@@ -1315,8 +1317,8 @@ class _$_SearchState implements _SearchState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
-      __$$_SearchStateCopyWithImpl<_$_SearchState>(this, _$identity);
+  _$$SearchStateImplCopyWith<_$SearchStateImpl> get copyWith =>
+      __$$SearchStateImplCopyWithImpl<_$SearchStateImpl>(this, _$identity);
 }
 
 abstract class _SearchState implements SearchState {
@@ -1329,7 +1331,7 @@ abstract class _SearchState implements SearchState {
       final bool isProductLoading,
       final bool isCategoryLoading,
       final bool isBrandLoading,
-      final String query}) = _$_SearchState;
+      final String query}) = _$SearchStateImpl;
 
   @override
   List<ShopData> get shops;
@@ -1351,6 +1353,6 @@ abstract class _SearchState implements SearchState {
   String get query;
   @override
   @JsonKey(ignore: true)
-  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
+  _$$SearchStateImplCopyWith<_$SearchStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

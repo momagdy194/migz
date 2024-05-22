@@ -12,7 +12,7 @@ part of 'parcels_list_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ParcelsListEvent {
@@ -120,11 +120,11 @@ class _$ParcelsListEventCopyWithImpl<$Res, $Val extends ParcelsListEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchActiveParcelCopyWith<$Res>
+abstract class _$$FetchActiveParcelImplCopyWith<$Res>
     implements $ParcelsListEventCopyWith<$Res> {
-  factory _$$FetchActiveParcelCopyWith(
-          _$FetchActiveParcel value, $Res Function(_$FetchActiveParcel) then) =
-      __$$FetchActiveParcelCopyWithImpl<$Res>;
+  factory _$$FetchActiveParcelImplCopyWith(_$FetchActiveParcelImpl value,
+          $Res Function(_$FetchActiveParcelImpl) then) =
+      __$$FetchActiveParcelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -132,11 +132,11 @@ abstract class _$$FetchActiveParcelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchActiveParcelCopyWithImpl<$Res>
-    extends _$ParcelsListEventCopyWithImpl<$Res, _$FetchActiveParcel>
-    implements _$$FetchActiveParcelCopyWith<$Res> {
-  __$$FetchActiveParcelCopyWithImpl(
-      _$FetchActiveParcel _value, $Res Function(_$FetchActiveParcel) _then)
+class __$$FetchActiveParcelImplCopyWithImpl<$Res>
+    extends _$ParcelsListEventCopyWithImpl<$Res, _$FetchActiveParcelImpl>
+    implements _$$FetchActiveParcelImplCopyWith<$Res> {
+  __$$FetchActiveParcelImplCopyWithImpl(_$FetchActiveParcelImpl _value,
+      $Res Function(_$FetchActiveParcelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -146,7 +146,7 @@ class __$$FetchActiveParcelCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchActiveParcel(
+    return _then(_$FetchActiveParcelImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -165,8 +165,8 @@ class __$$FetchActiveParcelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchActiveParcel implements FetchActiveParcel {
-  const _$FetchActiveParcel(
+class _$FetchActiveParcelImpl implements FetchActiveParcel {
+  const _$FetchActiveParcelImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -182,10 +182,10 @@ class _$FetchActiveParcel implements FetchActiveParcel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchActiveParcel &&
+            other is _$FetchActiveParcelImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -199,8 +199,9 @@ class _$FetchActiveParcel implements FetchActiveParcel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchActiveParcelCopyWith<_$FetchActiveParcel> get copyWith =>
-      __$$FetchActiveParcelCopyWithImpl<_$FetchActiveParcel>(this, _$identity);
+  _$$FetchActiveParcelImplCopyWith<_$FetchActiveParcelImpl> get copyWith =>
+      __$$FetchActiveParcelImplCopyWithImpl<_$FetchActiveParcelImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -281,7 +282,7 @@ abstract class FetchActiveParcel implements ParcelsListEvent {
   const factory FetchActiveParcel(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchActiveParcel;
+      final RefreshController? controller}) = _$FetchActiveParcelImpl;
 
   @override
   BuildContext get context;
@@ -291,16 +292,16 @@ abstract class FetchActiveParcel implements ParcelsListEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchActiveParcelCopyWith<_$FetchActiveParcel> get copyWith =>
+  _$$FetchActiveParcelImplCopyWith<_$FetchActiveParcelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchHistoryParcelCopyWith<$Res>
+abstract class _$$FetchHistoryParcelImplCopyWith<$Res>
     implements $ParcelsListEventCopyWith<$Res> {
-  factory _$$FetchHistoryParcelCopyWith(_$FetchHistoryParcel value,
-          $Res Function(_$FetchHistoryParcel) then) =
-      __$$FetchHistoryParcelCopyWithImpl<$Res>;
+  factory _$$FetchHistoryParcelImplCopyWith(_$FetchHistoryParcelImpl value,
+          $Res Function(_$FetchHistoryParcelImpl) then) =
+      __$$FetchHistoryParcelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -308,11 +309,11 @@ abstract class _$$FetchHistoryParcelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchHistoryParcelCopyWithImpl<$Res>
-    extends _$ParcelsListEventCopyWithImpl<$Res, _$FetchHistoryParcel>
-    implements _$$FetchHistoryParcelCopyWith<$Res> {
-  __$$FetchHistoryParcelCopyWithImpl(
-      _$FetchHistoryParcel _value, $Res Function(_$FetchHistoryParcel) _then)
+class __$$FetchHistoryParcelImplCopyWithImpl<$Res>
+    extends _$ParcelsListEventCopyWithImpl<$Res, _$FetchHistoryParcelImpl>
+    implements _$$FetchHistoryParcelImplCopyWith<$Res> {
+  __$$FetchHistoryParcelImplCopyWithImpl(_$FetchHistoryParcelImpl _value,
+      $Res Function(_$FetchHistoryParcelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -322,7 +323,7 @@ class __$$FetchHistoryParcelCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchHistoryParcel(
+    return _then(_$FetchHistoryParcelImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -341,8 +342,8 @@ class __$$FetchHistoryParcelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchHistoryParcel implements FetchHistoryParcel {
-  const _$FetchHistoryParcel(
+class _$FetchHistoryParcelImpl implements FetchHistoryParcel {
+  const _$FetchHistoryParcelImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -358,10 +359,10 @@ class _$FetchHistoryParcel implements FetchHistoryParcel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchHistoryParcel &&
+            other is _$FetchHistoryParcelImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -375,8 +376,8 @@ class _$FetchHistoryParcel implements FetchHistoryParcel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchHistoryParcelCopyWith<_$FetchHistoryParcel> get copyWith =>
-      __$$FetchHistoryParcelCopyWithImpl<_$FetchHistoryParcel>(
+  _$$FetchHistoryParcelImplCopyWith<_$FetchHistoryParcelImpl> get copyWith =>
+      __$$FetchHistoryParcelImplCopyWithImpl<_$FetchHistoryParcelImpl>(
           this, _$identity);
 
   @override
@@ -458,7 +459,7 @@ abstract class FetchHistoryParcel implements ParcelsListEvent {
   const factory FetchHistoryParcel(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchHistoryParcel;
+      final RefreshController? controller}) = _$FetchHistoryParcelImpl;
 
   @override
   BuildContext get context;
@@ -468,7 +469,7 @@ abstract class FetchHistoryParcel implements ParcelsListEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchHistoryParcelCopyWith<_$FetchHistoryParcel> get copyWith =>
+  _$$FetchHistoryParcelImplCopyWith<_$FetchHistoryParcelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -544,11 +545,11 @@ class _$ParcelsListStateCopyWithImpl<$Res, $Val extends ParcelsListState>
 }
 
 /// @nodoc
-abstract class _$$_ParcelsListStateCopyWith<$Res>
+abstract class _$$ParcelsListStateImplCopyWith<$Res>
     implements $ParcelsListStateCopyWith<$Res> {
-  factory _$$_ParcelsListStateCopyWith(
-          _$_ParcelsListState value, $Res Function(_$_ParcelsListState) then) =
-      __$$_ParcelsListStateCopyWithImpl<$Res>;
+  factory _$$ParcelsListStateImplCopyWith(_$ParcelsListStateImpl value,
+          $Res Function(_$ParcelsListStateImpl) then) =
+      __$$ParcelsListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -560,11 +561,11 @@ abstract class _$$_ParcelsListStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ParcelsListStateCopyWithImpl<$Res>
-    extends _$ParcelsListStateCopyWithImpl<$Res, _$_ParcelsListState>
-    implements _$$_ParcelsListStateCopyWith<$Res> {
-  __$$_ParcelsListStateCopyWithImpl(
-      _$_ParcelsListState _value, $Res Function(_$_ParcelsListState) _then)
+class __$$ParcelsListStateImplCopyWithImpl<$Res>
+    extends _$ParcelsListStateCopyWithImpl<$Res, _$ParcelsListStateImpl>
+    implements _$$ParcelsListStateImplCopyWith<$Res> {
+  __$$ParcelsListStateImplCopyWithImpl(_$ParcelsListStateImpl _value,
+      $Res Function(_$ParcelsListStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -576,7 +577,7 @@ class __$$_ParcelsListStateCopyWithImpl<$Res>
     Object? activeOrders = null,
     Object? historyOrders = null,
   }) {
-    return _then(_$_ParcelsListState(
+    return _then(_$ParcelsListStateImpl(
       isActiveLoading: null == isActiveLoading
           ? _value.isActiveLoading
           : isActiveLoading // ignore: cast_nullable_to_non_nullable
@@ -603,8 +604,8 @@ class __$$_ParcelsListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ParcelsListState implements _ParcelsListState {
-  const _$_ParcelsListState(
+class _$ParcelsListStateImpl implements _ParcelsListState {
+  const _$ParcelsListStateImpl(
       {this.isActiveLoading = false,
       this.isHistoryLoading = false,
       this.totalActiveCount = 0,
@@ -646,10 +647,10 @@ class _$_ParcelsListState implements _ParcelsListState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ParcelsListState &&
+            other is _$ParcelsListStateImpl &&
             (identical(other.isActiveLoading, isActiveLoading) ||
                 other.isActiveLoading == isActiveLoading) &&
             (identical(other.isHistoryLoading, isHistoryLoading) ||
@@ -674,8 +675,9 @@ class _$_ParcelsListState implements _ParcelsListState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ParcelsListStateCopyWith<_$_ParcelsListState> get copyWith =>
-      __$$_ParcelsListStateCopyWithImpl<_$_ParcelsListState>(this, _$identity);
+  _$$ParcelsListStateImplCopyWith<_$ParcelsListStateImpl> get copyWith =>
+      __$$ParcelsListStateImplCopyWithImpl<_$ParcelsListStateImpl>(
+          this, _$identity);
 }
 
 abstract class _ParcelsListState implements ParcelsListState {
@@ -684,7 +686,7 @@ abstract class _ParcelsListState implements ParcelsListState {
       final bool isHistoryLoading,
       final int totalActiveCount,
       final List<ParcelOrder> activeOrders,
-      final List<ParcelOrder> historyOrders}) = _$_ParcelsListState;
+      final List<ParcelOrder> historyOrders}) = _$ParcelsListStateImpl;
 
   @override
   bool get isActiveLoading;
@@ -698,6 +700,6 @@ abstract class _ParcelsListState implements ParcelsListState {
   List<ParcelOrder> get historyOrders;
   @override
   @JsonKey(ignore: true)
-  _$$_ParcelsListStateCopyWith<_$_ParcelsListState> get copyWith =>
+  _$$ParcelsListStateImplCopyWith<_$ParcelsListStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

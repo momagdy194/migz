@@ -12,7 +12,7 @@ part of 'main_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$MainEvent {
@@ -80,20 +80,20 @@ class _$MainEventCopyWithImpl<$Res, $Val extends MainEvent>
 }
 
 /// @nodoc
-abstract class _$$ChangeIndexCopyWith<$Res> {
-  factory _$$ChangeIndexCopyWith(
-          _$ChangeIndex value, $Res Function(_$ChangeIndex) then) =
-      __$$ChangeIndexCopyWithImpl<$Res>;
+abstract class _$$ChangeIndexImplCopyWith<$Res> {
+  factory _$$ChangeIndexImplCopyWith(
+          _$ChangeIndexImpl value, $Res Function(_$ChangeIndexImpl) then) =
+      __$$ChangeIndexImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$ChangeIndexCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ChangeIndex>
-    implements _$$ChangeIndexCopyWith<$Res> {
-  __$$ChangeIndexCopyWithImpl(
-      _$ChangeIndex _value, $Res Function(_$ChangeIndex) _then)
+class __$$ChangeIndexImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$ChangeIndexImpl>
+    implements _$$ChangeIndexImplCopyWith<$Res> {
+  __$$ChangeIndexImplCopyWithImpl(
+      _$ChangeIndexImpl _value, $Res Function(_$ChangeIndexImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +101,7 @@ class __$$ChangeIndexCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$ChangeIndex(
+    return _then(_$ChangeIndexImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -112,8 +112,8 @@ class __$$ChangeIndexCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeIndex implements ChangeIndex {
-  const _$ChangeIndex({required this.index});
+class _$ChangeIndexImpl implements ChangeIndex {
+  const _$ChangeIndexImpl({required this.index});
 
   @override
   final int index;
@@ -124,10 +124,10 @@ class _$ChangeIndex implements ChangeIndex {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeIndex &&
+            other is _$ChangeIndexImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -137,8 +137,8 @@ class _$ChangeIndex implements ChangeIndex {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeIndexCopyWith<_$ChangeIndex> get copyWith =>
-      __$$ChangeIndexCopyWithImpl<_$ChangeIndex>(this, _$identity);
+  _$$ChangeIndexImplCopyWith<_$ChangeIndexImpl> get copyWith =>
+      __$$ChangeIndexImplCopyWithImpl<_$ChangeIndexImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -210,29 +210,29 @@ class _$ChangeIndex implements ChangeIndex {
 }
 
 abstract class ChangeIndex implements MainEvent {
-  const factory ChangeIndex({required final int index}) = _$ChangeIndex;
+  const factory ChangeIndex({required final int index}) = _$ChangeIndexImpl;
 
   int get index;
   @JsonKey(ignore: true)
-  _$$ChangeIndexCopyWith<_$ChangeIndex> get copyWith =>
+  _$$ChangeIndexImplCopyWith<_$ChangeIndexImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeForYouCopyWith<$Res> {
-  factory _$$ChangeForYouCopyWith(
-          _$ChangeForYou value, $Res Function(_$ChangeForYou) then) =
-      __$$ChangeForYouCopyWithImpl<$Res>;
+abstract class _$$ChangeForYouImplCopyWith<$Res> {
+  factory _$$ChangeForYouImplCopyWith(
+          _$ChangeForYouImpl value, $Res Function(_$ChangeForYouImpl) then) =
+      __$$ChangeForYouImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$ChangeForYouCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ChangeForYou>
-    implements _$$ChangeForYouCopyWith<$Res> {
-  __$$ChangeForYouCopyWithImpl(
-      _$ChangeForYou _value, $Res Function(_$ChangeForYou) _then)
+class __$$ChangeForYouImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$ChangeForYouImpl>
+    implements _$$ChangeForYouImplCopyWith<$Res> {
+  __$$ChangeForYouImplCopyWithImpl(
+      _$ChangeForYouImpl _value, $Res Function(_$ChangeForYouImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -240,7 +240,7 @@ class __$$ChangeForYouCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ChangeForYou(
+    return _then(_$ChangeForYouImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -251,8 +251,8 @@ class __$$ChangeForYouCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeForYou implements ChangeForYou {
-  const _$ChangeForYou({required this.value});
+class _$ChangeForYouImpl implements ChangeForYou {
+  const _$ChangeForYouImpl({required this.value});
 
   @override
   final bool value;
@@ -263,10 +263,10 @@ class _$ChangeForYou implements ChangeForYou {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeForYou &&
+            other is _$ChangeForYouImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -276,8 +276,8 @@ class _$ChangeForYou implements ChangeForYou {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeForYouCopyWith<_$ChangeForYou> get copyWith =>
-      __$$ChangeForYouCopyWithImpl<_$ChangeForYou>(this, _$identity);
+  _$$ChangeForYouImplCopyWith<_$ChangeForYouImpl> get copyWith =>
+      __$$ChangeForYouImplCopyWithImpl<_$ChangeForYouImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -349,29 +349,29 @@ class _$ChangeForYou implements ChangeForYou {
 }
 
 abstract class ChangeForYou implements MainEvent {
-  const factory ChangeForYou({required final bool value}) = _$ChangeForYou;
+  const factory ChangeForYou({required final bool value}) = _$ChangeForYouImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$ChangeForYouCopyWith<_$ChangeForYou> get copyWith =>
+  _$$ChangeForYouImplCopyWith<_$ChangeForYouImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ShowSearchCopyWith<$Res> {
-  factory _$$ShowSearchCopyWith(
-          _$ShowSearch value, $Res Function(_$ShowSearch) then) =
-      __$$ShowSearchCopyWithImpl<$Res>;
+abstract class _$$ShowSearchImplCopyWith<$Res> {
+  factory _$$ShowSearchImplCopyWith(
+          _$ShowSearchImpl value, $Res Function(_$ShowSearchImpl) then) =
+      __$$ShowSearchImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$ShowSearchCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ShowSearch>
-    implements _$$ShowSearchCopyWith<$Res> {
-  __$$ShowSearchCopyWithImpl(
-      _$ShowSearch _value, $Res Function(_$ShowSearch) _then)
+class __$$ShowSearchImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$ShowSearchImpl>
+    implements _$$ShowSearchImplCopyWith<$Res> {
+  __$$ShowSearchImplCopyWithImpl(
+      _$ShowSearchImpl _value, $Res Function(_$ShowSearchImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -379,7 +379,7 @@ class __$$ShowSearchCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ShowSearch(
+    return _then(_$ShowSearchImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -390,8 +390,8 @@ class __$$ShowSearchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ShowSearch implements ShowSearch {
-  const _$ShowSearch({required this.value});
+class _$ShowSearchImpl implements ShowSearch {
+  const _$ShowSearchImpl({required this.value});
 
   @override
   final bool value;
@@ -402,10 +402,10 @@ class _$ShowSearch implements ShowSearch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShowSearch &&
+            other is _$ShowSearchImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -415,8 +415,8 @@ class _$ShowSearch implements ShowSearch {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ShowSearchCopyWith<_$ShowSearch> get copyWith =>
-      __$$ShowSearchCopyWithImpl<_$ShowSearch>(this, _$identity);
+  _$$ShowSearchImplCopyWith<_$ShowSearchImpl> get copyWith =>
+      __$$ShowSearchImplCopyWithImpl<_$ShowSearchImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -488,11 +488,11 @@ class _$ShowSearch implements ShowSearch {
 }
 
 abstract class ShowSearch implements MainEvent {
-  const factory ShowSearch({required final bool value}) = _$ShowSearch;
+  const factory ShowSearch({required final bool value}) = _$ShowSearchImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$ShowSearchCopyWith<_$ShowSearch> get copyWith =>
+  _$$ShowSearchImplCopyWith<_$ShowSearchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -550,21 +550,22 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
 }
 
 /// @nodoc
-abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
-  factory _$$_MainStateCopyWith(
-          _$_MainState value, $Res Function(_$_MainState) then) =
-      __$$_MainStateCopyWithImpl<$Res>;
+abstract class _$$MainStateImplCopyWith<$Res>
+    implements $MainStateCopyWith<$Res> {
+  factory _$$MainStateImplCopyWith(
+          _$MainStateImpl value, $Res Function(_$MainStateImpl) then) =
+      __$$MainStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int selectIndex, bool selectForYou, bool isShowSearch});
 }
 
 /// @nodoc
-class __$$_MainStateCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$_MainState>
-    implements _$$_MainStateCopyWith<$Res> {
-  __$$_MainStateCopyWithImpl(
-      _$_MainState _value, $Res Function(_$_MainState) _then)
+class __$$MainStateImplCopyWithImpl<$Res>
+    extends _$MainStateCopyWithImpl<$Res, _$MainStateImpl>
+    implements _$$MainStateImplCopyWith<$Res> {
+  __$$MainStateImplCopyWithImpl(
+      _$MainStateImpl _value, $Res Function(_$MainStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -574,7 +575,7 @@ class __$$_MainStateCopyWithImpl<$Res>
     Object? selectForYou = null,
     Object? isShowSearch = null,
   }) {
-    return _then(_$_MainState(
+    return _then(_$MainStateImpl(
       selectIndex: null == selectIndex
           ? _value.selectIndex
           : selectIndex // ignore: cast_nullable_to_non_nullable
@@ -593,8 +594,8 @@ class __$$_MainStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MainState implements _MainState {
-  const _$_MainState(
+class _$MainStateImpl implements _MainState {
+  const _$MainStateImpl(
       {this.selectIndex = 0,
       this.selectForYou = true,
       this.isShowSearch = true});
@@ -615,10 +616,10 @@ class _$_MainState implements _MainState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MainState &&
+            other is _$MainStateImpl &&
             (identical(other.selectIndex, selectIndex) ||
                 other.selectIndex == selectIndex) &&
             (identical(other.selectForYou, selectForYou) ||
@@ -634,15 +635,15 @@ class _$_MainState implements _MainState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
-      __$$_MainStateCopyWithImpl<_$_MainState>(this, _$identity);
+  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
+      __$$MainStateImplCopyWithImpl<_$MainStateImpl>(this, _$identity);
 }
 
 abstract class _MainState implements MainState {
   const factory _MainState(
       {final int selectIndex,
       final bool selectForYou,
-      final bool isShowSearch}) = _$_MainState;
+      final bool isShowSearch}) = _$MainStateImpl;
 
   @override
   int get selectIndex;
@@ -652,6 +653,6 @@ abstract class _MainState implements MainState {
   bool get isShowSearch;
   @override
   @JsonKey(ignore: true)
-  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
+  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

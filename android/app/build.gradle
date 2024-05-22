@@ -34,7 +34,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "org.uzmart"
-    compileSdkVersion 33
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {

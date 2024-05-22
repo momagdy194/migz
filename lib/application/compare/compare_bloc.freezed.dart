@@ -12,7 +12,7 @@ part of 'compare_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CompareEvent {
@@ -81,21 +81,21 @@ class _$CompareEventCopyWithImpl<$Res, $Val extends CompareEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchActiveParcelCopyWith<$Res> {
-  factory _$$FetchActiveParcelCopyWith(
-          _$FetchActiveParcel value, $Res Function(_$FetchActiveParcel) then) =
-      __$$FetchActiveParcelCopyWithImpl<$Res>;
+abstract class _$$FetchActiveParcelImplCopyWith<$Res> {
+  factory _$$FetchActiveParcelImplCopyWith(_$FetchActiveParcelImpl value,
+          $Res Function(_$FetchActiveParcelImpl) then) =
+      __$$FetchActiveParcelImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context, bool? isRefresh, RefreshController? controller});
 }
 
 /// @nodoc
-class __$$FetchActiveParcelCopyWithImpl<$Res>
-    extends _$CompareEventCopyWithImpl<$Res, _$FetchActiveParcel>
-    implements _$$FetchActiveParcelCopyWith<$Res> {
-  __$$FetchActiveParcelCopyWithImpl(
-      _$FetchActiveParcel _value, $Res Function(_$FetchActiveParcel) _then)
+class __$$FetchActiveParcelImplCopyWithImpl<$Res>
+    extends _$CompareEventCopyWithImpl<$Res, _$FetchActiveParcelImpl>
+    implements _$$FetchActiveParcelImplCopyWith<$Res> {
+  __$$FetchActiveParcelImplCopyWithImpl(_$FetchActiveParcelImpl _value,
+      $Res Function(_$FetchActiveParcelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -105,7 +105,7 @@ class __$$FetchActiveParcelCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchActiveParcel(
+    return _then(_$FetchActiveParcelImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -124,8 +124,8 @@ class __$$FetchActiveParcelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchActiveParcel implements FetchActiveParcel {
-  const _$FetchActiveParcel(
+class _$FetchActiveParcelImpl implements FetchActiveParcel {
+  const _$FetchActiveParcelImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -141,10 +141,10 @@ class _$FetchActiveParcel implements FetchActiveParcel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchActiveParcel &&
+            other is _$FetchActiveParcelImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -158,8 +158,9 @@ class _$FetchActiveParcel implements FetchActiveParcel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchActiveParcelCopyWith<_$FetchActiveParcel> get copyWith =>
-      __$$FetchActiveParcelCopyWithImpl<_$FetchActiveParcel>(this, _$identity);
+  _$$FetchActiveParcelImplCopyWith<_$FetchActiveParcelImpl> get copyWith =>
+      __$$FetchActiveParcelImplCopyWithImpl<_$FetchActiveParcelImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -234,31 +235,31 @@ abstract class FetchActiveParcel implements CompareEvent {
   const factory FetchActiveParcel(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchActiveParcel;
+      final RefreshController? controller}) = _$FetchActiveParcelImpl;
 
   BuildContext get context;
   bool? get isRefresh;
   RefreshController? get controller;
   @JsonKey(ignore: true)
-  _$$FetchActiveParcelCopyWith<_$FetchActiveParcel> get copyWith =>
+  _$$FetchActiveParcelImplCopyWith<_$FetchActiveParcelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetExtraGroupCopyWith<$Res> {
-  factory _$$SetExtraGroupCopyWith(
-          _$SetExtraGroup value, $Res Function(_$SetExtraGroup) then) =
-      __$$SetExtraGroupCopyWithImpl<$Res>;
+abstract class _$$SetExtraGroupImplCopyWith<$Res> {
+  factory _$$SetExtraGroupImplCopyWith(
+          _$SetExtraGroupImpl value, $Res Function(_$SetExtraGroupImpl) then) =
+      __$$SetExtraGroupImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ProductData> products});
 }
 
 /// @nodoc
-class __$$SetExtraGroupCopyWithImpl<$Res>
-    extends _$CompareEventCopyWithImpl<$Res, _$SetExtraGroup>
-    implements _$$SetExtraGroupCopyWith<$Res> {
-  __$$SetExtraGroupCopyWithImpl(
-      _$SetExtraGroup _value, $Res Function(_$SetExtraGroup) _then)
+class __$$SetExtraGroupImplCopyWithImpl<$Res>
+    extends _$CompareEventCopyWithImpl<$Res, _$SetExtraGroupImpl>
+    implements _$$SetExtraGroupImplCopyWith<$Res> {
+  __$$SetExtraGroupImplCopyWithImpl(
+      _$SetExtraGroupImpl _value, $Res Function(_$SetExtraGroupImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -266,7 +267,7 @@ class __$$SetExtraGroupCopyWithImpl<$Res>
   $Res call({
     Object? products = null,
   }) {
-    return _then(_$SetExtraGroup(
+    return _then(_$SetExtraGroupImpl(
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
@@ -277,8 +278,8 @@ class __$$SetExtraGroupCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetExtraGroup implements SetExtraGroup {
-  const _$SetExtraGroup({required final List<ProductData> products})
+class _$SetExtraGroupImpl implements SetExtraGroup {
+  const _$SetExtraGroupImpl({required final List<ProductData> products})
       : _products = products;
 
   final List<ProductData> _products;
@@ -295,10 +296,10 @@ class _$SetExtraGroup implements SetExtraGroup {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetExtraGroup &&
+            other is _$SetExtraGroupImpl &&
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
@@ -309,8 +310,8 @@ class _$SetExtraGroup implements SetExtraGroup {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetExtraGroupCopyWith<_$SetExtraGroup> get copyWith =>
-      __$$SetExtraGroupCopyWithImpl<_$SetExtraGroup>(this, _$identity);
+  _$$SetExtraGroupImplCopyWith<_$SetExtraGroupImpl> get copyWith =>
+      __$$SetExtraGroupImplCopyWithImpl<_$SetExtraGroupImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -383,11 +384,11 @@ class _$SetExtraGroup implements SetExtraGroup {
 
 abstract class SetExtraGroup implements CompareEvent {
   const factory SetExtraGroup({required final List<ProductData> products}) =
-      _$SetExtraGroup;
+      _$SetExtraGroupImpl;
 
   List<ProductData> get products;
   @JsonKey(ignore: true)
-  _$$SetExtraGroupCopyWith<_$SetExtraGroup> get copyWith =>
+  _$$SetExtraGroupImplCopyWith<_$SetExtraGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -456,11 +457,11 @@ class _$CompareStateCopyWithImpl<$Res, $Val extends CompareState>
 }
 
 /// @nodoc
-abstract class _$$_CompareStateCopyWith<$Res>
+abstract class _$$CompareStateImplCopyWith<$Res>
     implements $CompareStateCopyWith<$Res> {
-  factory _$$_CompareStateCopyWith(
-          _$_CompareState value, $Res Function(_$_CompareState) then) =
-      __$$_CompareStateCopyWithImpl<$Res>;
+  factory _$$CompareStateImplCopyWith(
+          _$CompareStateImpl value, $Res Function(_$CompareStateImpl) then) =
+      __$$CompareStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -471,11 +472,11 @@ abstract class _$$_CompareStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CompareStateCopyWithImpl<$Res>
-    extends _$CompareStateCopyWithImpl<$Res, _$_CompareState>
-    implements _$$_CompareStateCopyWith<$Res> {
-  __$$_CompareStateCopyWithImpl(
-      _$_CompareState _value, $Res Function(_$_CompareState) _then)
+class __$$CompareStateImplCopyWithImpl<$Res>
+    extends _$CompareStateCopyWithImpl<$Res, _$CompareStateImpl>
+    implements _$$CompareStateImplCopyWith<$Res> {
+  __$$CompareStateImplCopyWithImpl(
+      _$CompareStateImpl _value, $Res Function(_$CompareStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -486,7 +487,7 @@ class __$$_CompareStateCopyWithImpl<$Res>
     Object? extraGroup = null,
     Object? propertyGroup = null,
   }) {
-    return _then(_$_CompareState(
+    return _then(_$CompareStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -509,8 +510,8 @@ class __$$_CompareStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CompareState implements _CompareState {
-  const _$_CompareState(
+class _$CompareStateImpl implements _CompareState {
+  const _$CompareStateImpl(
       {this.isLoading = false,
       final List<List<ProductData>> compare = const [],
       final List<GroupProperties> extraGroup = const [],
@@ -555,10 +556,10 @@ class _$_CompareState implements _CompareState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CompareState &&
+            other is _$CompareStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality().equals(other._compare, _compare) &&
@@ -579,8 +580,8 @@ class _$_CompareState implements _CompareState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CompareStateCopyWith<_$_CompareState> get copyWith =>
-      __$$_CompareStateCopyWithImpl<_$_CompareState>(this, _$identity);
+  _$$CompareStateImplCopyWith<_$CompareStateImpl> get copyWith =>
+      __$$CompareStateImplCopyWithImpl<_$CompareStateImpl>(this, _$identity);
 }
 
 abstract class _CompareState implements CompareState {
@@ -588,7 +589,7 @@ abstract class _CompareState implements CompareState {
       {final bool isLoading,
       final List<List<ProductData>> compare,
       final List<GroupProperties> extraGroup,
-      final List<GroupProperties> propertyGroup}) = _$_CompareState;
+      final List<GroupProperties> propertyGroup}) = _$CompareStateImpl;
 
   @override
   bool get isLoading;
@@ -600,6 +601,6 @@ abstract class _CompareState implements CompareState {
   List<GroupProperties> get propertyGroup;
   @override
   @JsonKey(ignore: true)
-  _$$_CompareStateCopyWith<_$_CompareState> get copyWith =>
+  _$$CompareStateImplCopyWith<_$CompareStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

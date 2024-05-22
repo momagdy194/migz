@@ -12,7 +12,7 @@ part of 'shop_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ShopEvent {
@@ -101,10 +101,11 @@ class _$ShopEventCopyWithImpl<$Res, $Val extends ShopEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchShopsCopyWith<$Res> implements $ShopEventCopyWith<$Res> {
-  factory _$$FetchShopsCopyWith(
-          _$FetchShops value, $Res Function(_$FetchShops) then) =
-      __$$FetchShopsCopyWithImpl<$Res>;
+abstract class _$$FetchShopsImplCopyWith<$Res>
+    implements $ShopEventCopyWith<$Res> {
+  factory _$$FetchShopsImplCopyWith(
+          _$FetchShopsImpl value, $Res Function(_$FetchShopsImpl) then) =
+      __$$FetchShopsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +113,11 @@ abstract class _$$FetchShopsCopyWith<$Res> implements $ShopEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FetchShopsCopyWithImpl<$Res>
-    extends _$ShopEventCopyWithImpl<$Res, _$FetchShops>
-    implements _$$FetchShopsCopyWith<$Res> {
-  __$$FetchShopsCopyWithImpl(
-      _$FetchShops _value, $Res Function(_$FetchShops) _then)
+class __$$FetchShopsImplCopyWithImpl<$Res>
+    extends _$ShopEventCopyWithImpl<$Res, _$FetchShopsImpl>
+    implements _$$FetchShopsImplCopyWith<$Res> {
+  __$$FetchShopsImplCopyWithImpl(
+      _$FetchShopsImpl _value, $Res Function(_$FetchShopsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +127,7 @@ class __$$FetchShopsCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchShops(
+    return _then(_$FetchShopsImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -145,8 +146,9 @@ class __$$FetchShopsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchShops implements FetchShops {
-  const _$FetchShops({required this.context, this.isRefresh, this.controller});
+class _$FetchShopsImpl implements FetchShops {
+  const _$FetchShopsImpl(
+      {required this.context, this.isRefresh, this.controller});
 
   @override
   final BuildContext context;
@@ -161,10 +163,10 @@ class _$FetchShops implements FetchShops {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchShops &&
+            other is _$FetchShopsImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -178,8 +180,8 @@ class _$FetchShops implements FetchShops {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchShopsCopyWith<_$FetchShops> get copyWith =>
-      __$$FetchShopsCopyWithImpl<_$FetchShops>(this, _$identity);
+  _$$FetchShopsImplCopyWith<_$FetchShopsImpl> get copyWith =>
+      __$$FetchShopsImplCopyWithImpl<_$FetchShopsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -255,7 +257,7 @@ abstract class FetchShops implements ShopEvent {
   const factory FetchShops(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchShops;
+      final RefreshController? controller}) = _$FetchShopsImpl;
 
   @override
   BuildContext get context;
@@ -263,27 +265,27 @@ abstract class FetchShops implements ShopEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchShopsCopyWith<_$FetchShops> get copyWith =>
+  _$$FetchShopsImplCopyWith<_$FetchShopsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchShopByIdCopyWith<$Res>
+abstract class _$$FetchShopByIdImplCopyWith<$Res>
     implements $ShopEventCopyWith<$Res> {
-  factory _$$FetchShopByIdCopyWith(
-          _$FetchShopById value, $Res Function(_$FetchShopById) then) =
-      __$$FetchShopByIdCopyWithImpl<$Res>;
+  factory _$$FetchShopByIdImplCopyWith(
+          _$FetchShopByIdImpl value, $Res Function(_$FetchShopByIdImpl) then) =
+      __$$FetchShopByIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, ShopData? shop});
 }
 
 /// @nodoc
-class __$$FetchShopByIdCopyWithImpl<$Res>
-    extends _$ShopEventCopyWithImpl<$Res, _$FetchShopById>
-    implements _$$FetchShopByIdCopyWith<$Res> {
-  __$$FetchShopByIdCopyWithImpl(
-      _$FetchShopById _value, $Res Function(_$FetchShopById) _then)
+class __$$FetchShopByIdImplCopyWithImpl<$Res>
+    extends _$ShopEventCopyWithImpl<$Res, _$FetchShopByIdImpl>
+    implements _$$FetchShopByIdImplCopyWith<$Res> {
+  __$$FetchShopByIdImplCopyWithImpl(
+      _$FetchShopByIdImpl _value, $Res Function(_$FetchShopByIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -292,7 +294,7 @@ class __$$FetchShopByIdCopyWithImpl<$Res>
     Object? context = null,
     Object? shop = freezed,
   }) {
-    return _then(_$FetchShopById(
+    return _then(_$FetchShopByIdImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -307,8 +309,8 @@ class __$$FetchShopByIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchShopById implements FetchShopById {
-  const _$FetchShopById({required this.context, required this.shop});
+class _$FetchShopByIdImpl implements FetchShopById {
+  const _$FetchShopByIdImpl({required this.context, required this.shop});
 
   @override
   final BuildContext context;
@@ -321,10 +323,10 @@ class _$FetchShopById implements FetchShopById {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchShopById &&
+            other is _$FetchShopByIdImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.shop, shop) || other.shop == shop));
   }
@@ -335,8 +337,8 @@ class _$FetchShopById implements FetchShopById {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchShopByIdCopyWith<_$FetchShopById> get copyWith =>
-      __$$FetchShopByIdCopyWithImpl<_$FetchShopById>(this, _$identity);
+  _$$FetchShopByIdImplCopyWith<_$FetchShopByIdImpl> get copyWith =>
+      __$$FetchShopByIdImplCopyWithImpl<_$FetchShopByIdImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -411,14 +413,14 @@ class _$FetchShopById implements FetchShopById {
 abstract class FetchShopById implements ShopEvent {
   const factory FetchShopById(
       {required final BuildContext context,
-      required final ShopData? shop}) = _$FetchShopById;
+      required final ShopData? shop}) = _$FetchShopByIdImpl;
 
   @override
   BuildContext get context;
   ShopData? get shop;
   @override
   @JsonKey(ignore: true)
-  _$$FetchShopByIdCopyWith<_$FetchShopById> get copyWith =>
+  _$$FetchShopByIdImplCopyWith<_$FetchShopByIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -486,10 +488,11 @@ class _$ShopStateCopyWithImpl<$Res, $Val extends ShopState>
 }
 
 /// @nodoc
-abstract class _$$_ShopStateCopyWith<$Res> implements $ShopStateCopyWith<$Res> {
-  factory _$$_ShopStateCopyWith(
-          _$_ShopState value, $Res Function(_$_ShopState) then) =
-      __$$_ShopStateCopyWithImpl<$Res>;
+abstract class _$$ShopStateImplCopyWith<$Res>
+    implements $ShopStateCopyWith<$Res> {
+  factory _$$ShopStateImplCopyWith(
+          _$ShopStateImpl value, $Res Function(_$ShopStateImpl) then) =
+      __$$ShopStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -500,11 +503,11 @@ abstract class _$$_ShopStateCopyWith<$Res> implements $ShopStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ShopStateCopyWithImpl<$Res>
-    extends _$ShopStateCopyWithImpl<$Res, _$_ShopState>
-    implements _$$_ShopStateCopyWith<$Res> {
-  __$$_ShopStateCopyWithImpl(
-      _$_ShopState _value, $Res Function(_$_ShopState) _then)
+class __$$ShopStateImplCopyWithImpl<$Res>
+    extends _$ShopStateCopyWithImpl<$Res, _$ShopStateImpl>
+    implements _$$ShopStateImplCopyWith<$Res> {
+  __$$ShopStateImplCopyWithImpl(
+      _$ShopStateImpl _value, $Res Function(_$ShopStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -515,7 +518,7 @@ class __$$_ShopStateCopyWithImpl<$Res>
     Object? isLoadingShops = null,
     Object? isLoading = null,
   }) {
-    return _then(_$_ShopState(
+    return _then(_$ShopStateImpl(
       shops: null == shops
           ? _value._shops
           : shops // ignore: cast_nullable_to_non_nullable
@@ -538,8 +541,8 @@ class __$$_ShopStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShopState implements _ShopState {
-  const _$_ShopState(
+class _$ShopStateImpl implements _ShopState {
+  const _$ShopStateImpl(
       {final List<ShopData> shops = const [],
       this.shop = null,
       this.isLoadingShops = true,
@@ -571,10 +574,10 @@ class _$_ShopState implements _ShopState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShopState &&
+            other is _$ShopStateImpl &&
             const DeepCollectionEquality().equals(other._shops, _shops) &&
             (identical(other.shop, shop) || other.shop == shop) &&
             (identical(other.isLoadingShops, isLoadingShops) ||
@@ -594,8 +597,8 @@ class _$_ShopState implements _ShopState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShopStateCopyWith<_$_ShopState> get copyWith =>
-      __$$_ShopStateCopyWithImpl<_$_ShopState>(this, _$identity);
+  _$$ShopStateImplCopyWith<_$ShopStateImpl> get copyWith =>
+      __$$ShopStateImplCopyWithImpl<_$ShopStateImpl>(this, _$identity);
 }
 
 abstract class _ShopState implements ShopState {
@@ -603,7 +606,7 @@ abstract class _ShopState implements ShopState {
       {final List<ShopData> shops,
       final ShopData? shop,
       final bool isLoadingShops,
-      final bool isLoading}) = _$_ShopState;
+      final bool isLoading}) = _$ShopStateImpl;
 
   @override
   List<ShopData> get shops;
@@ -615,6 +618,6 @@ abstract class _ShopState implements ShopState {
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_ShopStateCopyWith<_$_ShopState> get copyWith =>
+  _$$ShopStateImplCopyWith<_$ShopStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

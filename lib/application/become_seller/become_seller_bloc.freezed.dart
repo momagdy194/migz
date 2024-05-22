@@ -12,7 +12,7 @@ part of 'become_seller_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BecomeSellerEvent {
@@ -123,20 +123,20 @@ class _$BecomeSellerEventCopyWithImpl<$Res, $Val extends BecomeSellerEvent>
 }
 
 /// @nodoc
-abstract class _$$UpdateLogoPathCopyWith<$Res> {
-  factory _$$UpdateLogoPathCopyWith(
-          _$UpdateLogoPath value, $Res Function(_$UpdateLogoPath) then) =
-      __$$UpdateLogoPathCopyWithImpl<$Res>;
+abstract class _$$UpdateLogoPathImplCopyWith<$Res> {
+  factory _$$UpdateLogoPathImplCopyWith(_$UpdateLogoPathImpl value,
+          $Res Function(_$UpdateLogoPathImpl) then) =
+      __$$UpdateLogoPathImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? imagePath});
 }
 
 /// @nodoc
-class __$$UpdateLogoPathCopyWithImpl<$Res>
-    extends _$BecomeSellerEventCopyWithImpl<$Res, _$UpdateLogoPath>
-    implements _$$UpdateLogoPathCopyWith<$Res> {
-  __$$UpdateLogoPathCopyWithImpl(
-      _$UpdateLogoPath _value, $Res Function(_$UpdateLogoPath) _then)
+class __$$UpdateLogoPathImplCopyWithImpl<$Res>
+    extends _$BecomeSellerEventCopyWithImpl<$Res, _$UpdateLogoPathImpl>
+    implements _$$UpdateLogoPathImplCopyWith<$Res> {
+  __$$UpdateLogoPathImplCopyWithImpl(
+      _$UpdateLogoPathImpl _value, $Res Function(_$UpdateLogoPathImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -144,7 +144,7 @@ class __$$UpdateLogoPathCopyWithImpl<$Res>
   $Res call({
     Object? imagePath = freezed,
   }) {
-    return _then(_$UpdateLogoPath(
+    return _then(_$UpdateLogoPathImpl(
       imagePath: freezed == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -155,8 +155,8 @@ class __$$UpdateLogoPathCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateLogoPath implements UpdateLogoPath {
-  const _$UpdateLogoPath({required this.imagePath});
+class _$UpdateLogoPathImpl implements UpdateLogoPath {
+  const _$UpdateLogoPathImpl({required this.imagePath});
 
   @override
   final String? imagePath;
@@ -167,10 +167,10 @@ class _$UpdateLogoPath implements UpdateLogoPath {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateLogoPath &&
+            other is _$UpdateLogoPathImpl &&
             (identical(other.imagePath, imagePath) ||
                 other.imagePath == imagePath));
   }
@@ -181,8 +181,9 @@ class _$UpdateLogoPath implements UpdateLogoPath {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateLogoPathCopyWith<_$UpdateLogoPath> get copyWith =>
-      __$$UpdateLogoPathCopyWithImpl<_$UpdateLogoPath>(this, _$identity);
+  _$$UpdateLogoPathImplCopyWith<_$UpdateLogoPathImpl> get copyWith =>
+      __$$UpdateLogoPathImplCopyWithImpl<_$UpdateLogoPathImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -297,29 +298,29 @@ class _$UpdateLogoPath implements UpdateLogoPath {
 
 abstract class UpdateLogoPath implements BecomeSellerEvent {
   const factory UpdateLogoPath({required final String? imagePath}) =
-      _$UpdateLogoPath;
+      _$UpdateLogoPathImpl;
 
   String? get imagePath;
   @JsonKey(ignore: true)
-  _$$UpdateLogoPathCopyWith<_$UpdateLogoPath> get copyWith =>
+  _$$UpdateLogoPathImplCopyWith<_$UpdateLogoPathImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateBgPathCopyWith<$Res> {
-  factory _$$UpdateBgPathCopyWith(
-          _$UpdateBgPath value, $Res Function(_$UpdateBgPath) then) =
-      __$$UpdateBgPathCopyWithImpl<$Res>;
+abstract class _$$UpdateBgPathImplCopyWith<$Res> {
+  factory _$$UpdateBgPathImplCopyWith(
+          _$UpdateBgPathImpl value, $Res Function(_$UpdateBgPathImpl) then) =
+      __$$UpdateBgPathImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? imagePath});
 }
 
 /// @nodoc
-class __$$UpdateBgPathCopyWithImpl<$Res>
-    extends _$BecomeSellerEventCopyWithImpl<$Res, _$UpdateBgPath>
-    implements _$$UpdateBgPathCopyWith<$Res> {
-  __$$UpdateBgPathCopyWithImpl(
-      _$UpdateBgPath _value, $Res Function(_$UpdateBgPath) _then)
+class __$$UpdateBgPathImplCopyWithImpl<$Res>
+    extends _$BecomeSellerEventCopyWithImpl<$Res, _$UpdateBgPathImpl>
+    implements _$$UpdateBgPathImplCopyWith<$Res> {
+  __$$UpdateBgPathImplCopyWithImpl(
+      _$UpdateBgPathImpl _value, $Res Function(_$UpdateBgPathImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -327,7 +328,7 @@ class __$$UpdateBgPathCopyWithImpl<$Res>
   $Res call({
     Object? imagePath = freezed,
   }) {
-    return _then(_$UpdateBgPath(
+    return _then(_$UpdateBgPathImpl(
       imagePath: freezed == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -338,8 +339,8 @@ class __$$UpdateBgPathCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateBgPath implements UpdateBgPath {
-  const _$UpdateBgPath({required this.imagePath});
+class _$UpdateBgPathImpl implements UpdateBgPath {
+  const _$UpdateBgPathImpl({required this.imagePath});
 
   @override
   final String? imagePath;
@@ -350,10 +351,10 @@ class _$UpdateBgPath implements UpdateBgPath {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateBgPath &&
+            other is _$UpdateBgPathImpl &&
             (identical(other.imagePath, imagePath) ||
                 other.imagePath == imagePath));
   }
@@ -364,8 +365,8 @@ class _$UpdateBgPath implements UpdateBgPath {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateBgPathCopyWith<_$UpdateBgPath> get copyWith =>
-      __$$UpdateBgPathCopyWithImpl<_$UpdateBgPath>(this, _$identity);
+  _$$UpdateBgPathImplCopyWith<_$UpdateBgPathImpl> get copyWith =>
+      __$$UpdateBgPathImplCopyWithImpl<_$UpdateBgPathImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -480,29 +481,29 @@ class _$UpdateBgPath implements UpdateBgPath {
 
 abstract class UpdateBgPath implements BecomeSellerEvent {
   const factory UpdateBgPath({required final String? imagePath}) =
-      _$UpdateBgPath;
+      _$UpdateBgPathImpl;
 
   String? get imagePath;
   @JsonKey(ignore: true)
-  _$$UpdateBgPathCopyWith<_$UpdateBgPath> get copyWith =>
+  _$$UpdateBgPathImplCopyWith<_$UpdateBgPathImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetDeliveryTimeTypeCopyWith<$Res> {
-  factory _$$SetDeliveryTimeTypeCopyWith(_$SetDeliveryTimeType value,
-          $Res Function(_$SetDeliveryTimeType) then) =
-      __$$SetDeliveryTimeTypeCopyWithImpl<$Res>;
+abstract class _$$SetDeliveryTimeTypeImplCopyWith<$Res> {
+  factory _$$SetDeliveryTimeTypeImplCopyWith(_$SetDeliveryTimeTypeImpl value,
+          $Res Function(_$SetDeliveryTimeTypeImpl) then) =
+      __$$SetDeliveryTimeTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? type});
 }
 
 /// @nodoc
-class __$$SetDeliveryTimeTypeCopyWithImpl<$Res>
-    extends _$BecomeSellerEventCopyWithImpl<$Res, _$SetDeliveryTimeType>
-    implements _$$SetDeliveryTimeTypeCopyWith<$Res> {
-  __$$SetDeliveryTimeTypeCopyWithImpl(
-      _$SetDeliveryTimeType _value, $Res Function(_$SetDeliveryTimeType) _then)
+class __$$SetDeliveryTimeTypeImplCopyWithImpl<$Res>
+    extends _$BecomeSellerEventCopyWithImpl<$Res, _$SetDeliveryTimeTypeImpl>
+    implements _$$SetDeliveryTimeTypeImplCopyWith<$Res> {
+  __$$SetDeliveryTimeTypeImplCopyWithImpl(_$SetDeliveryTimeTypeImpl _value,
+      $Res Function(_$SetDeliveryTimeTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -510,7 +511,7 @@ class __$$SetDeliveryTimeTypeCopyWithImpl<$Res>
   $Res call({
     Object? type = freezed,
   }) {
-    return _then(_$SetDeliveryTimeType(
+    return _then(_$SetDeliveryTimeTypeImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -521,8 +522,8 @@ class __$$SetDeliveryTimeTypeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetDeliveryTimeType implements SetDeliveryTimeType {
-  const _$SetDeliveryTimeType({required this.type});
+class _$SetDeliveryTimeTypeImpl implements SetDeliveryTimeType {
+  const _$SetDeliveryTimeTypeImpl({required this.type});
 
   @override
   final String? type;
@@ -533,10 +534,10 @@ class _$SetDeliveryTimeType implements SetDeliveryTimeType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetDeliveryTimeType &&
+            other is _$SetDeliveryTimeTypeImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -546,8 +547,8 @@ class _$SetDeliveryTimeType implements SetDeliveryTimeType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetDeliveryTimeTypeCopyWith<_$SetDeliveryTimeType> get copyWith =>
-      __$$SetDeliveryTimeTypeCopyWithImpl<_$SetDeliveryTimeType>(
+  _$$SetDeliveryTimeTypeImplCopyWith<_$SetDeliveryTimeTypeImpl> get copyWith =>
+      __$$SetDeliveryTimeTypeImplCopyWithImpl<_$SetDeliveryTimeTypeImpl>(
           this, _$identity);
 
   @override
@@ -663,29 +664,29 @@ class _$SetDeliveryTimeType implements SetDeliveryTimeType {
 
 abstract class SetDeliveryTimeType implements BecomeSellerEvent {
   const factory SetDeliveryTimeType({required final String? type}) =
-      _$SetDeliveryTimeType;
+      _$SetDeliveryTimeTypeImpl;
 
   String? get type;
   @JsonKey(ignore: true)
-  _$$SetDeliveryTimeTypeCopyWith<_$SetDeliveryTimeType> get copyWith =>
+  _$$SetDeliveryTimeTypeImplCopyWith<_$SetDeliveryTimeTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetDeliveryTypeCopyWith<$Res> {
-  factory _$$SetDeliveryTypeCopyWith(
-          _$SetDeliveryType value, $Res Function(_$SetDeliveryType) then) =
-      __$$SetDeliveryTypeCopyWithImpl<$Res>;
+abstract class _$$SetDeliveryTypeImplCopyWith<$Res> {
+  factory _$$SetDeliveryTypeImplCopyWith(_$SetDeliveryTypeImpl value,
+          $Res Function(_$SetDeliveryTypeImpl) then) =
+      __$$SetDeliveryTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? type});
 }
 
 /// @nodoc
-class __$$SetDeliveryTypeCopyWithImpl<$Res>
-    extends _$BecomeSellerEventCopyWithImpl<$Res, _$SetDeliveryType>
-    implements _$$SetDeliveryTypeCopyWith<$Res> {
-  __$$SetDeliveryTypeCopyWithImpl(
-      _$SetDeliveryType _value, $Res Function(_$SetDeliveryType) _then)
+class __$$SetDeliveryTypeImplCopyWithImpl<$Res>
+    extends _$BecomeSellerEventCopyWithImpl<$Res, _$SetDeliveryTypeImpl>
+    implements _$$SetDeliveryTypeImplCopyWith<$Res> {
+  __$$SetDeliveryTypeImplCopyWithImpl(
+      _$SetDeliveryTypeImpl _value, $Res Function(_$SetDeliveryTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -693,7 +694,7 @@ class __$$SetDeliveryTypeCopyWithImpl<$Res>
   $Res call({
     Object? type = freezed,
   }) {
-    return _then(_$SetDeliveryType(
+    return _then(_$SetDeliveryTypeImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -704,8 +705,8 @@ class __$$SetDeliveryTypeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetDeliveryType implements SetDeliveryType {
-  const _$SetDeliveryType({required this.type});
+class _$SetDeliveryTypeImpl implements SetDeliveryType {
+  const _$SetDeliveryTypeImpl({required this.type});
 
   @override
   final String? type;
@@ -716,10 +717,10 @@ class _$SetDeliveryType implements SetDeliveryType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetDeliveryType &&
+            other is _$SetDeliveryTypeImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -729,8 +730,9 @@ class _$SetDeliveryType implements SetDeliveryType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetDeliveryTypeCopyWith<_$SetDeliveryType> get copyWith =>
-      __$$SetDeliveryTypeCopyWithImpl<_$SetDeliveryType>(this, _$identity);
+  _$$SetDeliveryTypeImplCopyWith<_$SetDeliveryTypeImpl> get copyWith =>
+      __$$SetDeliveryTypeImplCopyWithImpl<_$SetDeliveryTypeImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -845,19 +847,19 @@ class _$SetDeliveryType implements SetDeliveryType {
 
 abstract class SetDeliveryType implements BecomeSellerEvent {
   const factory SetDeliveryType({required final String? type}) =
-      _$SetDeliveryType;
+      _$SetDeliveryTypeImpl;
 
   String? get type;
   @JsonKey(ignore: true)
-  _$$SetDeliveryTypeCopyWith<_$SetDeliveryType> get copyWith =>
+  _$$SetDeliveryTypeImplCopyWith<_$SetDeliveryTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CreateShopCopyWith<$Res> {
-  factory _$$CreateShopCopyWith(
-          _$CreateShop value, $Res Function(_$CreateShop) then) =
-      __$$CreateShopCopyWithImpl<$Res>;
+abstract class _$$CreateShopImplCopyWith<$Res> {
+  factory _$$CreateShopImplCopyWith(
+          _$CreateShopImpl value, $Res Function(_$CreateShopImpl) then) =
+      __$$CreateShopImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {BuildContext context,
@@ -872,11 +874,11 @@ abstract class _$$CreateShopCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CreateShopCopyWithImpl<$Res>
-    extends _$BecomeSellerEventCopyWithImpl<$Res, _$CreateShop>
-    implements _$$CreateShopCopyWith<$Res> {
-  __$$CreateShopCopyWithImpl(
-      _$CreateShop _value, $Res Function(_$CreateShop) _then)
+class __$$CreateShopImplCopyWithImpl<$Res>
+    extends _$BecomeSellerEventCopyWithImpl<$Res, _$CreateShopImpl>
+    implements _$$CreateShopImplCopyWith<$Res> {
+  __$$CreateShopImplCopyWithImpl(
+      _$CreateShopImpl _value, $Res Function(_$CreateShopImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -892,7 +894,7 @@ class __$$CreateShopCopyWithImpl<$Res>
     Object? tax = null,
     Object? location = freezed,
   }) {
-    return _then(_$CreateShop(
+    return _then(_$CreateShopImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -935,8 +937,8 @@ class __$$CreateShopCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CreateShop implements CreateShop {
-  const _$CreateShop(
+class _$CreateShopImpl implements CreateShop {
+  const _$CreateShopImpl(
       {required this.context,
       required this.shopName,
       required this.description,
@@ -972,10 +974,10 @@ class _$CreateShop implements CreateShop {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateShop &&
+            other is _$CreateShopImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.shopName, shopName) ||
                 other.shopName == shopName) &&
@@ -1000,8 +1002,8 @@ class _$CreateShop implements CreateShop {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreateShopCopyWith<_$CreateShop> get copyWith =>
-      __$$CreateShopCopyWithImpl<_$CreateShop>(this, _$identity);
+  _$$CreateShopImplCopyWith<_$CreateShopImpl> get copyWith =>
+      __$$CreateShopImplCopyWithImpl<_$CreateShopImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1127,7 +1129,7 @@ abstract class CreateShop implements BecomeSellerEvent {
       required final String deliveryFrom,
       required final String minAmount,
       required final String tax,
-      required final LocationModel? location}) = _$CreateShop;
+      required final LocationModel? location}) = _$CreateShopImpl;
 
   BuildContext get context;
   String get shopName;
@@ -1139,7 +1141,7 @@ abstract class CreateShop implements BecomeSellerEvent {
   String get tax;
   LocationModel? get location;
   @JsonKey(ignore: true)
-  _$$CreateShopCopyWith<_$CreateShop> get copyWith =>
+  _$$CreateShopImplCopyWith<_$CreateShopImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1222,11 +1224,11 @@ class _$BecomeSellerStateCopyWithImpl<$Res, $Val extends BecomeSellerState>
 }
 
 /// @nodoc
-abstract class _$$_BecomeSellerStateCopyWith<$Res>
+abstract class _$$BecomeSellerStateImplCopyWith<$Res>
     implements $BecomeSellerStateCopyWith<$Res> {
-  factory _$$_BecomeSellerStateCopyWith(_$_BecomeSellerState value,
-          $Res Function(_$_BecomeSellerState) then) =
-      __$$_BecomeSellerStateCopyWithImpl<$Res>;
+  factory _$$BecomeSellerStateImplCopyWith(_$BecomeSellerStateImpl value,
+          $Res Function(_$BecomeSellerStateImpl) then) =
+      __$$BecomeSellerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1239,11 +1241,11 @@ abstract class _$$_BecomeSellerStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BecomeSellerStateCopyWithImpl<$Res>
-    extends _$BecomeSellerStateCopyWithImpl<$Res, _$_BecomeSellerState>
-    implements _$$_BecomeSellerStateCopyWith<$Res> {
-  __$$_BecomeSellerStateCopyWithImpl(
-      _$_BecomeSellerState _value, $Res Function(_$_BecomeSellerState) _then)
+class __$$BecomeSellerStateImplCopyWithImpl<$Res>
+    extends _$BecomeSellerStateCopyWithImpl<$Res, _$BecomeSellerStateImpl>
+    implements _$$BecomeSellerStateImplCopyWith<$Res> {
+  __$$BecomeSellerStateImplCopyWithImpl(_$BecomeSellerStateImpl _value,
+      $Res Function(_$BecomeSellerStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1256,7 +1258,7 @@ class __$$_BecomeSellerStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isSuccess = null,
   }) {
-    return _then(_$_BecomeSellerState(
+    return _then(_$BecomeSellerStateImpl(
       logoPath: freezed == logoPath
           ? _value.logoPath
           : logoPath // ignore: cast_nullable_to_non_nullable
@@ -1287,8 +1289,8 @@ class __$$_BecomeSellerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BecomeSellerState implements _BecomeSellerState {
-  const _$_BecomeSellerState(
+class _$BecomeSellerStateImpl implements _BecomeSellerState {
+  const _$BecomeSellerStateImpl(
       {this.logoPath = null,
       this.bgPath = null,
       this.type = TrKeys.month,
@@ -1321,10 +1323,10 @@ class _$_BecomeSellerState implements _BecomeSellerState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BecomeSellerState &&
+            other is _$BecomeSellerStateImpl &&
             (identical(other.logoPath, logoPath) ||
                 other.logoPath == logoPath) &&
             (identical(other.bgPath, bgPath) || other.bgPath == bgPath) &&
@@ -1344,8 +1346,8 @@ class _$_BecomeSellerState implements _BecomeSellerState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BecomeSellerStateCopyWith<_$_BecomeSellerState> get copyWith =>
-      __$$_BecomeSellerStateCopyWithImpl<_$_BecomeSellerState>(
+  _$$BecomeSellerStateImplCopyWith<_$BecomeSellerStateImpl> get copyWith =>
+      __$$BecomeSellerStateImplCopyWithImpl<_$BecomeSellerStateImpl>(
           this, _$identity);
 }
 
@@ -1356,7 +1358,7 @@ abstract class _BecomeSellerState implements BecomeSellerState {
       final String type,
       final String deliveryType,
       final bool isLoading,
-      final bool isSuccess}) = _$_BecomeSellerState;
+      final bool isSuccess}) = _$BecomeSellerStateImpl;
 
   @override
   String? get logoPath;
@@ -1372,6 +1374,6 @@ abstract class _BecomeSellerState implements BecomeSellerState {
   bool get isSuccess;
   @override
   @JsonKey(ignore: true)
-  _$$_BecomeSellerStateCopyWith<_$_BecomeSellerState> get copyWith =>
+  _$$BecomeSellerStateImplCopyWith<_$BecomeSellerStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

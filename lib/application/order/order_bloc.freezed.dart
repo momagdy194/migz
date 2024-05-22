@@ -12,7 +12,7 @@ part of 'order_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$OrderEvent {
@@ -159,11 +159,11 @@ class _$OrderEventCopyWithImpl<$Res, $Val extends OrderEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchActiveOrdersCopyWith<$Res>
+abstract class _$$FetchActiveOrdersImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$FetchActiveOrdersCopyWith(
-          _$FetchActiveOrders value, $Res Function(_$FetchActiveOrders) then) =
-      __$$FetchActiveOrdersCopyWithImpl<$Res>;
+  factory _$$FetchActiveOrdersImplCopyWith(_$FetchActiveOrdersImpl value,
+          $Res Function(_$FetchActiveOrdersImpl) then) =
+      __$$FetchActiveOrdersImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -171,11 +171,11 @@ abstract class _$$FetchActiveOrdersCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchActiveOrdersCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$FetchActiveOrders>
-    implements _$$FetchActiveOrdersCopyWith<$Res> {
-  __$$FetchActiveOrdersCopyWithImpl(
-      _$FetchActiveOrders _value, $Res Function(_$FetchActiveOrders) _then)
+class __$$FetchActiveOrdersImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$FetchActiveOrdersImpl>
+    implements _$$FetchActiveOrdersImplCopyWith<$Res> {
+  __$$FetchActiveOrdersImplCopyWithImpl(_$FetchActiveOrdersImpl _value,
+      $Res Function(_$FetchActiveOrdersImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -185,7 +185,7 @@ class __$$FetchActiveOrdersCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchActiveOrders(
+    return _then(_$FetchActiveOrdersImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -204,8 +204,8 @@ class __$$FetchActiveOrdersCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchActiveOrders implements FetchActiveOrders {
-  const _$FetchActiveOrders(
+class _$FetchActiveOrdersImpl implements FetchActiveOrders {
+  const _$FetchActiveOrdersImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -221,10 +221,10 @@ class _$FetchActiveOrders implements FetchActiveOrders {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchActiveOrders &&
+            other is _$FetchActiveOrdersImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -238,8 +238,9 @@ class _$FetchActiveOrders implements FetchActiveOrders {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchActiveOrdersCopyWith<_$FetchActiveOrders> get copyWith =>
-      __$$FetchActiveOrdersCopyWithImpl<_$FetchActiveOrders>(this, _$identity);
+  _$$FetchActiveOrdersImplCopyWith<_$FetchActiveOrdersImpl> get copyWith =>
+      __$$FetchActiveOrdersImplCopyWithImpl<_$FetchActiveOrdersImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -372,7 +373,7 @@ abstract class FetchActiveOrders implements OrderEvent {
   const factory FetchActiveOrders(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchActiveOrders;
+      final RefreshController? controller}) = _$FetchActiveOrdersImpl;
 
   @override
   BuildContext get context;
@@ -380,16 +381,16 @@ abstract class FetchActiveOrders implements OrderEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchActiveOrdersCopyWith<_$FetchActiveOrders> get copyWith =>
+  _$$FetchActiveOrdersImplCopyWith<_$FetchActiveOrdersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchRefundOrdersCopyWith<$Res>
+abstract class _$$FetchRefundOrdersImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$FetchRefundOrdersCopyWith(
-          _$FetchRefundOrders value, $Res Function(_$FetchRefundOrders) then) =
-      __$$FetchRefundOrdersCopyWithImpl<$Res>;
+  factory _$$FetchRefundOrdersImplCopyWith(_$FetchRefundOrdersImpl value,
+          $Res Function(_$FetchRefundOrdersImpl) then) =
+      __$$FetchRefundOrdersImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -397,11 +398,11 @@ abstract class _$$FetchRefundOrdersCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FetchRefundOrdersCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$FetchRefundOrders>
-    implements _$$FetchRefundOrdersCopyWith<$Res> {
-  __$$FetchRefundOrdersCopyWithImpl(
-      _$FetchRefundOrders _value, $Res Function(_$FetchRefundOrders) _then)
+class __$$FetchRefundOrdersImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$FetchRefundOrdersImpl>
+    implements _$$FetchRefundOrdersImplCopyWith<$Res> {
+  __$$FetchRefundOrdersImplCopyWithImpl(_$FetchRefundOrdersImpl _value,
+      $Res Function(_$FetchRefundOrdersImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -411,7 +412,7 @@ class __$$FetchRefundOrdersCopyWithImpl<$Res>
     Object? isRefresh = freezed,
     Object? controller = freezed,
   }) {
-    return _then(_$FetchRefundOrders(
+    return _then(_$FetchRefundOrdersImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -430,8 +431,8 @@ class __$$FetchRefundOrdersCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchRefundOrders implements FetchRefundOrders {
-  const _$FetchRefundOrders(
+class _$FetchRefundOrdersImpl implements FetchRefundOrders {
+  const _$FetchRefundOrdersImpl(
       {required this.context, this.isRefresh, this.controller});
 
   @override
@@ -447,10 +448,10 @@ class _$FetchRefundOrders implements FetchRefundOrders {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchRefundOrders &&
+            other is _$FetchRefundOrdersImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.isRefresh, isRefresh) ||
                 other.isRefresh == isRefresh) &&
@@ -464,8 +465,9 @@ class _$FetchRefundOrders implements FetchRefundOrders {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchRefundOrdersCopyWith<_$FetchRefundOrders> get copyWith =>
-      __$$FetchRefundOrdersCopyWithImpl<_$FetchRefundOrders>(this, _$identity);
+  _$$FetchRefundOrdersImplCopyWith<_$FetchRefundOrdersImpl> get copyWith =>
+      __$$FetchRefundOrdersImplCopyWithImpl<_$FetchRefundOrdersImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -598,7 +600,7 @@ abstract class FetchRefundOrders implements OrderEvent {
   const factory FetchRefundOrders(
       {required final BuildContext context,
       final bool? isRefresh,
-      final RefreshController? controller}) = _$FetchRefundOrders;
+      final RefreshController? controller}) = _$FetchRefundOrdersImpl;
 
   @override
   BuildContext get context;
@@ -606,27 +608,27 @@ abstract class FetchRefundOrders implements OrderEvent {
   RefreshController? get controller;
   @override
   @JsonKey(ignore: true)
-  _$$FetchRefundOrdersCopyWith<_$FetchRefundOrders> get copyWith =>
+  _$$FetchRefundOrdersImplCopyWith<_$FetchRefundOrdersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchOrderByIdCopyWith<$Res>
+abstract class _$$FetchOrderByIdImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$FetchOrderByIdCopyWith(
-          _$FetchOrderById value, $Res Function(_$FetchOrderById) then) =
-      __$$FetchOrderByIdCopyWithImpl<$Res>;
+  factory _$$FetchOrderByIdImplCopyWith(_$FetchOrderByIdImpl value,
+          $Res Function(_$FetchOrderByIdImpl) then) =
+      __$$FetchOrderByIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int id, OrderModel? order});
 }
 
 /// @nodoc
-class __$$FetchOrderByIdCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$FetchOrderById>
-    implements _$$FetchOrderByIdCopyWith<$Res> {
-  __$$FetchOrderByIdCopyWithImpl(
-      _$FetchOrderById _value, $Res Function(_$FetchOrderById) _then)
+class __$$FetchOrderByIdImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$FetchOrderByIdImpl>
+    implements _$$FetchOrderByIdImplCopyWith<$Res> {
+  __$$FetchOrderByIdImplCopyWithImpl(
+      _$FetchOrderByIdImpl _value, $Res Function(_$FetchOrderByIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -636,7 +638,7 @@ class __$$FetchOrderByIdCopyWithImpl<$Res>
     Object? id = null,
     Object? order = freezed,
   }) {
-    return _then(_$FetchOrderById(
+    return _then(_$FetchOrderByIdImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -655,8 +657,9 @@ class __$$FetchOrderByIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchOrderById implements FetchOrderById {
-  const _$FetchOrderById({required this.context, required this.id, this.order});
+class _$FetchOrderByIdImpl implements FetchOrderById {
+  const _$FetchOrderByIdImpl(
+      {required this.context, required this.id, this.order});
 
   @override
   final BuildContext context;
@@ -671,10 +674,10 @@ class _$FetchOrderById implements FetchOrderById {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchOrderById &&
+            other is _$FetchOrderByIdImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.order, order) || other.order == order));
@@ -686,8 +689,9 @@ class _$FetchOrderById implements FetchOrderById {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchOrderByIdCopyWith<_$FetchOrderById> get copyWith =>
-      __$$FetchOrderByIdCopyWithImpl<_$FetchOrderById>(this, _$identity);
+  _$$FetchOrderByIdImplCopyWith<_$FetchOrderByIdImpl> get copyWith =>
+      __$$FetchOrderByIdImplCopyWithImpl<_$FetchOrderByIdImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -820,7 +824,7 @@ abstract class FetchOrderById implements OrderEvent {
   const factory FetchOrderById(
       {required final BuildContext context,
       required final int id,
-      final OrderModel? order}) = _$FetchOrderById;
+      final OrderModel? order}) = _$FetchOrderByIdImpl;
 
   @override
   BuildContext get context;
@@ -828,27 +832,27 @@ abstract class FetchOrderById implements OrderEvent {
   OrderModel? get order;
   @override
   @JsonKey(ignore: true)
-  _$$FetchOrderByIdCopyWith<_$FetchOrderById> get copyWith =>
+  _$$FetchOrderByIdImplCopyWith<_$FetchOrderByIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchRefundOrderByIdCopyWith<$Res>
+abstract class _$$FetchRefundOrderByIdImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$FetchRefundOrderByIdCopyWith(_$FetchRefundOrderById value,
-          $Res Function(_$FetchRefundOrderById) then) =
-      __$$FetchRefundOrderByIdCopyWithImpl<$Res>;
+  factory _$$FetchRefundOrderByIdImplCopyWith(_$FetchRefundOrderByIdImpl value,
+          $Res Function(_$FetchRefundOrderByIdImpl) then) =
+      __$$FetchRefundOrderByIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int id, RefundModel? refund});
 }
 
 /// @nodoc
-class __$$FetchRefundOrderByIdCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$FetchRefundOrderById>
-    implements _$$FetchRefundOrderByIdCopyWith<$Res> {
-  __$$FetchRefundOrderByIdCopyWithImpl(_$FetchRefundOrderById _value,
-      $Res Function(_$FetchRefundOrderById) _then)
+class __$$FetchRefundOrderByIdImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$FetchRefundOrderByIdImpl>
+    implements _$$FetchRefundOrderByIdImplCopyWith<$Res> {
+  __$$FetchRefundOrderByIdImplCopyWithImpl(_$FetchRefundOrderByIdImpl _value,
+      $Res Function(_$FetchRefundOrderByIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -858,7 +862,7 @@ class __$$FetchRefundOrderByIdCopyWithImpl<$Res>
     Object? id = null,
     Object? refund = freezed,
   }) {
-    return _then(_$FetchRefundOrderById(
+    return _then(_$FetchRefundOrderByIdImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -877,8 +881,8 @@ class __$$FetchRefundOrderByIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchRefundOrderById implements FetchRefundOrderById {
-  const _$FetchRefundOrderById(
+class _$FetchRefundOrderByIdImpl implements FetchRefundOrderById {
+  const _$FetchRefundOrderByIdImpl(
       {required this.context, required this.id, this.refund});
 
   @override
@@ -894,10 +898,10 @@ class _$FetchRefundOrderById implements FetchRefundOrderById {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchRefundOrderById &&
+            other is _$FetchRefundOrderByIdImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.refund, refund) || other.refund == refund));
@@ -909,9 +913,10 @@ class _$FetchRefundOrderById implements FetchRefundOrderById {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchRefundOrderByIdCopyWith<_$FetchRefundOrderById> get copyWith =>
-      __$$FetchRefundOrderByIdCopyWithImpl<_$FetchRefundOrderById>(
-          this, _$identity);
+  _$$FetchRefundOrderByIdImplCopyWith<_$FetchRefundOrderByIdImpl>
+      get copyWith =>
+          __$$FetchRefundOrderByIdImplCopyWithImpl<_$FetchRefundOrderByIdImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1044,7 +1049,7 @@ abstract class FetchRefundOrderById implements OrderEvent {
   const factory FetchRefundOrderById(
       {required final BuildContext context,
       required final int id,
-      final RefundModel? refund}) = _$FetchRefundOrderById;
+      final RefundModel? refund}) = _$FetchRefundOrderByIdImpl;
 
   @override
   BuildContext get context;
@@ -1052,16 +1057,16 @@ abstract class FetchRefundOrderById implements OrderEvent {
   RefundModel? get refund;
   @override
   @JsonKey(ignore: true)
-  _$$FetchRefundOrderByIdCopyWith<_$FetchRefundOrderById> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchRefundOrderByIdImplCopyWith<_$FetchRefundOrderByIdImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CreateOrderCopyWith<$Res>
+abstract class _$$CreateOrderImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$CreateOrderCopyWith(
-          _$CreateOrder value, $Res Function(_$CreateOrder) then) =
-      __$$CreateOrderCopyWithImpl<$Res>;
+  factory _$$CreateOrderImplCopyWith(
+          _$CreateOrderImpl value, $Res Function(_$CreateOrderImpl) then) =
+      __$$CreateOrderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1073,11 +1078,11 @@ abstract class _$$CreateOrderCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateOrderCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$CreateOrder>
-    implements _$$CreateOrderCopyWith<$Res> {
-  __$$CreateOrderCopyWithImpl(
-      _$CreateOrder _value, $Res Function(_$CreateOrder) _then)
+class __$$CreateOrderImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$CreateOrderImpl>
+    implements _$$CreateOrderImplCopyWith<$Res> {
+  __$$CreateOrderImplCopyWithImpl(
+      _$CreateOrderImpl _value, $Res Function(_$CreateOrderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1089,7 +1094,7 @@ class __$$CreateOrderCopyWithImpl<$Res>
     Object? totalPrice = null,
     Object? onSuccess = null,
   }) {
-    return _then(_$CreateOrder(
+    return _then(_$CreateOrderImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1116,8 +1121,8 @@ class __$$CreateOrderCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CreateOrder implements CreateOrder {
-  const _$CreateOrder(
+class _$CreateOrderImpl implements CreateOrder {
+  const _$CreateOrderImpl(
       {required this.context,
       required this.order,
       required this.payment,
@@ -1141,10 +1146,10 @@ class _$CreateOrder implements CreateOrder {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateOrder &&
+            other is _$CreateOrderImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.order, order) || other.order == order) &&
             (identical(other.payment, payment) || other.payment == payment) &&
@@ -1161,8 +1166,8 @@ class _$CreateOrder implements CreateOrder {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreateOrderCopyWith<_$CreateOrder> get copyWith =>
-      __$$CreateOrderCopyWithImpl<_$CreateOrder>(this, _$identity);
+  _$$CreateOrderImplCopyWith<_$CreateOrderImpl> get copyWith =>
+      __$$CreateOrderImplCopyWithImpl<_$CreateOrderImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1297,7 +1302,7 @@ abstract class CreateOrder implements OrderEvent {
       required final CreateOrderModel order,
       required final PaymentData payment,
       required final num totalPrice,
-      required final VoidCallback onSuccess}) = _$CreateOrder;
+      required final VoidCallback onSuccess}) = _$CreateOrderImpl;
 
   @override
   BuildContext get context;
@@ -1307,27 +1312,27 @@ abstract class CreateOrder implements OrderEvent {
   VoidCallback get onSuccess;
   @override
   @JsonKey(ignore: true)
-  _$$CreateOrderCopyWith<_$CreateOrder> get copyWith =>
+  _$$CreateOrderImplCopyWith<_$CreateOrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CancelOrderCopyWith<$Res>
+abstract class _$$CancelOrderImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$CancelOrderCopyWith(
-          _$CancelOrder value, $Res Function(_$CancelOrder) then) =
-      __$$CancelOrderCopyWithImpl<$Res>;
+  factory _$$CancelOrderImplCopyWith(
+          _$CancelOrderImpl value, $Res Function(_$CancelOrderImpl) then) =
+      __$$CancelOrderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, int id, VoidCallback onSuccess});
 }
 
 /// @nodoc
-class __$$CancelOrderCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$CancelOrder>
-    implements _$$CancelOrderCopyWith<$Res> {
-  __$$CancelOrderCopyWithImpl(
-      _$CancelOrder _value, $Res Function(_$CancelOrder) _then)
+class __$$CancelOrderImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$CancelOrderImpl>
+    implements _$$CancelOrderImplCopyWith<$Res> {
+  __$$CancelOrderImplCopyWithImpl(
+      _$CancelOrderImpl _value, $Res Function(_$CancelOrderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1337,7 +1342,7 @@ class __$$CancelOrderCopyWithImpl<$Res>
     Object? id = null,
     Object? onSuccess = null,
   }) {
-    return _then(_$CancelOrder(
+    return _then(_$CancelOrderImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1356,8 +1361,8 @@ class __$$CancelOrderCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CancelOrder implements CancelOrder {
-  const _$CancelOrder(
+class _$CancelOrderImpl implements CancelOrder {
+  const _$CancelOrderImpl(
       {required this.context, required this.id, required this.onSuccess});
 
   @override
@@ -1373,10 +1378,10 @@ class _$CancelOrder implements CancelOrder {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CancelOrder &&
+            other is _$CancelOrderImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.onSuccess, onSuccess) ||
@@ -1389,8 +1394,8 @@ class _$CancelOrder implements CancelOrder {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CancelOrderCopyWith<_$CancelOrder> get copyWith =>
-      __$$CancelOrderCopyWithImpl<_$CancelOrder>(this, _$identity);
+  _$$CancelOrderImplCopyWith<_$CancelOrderImpl> get copyWith =>
+      __$$CancelOrderImplCopyWithImpl<_$CancelOrderImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1523,7 +1528,7 @@ abstract class CancelOrder implements OrderEvent {
   const factory CancelOrder(
       {required final BuildContext context,
       required final int id,
-      required final VoidCallback onSuccess}) = _$CancelOrder;
+      required final VoidCallback onSuccess}) = _$CancelOrderImpl;
 
   @override
   BuildContext get context;
@@ -1531,16 +1536,16 @@ abstract class CancelOrder implements OrderEvent {
   VoidCallback get onSuccess;
   @override
   @JsonKey(ignore: true)
-  _$$CancelOrderCopyWith<_$CancelOrder> get copyWith =>
+  _$$CancelOrderImplCopyWith<_$CancelOrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RefundOrderCopyWith<$Res>
+abstract class _$$RefundOrderImplCopyWith<$Res>
     implements $OrderEventCopyWith<$Res> {
-  factory _$$RefundOrderCopyWith(
-          _$RefundOrder value, $Res Function(_$RefundOrder) then) =
-      __$$RefundOrderCopyWithImpl<$Res>;
+  factory _$$RefundOrderImplCopyWith(
+          _$RefundOrderImpl value, $Res Function(_$RefundOrderImpl) then) =
+      __$$RefundOrderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1548,11 +1553,11 @@ abstract class _$$RefundOrderCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RefundOrderCopyWithImpl<$Res>
-    extends _$OrderEventCopyWithImpl<$Res, _$RefundOrder>
-    implements _$$RefundOrderCopyWith<$Res> {
-  __$$RefundOrderCopyWithImpl(
-      _$RefundOrder _value, $Res Function(_$RefundOrder) _then)
+class __$$RefundOrderImplCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$RefundOrderImpl>
+    implements _$$RefundOrderImplCopyWith<$Res> {
+  __$$RefundOrderImplCopyWithImpl(
+      _$RefundOrderImpl _value, $Res Function(_$RefundOrderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1563,7 +1568,7 @@ class __$$RefundOrderCopyWithImpl<$Res>
     Object? reason = null,
     Object? onSuccess = null,
   }) {
-    return _then(_$RefundOrder(
+    return _then(_$RefundOrderImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -1586,8 +1591,8 @@ class __$$RefundOrderCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RefundOrder implements RefundOrder {
-  const _$RefundOrder(
+class _$RefundOrderImpl implements RefundOrder {
+  const _$RefundOrderImpl(
       {required this.context,
       required this.id,
       required this.reason,
@@ -1608,10 +1613,10 @@ class _$RefundOrder implements RefundOrder {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefundOrder &&
+            other is _$RefundOrderImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.reason, reason) || other.reason == reason) &&
@@ -1625,8 +1630,8 @@ class _$RefundOrder implements RefundOrder {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RefundOrderCopyWith<_$RefundOrder> get copyWith =>
-      __$$RefundOrderCopyWithImpl<_$RefundOrder>(this, _$identity);
+  _$$RefundOrderImplCopyWith<_$RefundOrderImpl> get copyWith =>
+      __$$RefundOrderImplCopyWithImpl<_$RefundOrderImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1760,7 +1765,7 @@ abstract class RefundOrder implements OrderEvent {
       {required final BuildContext context,
       required final int id,
       required final String reason,
-      required final VoidCallback onSuccess}) = _$RefundOrder;
+      required final VoidCallback onSuccess}) = _$RefundOrderImpl;
 
   @override
   BuildContext get context;
@@ -1769,7 +1774,7 @@ abstract class RefundOrder implements OrderEvent {
   VoidCallback get onSuccess;
   @override
   @JsonKey(ignore: true)
-  _$$RefundOrderCopyWith<_$RefundOrder> get copyWith =>
+  _$$RefundOrderImplCopyWith<_$RefundOrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1880,11 +1885,11 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
 }
 
 /// @nodoc
-abstract class _$$_OrderStateCopyWith<$Res>
+abstract class _$$OrderStateImplCopyWith<$Res>
     implements $OrderStateCopyWith<$Res> {
-  factory _$$_OrderStateCopyWith(
-          _$_OrderState value, $Res Function(_$_OrderState) then) =
-      __$$_OrderStateCopyWithImpl<$Res>;
+  factory _$$OrderStateImplCopyWith(
+          _$OrderStateImpl value, $Res Function(_$OrderStateImpl) then) =
+      __$$OrderStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1901,11 +1906,11 @@ abstract class _$$_OrderStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OrderStateCopyWithImpl<$Res>
-    extends _$OrderStateCopyWithImpl<$Res, _$_OrderState>
-    implements _$$_OrderStateCopyWith<$Res> {
-  __$$_OrderStateCopyWithImpl(
-      _$_OrderState _value, $Res Function(_$_OrderState) _then)
+class __$$OrderStateImplCopyWithImpl<$Res>
+    extends _$OrderStateCopyWithImpl<$Res, _$OrderStateImpl>
+    implements _$$OrderStateImplCopyWith<$Res> {
+  __$$OrderStateImplCopyWithImpl(
+      _$OrderStateImpl _value, $Res Function(_$OrderStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1922,7 +1927,7 @@ class __$$_OrderStateCopyWithImpl<$Res>
     Object? anotherOrder = null,
     Object? isButtonLoading = null,
   }) {
-    return _then(_$_OrderState(
+    return _then(_$OrderStateImpl(
       activeOrders: null == activeOrders
           ? _value._activeOrders
           : activeOrders // ignore: cast_nullable_to_non_nullable
@@ -1969,8 +1974,8 @@ class __$$_OrderStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OrderState implements _OrderState {
-  const _$_OrderState(
+class _$OrderStateImpl implements _OrderState {
+  const _$OrderStateImpl(
       {final List<OrderShops> activeOrders = const [],
       final List<RefundModel> refundOrders = const [],
       this.order = null,
@@ -2033,10 +2038,10 @@ class _$_OrderState implements _OrderState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OrderState &&
+            other is _$OrderStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._activeOrders, _activeOrders) &&
             const DeepCollectionEquality()
@@ -2075,8 +2080,8 @@ class _$_OrderState implements _OrderState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrderStateCopyWith<_$_OrderState> get copyWith =>
-      __$$_OrderStateCopyWithImpl<_$_OrderState>(this, _$identity);
+  _$$OrderStateImplCopyWith<_$OrderStateImpl> get copyWith =>
+      __$$OrderStateImplCopyWithImpl<_$OrderStateImpl>(this, _$identity);
 }
 
 abstract class _OrderState implements OrderState {
@@ -2090,7 +2095,7 @@ abstract class _OrderState implements OrderState {
       final bool isLoadingRefund,
       final bool isLoading,
       final bool anotherOrder,
-      final bool isButtonLoading}) = _$_OrderState;
+      final bool isButtonLoading}) = _$OrderStateImpl;
 
   @override
   List<OrderShops> get activeOrders;
@@ -2114,6 +2119,6 @@ abstract class _OrderState implements OrderState {
   bool get isButtonLoading;
   @override
   @JsonKey(ignore: true)
-  _$$_OrderStateCopyWith<_$_OrderState> get copyWith =>
+  _$$OrderStateImplCopyWith<_$OrderStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
