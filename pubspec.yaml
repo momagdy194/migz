@@ -13,6 +13,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  device_info_plus: 9.1.2
+  package_info_plus: 5.0.1
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.1.1
   flutter_bloc: ^8.1.2
@@ -116,5 +118,4 @@ flutter:
     - assets/svg/
     - assets/lottie/
     - assets/videos/
-    - assets/
 

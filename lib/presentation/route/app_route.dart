@@ -520,7 +520,7 @@ abstract class AppRoute {
                       isRefresh: true,
                       shopId: shop?.id ?? 0)),
               ),
-            if (AppHelper.getType() != 0)
+            // if (AppHelper.getType() != 0)
               BlocProvider(
                 create: (context) => BannerBloc(bannersRepository)
                   ..add(BannerEvent.fetchLooks(
@@ -528,7 +528,12 @@ abstract class AppRoute {
                   ..add(BannerEvent.fetchAdsListProduct(
                       context: context,
                       isRefresh: true,
-                      shopId: shop?.id ?? 0)),
+                      shopId: shop?.id ?? 0)
+                  )..add(BannerEvent.fetchBannersByShopId(
+                      context: context,
+                      isRefresh: true,
+                      shopId: shop?.uuid??'uid0',
+                      )),
               ),
             BlocProvider.value(value: context.read<MainBloc>()),
             BlocProvider.value(value: context.read<CartBloc>()),
@@ -536,6 +541,7 @@ abstract class AppRoute {
           child: AppHelper.getType() == 0
               ? ShopPage(
                   shopId: shop?.id ?? 0,
+                  shopUid: shop?.uuid ?? 'uid0',
                 )
               : AppHelper.getType() == 1
                   ? ShopOnePage(

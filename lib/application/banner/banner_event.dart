@@ -7,6 +7,12 @@ abstract class BannerEvent with _$BannerEvent {
       bool? isRefresh,
       RefreshController? controller}) = FetchBanner;
 
+  const factory BannerEvent.fetchBannersByShopId(
+      {required BuildContext context,
+        bool? isRefresh,
+        String? shopId,
+        RefreshController? controller}) = FetchBannersByShopId;
+
   const factory BannerEvent.fetchAdsBanner(
       {required BuildContext context,
       bool? isRefresh,

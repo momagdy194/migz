@@ -170,4 +170,29 @@ class BannersRepository implements BannersInterface {
       return right(AppHelper.errorHandler(e));
     }
   }
+
+  @override
+  Future<Either<BannersPaginateResponse, dynamic>> getBannersPaginateByShopId({required String shopId}) async{
+    final data = {
+      'lang': LocalStorage.getLanguage()?.locale,
+      if (LocalStorage.getAddress()?.regionId != null)
+        'region_id': LocalStorage.getAddress()?.regionId,
+      if (LocalStorage.getSelectedCurrency()?.id != null)
+        'currency_id': LocalStorage.getSelectedCurrency()?.id,
+    };
+    try {
+      final client = dioHttp.client(requireAuth: false);
+      print('MyResponse');
+      final response = await client.get(
+        '/api/v1/rest/shops/banners/$shopId',
+        queryParameters: data,
+      );
+      print('MyResponseCode= ${response.statusCode}');
+      print('MyResponseData= ${response.data}');
+      return left(BannersPaginateResponse.fromJson(response.data));
+    } catch (e) {
+      debugPrint('==> get banners paginate failure: $e');
+      return right(AppHelper.errorHandler(e));
+    }
+  }
 }

@@ -270,12 +270,12 @@ class _HomePageState extends State<HomePage> {
               label: (LocalStorage.getToken().isEmpty)
                   ? const Text("0")
                   : BlocBuilder<NotificationBloc, NotificationState>(
-                      builder: (context, state) {
-                        return Text(state.countOfNotifications?.notification
-                                .toString() ??
-                            "0");
-                      },
-                    ),
+                builder: (context, state) {
+                  return Text(state.countOfNotifications?.notification
+                      .toString() ??
+                      "0");
+                },
+              ),
               child: Icon(
                 FlutterRemix.notification_line,
                 color: colors.textBlack,

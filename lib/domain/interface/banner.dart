@@ -8,6 +8,10 @@ abstract class BannersInterface {
     int? page,
   });
 
+  Future<Either<BannersPaginateResponse, dynamic>> getBannersPaginateByShopId({
+    required String shopId,
+  });
+
   Future<Either<BannersPaginateResponse, dynamic>> getLooksPaginate({
     int? page,
     int? shopId,

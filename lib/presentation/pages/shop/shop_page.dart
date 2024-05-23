@@ -4,26 +4,52 @@ import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:gshop/app_constants.dart';
+import 'package:gshop/application/banner/banner_bloc.dart';
 import 'package:gshop/application/shop/shop_bloc.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
 import 'package:gshop/presentation/components/button/animation_button_effect.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
+import 'package:gshop/presentation/pages/home/widgets/banner_list.dart';
 import 'package:gshop/presentation/pages/shop/widgets/most_products_shop.dart';
 import 'package:gshop/presentation/pages/shop/widgets/new_products_shop.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/blur_wrap.dart';
 import '../../components/button/pop_button.dart';
 import 'widgets/shop_avatar.dart';
 
-class ShopPage extends StatelessWidget {
+class ShopPage extends StatefulWidget {
   final int shopId;
+  final String shopUid;
 
-  const ShopPage({Key? key, required this.shopId}) : super(key: key);
+  const ShopPage({Key? key, required this.shopId, required this.shopUid}) : super(key: key);
+
+  @override
+  State<ShopPage> createState() => _ShopPageState();
+}
+
+class _ShopPageState extends State<ShopPage> {
+  late PageController pageController;
+
+  late RefreshController bannerRefresh;
+
+  @override
+  void initState() {
+    pageController=PageController();
+    bannerRefresh=RefreshController();
+    super.initState();
+  }
+  @override
+  void dispose() {
+    pageController.dispose();
+    bannerRefresh.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +91,23 @@ class ShopPage extends StatelessWidget {
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   children: [
+                    BannerList(
+                      pageController: pageController,
+                      colors: colors,
+                      controller: bannerRefresh,
+                      onLoading: () {
+                        context.read<BannerBloc>().add(BannerEvent.fetchBannersByShopId(
+                          shopId: widget.shopUid,
+                            context: context, controller: bannerRefresh));
+                      },
+                    ),
                     MostShopProductList(
                       colors: colors,
-                      shopId: shopId,
+                      shopId: widget.shopId,
                     ),
                     NewShopsProductList(
                       colors: colors,
-                      shopId: shopId,
+                      shopId: widget.shopId,
                     )
                   ],
                 ),
@@ -100,7 +136,7 @@ class ShopPage extends StatelessWidget {
                     child: IconButton(
                         onPressed: () {
                           AppRoute.goSearchPage(
-                              context: context, shopId: shopId);
+                              context: context, shopId: widget.shopId);
                         },
                         icon: Icon(
                           FlutterRemix.search_2_line,
