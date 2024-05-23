@@ -34,6 +34,17 @@ class _CountryPageState extends State<CountryPage> {
   final Delayed delayed = Delayed(milliseconds: 700);
 
   @override
+  void initState() {
+    Future.delayed(
+      Duration(seconds: 0),
+      () {
+        AppRoute.goMain(context);
+      },
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomScaffold(
         body: (colors) => KeyboardDismisser(

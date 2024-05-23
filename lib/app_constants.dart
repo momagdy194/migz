@@ -9,7 +9,7 @@ class AppConstants {
   AppConstants._();
 
   /// api urls
-  static const String baseUrl = 'https://admin.flonstore.com/';
+  static const String baseUrl = 'https://api.flonstore.com';
   static const String drawingBaseUrl = 'https://api.openrouteservice.org/';
   static const String googleApiKey = 'AIzaSyDZQUsmwnkCmD3HMNFCABo8YSE54FCTFYo';
   static const String privacyPolicyUrl = '$baseUrl/privacy-policy';

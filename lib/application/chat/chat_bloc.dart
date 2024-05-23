@@ -100,4 +100,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
           docId: event.messageId);
     });
   }
+
+
+
 }
