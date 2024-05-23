@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:gshop/app_constants.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
 import 'package:gshop/presentation/route/app_route.dart';
@@ -17,11 +16,11 @@ class _SplashPageState extends State<SplashPage> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (LocalStorage.getToken().isEmpty) {
         AppRoute.goLogin(context);
-        FlutterNativeSplash.remove();
+        // FlutterNativeSplash.remove();
         return;
       }
       AppRoute.goMain(context);
-      FlutterNativeSplash.remove();
+      // FlutterNativeSplash.remove();
     });
 
     super.initState();

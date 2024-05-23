@@ -47,7 +47,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   google_fonts: ^4.0.4
   flutter_remix: ^0.0.3
-  flutter_native_splash: ^2.2.19
+#  flutter_native_splash: ^2.2.19
   flutter_keyboard_visibility: ^5.4.1
   proste_indexed_stack: ^0.2.4
   flutter_svg: ^2.0.5
@@ -100,10 +100,13 @@ flutter_icons:
   remove_alpha_ios: true
   image_path: 'assets/images/app_logo.png'
 
-flutter_native_splash:
-  background_image: 'assets/images/loginBg.png'
-  android_12:
-  fullscreen: true
+#flutter_native_splash:
+#  background_image: assets/images/loginBg.png
+#  android_12:
+#    background_image: assets/images/loginBg.png
+#  android: true
+#  ios: true
+#  web: false
 
 flutter:
   uses-material-design: true
@@ -112,4 +115,6 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/lottie/
+    - assets/videos/
+    - assets/
 

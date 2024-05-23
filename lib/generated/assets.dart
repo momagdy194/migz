@@ -41,5 +41,6 @@ class Assets {
   static const String svgSelectLike = 'assets/svg/selectLike.svg';
   static const String svgSelectMenu = 'assets/svg/selectMenu.svg';
   static const String svgStart = 'assets/svg/start.svg';
+  static const String videosFlonSplash = 'assets/videos/flon_splash.mp4';
 
 }
