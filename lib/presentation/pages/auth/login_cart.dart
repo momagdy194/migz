@@ -47,138 +47,140 @@ class _LoginCartState extends State<LoginCart> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500.r,
-      child: Form(
-        key: formKey,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.r),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    20.verticalSpace,
-                    Text(
-                      AppHelper.getTrn(TrKeys.login),
-                      style: CustomStyle.interNoSemi(
-                          color: widget.colors.textBlack, size: 30),
-                    ),
-                    32.verticalSpace,
-                    CustomTextFormField(
-                      validation: AppValidators.isNotEmptyValidator,
-                      controller: phone,
-                      hint: AppHelper.getTrn(TrKeys.phoneNumberOrEmail),
-                    ),
-                    16.verticalSpace,
-                    BlocBuilder<AuthBloc, AuthState>(
-                      buildWhen: (l, n) {
-                        return l.isShowPassword != n.isShowPassword;
-                      },
-                      builder: (context, state) {
-                        return CustomTextFormField(
-                          obscure: state.isShowPassword,
-                          controller: password,
-                          validation: AppValidators.isValidPassword,
-                          hint: AppHelper.getTrn(TrKeys.password),
-                          suffixIcon: IconButton(
-                            onPressed: () {
-                              context
-                                  .read<AuthBloc>()
-                                  .add(const AuthEvent.showPassword());
-                            },
-                            icon: Icon(
-                              !state.isShowPassword
-                                  ? FlutterRemix.eye_close_line
-                                  : FlutterRemix.eye_line,
-                              color: widget.colors.textBlack,
+    return Container(
+      child: SizedBox(
+        height: 500.r,
+        child: Form(
+          key: formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.r),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      20.verticalSpace,
+                      Text(
+                        AppHelper.getTrn(TrKeys.login),
+                        style: CustomStyle.interNoSemi(
+                            color: widget.colors.textBlack, size: 30),
+                      ),
+                      32.verticalSpace,
+                      CustomTextFormField(
+                        validation: AppValidators.isNotEmptyValidator,
+                        controller: phone,
+                        hint: AppHelper.getTrn(TrKeys.phoneNumberOrEmail),
+                      ),
+                      16.verticalSpace,
+                      BlocBuilder<AuthBloc, AuthState>(
+                        buildWhen: (l, n) {
+                          return l.isShowPassword != n.isShowPassword;
+                        },
+                        builder: (context, state) {
+                          return CustomTextFormField(
+                            obscure: state.isShowPassword,
+                            controller: password,
+                            validation: AppValidators.isValidPassword,
+                            hint: AppHelper.getTrn(TrKeys.password),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                context
+                                    .read<AuthBloc>()
+                                    .add(const AuthEvent.showPassword());
+                              },
+                              icon: Icon(
+                                !state.isShowPassword
+                                    ? FlutterRemix.eye_close_line
+                                    : FlutterRemix.eye_line,
+                                color: widget.colors.textBlack,
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-                    16.verticalSpace,
-                    BlocBuilder<AuthBloc, AuthState>(
-                      buildWhen: (l, n) {
-                        return l.isLoading != n.isLoading;
-                      },
-                      builder: (context, state) {
-                        return CustomButton(
-                            isLoading: state.isLoading,
-                            title: AppHelper.getTrn(TrKeys.signIn),
-                            bgColor: widget.colors.primary,
-                            titleColor: CustomStyle.white,
+                          );
+                        },
+                      ),
+                      16.verticalSpace,
+                      BlocBuilder<AuthBloc, AuthState>(
+                        buildWhen: (l, n) {
+                          return l.isLoading != n.isLoading;
+                        },
+                        builder: (context, state) {
+                          return CustomButton(
+                              isLoading: state.isLoading,
+                              title: AppHelper.getTrn(TrKeys.signIn),
+                              bgColor: widget.colors.primary,
+                              titleColor: CustomStyle.white,
+                              onTap: () {
+                                if (formKey.currentState?.validate() ?? false) {
+                                  context.read<AuthBloc>().add(AuthEvent.login(
+                                      context: context,
+                                      phone: phone.text,
+                                      password: password.text,
+                                      onSuccess: () {
+                                        if (LocalStorage.getAddress() == null) {
+                                          AppRoute.goSelectCountry(
+                                              context: context);
+                                          return;
+                                        }
+                                        if(AppConstants.isDemo && LocalStorage.getUiType() == null){
+                                          AppRoute.goSelectUIType(context: context);
+                                          return;
+                                        }
+                                        AppRoute.goMain(context);
+                                      }));
+                                }
+                              });
+                        },
+                      ),
+                      24.verticalSpace,
+                    ],
+                  ),
+                ),
+                ButtonEffectAnimation(
+                  onTap: () {
+                    context.read<AuthBloc>().add(
+                        const AuthEvent.switchScreen(AuthType.forgetPassword));
+                  },
+                  child: Text(
+                    AppHelper.getTrn(TrKeys.forgetPassword),
+                    style:
+                        CustomStyle.interNormal(color: widget.colors.textBlack),
+                  ),
+                ),
+                16.verticalSpace,
+                Divider(
+                  color: widget.colors.icon,
+                ),
+                16.verticalSpace,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: AppConstants.socialSignIn
+                      .map((e) => SocialButton(
+                            iconColor: widget.colors.textBlack,
+                            bgColor: widget.colors.socialButtonColor,
+                            icon: e,
                             onTap: () {
-                              if (formKey.currentState?.validate() ?? false) {
-                                context.read<AuthBloc>().add(AuthEvent.login(
-                                    context: context,
-                                    phone: phone.text,
-                                    password: password.text,
-                                    onSuccess: () {
-                                      if (LocalStorage.getAddress() == null) {
-                                        AppRoute.goSelectCountry(
-                                            context: context);
-                                        return;
-                                      }
-                                      if(AppConstants.isDemo && LocalStorage.getUiType() == null){
-                                        AppRoute.goSelectUIType(context: context);
-                                        return;
-                                      }
-                                      AppRoute.goMain(context);
-                                    }));
-                              }
-                            });
-                      },
-                    ),
-                    24.verticalSpace,
-                  ],
+                              context.read<AuthBloc>().add(AuthEvent.socialSignIn(
+                                  context: context,
+                                  type: e,
+                                  onSuccess: () {
+                                    if (LocalStorage.getAddress() == null) {
+                                      AppRoute.goSelectCountry(context: context);
+                                      return;
+                                    }
+                                    if(AppConstants.isDemo && LocalStorage.getUiType() == null){
+                                      AppRoute.goSelectUIType(context: context);
+                                      return;
+                                    }
+                                    AppRoute.goMain(context);
+                                  }));
+                            },
+                          ))
+                      .toList(),
                 ),
-              ),
-              ButtonEffectAnimation(
-                onTap: () {
-                  context.read<AuthBloc>().add(
-                      const AuthEvent.switchScreen(AuthType.forgetPassword));
-                },
-                child: Text(
-                  AppHelper.getTrn(TrKeys.forgetPassword),
-                  style:
-                      CustomStyle.interNormal(color: widget.colors.textBlack),
-                ),
-              ),
-              16.verticalSpace,
-              Divider(
-                color: widget.colors.icon,
-              ),
-              16.verticalSpace,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: AppConstants.socialSignIn
-                    .map((e) => SocialButton(
-                          iconColor: widget.colors.textBlack,
-                          bgColor: widget.colors.socialButtonColor,
-                          icon: e,
-                          onTap: () {
-                            context.read<AuthBloc>().add(AuthEvent.socialSignIn(
-                                context: context,
-                                type: e,
-                                onSuccess: () {
-                                  if (LocalStorage.getAddress() == null) {
-                                    AppRoute.goSelectCountry(context: context);
-                                    return;
-                                  }
-                                  if(AppConstants.isDemo && LocalStorage.getUiType() == null){
-                                    AppRoute.goSelectUIType(context: context);
-                                    return;
-                                  }
-                                  AppRoute.goMain(context);
-                                }));
-                          },
-                        ))
-                    .toList(),
-              ),
-              24.verticalSpace,
-            ],
+                24.verticalSpace,
+              ],
+            ),
           ),
         ),
       ),

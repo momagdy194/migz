@@ -38,7 +38,7 @@ class _CountryPageState extends State<CountryPage> {
     Future.delayed(
       Duration(seconds: 0),
       () {
-        AppRoute.goMain(context);
+        // AppRoute.goMain(context);
       },
     );
     super.initState();
@@ -121,10 +121,15 @@ class _CountryPageState extends State<CountryPage> {
       onTap: () {
         LocalStorage.deleteCartList();
         LocalStorage.setAddress(AddressModel(
-            countryId: state.countries[index].id,
-            regionId: state.countries[index].regionId,
-            countryCode: state.countries[index].code,
-            country: state.countries[index].translation?.title));
+            countryId:null,
+            // state.countries[index].id,
+            regionId: null,
+            // state.countries[index].regionId,
+            countryCode:null,
+            // state.countries[index].code,
+            country: null
+            // state.countries[index].translation?.title
+        ));
 
         if ((state.countries[index].citiesCount ?? 0) > 0) {
           AppRoute.goSelectCity(

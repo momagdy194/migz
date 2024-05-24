@@ -21,7 +21,7 @@ class AddressRepository implements AddressInterface {
     final data = {
       'perPage': 20,
       'page': page,
-      'has_price': 1,
+      // 'has_price': 1,
       if (LocalStorage.getAddress()?.countryId != null)
         'country_id': LocalStorage.getAddress()?.countryId,
     };
@@ -43,7 +43,7 @@ class AddressRepository implements AddressInterface {
       {required String search}) async {
     final data = {
       'perPage': 48,
-      'has_price': 1,
+      // 'has_price': 1,
       "search": search,
     };
     try {
@@ -165,9 +165,9 @@ class AddressRepository implements AddressInterface {
       "city_id": city,
       "additional_details": detail,
       "street_house_number": homeNumber,
-      if( LocalStorage.getAddress()?.countryId != null)
+      if (LocalStorage.getAddress()?.countryId != null)
         "country_id": LocalStorage.getAddress()?.countryId,
-      if( LocalStorage.getAddress()?.regionId != null)
+      if (LocalStorage.getAddress()?.regionId != null)
         "region_id": LocalStorage.getAddress()?.regionId,
       "location": locationModel?.toJson()
     };
@@ -189,12 +189,12 @@ class AddressRepository implements AddressInterface {
       {required int page}) async {
     final data = {
       'perPage': 10,
-      if( LocalStorage.getAddress()?.cityId != null)
-      "city_id": LocalStorage.getAddress()?.cityId,
-      if( LocalStorage.getAddress()?.countryId != null)
-      "country_id": LocalStorage.getAddress()?.countryId,
-      if( LocalStorage.getAddress()?.regionId != null)
-      "region_id": LocalStorage.getAddress()?.regionId,
+      if (LocalStorage.getAddress()?.cityId != null)
+        "city_id": LocalStorage.getAddress()?.cityId,
+      if (LocalStorage.getAddress()?.countryId != null)
+        "country_id": LocalStorage.getAddress()?.countryId,
+      if (LocalStorage.getAddress()?.regionId != null)
+        "region_id": LocalStorage.getAddress()?.regionId,
       'page': page,
     };
     try {

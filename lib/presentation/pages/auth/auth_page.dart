@@ -93,15 +93,17 @@ class _AuthPageState extends State<AuthPage> {
                       bgColor: CustomStyle.black,
                       titleColor: CustomStyle.white,
                       onTap: () {
-                        if (LocalStorage.getAddress() == null) {
-                          AppRoute.goSelectCountry(context: context);
-                          return;
-                        }
-                        if (AppConstants.isDemo &&
-                            LocalStorage.getUiType() == null) {
-                          AppRoute.goSelectUIType(context: context);
-                          return;
-                        }
+                        // AppRoute.goSelectCountry(context: context);
+
+                        // if (LocalStorage.getAddress() == null) {
+                        //   AppRoute.goSelectCountry(context: context);
+                        //   return;
+                        // }
+                        // if (AppConstants.isDemo &&
+                        //     LocalStorage.getUiType() == null) {
+                        //   AppRoute.goSelectUIType(context: context);
+                        //   return;
+                        // }
                         AppRoute.goMain(context);
                       },
                     )
@@ -110,49 +112,46 @@ class _AuthPageState extends State<AuthPage> {
                 const Spacer(),
                 Container(
                   margin: MediaQuery.viewInsetsOf(context),
-                  child: BlurWrap(
-                    radius: BorderRadius.circular(24.r),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: colors.backgroundColor.withOpacity(0.8),
-                          borderRadius: BorderRadius.circular(24.r)),
-                      child: BlocBuilder<AuthBloc, AuthState>(
-                        buildWhen: (l, n) {
-                          return l.screenType != n.screenType;
-                        },
-                        builder: (context, state) {
-                          switch (state.screenType) {
-                            case AuthType.login:
-                              return LoginCart(colors: colors);
-                            case AuthType.signUpSendCode:
-                              return SignUpCart(
-                                colors: colors,
-                                phone: phone,
-                              );
-                            case AuthType.confirm:
-                              return ConfirmScreen(
-                                colors: colors,
-                                phone: phone.text,
-                              );
-                            case AuthType.signUpFull:
-                              return SignUpFieldCart(
-                                phone: phone.text,
-                                colors: colors,
-                                isPhone: AppHelper.checkPhone(
-                                    phone.text.replaceAll(" ", "")),
-                              );
-                            case AuthType.forgetPassword:
-                              return ForgetPasswordScreen(
-                                  colors: colors, phone: phone);
-                            case AuthType.updatePassword:
-                              return UpdatePasswordScreen(
-                                colors: colors,
-                                phone: phone.text,
-                              );
-                          }
-                        },
-                      ),
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: colors.backgroundColor.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(24.r)),
+                    child: BlocBuilder<AuthBloc, AuthState>(
+                      buildWhen: (l, n) {
+                        return l.screenType != n.screenType;
+                      },
+                      builder: (context, state) {
+                        switch (state.screenType) {
+                          case AuthType.login:
+                            return LoginCart(colors: colors);
+                          case AuthType.signUpSendCode:
+                            return SignUpCart(
+                              colors: colors,
+                              phone: phone,
+                            );
+                          case AuthType.confirm:
+                            return ConfirmScreen(
+                              colors: colors,
+                              phone: phone.text,
+                            );
+                          case AuthType.signUpFull:
+                            return SignUpFieldCart(
+                              phone: phone.text,
+                              colors: colors,
+                              isPhone: AppHelper.checkPhone(
+                                  phone.text.replaceAll(" ", "")),
+                            );
+                          case AuthType.forgetPassword:
+                            return ForgetPasswordScreen(
+                                colors: colors, phone: phone);
+                          case AuthType.updatePassword:
+                            return UpdatePasswordScreen(
+                              colors: colors,
+                              phone: phone.text,
+                            );
+                        }
+                      },
                     ),
                   ),
                 ),

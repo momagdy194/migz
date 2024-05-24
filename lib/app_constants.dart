@@ -18,7 +18,7 @@ class AppConstants {
   static const String firebaseWebKey =
       'AIzaSyAV3BYPU2xncEElk74aKVJtSRTf4oPY7eE';
   static const String urlPrefix = 'https://uzmart.page.link';
-  static const String androidPackageName = 'org.uzmart';
+  static const String androidPackageName = 'com.flonstore.app';
   static const String iosPackageName = 'com.gshop';
   static const String routingKey =
       '5b3ce3597851110001cf6248ed52930792d447839b83083b296b7909';

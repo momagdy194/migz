@@ -255,7 +255,7 @@ class _HomeOnePageState extends State<HomeOnePage> {
                   AppHelper.getTrn(TrKeys.deliveryAddress),
                   style: CustomStyle.interNormal(color: colors.textHint, size: 12),
                 ),
-                Icon(FlutterRemix.arrow_right_s_line,color: colors.textHint,)
+                Icon(Icons.arrow_forward_ios,color: colors.textHint,size: 15,)
               ],
             ),
             Text(

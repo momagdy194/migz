@@ -6,7 +6,7 @@ class CustomStyle {
   CustomStyle._();
 
   /// colors.
-  static const Color primary = Color(0xffE34F26);
+  static const Color primary = Color(0xffec1c1a);
 
   static const Color black = Colors.black;
 
@@ -60,7 +60,7 @@ class CustomStyle {
           required Color color,
           FontStyle fontStyle = FontStyle.normal,
           double letterSpacing = 0}) =>
-      GoogleFonts.inter(
+      GoogleFonts.cairo(
           fontSize: size.sp,
           fontWeight: FontWeight.bold,
           color: color,
@@ -74,7 +74,7 @@ class CustomStyle {
           FontStyle fontStyle = FontStyle.normal,
           TextDecoration decoration = TextDecoration.none,
           double letterSpacing = 0}) =>
-      GoogleFonts.inter(
+      GoogleFonts.cairo(
           fontSize: size.sp,
           fontWeight: FontWeight.w700,
           color: color,
@@ -88,7 +88,7 @@ class CustomStyle {
           FontStyle fontStyle = FontStyle.normal,
           TextDecoration decoration = TextDecoration.none,
           double letterSpacing = 0}) =>
-      GoogleFonts.inter(
+      GoogleFonts.cairo(
           fontSize: size.sp,
           fontWeight: FontWeight.w600,
           color: color,
@@ -102,7 +102,7 @@ class CustomStyle {
           FontStyle fontStyle = FontStyle.normal,
           TextDecoration textDecoration = TextDecoration.none,
           double letterSpacing = 0}) =>
-      GoogleFonts.inter(
+      GoogleFonts.cairo(
           fontSize: size.sp,
           fontWeight: FontWeight.w500,
           color: color,
@@ -116,7 +116,7 @@ class CustomStyle {
           required Color color,
           TextDecoration textDecoration = TextDecoration.none,
           double letterSpacing = 0}) =>
-      GoogleFonts.inter(
+      GoogleFonts.cairo(
           fontSize: size,
           fontWeight: FontWeight.w400,
           color: color,

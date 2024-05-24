@@ -152,7 +152,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         res.fold((l) {
           Navigator.pop(event.context, true);
         }, (r) {
-          emit(state.copyWith(isLoading: false, isError: true));
+           emit(state.copyWith(isLoading: false, isError: true));
         });
       }
       res.fold((l) async {
