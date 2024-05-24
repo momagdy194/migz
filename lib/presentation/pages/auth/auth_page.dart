@@ -97,7 +97,8 @@ class _AuthPageState extends State<AuthPage> {
                           AppRoute.goSelectCountry(context: context);
                           return;
                         }
-                        if(AppConstants.isDemo && LocalStorage.getUiType() == null){
+                        if (AppConstants.isDemo &&
+                            LocalStorage.getUiType() == null) {
                           AppRoute.goSelectUIType(context: context);
                           return;
                         }

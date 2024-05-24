@@ -12,6 +12,7 @@ import 'package:gshop/domain/interface/auth.dart';
 import 'package:gshop/domain/model/model/user_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
+import 'package:gshop/infrastructure/firebase/firebase_constants.dart';
 import 'package:gshop/infrastructure/firebase/firebase_service.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
 
@@ -64,14 +65,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           user = await FirebaseService.socialFacebook();
           break;
       }
-
-      user?.fold((l) async {
-        String? token = await l.user?.getIdToken();
+      print('here');
+      user?.fold((userCredential) async {
+        final user=userCredential.user;
+        String? token = await user?.getIdToken();
         final res = await _authRepository.loginWithSocial(
-            email: l.user?.email ?? "",
-            displayName: l.user?.displayName ?? "",
+            email: userCredential.user?.email ?? "",
+            displayName: userCredential.user?.displayName ?? "",
             id: token ?? "",
-            img: l.user?.photoURL);
+            img: userCredential.user?.photoURL);
 
         res.fold((l) async {
           await LocalStorage.setToken(l.data?.accessToken ?? "");
@@ -89,7 +91,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             message: r,
           );
         });
-      }, (r) {
+      }, (error) {
         event.context.read<AuthBloc>().add(const AuthEvent.loadingChange());
       });
     });

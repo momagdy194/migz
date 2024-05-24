@@ -26,10 +26,10 @@
         android:icon="@mipmap/ic_launcher">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+            android:value="987998082762356"/>
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
-            android:value="@string/facebook_client_token"/>
+            android:value="555802e4429f5830591ef37241f9e63c"/>
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCuDSljHjF4pKT9yJWtnJgsCXf6rxi40Tg"/>
 

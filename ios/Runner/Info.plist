@@ -36,7 +36,7 @@
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<string>com.googleusercontent.apps.622325190921-snu19p8qdq33ku52t39uej1h4q8mbhee</string>
-					<string>fb919293142642874</string>
+					<string>fb987998082762356</string>
 					<string>com.gshop</string>
 				</array>
 			</dict>
@@ -49,11 +49,11 @@
 		<key>FDMaximumConcurrentTasks</key>
 		<integer>6</integer>
 		<key>FacebookAppID</key>
-		<string>919293142642874</string>
+		<string>987998082762356</string>
 		<key>FacebookClientToken</key>
-		<string>3d2818aedccb6222ad97cdfdcc2c5e50</string>
+		<string>555802e4429f5830591ef37241f9e63c</string>
 		<key>FacebookDisplayName</key>
-		<string>Uzmart</string>
+		<string>FlonStore</string>
 		<key>FirebaseDynamicLinksCustomDomains</key>
 		<array>
 			<string>https://uzmart.page.link</string>

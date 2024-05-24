@@ -3050,6 +3050,7 @@ mixin _$AuthState {
   bool get isShowPassword => throw _privateConstructorUsedError;
   bool get isShowConfirmPassword => throw _privateConstructorUsedError;
   AuthType get screenType => throw _privateConstructorUsedError;
+  bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   String get verificationId => throw _privateConstructorUsedError;
   String get timerText => throw _privateConstructorUsedError;
@@ -3069,6 +3070,7 @@ abstract class $AuthStateCopyWith<$Res> {
       bool isShowPassword,
       bool isShowConfirmPassword,
       AuthType screenType,
+      bool isAuthenticated,
       bool isError,
       String verificationId,
       String timerText});
@@ -3091,6 +3093,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? isShowPassword = null,
     Object? isShowConfirmPassword = null,
     Object? screenType = null,
+    Object? isAuthenticated = null,
     Object? isError = null,
     Object? verificationId = null,
     Object? timerText = null,
@@ -3112,6 +3115,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.screenType
           : screenType // ignore: cast_nullable_to_non_nullable
               as AuthType,
+      isAuthenticated: null == isAuthenticated
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
       isError: null == isError
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
@@ -3141,6 +3148,7 @@ abstract class _$$AuthStateImplCopyWith<$Res>
       bool isShowPassword,
       bool isShowConfirmPassword,
       AuthType screenType,
+      bool isAuthenticated,
       bool isError,
       String verificationId,
       String timerText});
@@ -3161,6 +3169,7 @@ class __$$AuthStateImplCopyWithImpl<$Res>
     Object? isShowPassword = null,
     Object? isShowConfirmPassword = null,
     Object? screenType = null,
+    Object? isAuthenticated = null,
     Object? isError = null,
     Object? verificationId = null,
     Object? timerText = null,
@@ -3182,6 +3191,10 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.screenType
           : screenType // ignore: cast_nullable_to_non_nullable
               as AuthType,
+      isAuthenticated: null == isAuthenticated
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
       isError: null == isError
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
@@ -3206,6 +3219,7 @@ class _$AuthStateImpl implements _AuthState {
       this.isShowPassword = false,
       this.isShowConfirmPassword = false,
       this.screenType = AuthType.login,
+      this.isAuthenticated = false,
       this.isError = false,
       this.verificationId = "",
       this.timerText = '05:00'});
@@ -3224,6 +3238,9 @@ class _$AuthStateImpl implements _AuthState {
   final AuthType screenType;
   @override
   @JsonKey()
+  final bool isAuthenticated;
+  @override
+  @JsonKey()
   final bool isError;
   @override
   @JsonKey()
@@ -3234,7 +3251,7 @@ class _$AuthStateImpl implements _AuthState {
 
   @override
   String toString() {
-    return 'AuthState(isLoading: $isLoading, isShowPassword: $isShowPassword, isShowConfirmPassword: $isShowConfirmPassword, screenType: $screenType, isError: $isError, verificationId: $verificationId, timerText: $timerText)';
+    return 'AuthState(isLoading: $isLoading, isShowPassword: $isShowPassword, isShowConfirmPassword: $isShowConfirmPassword, screenType: $screenType, isAuthenticated: $isAuthenticated, isError: $isError, verificationId: $verificationId, timerText: $timerText)';
   }
 
   @override
@@ -3250,6 +3267,8 @@ class _$AuthStateImpl implements _AuthState {
                 other.isShowConfirmPassword == isShowConfirmPassword) &&
             (identical(other.screenType, screenType) ||
                 other.screenType == screenType) &&
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                other.isAuthenticated == isAuthenticated) &&
             (identical(other.isError, isError) || other.isError == isError) &&
             (identical(other.verificationId, verificationId) ||
                 other.verificationId == verificationId) &&
@@ -3258,8 +3277,16 @@ class _$AuthStateImpl implements _AuthState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, isShowPassword,
-      isShowConfirmPassword, screenType, isError, verificationId, timerText);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      isShowPassword,
+      isShowConfirmPassword,
+      screenType,
+      isAuthenticated,
+      isError,
+      verificationId,
+      timerText);
 
   @JsonKey(ignore: true)
   @override
@@ -3274,6 +3301,7 @@ abstract class _AuthState implements AuthState {
       final bool isShowPassword,
       final bool isShowConfirmPassword,
       final AuthType screenType,
+      final bool isAuthenticated,
       final bool isError,
       final String verificationId,
       final String timerText}) = _$AuthStateImpl;
@@ -3286,6 +3314,8 @@ abstract class _AuthState implements AuthState {
   bool get isShowConfirmPassword;
   @override
   AuthType get screenType;
+  @override
+  bool get isAuthenticated;
   @override
   bool get isError;
   @override

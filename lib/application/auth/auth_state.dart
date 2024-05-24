@@ -7,6 +7,7 @@ class AuthState with _$AuthState {
     @Default(false) bool isShowPassword,
     @Default(false) bool isShowConfirmPassword,
     @Default(AuthType.login) AuthType screenType,
+    @Default(false) bool isAuthenticated,
     @Default(false) bool isError,
     @Default("") String verificationId,
     @Default('05:00') String timerText,
