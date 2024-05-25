@@ -61,6 +61,7 @@ import 'package:gshop/presentation/pages/group_order/group_order_page.dart';
 import 'package:gshop/presentation/pages/help_policy_term/help_page.dart';
 import 'package:gshop/presentation/pages/help_policy_term/policy_page.dart';
 import 'package:gshop/presentation/pages/help_policy_term/term_page.dart';
+import 'package:gshop/presentation/pages/map/shops_map_page.dart';
 import 'package:gshop/presentation/pages/my_digital_files/my_digital_list.dart';
 import 'package:gshop/presentation/pages/notification/widgets/notification_bottom_sheet.dart';
 import 'package:gshop/presentation/pages/app_setting/app_setting.dart';
@@ -404,6 +405,15 @@ abstract class AppRoute {
         builder: (_) => MultiBlocProvider(providers: [
           BlocProvider(create: (context) => MapBloc()),
         ], child: const MapPage()),
+      ),
+    );
+  }
+  static Future goShopsMap(BuildContext context,List<ShopData> shopData) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => MultiBlocProvider(providers: [
+          BlocProvider(create: (context) => MapBloc()),
+        ], child: ShopsMapPage(shops: shopData,)),
       ),
     );
   }

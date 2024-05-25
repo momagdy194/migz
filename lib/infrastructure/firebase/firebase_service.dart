@@ -22,28 +22,28 @@ abstract class FirebaseService {
   static final FirebaseFirestore store = FirebaseFirestore.instance;
 
   static Future<String> addDataToCollection(
-      {required String collection, Map<String, dynamic>? data,String? docId}) async {
+      {required String collection,
+      Map<String, dynamic>? data,
+      String? docId}) async {
     final colRef = store.collection(collection);
-    if(docId!=null){
+    if (docId != null) {
       await colRef.doc(docId).set(data ?? {});
       return docId;
-    }
-    else{
-      final docRef= await colRef.add(data ?? {});
+    } else {
+      final docRef = await colRef.add(data ?? {});
       return docRef.id;
     }
   }
 
   static Future<void> updateData(
       {required String collection,
-        required String docId,
-        Map<String, dynamic>? data}) async {
+      required String docId,
+      Map<String, dynamic>? data}) async {
     await store.collection(collection).doc(docId).set(data ?? {});
   }
 
-
   static Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>>
-  fetchAllDocsData({
+      fetchAllDocsData({
     required String collection,
   }) async {
     final querySnapshot = await store.collection(collection).get();
@@ -64,6 +64,7 @@ abstract class FirebaseService {
       {required String collection, required String docId}) async {
     await store.collection(collection).doc(docId).delete();
   }
+
   static Future<String> getFcmToken() async {
     final firebaseM = FirebaseMessaging.instance;
     firebaseM.requestPermission(
@@ -80,14 +81,15 @@ abstract class FirebaseService {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
       final GoogleSignInAuthentication? googleAuth =
-      await googleUser?.authentication;
+          await googleUser?.authentication;
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
 
-      final userCredential= await FirebaseAuth.instance.signInWithCredential(credential);
+      final userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
       return Left(userCredential);
     } on Exception catch (e) {
       print('MyException=${e.toString()}');
@@ -98,9 +100,9 @@ abstract class FirebaseService {
   static Future<Either<UserCredential, dynamic>> socialFacebook() async {
     final fb = FacebookLogin();
     try {
-      print('MyTry');
-      final user = await fb.logIn(permissions: []);
+      final user = await fb.logIn(permissions: [FacebookPermission.email]);
 
+      print('Facebook login status=${user.status.toString()}');
       final OAuthCredential credential =
           FacebookAuthProvider.credential(user.accessToken?.token ?? "");
 

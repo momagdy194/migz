@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+
     <queries>
         <intent>
             <action
@@ -31,7 +32,7 @@
             android:name="com.facebook.sdk.ClientToken"
             android:value="555802e4429f5830591ef37241f9e63c"/>
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCuDSljHjF4pKT9yJWtnJgsCXf6rxi40Tg"/>
+            android:value="AIzaSyAqUELkF-yyKYf6uYNNGdMhZBIda7mO198"/>
 
 
         <activity
@@ -53,6 +54,20 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="Flon" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="fb987998082762356" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
