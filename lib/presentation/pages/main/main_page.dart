@@ -12,6 +12,7 @@ import 'package:gshop/application/main/main_bloc.dart';
 import 'package:gshop/application/notification/notification_bloc.dart';
 import 'package:gshop/application/products/product_bloc.dart';
 import 'package:gshop/application/profile/profile_bloc.dart';
+import 'package:gshop/application/shop/shop_bloc.dart';
 import 'package:gshop/domain/di/dependency_manager.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
@@ -20,12 +21,15 @@ import 'package:gshop/infrastructure/local_storage/local_storage.dart';
 import 'package:gshop/presentation/components/blur_wrap.dart';
 import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
+import 'package:gshop/presentation/components/loading.dart';
 import 'package:gshop/presentation/pages/cart/cart_page.dart';
 import 'package:gshop/presentation/pages/home/home_page.dart';
 import 'package:gshop/presentation/pages/home_one/home_one_page.dart';
 import 'package:gshop/presentation/pages/home_three/home_three_page.dart';
 import 'package:gshop/presentation/pages/home_two/home_two_page.dart';
 import 'package:gshop/presentation/pages/like/like_page.dart';
+import 'package:gshop/presentation/pages/map/shops_map_page.dart';
+import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
 import 'package:proste_indexed_stack/proste_indexed_stack.dart';
 
@@ -96,9 +100,22 @@ class _MainPageState extends State<MainPage> {
           return l.selectIndex != n.selectIndex;
         },
         builder: (context, state) {
-          return ProsteIndexedStack(
-            index: state.selectIndex,
-            children: list,
+          return Stack(
+            alignment: AlignmentDirectional.bottomStart,
+            children: [
+              ProsteIndexedStack(
+                index: state.selectIndex,
+                children: list,
+              ),
+              BlocBuilder<ShopBloc, ShopState>(
+  builder: (context, state) {
+
+    return Padding(padding: EdgeInsets.all(15),child: state.shops.isEmpty? Loading(): IconButton(onPressed: (){
+      AppRoute.goShopsMap(context, state.shops);
+    }, icon: Icon(Icons.gps_fixed)),);
+  },
+),
+            ],
           );
         },
       ),
