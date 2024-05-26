@@ -42,7 +42,7 @@ class SubCategoryList extends StatelessWidget {
                   ),
                   12.verticalSpace,
                   SizedBox(
-                    height: 102.r,
+                    height: 120.r,
                     child: ListView.builder(
                         padding: EdgeInsets.symmetric(horizontal: 16.r),
                         shrinkWrap: true,

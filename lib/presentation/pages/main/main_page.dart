@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
@@ -16,6 +17,7 @@ import 'package:gshop/application/shop/shop_bloc.dart';
 import 'package:gshop/domain/di/dependency_manager.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
+import 'package:gshop/generated/assets.dart';
 import 'package:gshop/infrastructure/firebase/firebase_service.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
 import 'package:gshop/presentation/components/blur_wrap.dart';
@@ -23,6 +25,7 @@ import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
 import 'package:gshop/presentation/components/loading.dart';
 import 'package:gshop/presentation/pages/cart/cart_page.dart';
+import 'package:gshop/presentation/pages/category/shop_page.dart';
 import 'package:gshop/presentation/pages/home/home_page.dart';
 import 'package:gshop/presentation/pages/home_one/home_one_page.dart';
 import 'package:gshop/presentation/pages/home_three/home_three_page.dart';
@@ -58,6 +61,7 @@ class _MainPageState extends State<MainPage> {
                     ? const HomeTwoPage()
                     : const HomeThreePage()),
     IndexedStackChild(child: const CategoryPage()),
+    IndexedStackChild(child: const ShopCategoryPage()),
     IndexedStackChild(child: const LikePage()),
     IndexedStackChild(child: const CartPage(), preload: true),
   ];
@@ -90,6 +94,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("AppHelper.getType() ${AppHelper.getType()}");
     return CustomScaffold(
       drawer: (colors) => Drawer(
         backgroundColor: colors.transparent,
@@ -174,12 +179,21 @@ class _MainPageState extends State<MainPage> {
                         }),
                     BottomItem(
                         isActive: state.selectIndex == 2,
+                        selectIcon: Assets.svgCategory,
+                        icon: Assets.svgCategory,
+                        onTap: () {
+                          context
+                              .read<MainBloc>()
+                              .add(const MainEvent.changeIndex(index: 2));
+                        }),
+                    BottomItem(
+                        isActive: state.selectIndex == 3,
                         selectIcon: "assets/svg/selectLike.svg",
                         icon: "assets/svg/like.svg",
                         onTap: () {
                           context
                               .read<MainBloc>()
-                              .add(const MainEvent.changeIndex(index: 2));
+                              .add(const MainEvent.changeIndex(index: 3));
                           context.read<ProductBloc>().add(
                               ProductEvent.fetchLikeProduct(context: context));
                         }),
@@ -189,7 +203,7 @@ class _MainPageState extends State<MainPage> {
                             bagCount: LocalStorage.getCartList()
                                 .where((element) => element.count > 0)
                                 .length,
-                            isActive: state.selectIndex == 3,
+                            isActive: state.selectIndex == 4,
                             selectIcon: "assets/svg/selectBag.svg",
                             icon: "assets/svg/bag.svg",
                             onTap: () {
@@ -208,7 +222,7 @@ class _MainPageState extends State<MainPage> {
                                   ));
                               context
                                   .read<MainBloc>()
-                                  .add(const MainEvent.changeIndex(index: 3));
+                                  .add(const MainEvent.changeIndex(index: 4));
                             });
                       },
                     ),
@@ -218,7 +232,7 @@ class _MainPageState extends State<MainPage> {
                       },
                       builder: (context, s) {
                         return BottomItem(
-                            isActive: state.selectIndex == 4,
+                            isActive: state.selectIndex == 5,
                             selectIcon: "",
                             icon: "",
                             image: LocalStorage.getUser().img,
@@ -251,11 +265,13 @@ class _MainPageState extends State<MainPage> {
             selectedItemColor: colors.primary,
             unselectedItemColor: colors.textHint,
             onTap: (index) {
-              if (index == 4) {
+              print( "indexindexindex ${index}");
+
+              if (index == 5) {
                 Scaffold.of(context).openDrawer();
                 return;
               }
-              if (index == 3) {
+              if (index == 4) {
                 context.read<CartBloc>().add(CartEvent.insertCart(
                       context: context,
                       onSuccess: () {

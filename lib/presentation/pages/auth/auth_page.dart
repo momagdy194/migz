@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gshop/app_constants.dart';
 import 'package:gshop/application/auth/auth_bloc.dart';
+import 'package:gshop/domain/model/model/address_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/infrastructure/firebase/firebase_service.dart';
@@ -92,18 +93,27 @@ class _AuthPageState extends State<AuthPage> {
                       title: AppHelper.getTrn(TrKeys.skip),
                       bgColor: CustomStyle.black,
                       titleColor: CustomStyle.white,
-                      onTap: () {
-                        // AppRoute.goSelectCountry(context: context);
+                      onTap: () async {
+                        await LocalStorage.setAddress(
+                          AddressModel(
+                            // cityId: int.tryParse(cityId),
+                            countryId: 67,
+                            // regionId: int.tryParse(regionId),
+                          ),
+                        );
+                        // LocalStorage.deleteAddress();
+                        // print(LocalStorage.getAddress()?.countryId);
 
-                        // if (LocalStorage.getAddress() == null) {
-                        //   AppRoute.goSelectCountry(context: context);
-                        //   return;
-                        // }
-                        // if (AppConstants.isDemo &&
-                        //     LocalStorage.getUiType() == null) {
-                        //   AppRoute.goSelectUIType(context: context);
-                        //   return;
-                        // }
+                        // AppRoute.goSelectCountry(context: context);
+                        if (LocalStorage.getAddress() == null) {
+                          AppRoute.goSelectCountry(context: context);
+                          return;
+                        }
+                        if (AppConstants.isDemo &&
+                            LocalStorage.getUiType() == null) {
+                          AppRoute.goSelectUIType(context: context);
+                          return;
+                        }
                         AppRoute.goMain(context);
                       },
                     )

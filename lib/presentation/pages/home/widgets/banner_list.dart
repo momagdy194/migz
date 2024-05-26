@@ -71,7 +71,8 @@ class BannerList extends StatelessWidget {
                               if (state.isLoadingBanner) const BannerShimmer(),
                             ],
                           ),
-                          if (state.banners.length > 2 && AppHelper.getType() == 2)
+                          if (state.banners.length > 2 &&
+                              AppHelper.getType() == 2)
                             Positioned(
                               bottom: 32.r,
                               left: 32.r,
@@ -117,7 +118,8 @@ class BannerList extends StatelessWidget {
 
   Padding _bannerItem(BuildContext context, BannerState state, int index) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal:  AppHelper.getType() == 3 ? 0 : 16.r),
+      padding:
+          EdgeInsets.symmetric(horizontal: AppHelper.getType() == 3 ? 0 : 16.r),
       child: ButtonEffectAnimation(
         onTap: () {
           AppRoute.goBannerBottomSheet(context, state.banners[index], colors);
@@ -125,13 +127,18 @@ class BannerList extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
               border: Border.all(color: colors.icon),
-              borderRadius: BorderRadius.circular(  AppHelper.getType() == 3 ? 0 : 24.r)),
+              borderRadius:
+                  BorderRadius.circular(AppHelper.getType() == 3 ? 0 : 24.r)),
           child: CustomNetworkImage(
-              url: state.banners[index].galleries?.first.path ?? "",
-              preview: state.banners[index].galleries?.first.preview,
+              url: state.banners[index].galleries?.isNotEmpty ?? false
+                  ? (state.banners[index].galleries?.first.path ?? "")
+                  : "",
+              preview: state.banners[index].galleries?.isNotEmpty ?? false
+                  ? state.banners[index].galleries?.first.preview
+                  : "",
               height: double.infinity,
               width: double.infinity,
-              radius:  AppHelper.getType() == 3 ? 0 : 24),
+              radius: AppHelper.getType() == 3 ? 0 : 24),
         ),
       ),
     );

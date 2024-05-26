@@ -72,13 +72,13 @@ class MyAccount extends StatelessWidget {
                   AppRoute.goChangePassword(context: context, colors: colors);
                 },
                 colors: colors),
-            ButtonItem(
-                icon: FlutterRemix.hotel_line,
-                title: AppHelper.getTrn(TrKeys.deliveryAddress),
-                onTap: () {
-                  AppRoute.goSelectCountry(context: context);
-                },
-                colors: colors),
+            // ButtonItem(
+            //     icon: FlutterRemix.hotel_line,
+            //     title: AppHelper.getTrn(TrKeys.deliveryAddress),
+            //     onTap: () {
+            //       AppRoute.goSelectCountry(context: context);
+            //     },
+            //     colors: colors),
           ],
         ),
       ),

@@ -112,7 +112,7 @@ class _AppWidgetState extends State<AppWidget> {
             final AppTheme theme = snapshot.data?[0];
             return ScreenUtilInit(
               useInheritedMediaQuery: true,
-              designSize: const Size(375, 812),
+              designSize: const Size(450, 890),
               builder: (context, child) {
                 return RefreshConfiguration(
                   footerBuilder: () => const ClassicFooter(

@@ -413,7 +413,7 @@ abstract class AppRoute {
       MaterialPageRoute(
         builder: (_) => MultiBlocProvider(providers: [
           BlocProvider(create: (context) => MapBloc()),
-        ], child: ShopsMapPage(shops: shopData,)),
+        ], child: ShopsMapPage( )),
       ),
     );
   }

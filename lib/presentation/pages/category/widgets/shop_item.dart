@@ -1,5 +1,6 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gshop/domain/model/model/shop_model.dart';
@@ -74,6 +75,123 @@ class ShopItemPage extends StatelessWidget {
               ),
             ),
             16.verticalSpace,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ShopItemPage2 extends StatelessWidget {
+  final CustomColorSet colors;
+  final ShopData shop;
+
+  const ShopItemPage2({Key? key, required this.colors, required this.shop})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonEffectAnimation(
+      onTap: () {
+        AppRoute.goShopPage(context: context, shop: shop);
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width * .9,
+        height: 200,
+        margin: EdgeInsets.only(bottom: 10.r),
+        decoration: BoxDecoration(
+          color: CustomStyle.white,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: colors.icon),
+        ),
+        child:
+
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 18.r),
+            //   child: Row(
+            //     children: [
+            //       Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           Text(
+            //             shop.translation?.title ?? "",
+            //             style: CustomStyle.interSemi(
+            //                 color: colors.textBlack, size: 16),
+            //           ),
+            //           4.verticalSpace,
+            //           Text(
+            //             AppHelper.shopTime(shop.workingDays),
+            //             style: CustomStyle.interNormal(
+            //                 color: colors.textHint, size: 14),
+            //           ),
+            //         ],
+            //       ),
+            //       const Spacer(),
+            //       SvgPicture.asset("assets/svg/start.svg"),
+            //       4.horizontalSpace,
+            //       Text(
+            //         shop.ratingAvg?.toStringAsPrecision(2) ?? "0.0",
+            //         style:
+            //             CustomStyle.interNoSemi(color: colors.textBlack, size: 12),
+            //       )
+            //     ],
+            //   ),
+            // ),
+            Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16.r),
+                  bottomLeft: Radius.circular(16.r)),
+              child: CustomNetworkImage(
+                  fit: BoxFit.cover,
+                  url: shop.backgroundImg ?? shop.logoImg ?? "",
+                  height: 170,
+                  width: 170,
+                  radius: 0),
+            ),
+            10.horizontalSpace,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                10.verticalSpace,
+                Text(
+                  shop.translation?.title ?? "",
+                  style:
+                      CustomStyle.interSemi(color: colors.textBlack, size: 16),
+                ),
+                Flexible(
+                  child: Container(
+                    width: (MediaQuery.of(context).size.width * .9) - 180,
+                    child: Text(
+                      shop.translation?.address ?? "",
+                      style: CustomStyle.interSemi(
+                          color: colors.textBlack, size: 16),
+                      maxLines: 2,
+                    ),
+                  ),
+                ),
+                Text(shop.latLng!.latitude.toString()),
+                4.verticalSpace,
+                Text(
+                  AppHelper.shopTime(shop.workingDays),
+                  style:
+                      CustomStyle.interNormal(color: colors.textHint, size: 14),
+                ),
+                Row(
+                  children: [
+                    SvgPicture.asset("assets/svg/start.svg"),
+                    4.horizontalSpace,
+                    Text(
+                      shop.ratingAvg?.toStringAsPrecision(2) ?? "0.0",
+                      style: CustomStyle.interNoSemi(
+                          color: colors.textBlack, size: 12),
+                    )
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),

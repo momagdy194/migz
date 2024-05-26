@@ -58,8 +58,9 @@ class ButtonItem extends StatelessWidget {
             ),
             if (value == null)
               Icon(
-                FlutterRemix.arrow_right_s_line,
+                Icons.arrow_forward_ios,
                 color: colors.textBlack,
+                size: 18,
               ),
             if (value != null)
               CustomToggle(

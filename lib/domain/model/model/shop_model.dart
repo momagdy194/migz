@@ -13,6 +13,7 @@ class ShopData {
       num? deliveryRange,
       num? percentage,
       LocationModel? location,
+      LocationModel? latLng,
       String? phone,
       bool? showType,
       bool? open,
@@ -72,6 +73,9 @@ class ShopData {
     _location = json['location'] != null
         ? LocationModel.fromJson(json['location'])
         : null;
+    _latLng = json['lat_long'] != null
+        ? LocationModel.fromJson(json['lat_long'])
+        : null;
     _phone = json['phone'];
     _showType = json['show_type'];
     _open = json['open'];
@@ -116,6 +120,7 @@ class ShopData {
   num? _deliveryRange;
   num? _percentage;
   LocationModel? _location;
+  LocationModel? _latLng;
   String? _phone;
   bool? _showType;
   bool? _open;
@@ -144,6 +149,7 @@ class ShopData {
     num? deliveryRange,
     num? percentage,
     LocationModel? location,
+    LocationModel? latLng,
     String? phone,
     bool? showType,
     bool? open,
@@ -208,6 +214,7 @@ class ShopData {
   num? get percentage => _percentage;
 
   LocationModel? get location => _location;
+  LocationModel? get latLng => _latLng;
 
   String? get phone => _phone;
 

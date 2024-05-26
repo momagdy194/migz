@@ -13,8 +13,9 @@ class PopButton extends StatelessWidget {
         Navigator.pop(context);
       },
       icon: Icon(
-        FlutterRemix.arrow_left_s_line,
+        Icons.arrow_back_ios,
         color: color,
+        size: 20,
       ),
     );
   }

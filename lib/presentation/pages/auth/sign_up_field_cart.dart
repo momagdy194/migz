@@ -5,6 +5,7 @@ import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gshop/app_constants.dart';
 import 'package:gshop/application/auth/auth_bloc.dart';
+import 'package:gshop/domain/model/model/address_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/domain/service/validators.dart';
@@ -182,25 +183,35 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                         onTap: () {
                           if (formKey.currentState?.validate() ?? false) {
                             context.read<AuthBloc>().add(AuthEvent.signUp(
-                                context: context,
-                                firstname: firstName.text,
-                                lastname: userName.text,
-                                email: email.text,
-                                phone: widget.phone,
-                                password: password.text,
-                                referral: referral.text,
-                                onSuccess: () {
-                                  if (LocalStorage.getAddress() == null) {
-                                    AppRoute.goSelectCountry(context: context);
-                                    return;
-                                  }
-                                  if (AppConstants.isDemo &&
-                                      LocalStorage.getUiType() == null) {
-                                    AppRoute.goSelectUIType(context: context);
-                                    return;
-                                  }
-                                  AppRoute.goMain(context);
-                                },));
+                                  context: context,
+                                  firstname: firstName.text,
+                                  lastname: userName.text,
+                                  email: email.text,
+                                  phone: widget.phone,
+                                  password: password.text,
+                                  referral: referral.text,
+                                  onSuccess: () async {
+                                    await LocalStorage.setAddress(
+                                      AddressModel(
+                                        // cityId: int.tryParse(cityId),
+                                        countryId: 67,
+                                        // regionId: int.tryParse(regionId),
+                                      ),
+                                    );
+
+                                    if (LocalStorage.getAddress() == null) {
+                                      AppRoute.goSelectCountry(
+                                          context: context);
+                                      return;
+                                    }
+                                    if (AppConstants.isDemo &&
+                                        LocalStorage.getUiType() == null) {
+                                      AppRoute.goSelectUIType(context: context);
+                                      return;
+                                    }
+                                    AppRoute.goMain(context);
+                                  },
+                                ));
                           }
                         });
                   },

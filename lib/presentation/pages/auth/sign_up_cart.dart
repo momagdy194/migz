@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gshop/app_constants.dart';
 import 'package:gshop/application/auth/auth_bloc.dart';
+import 'package:gshop/domain/model/model/address_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/domain/service/validators.dart';
@@ -116,7 +117,17 @@ class _SignUpCartState extends State<SignUpCart> {
                                   .add(AuthEvent.socialSignIn(
                                       context: context,
                                       type: e,
-                                      onSuccess: () {
+                                      onSuccess: ()async {
+
+                                        await    LocalStorage.setAddress(
+                                          AddressModel(
+                                            // cityId: int.tryParse(cityId),
+                                            countryId: 67,
+                                            // regionId: int.tryParse(regionId),
+                                          ),
+                                        );
+
+
                                         if (LocalStorage.getAddress() == null) {
                                           AppRoute.goSelectCountry(
                                               context: context);

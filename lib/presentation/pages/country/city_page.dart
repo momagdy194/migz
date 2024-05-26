@@ -113,6 +113,8 @@ class _CityPageState extends State<CityPage> {
   Widget _cityItem(CustomColorSet colors, AddressState state, int index) {
     return ButtonEffectAnimation(
       onTap: () {
+
+
         if (widget.pushAddress) {
           Navigator.pop(context, state.cities[index]);
           return;

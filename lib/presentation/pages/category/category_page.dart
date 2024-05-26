@@ -35,37 +35,38 @@ class _CategoryPageState extends State<CategoryPage>
   late TabController tabController;
   final isLtr = LocalStorage.getLangLtr();
 
-  List<Tab> listTabs = [
-    Tab(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Icon(FlutterRemix.layout_4_fill),
-          10.horizontalSpace,
-          Text(AppHelper.getTrn(TrKeys.categories)),
-        ],
-      ),
-    ),
-    Tab(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Icon(FlutterRemix.store_2_fill),
-          10.horizontalSpace,
-          Text(AppHelper.getTrn(TrKeys.stores)),
-        ],
-      ),
-    ),
-  ];
+  // List<Tab> listTabs = [
+  //   Tab(
+  //     child:
+  //     Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       children: [
+  //         const Icon(FlutterRemix.layout_4_fill),
+  //         10.horizontalSpace,
+  //         Text(AppHelper.getTrn(TrKeys.categories)),
+  //       ],
+  //     ),
+  //   ),
+  //   Tab(
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       children: [
+  //         const Icon(FlutterRemix.store_2_fill),
+  //         10.horizontalSpace,
+  //         Text(AppHelper.getTrn(TrKeys.stores)),
+  //       ],
+  //     ),
+  //   ),
+  // ];
 
   @override
   void initState() {
-    tabController = TabController(length: listTabs.length, vsync: this);
+    // tabController = TabController(length: listTabs.length, vsync: this);
     categoryRefresh = RefreshController();
     refreshController = RefreshController();
-    shopsRefresh = RefreshController();
+    // shopsRefresh = RefreshController();
     storyRefresh = RefreshController();
     super.initState();
   }
@@ -91,27 +92,42 @@ class _CategoryPageState extends State<CategoryPage>
           padding: EdgeInsets.only(top: 8.r),
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.r),
-                child: CustomTabBar(
-                  tabController: tabController,
-                  tabs: listTabs,
-                ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Icon(FlutterRemix.layout_4_fill),
+                  10.horizontalSpace,
+                  Text(AppHelper.getTrn(TrKeys.categories)),
+                ],
               ),
+
+
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 16.r),
+              //   child: CustomTabBar(
+              //     tabController: tabController,
+              //     tabs: listTabs,
+              //   ),
+              // ),
               20.verticalSpace,
               _search(colors),
               Expanded(
-                child: TabBarView(
-                  controller: tabController,
-                  children: [
-                    _categories(colors),
-                    ShopsList(
-                      colors: colors,
-                      shopsRefresh: shopsRefresh,
-                      storyRefresh: storyRefresh,
-                    ),
-                  ],
-                ),
+                child:
+                _categories(colors),
+
+                // TabBarView(
+                //   controller: tabController,
+                //   children: [
+                //     _categories(colors),
+                //     // ShopsList(
+                //     //   colors: colors,
+                //     //   shopsRefresh: shopsRefresh,
+                //     //   storyRefresh: storyRefresh,
+                //     // ),
+                //   ],
+                // ),
               )
             ],
           ),

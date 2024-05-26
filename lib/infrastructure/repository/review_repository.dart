@@ -22,13 +22,13 @@ class ReviewRepository implements ReviewInterface {
       final response;
       if (shopId != null) {
         response =
-            await client.get('api/v1/rest/shops/$shopId/reviews-group-rating');
+            await client.get('/api/v1/rest/shops/$shopId/reviews-group-rating');
       } else if (driverId != null) {
         response = await client
-            .get('api/v1/rest/users/$driverId/reviews-group-rating');
+            .get('*api/v1/rest/users/$driverId/reviews-group-rating');
       } else {
         response = await client
-            .get('api/v1/rest/products/$productId/reviews-group-rating');
+            .get('/api/v1/rest/products/$productId/reviews-group-rating');
       }
       return left(ReviewCountModel.fromJson(response.data));
     } catch (e) {
@@ -51,17 +51,17 @@ class ReviewRepository implements ReviewInterface {
           dioHttp.client(requireAuth: LocalStorage.getToken().isNotEmpty);
       final response;
       if (shopId != null) {
-        response = await client.get('api/v1/rest/shops/$shopId/reviews',
+        response = await client.get('/api/v1/rest/shops/$shopId/reviews',
             queryParameters: data);
       } else if (productUuid != null) {
-        response = await client.get('api/v1/rest/products/reviews/$productUuid',
+        response = await client.get('/api/v1/rest/products/reviews/$productUuid',
             queryParameters: data);
       } else if (driverId != null) {
         response = await client.get(
-            'api/v1/rest/users/reviews?assign=deliveryman1&assign_id=$driverId',
+            '/api/v1/rest/users/reviews?assign=deliveryman1&assign_id=$driverId',
             queryParameters: data);
       } else {
-        response = await client.get('api/v1/rest/blogs/$blogId/reviews',
+        response = await client.get('/api/v1/rest/blogs/$blogId/reviews',
             queryParameters: data);
       }
       return left(ReviewResponseModel.fromJson(response.data));
@@ -84,7 +84,7 @@ class ReviewRepository implements ReviewInterface {
         "images": [for (int i = 0; i < list.length; i++) list[i]]
       };
       final client = dioHttp.client(requireAuth: true);
-      await client.post('api/v1/dashboard/user/products/review/$productUuid',
+      await client.post('/api/v1/dashboard/user/products/review/$productUuid',
           data: data);
       return left(true);
     } catch (e) {
@@ -107,7 +107,7 @@ class ReviewRepository implements ReviewInterface {
       };
       final client = dioHttp.client(requireAuth: true);
 
-      await client.post('api/v1/dashboard/user/shops/review/$shopId',
+      await client.post('/api/v1/dashboard/user/shops/review/$shopId',
           data: data);
       return left(true);
     } catch (e) {
@@ -130,7 +130,7 @@ class ReviewRepository implements ReviewInterface {
       };
       final client = dioHttp.client(requireAuth: true);
 
-      await client.post('api/v1/dashboard/user/orders/deliveryman-review/$orderId',
+      await client.post('/api/v1/dashboard/user/orders/deliveryman-review/$orderId',
           data: data);
       return left(true);
     } catch (e) {
@@ -153,7 +153,7 @@ class ReviewRepository implements ReviewInterface {
       };
       final client = dioHttp.client(requireAuth: true);
 
-      await client.post('api/v1/dashboard/user/blogs/review/$blogId',
+      await client.post('/api/v1/dashboard/user/blogs/review/$blogId',
           data: data);
       return left(true);
     } catch (e) {
@@ -178,7 +178,7 @@ class ReviewRepository implements ReviewInterface {
           dioHttp.client(requireAuth: LocalStorage.getToken().isNotEmpty);
 
       final res =
-          await client.get('api/v1/rest/added-review', queryParameters: data);
+          await client.get('/api/v1/rest/added-review', queryParameters: data);
       return left(ReviewCheckResponse.fromJson(res.data));
     } catch (e) {
       debugPrint('==> check review failure: $e');

@@ -121,21 +121,25 @@ class _CountryPageState extends State<CountryPage> {
       onTap: () {
         LocalStorage.deleteCartList();
         LocalStorage.setAddress(AddressModel(
-            countryId:null,
-            // state.countries[index].id,
-            regionId: null,
-            // state.countries[index].regionId,
-            countryCode:null,
-            // state.countries[index].code,
-            country: null
-            // state.countries[index].translation?.title
+            countryId:
+            // null,
+            state.countries[index].id,
+            regionId:
+            // null,
+            state.countries[index].regionId,
+            countryCode:
+            // null,
+            state.countries[index].code,
+            country:
+            // null
+            state.countries[index].translation?.title
         ));
 
-        if ((state.countries[index].citiesCount ?? 0) > 0) {
-          AppRoute.goSelectCity(
-              context: context, countryId: state.countries[index].id ?? 0);
-          return;
-        }
+        // if ((state.countries[index].citiesCount ?? 0) > 0) {
+        //   AppRoute.goSelectCity(
+        //       context: context, countryId: state.countries[index].id ?? 0);
+        //   return;
+        // }
         if (AppConstants.isDemo && LocalStorage.getUiType() == null) {
           AppRoute.goSelectUIType(context: context);
           return;

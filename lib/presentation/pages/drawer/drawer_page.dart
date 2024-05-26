@@ -46,8 +46,8 @@ class DrawerPage extends StatelessWidget {
                     16.verticalSpace,
                     LogoutButton(colors: colors),
                     16.verticalSpace,
-                    if (LocalStorage.getToken().isNotEmpty)
-                      WalletScreen(colors: colors),
+                    // if (LocalStorage.getToken().isNotEmpty)
+                    //   WalletScreen(colors: colors),
                     24.verticalSpace,
                     Text(
                       AppHelper.getTrn(TrKeys.information).toUpperCase(),

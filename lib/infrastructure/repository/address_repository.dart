@@ -64,7 +64,7 @@ class AddressRepository implements AddressInterface {
       {required int page, required int countyId}) async {
     final data = {
       'perPage': 48,
-      'has_price': 1,
+      // 'has_price': 1,
       'page': page,
       if (LocalStorage.getAddress()?.cityId != null)
         'city_id': LocalStorage.getAddress()?.cityId,
