@@ -256,7 +256,7 @@ class _CheckoutPageState extends State<CheckoutPage>
                               titleColor:
                                   !active ? colors.textBlack : colors.white,
                               onTap: () {
-                                if (active) {
+                                if (true) {
                                   checkDigital = true;
                                   if (state.step == 2) {
                                     cartState.cart?.userCarts

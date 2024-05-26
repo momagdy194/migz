@@ -98,8 +98,8 @@ class _AuthPageState extends State<AuthPage> {
                           AddressModel(
                             // cityId: int.tryParse(cityId),
                             countryId: 67,
-                            // regionId: int.tryParse(regionId),
-                          ),
+                            regionId: 3,
+                          ), 
                         );
                         // LocalStorage.deleteAddress();
                         // print(LocalStorage.getAddress()?.countryId);

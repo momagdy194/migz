@@ -38,112 +38,114 @@ class _SignUpCartState extends State<SignUpCart> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 380.r,
-      child: SingleChildScrollView(
-        child: Form(
-          key: formKey,
-          child: Padding(
-            padding: EdgeInsets.all(20.r),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  AppHelper.getTrn(TrKeys.signUp),
-                  style: CustomStyle.interNoSemi(
-                      color: widget.colors.textBlack, size: 30),
-                ),
-                32.verticalSpace,
-                CustomTextFormField(
-                  validation: AppValidators.isNotEmptyValidator,
-                  controller: widget.phone,
-                  hint: AppHelper.getTrn(TrKeys.phoneNumber),
-                  inputType: TextInputType.phone,
-                ),
-                16.verticalSpace,
-                BlocBuilder<AuthBloc, AuthState>(
-                  buildWhen: (l, n) {
-                    return l.isLoading != n.isLoading;
-                  },
-                  builder: (context, state) {
-                    return CustomButton(
-                        isLoading: state.isLoading,
-                        title: AppHelper.getTrn(TrKeys.signUp),
-                        bgColor: widget.colors.primary,
-                        titleColor: CustomStyle.white,
-                        onTap: () {
-                          if (formKey.currentState?.validate() ?? false) {
-                            if (AppHelper.checkPhone(
-                                widget.phone.text.replaceAll(" ", ""))) {
-                              context.read<AuthBloc>().add(AuthEvent.checkPhone(
-                                  context: context,
-                                  phone: widget.phone.text,
-                                  onSuccess: () {
-                                    FirebaseService.sendCode(
-                                        phone: widget.phone.text,
-                                        onSuccess: (id) {
-                                          context.read<AuthBloc>().add(
-                                              AuthEvent.setVerificationId(
-                                                  id: id));
-                                        },
-                                        onError: (e) {
-                                          AppHelper.errorSnackBar(
-                                              context: context, message: e);
-                                        });
-                                  }));
-                            } else {
-                              AppHelper.errorSnackBar(
-                                  context: context,
-                                  message: AppHelper.getTrn(
-                                      TrKeys.thisNotPhoneNumber));
+      child: Center(
+        child: SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: EdgeInsets.all(20.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    AppHelper.getTrn(TrKeys.signUp),
+                    style: CustomStyle.interNoSemi(
+                        color: widget.colors.textBlack, size: 30),
+                  ),
+                  32.verticalSpace,
+                  CustomTextFormField(
+                    validation: AppValidators.isNotEmptyValidator,
+                    controller: widget.phone,
+                    hint: AppHelper.getTrn(TrKeys.phoneNumber),
+                    inputType: TextInputType.phone,
+                  ),
+                  16.verticalSpace,
+                  BlocBuilder<AuthBloc, AuthState>(
+                    buildWhen: (l, n) {
+                      return l.isLoading != n.isLoading;
+                    },
+                    builder: (context, state) {
+                      return CustomButton(
+                          isLoading: state.isLoading,
+                          title: AppHelper.getTrn(TrKeys.signUp),
+                          bgColor: widget.colors.primary,
+                          titleColor: CustomStyle.white,
+                          onTap: () {
+                            if (formKey.currentState?.validate() ?? false) {
+                              if (AppHelper.checkPhone(
+                                  widget.phone.text.replaceAll(" ", ""))) {
+                                context.read<AuthBloc>().add(AuthEvent.checkPhone(
+                                    context: context,
+                                    phone: widget.phone.text,
+                                    onSuccess: () {
+                                      FirebaseService.sendCode(
+                                          phone: widget.phone.text,
+                                          onSuccess: (id) {
+                                            context.read<AuthBloc>().add(
+                                                AuthEvent.setVerificationId(
+                                                    id: id));
+                                          },
+                                          onError: (e) {
+                                            AppHelper.errorSnackBar(
+                                                context: context, message: e);
+                                          });
+                                    }));
+                              } else {
+                                AppHelper.errorSnackBar(
+                                    context: context,
+                                    message: AppHelper.getTrn(
+                                        TrKeys.thisNotPhoneNumber));
+                              }
                             }
-                          }
-                        });
-                  },
-                ),
-                16.verticalSpace,
-                Divider(
-                  color: widget.colors.icon,
-                ),
-                16.verticalSpace,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: AppConstants.socialSignIn
-                      .map((e) => SocialButton(
-                            iconColor: widget.colors.textBlack,
-                            bgColor: widget.colors.socialButtonColor,
-                            icon: e,
-                            onTap: () {
-                              context
-                                  .read<AuthBloc>()
-                                  .add(AuthEvent.socialSignIn(
-                                      context: context,
-                                      type: e,
-                                      onSuccess: ()async {
+                          });
+                    },
+                  ),
+                  16.verticalSpace,
+                  Divider(
+                    color: widget.colors.icon,
+                  ),
+                  16.verticalSpace,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: AppConstants.socialSignIn
+                        .map((e) => SocialButton(
+                              iconColor: widget.colors.textBlack,
+                              bgColor: widget.colors.socialButtonColor,
+                              icon: e,
+                              onTap: () {
+                                context
+                                    .read<AuthBloc>()
+                                    .add(AuthEvent.socialSignIn(
+                                        context: context,
+                                        type: e,
+                                        onSuccess: ()async {
 
-                                        await    LocalStorage.setAddress(
-                                          AddressModel(
-                                            // cityId: int.tryParse(cityId),
-                                            countryId: 67,
-                                            // regionId: int.tryParse(regionId),
-                                          ),
-                                        );
+                                          await    LocalStorage.setAddress(
+                                            AddressModel(
+                                              // cityId: int.tryParse(cityId),
+                                              countryId: 67,
+                                              regionId: 3,   // regionId: int.tryParse(regionId),
+                                            ),
+                                          );
 
 
-                                        if (LocalStorage.getAddress() == null) {
-                                          AppRoute.goSelectCountry(
-                                              context: context);
-                                          return;
-                                        }
-                                        if(AppConstants.isDemo && LocalStorage.getUiType() == null){
-                                          AppRoute.goSelectUIType(context: context);
-                                          return;
-                                        }
-                                        AppRoute.goMain(context);
-                                      }));
-                            },
-                          ))
-                      .toList(),
-                ),
-              ],
+                                          if (LocalStorage.getAddress() == null) {
+                                            AppRoute.goSelectCountry(
+                                                context: context);
+                                            return;
+                                          }
+                                          if(AppConstants.isDemo && LocalStorage.getUiType() == null){
+                                            AppRoute.goSelectUIType(context: context);
+                                            return;
+                                          }
+                                          AppRoute.goMain(context);
+                                        }));
+                              },
+                            ))
+                        .toList(),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

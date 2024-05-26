@@ -112,14 +112,14 @@ class _MainPageState extends State<MainPage> {
                 index: state.selectIndex,
                 children: list,
               ),
-              BlocBuilder<ShopBloc, ShopState>(
-  builder: (context, state) {
-
-    return Padding(padding: EdgeInsets.all(15),child: state.shops.isEmpty? Loading(): IconButton(onPressed: (){
-      AppRoute.goShopsMap(context, state.shops);
-    }, icon: Icon(Icons.gps_fixed)),);
-  },
-),
+//               BlocBuilder<ShopBloc, ShopState>(
+//   builder: (context, state) {
+//
+//     return Padding(padding: EdgeInsets.all(15),child: state.shops.isEmpty? Loading(): IconButton(onPressed: (){
+//       AppRoute.goShopsMap(context, state.shops);
+//     }, icon: Icon(Icons.gps_fixed)),);
+//   },
+// ),
             ],
           );
         },

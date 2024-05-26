@@ -30,9 +30,9 @@ class AppConstants {
 
   /// social sign-in
   static const socialSignIn = [
-    FlutterRemix.google_fill,
-    FlutterRemix.facebook_fill,
-    FlutterRemix.apple_fill,
+    // FlutterRemix.google_fill,
+    // FlutterRemix.facebook_fill,
+    // FlutterRemix.apple_fill,
   ];
 
   static const filterLayouts = [

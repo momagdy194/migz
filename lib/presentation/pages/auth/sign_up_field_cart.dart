@@ -195,7 +195,7 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                                       AddressModel(
                                         // cityId: int.tryParse(cityId),
                                         countryId: 67,
-                                        // regionId: int.tryParse(regionId),
+                                        regionId: 3,    // regionId: int.tryParse(regionId),
                                       ),
                                     );
 

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -196,63 +197,68 @@ class _ShopsMapPageState extends State<ShopsMapPage>
                               _cameraPosition = cameraPosition;
                             },
                           ),
-                          SizedBox(
-                            height: 250,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: PageView.builder(
-                                  // shrinkWrap: true,
-                                  onPageChanged: (index) {
-                                    _mapController?.animateCamera(
-                                      CameraUpdate.newCameraPosition(
-                                        CameraPosition(
-                                          target: LatLng(
-                                            double.parse(state.shops[index]
-                                                    .latLng?.latitude ??
-                                                "0"),
-                                            double.parse(state.shops[index]
-                                                    .latLng?.longitude ??
-                                                "0"),
+                          Positioned(
+                            bottom: 80,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              height: 200,
+                              child: Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: PageView.builder(
+                                    // shrinkWrap: true,
+                                    onPageChanged: (index) {
+                                      _mapController?.animateCamera(
+                                        CameraUpdate.newCameraPosition(
+                                          CameraPosition(
+                                            target: LatLng(
+                                              double.parse(state.shops[index]
+                                                      .latLng?.latitude ??
+                                                  "0"),
+                                              double.parse(state.shops[index]
+                                                      .latLng?.longitude ??
+                                                  "0"),
+                                            ),
+                                            // LatLng(latitude, longitude),
+                                            zoom: 17,
                                           ),
-                                          // LatLng(latitude, longitude),
-                                          zoom: 17,
                                         ),
-                                      ),
-                                    );
+                                      );
 
-                                    //
-                                    // _mapController.animateCamera(C)
-                                    // _cameraPosition = CameraPosition(
-                                    //   target:
-                                    //   LatLng(double.parse(state.shops[index].latLng?.latitude ?? "0"),
-                                    //   double.parse(state.shops[index].latLng?.longitude ??"0"),)
-                                    // ,
-                                    //
-                                    setState(() {});
-                                  },
-                                  scrollDirection: Axis.horizontal,
-                                  // physics:
-                                  // const NeverScrollableScrollPhysics(),
-                                  // padding: EdgeInsets.only(
-                                  //     right: 16.r, left: 16.r, bottom: 90.r),
-                                  // shrinkWrap: true,
-                                  controller: PageController(
-                                    viewportFraction: 0.9,
-                                    initialPage: 0,
-                                  ),
-                                  clipBehavior: Clip.none,
-                                  // Here is the changed made
+                                      //
+                                      // _mapController.animateCamera(C)
+                                      // _cameraPosition = CameraPosition(
+                                      //   target:
+                                      //   LatLng(double.parse(state.shops[index].latLng?.latitude ?? "0"),
+                                      //   double.parse(state.shops[index].latLng?.longitude ??"0"),)
+                                      // ,
+                                      //
+                                      setState(() {});
+                                    },
+                                    scrollDirection: Axis.horizontal,
+                                    // physics:
+                                    // const NeverScrollableScrollPhysics(),
+                                    // padding: EdgeInsets.only(
+                                    //     right: 16.r, left: 16.r, bottom: 90.r),
+                                    // shrinkWrap: true,
+                                    controller: PageController(
+                                      viewportFraction: 0.9,
+                                      initialPage: 0,
+                                    ),
+                                    clipBehavior: Clip.none,
+                                    // Here is the changed made
 
-                                  itemCount: state.shops.length,
-                                  itemBuilder: (context, index) {
-                                    return
-                                        // Text("aaaaa");
+                                    itemCount: state.shops.length,
+                                    itemBuilder: (context, index) {
+                                      return
+                                          // Text("aaaaa");
 
-                                        ShopItemPage2(
-                                      colors: colors,
-                                      shop: state.shops[index],
-                                    );
-                                  }),
+                                          ShopItemPage2(
+                                        colors: colors,
+                                        shop: state.shops[index],
+                                      );
+                                    }),
+                              ),
                             ),
                           ),
                         ],
