@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gshop/application/category/category_bloc.dart';
+import 'package:gshop/application/products/product_bloc.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
@@ -107,7 +108,6 @@ class _ShopCategoryPageState extends State<ShopCategoryPage>
                   children: [
                     // _categories(colors),
 
-
                     ShopsList(
                       colors: colors,
                       shopsRefresh: shopsRefresh,
@@ -147,7 +147,25 @@ class _ShopCategoryPageState extends State<ShopCategoryPage>
             ),
           ),
           8.horizontalSpace,
-          FilterButton(colors: colors, onTap: () {})
+          FilterButton(
+              colors: colors,
+              onTap: () async {
+                await AppRoute.goProductList(
+                  context: context,
+                  // list: state.mostSaleProduct,
+                  showFilter: true,
+                  colors: colors,
+                  title: "",
+                  // total: state.mostSaleProductCount,
+                  isNewProduct: false,
+                  isMostSaleProduct: true,
+                );
+                if (context.mounted) {
+                  context
+                      .read<ProductBloc>()
+                      .add(const ProductEvent.updateState());
+                }
+              })
         ],
       ),
     );

@@ -41,8 +41,10 @@ class AdsProductsResponse {
             : DateTime.parse(json["timestamp"]),
         status: json["status"],
         message: json["message"],
-        data: list ? null
-            : json["data"] == null ? null
+        data: list
+            ? null
+            : json["data"] == null
+                ? null
                 : AdModel.fromJson(json["data"]),
         listOfAds: list
             ? json["data"] == null

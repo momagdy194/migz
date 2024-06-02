@@ -19,6 +19,7 @@ class CheckoutProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("cartItemcartItem${cartItem?.toJson()}");
     return Padding(
       padding: EdgeInsets.only(bottom: 16.r),
       child: cartItem?.replaceStock != null
@@ -39,9 +40,7 @@ class CheckoutProductItem extends StatelessWidget {
           Stack(
             children: [
               CustomNetworkImage(
-                  url: (cartItem?.galleries?.isNotEmpty ?? false)
-                      ? cartItem?.galleries?.first.path ?? ""
-                      : cartItem?.stocks?.product?.img ?? "",
+                  url: cartItem!.stocks!.product!.img.toString(),
                   height: 86,
                   width: 64,
                   radius: 16),

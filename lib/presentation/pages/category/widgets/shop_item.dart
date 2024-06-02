@@ -97,7 +97,7 @@ class ShopItemPage2 extends StatelessWidget {
       },
       child: Container(
         width: MediaQuery.of(context).size.width * .9,
-        height: 200,
+        height: 170,
         margin: EdgeInsets.only(bottom: 10.r),
         decoration: BoxDecoration(
           color: CustomStyle.white,

@@ -2,6 +2,8 @@ import 'package:gshop/domain/model/model/review_data.dart';
 import 'package:gshop/domain/model/model/translation_model.dart';
 
 class BannersPaginateResponse {
+  List<BannerData>? _data;
+
   BannersPaginateResponse({List<BannerData>? data}) {
     _data = data;
   }
@@ -15,7 +17,6 @@ class BannersPaginateResponse {
     }
   }
 
-  List<BannerData>? _data;
 
   BannersPaginateResponse copyWith({List<BannerData>? data}) =>
       BannersPaginateResponse(data: data ?? _data);

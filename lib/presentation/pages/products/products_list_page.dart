@@ -31,11 +31,13 @@ class ProductsListPage extends StatefulWidget {
   final String title;
   final int totalCount;
   final bool? isNewProduct;
+  final bool? showFilter;
   final bool? isMostSaleProduct;
   final int? categoryId;
   final int? shopId;
   final int? bannerId;
   final int? brandId;
+  final dynamic? colors;
 
   const ProductsListPage({
     Key? key,
@@ -44,8 +46,10 @@ class ProductsListPage extends StatefulWidget {
     required this.totalCount,
     this.isNewProduct = false,
     this.isMostSaleProduct = false,
+    this.showFilter = false,
     this.categoryId,
     this.shopId,
+    this.colors,
     this.bannerId,
     this.brandId,
   }) : super(key: key);
@@ -68,7 +72,13 @@ class _ProductsListPageState extends State<ProductsListPage> {
     gridController = RefreshController();
     verticalController = RefreshController();
     oneController = RefreshController();
+    if(widget.showFilter??false){
+      Future.delayed(Duration(seconds: 0),() {
+        AppRoute.goFilterBottomSheet(context,widget.colors);
 
+      },);
+
+    }
     super.initState();
   }
 

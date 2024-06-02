@@ -374,7 +374,7 @@ abstract class LocalStorage {
     if (local != null) {
       final String currencyString = jsonEncode(address?.toJson());
       await local!.setString(AppConstants.keyAddress, currencyString);
-    }
+                    }
   }
 
   static AddressModel? getAddress() {
@@ -396,10 +396,10 @@ abstract class LocalStorage {
 
   static int? getUiType() => local?.getInt(AppConstants.keyUiType);
 
-
   static Future<void> setGroupOrder(UserModel? user) async {
     if (local != null) {
-      await local?.setString(AppConstants.keyGroupUser, jsonEncode(user?.toJson()));
+      await local?.setString(
+          AppConstants.keyGroupUser, jsonEncode(user?.toJson()));
     }
   }
 
@@ -423,7 +423,8 @@ abstract class LocalStorage {
 
   static Future<void> setBoard(Board? board) async {
     if (local != null) {
-      await local?.setString(AppConstants.keyBoard, jsonEncode(board?.toJson()));
+      await local?.setString(
+          AppConstants.keyBoard, jsonEncode(board?.toJson()));
     }
   }
 

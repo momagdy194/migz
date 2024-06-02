@@ -101,7 +101,7 @@ class ParcelItem extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(right: 16.r),
                         child: Icon(
-                          FlutterRemix.arrow_right_s_line,
+                          Icons.arrow_forward_ios,
                           color: colors.textBlack,
                         ),
                       )

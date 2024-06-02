@@ -17,7 +17,7 @@ class ShopsRepository implements ShopsInterface {
   Future<Either<ShopsPaginateResponse, dynamic>> getAllShops(
       {String? query, int? page}) async {
     final data = {
-      'perPage': 5,
+      'perPage': 100,
       'page': page,
       'lang': LocalStorage.getLanguage()?.locale,
       if (LocalStorage.getAddress()?.countryId != null)

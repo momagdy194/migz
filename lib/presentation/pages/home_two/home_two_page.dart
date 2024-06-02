@@ -1,18 +1,24 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:gshop/application/banner/banner_bloc.dart';
 import 'package:gshop/application/blog/blog_bloc.dart';
 import 'package:gshop/application/brand/brand_bloc.dart';
 import 'package:gshop/application/category/category_bloc.dart';
+import 'package:gshop/application/filter/filter_bloc.dart';
 import 'package:gshop/application/main/main_bloc.dart';
 import 'package:gshop/application/notification/notification_bloc.dart';
 import 'package:gshop/application/products/product_bloc.dart';
+import 'package:gshop/domain/di/dependency_manager.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
+import 'package:gshop/presentation/components/button/filter_button.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
 import 'package:gshop/presentation/components/custom_textformfield.dart';
 import 'package:gshop/presentation/pages/home/widgets/all_product_list.dart';
@@ -55,6 +61,39 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
     }
   }
 
+  Future<void> getMyLocation() async {
+    print("getMyLocationgetMyLocation");
+    LocationPermission check = await Geolocator.requestPermission();
+
+    if (check == LocationPermission.denied ||
+        check == LocationPermission.deniedForever) {
+      check = await Geolocator.requestPermission();
+    }
+
+    if (check != LocationPermission.denied &&
+        check != LocationPermission.deniedForever) {
+      try {
+        var loc = await Geolocator.getCurrentPosition();
+        final latLng = LatLng(loc.latitude, loc.longitude);
+        setState(() {
+          // _myLocation = latLng;
+          // _markers.add(Marker(
+          //   markerId: MarkerId('my_location'),
+          //   position: latLng,
+          //   icon: BitmapDescriptor.defaultMarkerWithHue(
+          //       BitmapDescriptor.hueGreen),
+          // ));
+        });
+        // print("_markers_markers ${_markers}");
+        // // Move the camera to the current location
+        // if (_mapController != null) {
+        //   _mapController!.animateCamera(CameraUpdate.newLatLngZoom(latLng, 17));
+      } catch (e) {
+        print("objectobjectobject ${e}");
+      }
+    }
+  }
+
   @override
   void initState() {
     categoryRefresh = RefreshController();
@@ -66,6 +105,7 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
     pageController = PageController();
     scrollController = ScrollController();
     scrollController.addListener(listen);
+    getMyLocation();
     super.initState();
   }
 
@@ -99,18 +139,49 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
                 return AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
                   height: state.isShowSearch ? 54.r : 0,
-                  child: state.isShowSearch ? CustomTextFormField(
-                    onTap: () {
-                      AppRoute.goSearchPage(context: context);
-                    },
-                    readOnly: true,
-                    radius: 0,
-                    prefixIcon: const Icon(
-                      FlutterRemix.search_2_line,
-                      color: CustomStyle.textHint,
-                    ),
-                    hint: AppHelper.getTrn(TrKeys.search),
-                  ) : const SizedBox.shrink(),
+                  child: state.isShowSearch
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: CustomTextFormField(
+                                  borderColor: Colors.grey,
+
+                                  onTap: () {
+                                    AppRoute.goSearchPage(context: context);
+                                  },
+                                  readOnly: true,
+                                  // radius: 0,
+                                  prefixIcon: const Icon(
+                                    FlutterRemix.search_2_line,
+                                    color: CustomStyle.textHint,
+                                  ),
+                                  hint: AppHelper.getTrn(TrKeys.search),
+                                ),
+                              ),
+                              FilterButton(
+                                  colors: colors,
+                                  onTap: () async {
+                                    await AppRoute.goProductList(
+                                      context: context,
+                                      // list: state.mostSaleProduct,
+                                      showFilter: true,
+                                      colors: colors,
+                                      title: "",
+                                      // total: state.mostSaleProductCount,
+                                      isNewProduct: false,
+                                      isMostSaleProduct: true,
+                                    );
+                                    if (context.mounted) {
+                                      context.read<ProductBloc>().add(
+                                          const ProductEvent.updateState());
+                                    }
+                                  })
+                            ],
+                          ),
+                        )
+                      : const SizedBox.shrink(),
                 );
               },
             ),
@@ -220,7 +291,7 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
     return AppBar(
       backgroundColor: colors.backgroundColor,
       elevation: 0.0,
-      centerTitle: false,
+      centerTitle: true,
       actions: [
         IconButton(
             onPressed: () {
@@ -256,7 +327,10 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
           )),
       title: Text(
         AppHelper.getAppName(),
-        style: CustomStyle.interSemi(color: colors.textBlack, size: 22),
+        style: CustomStyle.interSemi(
+          color: colors.textBlack,
+          size: 22,
+        ),
       ),
     );
   }

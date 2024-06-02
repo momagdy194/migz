@@ -6,6 +6,7 @@ import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/presentation/components/button/animation_button_effect.dart';
 import 'package:gshop/presentation/components/custom_network_image.dart';
+import 'package:gshop/presentation/components/title.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
@@ -27,27 +28,38 @@ class LooksListTwo extends StatelessWidget {
     return BlocBuilder<BannerBloc, BannerState>(
       builder: (context, state) {
         return state.looks.isNotEmpty
-            ? Container(
-                height: 200.r,
-                color: colors.newBoxColor,
-                padding: EdgeInsets.symmetric(vertical: 16.r),
-                child: SmartRefresher(
-                  enablePullUp: true,
-                  enablePullDown: false,
-                  controller: controller,
-                  scrollDirection: Axis.horizontal,
-                  onLoading: onLoading,
-                  child: ListView.builder(
-                    padding: EdgeInsets.symmetric(horizontal: 16.r),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: state.looks.length,
-                    itemBuilder: (context, index) {
-                      return _itemBanner(context, state, index);
-                    },
-                  ),
+            ? Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal  : 16.r),
+                  child: TitleWidget(
+                      title: AppHelper.getTrn(TrKeys.looks),
+                      titleColor: colors.textBlack),
                 ),
-              )
+                16.verticalSpace,
+                Container(
+                    height: 200.r,
+                    color: colors.newBoxColor,
+                    padding: EdgeInsets.symmetric(vertical: 16.r),
+                    child: SmartRefresher(
+                      enablePullUp: true,
+                      enablePullDown: false,
+                      controller: controller,
+                      scrollDirection: Axis.horizontal,
+                      onLoading: onLoading,
+                      child: ListView.builder(
+                        padding: EdgeInsets.symmetric(horizontal: 16.r),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: state.looks.length,
+                        itemBuilder: (context, index) {
+                          return _itemBanner(context, state, index);
+                        },
+                      ),
+                    ),
+                  ),
+              ],
+            )
             : const SizedBox.shrink();
       },
     );

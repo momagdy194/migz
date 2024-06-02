@@ -65,7 +65,6 @@ class _LoginCartState extends State<LoginCart> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-
                           children: [
                             20.verticalSpace,
                             Text(
@@ -118,30 +117,40 @@ class _LoginCartState extends State<LoginCart> {
                                     bgColor: widget.colors.primary,
                                     titleColor: CustomStyle.white,
                                     onTap: () {
-                                      if (formKey.currentState?.validate() ?? false) {
-                                        context.read<AuthBloc>().add(AuthEvent.login(
-                                            context: context,
-                                            phone: phone.text,
-                                            password: password.text,
-                                            onSuccess: ()async {
-                                              await    LocalStorage.setAddress(
-                                                AddressModel(
-                                                  // cityId: int.tryParse(cityId),
-                                                  countryId: 67,
-                                                  regionId: 3,  // regionId: int.tryParse(regionId),
-                                                ),
-                                              );
-                                              if (LocalStorage.getAddress() == null) {
-                                                AppRoute.goSelectCountry(
-                                                    context: context);
-                                                return;
-                                              }
-                                              if(AppConstants.isDemo && LocalStorage.getUiType() == null){
-                                                AppRoute.goSelectUIType(context: context);
-                                                return;
-                                              }
-                                              AppRoute.goMain(context);
-                                            }));
+                                      if (formKey.currentState?.validate() ??
+                                          false) {
+                                        context
+                                            .read<AuthBloc>()
+                                            .add(AuthEvent.login(
+                                                context: context,
+                                                phone: phone.text,
+                                                password: password.text,
+                                                onSuccess: () async {
+                                                  await LocalStorage.setAddress(
+                                                    AddressModel(
+                                                      // cityId: int.tryParse(cityId),
+                                                      countryId: 67,
+                                                      regionId:
+                                                          3, // regionId: int.tryParse(regionId),
+                                                    ),
+                                                  );
+                                                  if (LocalStorage
+                                                          .getAddress() ==
+                                                      null) {
+                                                    AppRoute.goSelectCountry(
+                                                        context: context);
+                                                    return;
+                                                  }
+                                                  if (AppConstants.isDemo &&
+                                                      LocalStorage
+                                                              .getUiType() ==
+                                                          null) {
+                                                    AppRoute.goSelectUIType(
+                                                        context: context);
+                                                    return;
+                                                  }
+                                                  AppRoute.goMain(context);
+                                                }));
                                       }
                                     });
                               },
@@ -154,12 +163,13 @@ class _LoginCartState extends State<LoginCart> {
                     ButtonEffectAnimation(
                       onTap: () {
                         context.read<AuthBloc>().add(
-                            const AuthEvent.switchScreen(AuthType.forgetPassword));
+                            const AuthEvent.switchScreen(
+                                AuthType.forgetPassword));
                       },
                       child: Text(
                         AppHelper.getTrn(TrKeys.forgetPassword),
-                        style:
-                            CustomStyle.interNormal(color: widget.colors.textBlack),
+                        style: CustomStyle.interNormal(
+                            color: widget.colors.textBlack),
                       ),
                     ),
                     16.verticalSpace,

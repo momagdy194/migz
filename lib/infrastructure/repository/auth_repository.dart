@@ -19,7 +19,8 @@ class AuthRepository implements AuthInterface {
     if (AppHelper.checkPhone(phone.replaceAll(" ", ""))) {
       data = {
         'phone':
-            phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
+        formatPhoneNumber2(phone.toString()),
+            // phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
         'password': password
       };
     } else {
@@ -130,14 +131,18 @@ class AuthRepository implements AuthInterface {
   @override
   Future<Either<bool, dynamic>> checkPhone({required String phone}) async {
     final data = {
-      'phone': phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "")
-    };
+      'phone':
+      formatPhoneNumber2(phone)
+};
+
+    print("${data} datadata");
     try {
       final client = dioHttp.client(requireAuth: false);
       final response = await client.post(
         '/api/v1/auth/check/phone',
         queryParameters: data,
       );
+      print("${response.realUri.query}response.realUri");
       return left(response.data?["data"]?["exist"] ?? false);
     } catch (e) {
       debugPrint('==> login failure: $e');
@@ -152,7 +157,8 @@ class AuthRepository implements AuthInterface {
       required String password}) async {
     final data = {
       'phone':
-          phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
+      formatPhoneNumber2(phone.toString()),
+          // phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
       "id": verificationId,
       "type": "firebase",
       "password": password
@@ -186,4 +192,43 @@ class AuthRepository implements AuthInterface {
       return right(AppHelper.errorHandler(e));
     }
   }
+}
+
+String formatPhoneNumber(String input) {
+  // Remove all non-numeric characters from the input
+  String numericString = input.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
+  // Add the country code and leading zero if missing
+  print("numericStringnumericStringnumericString00 ${numericString}");
+
+  if (numericString.startsWith('0')) {
+    print("objectobjectobject${numericString}");
+
+    numericString = '2$numericString';
+    // numericString = '20$numericString';
+  } else if (!numericString.startsWith('20')) {
+    print("objectobjectobject${numericString}");
+    numericString = '20$numericString';
+  }
+print("numericStringnumericStringnumericString ${numericString}");
+  // Insert '+' before the country code
+  return '+$numericString';
+}
+String formatPhoneNumber2(String input) {
+  // Remove all non-numeric characters from the input
+  String numericString = input.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
+  // Add the country code and leading zero if missing
+  print("numericStringnumericStringnumericString00 ${numericString}");
+
+  if (numericString.startsWith('0')) {
+    print("objectobjectobject${numericString}");
+
+    numericString = '2$numericString';
+    // numericString = '20$numericString';
+  } else if (!numericString.startsWith('20')) {
+    print("objectobjectobject${numericString}");
+    numericString = '20$numericString';
+  }
+print("numericStringnumericStringnumericString ${numericString}");
+  // Insert '+' before the country code
+  return '$numericString';
 }

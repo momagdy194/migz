@@ -107,7 +107,7 @@ class _LocationWidgetState extends State<LocationWidget> {
             ),
             const Spacer(),
             Icon(
-              FlutterRemix.arrow_right_s_line,
+              Icons.arrow_forward_ios,
               color: widget.colors.textBlack,
             )
           ],

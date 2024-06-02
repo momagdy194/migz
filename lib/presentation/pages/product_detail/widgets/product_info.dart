@@ -94,7 +94,7 @@ class ProductInfo extends StatelessWidget {
               style: CustomStyle.interNormal(color: colors.textBlack, size: 16),
             ),
             Icon(
-              FlutterRemix.arrow_right_s_line,
+              Icons.arrow_forward_ios,
               color: colors.textBlack,
             )
           ],

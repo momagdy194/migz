@@ -5,7 +5,7 @@ class CheckoutState with _$CheckoutState {
   const factory CheckoutState({
     @Default(true) bool isLoadingPoint,
     @Default(true) bool isLoading,
-    @Default(false) bool isActive,
+    @Default(true) bool isActive,
     @Default(0) int selectAddress,
     @Default(1) int step,
     @Default(-1) int selectId,

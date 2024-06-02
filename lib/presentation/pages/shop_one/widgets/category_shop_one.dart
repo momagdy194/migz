@@ -31,7 +31,7 @@ class CategoryShopOne extends StatelessWidget {
             ? Column(
                 children: [
                   SizedBox(
-                    height: 120.r,
+                    height: 140.r,
                     child: Row(
                       children: [
                         if (state.categories.isNotEmpty)
@@ -76,7 +76,7 @@ class CategoryShopOne extends StatelessWidget {
                                         },
                                         child: Container(
                                           width: 110.r,
-                                          height: 110.r,
+                                          height: 130.r,
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(20.r),

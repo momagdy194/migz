@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:700233182667:android:93a43a763a0d87cc445a4e",
+        "mobilesdk_app_id": "1:700233182667:android:102168ea284d2d54445a4e",
         "android_client_info": {
-          "package_name": "org.uzmart"
+          "package_name": "com.flonstore.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "700233182667-q4965anp12gtnh7piavo5va27svoprv5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flonstore.app",
+            "certificate_hash": "704e10828af65cef386095973ef61db7aecb8363"
+          }
+        },
+        {
+          "client_id": "700233182667-tisfuuq7rg1q6c8khrmsapl1d6e0ig6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA1WJX1DpMeDodlGfotpHuvH9e3T5dfpjQ"
@@ -20,7 +33,65 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700233182667-tisfuuq7rg1q6c8khrmsapl1d6e0ig6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700233182667:android:93a43a763a0d87cc445a4e",
+        "android_client_info": {
+          "package_name": "org.uzmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700233182667-2dg7ib9v7b6dkn5jta1vkmek5ldnh0ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.uzmart",
+            "certificate_hash": "5fdd6b563a21b5157456ece152a8aec91266c10b"
+          }
+        },
+        {
+          "client_id": "700233182667-cdbl5nld3ggeaulgd0e5p5iqedh54el0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.uzmart",
+            "certificate_hash": "fa7a1416dcbeef40568fd683b3033ee392bcfb26"
+          }
+        },
+        {
+          "client_id": "700233182667-sf1n080dvpij680nf2e8lc3235q40t8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.uzmart",
+            "certificate_hash": "704e10828af65cef386095973ef61db7aecb8363"
+          }
+        },
+        {
+          "client_id": "700233182667-tisfuuq7rg1q6c8khrmsapl1d6e0ig6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1WJX1DpMeDodlGfotpHuvH9e3T5dfpjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700233182667-tisfuuq7rg1q6c8khrmsapl1d6e0ig6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

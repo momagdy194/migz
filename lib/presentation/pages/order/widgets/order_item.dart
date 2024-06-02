@@ -47,10 +47,11 @@ class OrderItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: colors.primary,
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(16.r),
-                      bottomRight: Radius.circular(16.r)),
+                      topLeft: Radius.circular(16.r),
+                      bottomLeft: Radius.circular(16.r)),
                 ),
               ),
+            SizedBox(width: 10,),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +120,7 @@ class OrderItem extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(right: 16.r),
                         child: Icon(
-                          FlutterRemix.arrow_right_s_line,
+                          Icons.arrow_forward_ios,
                           color: colors.textBlack,
                         ),
                       )

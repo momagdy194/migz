@@ -38,7 +38,7 @@ class AdsOneItem extends StatelessWidget {
         bottom: 24.r,
       ),
       width: double.infinity,
-      height: 275.r,
+      height: 300.r,
       margin: EdgeInsets.symmetric(horizontal: 16.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +63,7 @@ class AdsOneItem extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Container(
                           width: 150.r,
-                          height: 150.r,
+                          height: 180.r,
                           padding: EdgeInsets.all(20.r),
                           margin: EdgeInsets.only(right: 10.r),
                           decoration: BoxDecoration(

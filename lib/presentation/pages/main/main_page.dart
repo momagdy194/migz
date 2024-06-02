@@ -54,7 +54,7 @@ class _MainPageState extends State<MainPage> {
   List<IndexedStackChild> list = [
     IndexedStackChild(
         child: AppHelper.getType() == 0
-            ? const HomePage()
+            ? const HomeTwoPage()  
             : AppHelper.getType() == 1
                 ? const HomeOnePage()
                 : AppHelper.getType() == 2

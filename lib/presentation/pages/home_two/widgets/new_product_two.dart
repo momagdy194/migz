@@ -23,25 +23,28 @@ class NewProductTwoList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   32.verticalSpace,
-                  TitleWidget(
-                    title: AppHelper.getTrn(TrKeys.newArrivals),
-                    titleColor: colors.textBlack,
-                    subTitle: AppHelper.getTrn(TrKeys.seeAll),
-                    onTap: () async {
-                      await AppRoute.goProductList(
-                        context: context,
-                        list: state.newProduct,
-                        title: AppHelper.getTrn(TrKeys.newArrivals),
-                        total: state.newProductCount,
-                        isNewProduct: true,
-                        isMostSaleProduct: false,
-                      );
-                      if (context.mounted) {
-                        context
-                            .read<ProductBloc>()
-                            .add(const ProductEvent.updateState());
-                      }
-                    },
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.r),
+                    child: TitleWidget(
+                      title: AppHelper.getTrn(TrKeys.newArrivals),
+                      titleColor: colors.textBlack,
+                      subTitle: AppHelper.getTrn(TrKeys.seeAll),
+                      onTap: () async {
+                        await AppRoute.goProductList(
+                          context: context,
+                          list: state.newProduct,
+                          title: AppHelper.getTrn(TrKeys.newArrivals),
+                          total: state.newProductCount,
+                          isNewProduct: true,
+                          isMostSaleProduct: false,
+                        );
+                        if (context.mounted) {
+                          context
+                              .read<ProductBloc>()
+                              .add(const ProductEvent.updateState());
+                        }
+                      },
+                    ),
                   ),
                   16.verticalSpace,
                   ListView.builder(

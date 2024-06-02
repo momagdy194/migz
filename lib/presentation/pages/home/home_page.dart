@@ -16,6 +16,8 @@ import 'package:gshop/presentation/pages/home/widgets/ads_list.dart';
 import 'package:gshop/presentation/pages/home/widgets/all_product_list.dart';
 import 'package:gshop/presentation/pages/home/widgets/banner_list.dart';
 import 'package:gshop/presentation/pages/home/widgets/looks_list.dart';
+import 'package:gshop/presentation/pages/home_two/widgets/brands_two_list.dart';
+import 'package:gshop/presentation/pages/home_two/widgets/category_two_list.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
@@ -36,6 +38,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late RefreshController categoryRefresh;
+  late RefreshController brandRefresh;
+
   late RefreshController productRefresh;
   late RefreshController looksRefresh;
   late RefreshController adsRefresh;
@@ -46,6 +50,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     categoryRefresh = RefreshController();
     productRefresh = RefreshController();
+    brandRefresh = RefreshController();
+
     looksRefresh = RefreshController();
     adsRefresh = RefreshController();
     bannerRefresh = RefreshController();
@@ -58,6 +64,8 @@ class _HomePageState extends State<HomePage> {
     categoryRefresh.dispose();
     productRefresh.dispose();
     pageController.dispose();
+    brandRefresh.dispose();
+
     looksRefresh.dispose();
     adsRefresh.dispose();
     bannerRefresh.dispose();
@@ -115,7 +123,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               if (LocalStorage.getUser().firstname != null) _hello(colors),
               24.verticalSpace,
-              CategoryList(categoryRefresh: categoryRefresh, colors: colors),
+              // CategoryList(categoryRefresh: categoryRefresh, colors: colors),
               BannerList(
                 pageController: pageController,
                 colors: colors,
@@ -125,8 +133,9 @@ class _HomePageState extends State<HomePage> {
                       context: context, controller: bannerRefresh));
                 },
               ),
-
-              SubCategoryList(colors: colors),
+              BrandsTwoList(brandRefresh: brandRefresh, colors: colors),
+              CategoryTwoList(categoryRefresh: categoryRefresh, colors: colors),
+              // SubCategoryList(colors: colors),
               MostProductList(colors: colors),
               AdsList(
                 colors: colors,
@@ -191,7 +200,7 @@ class _HomePageState extends State<HomePage> {
   //             ),
   //             const Spacer(),
   //             Icon(
-  //               FlutterRemix.arrow_right_s_line,
+  //               Icons.arrow_forward_ios,,
   //               color: colors.textBlack,
   //             )
   //           ],
@@ -229,7 +238,7 @@ class _HomePageState extends State<HomePage> {
   //             ),
   //             const Spacer(),
   //             Icon(
-  //               FlutterRemix.arrow_right_s_line,
+  //               Icons.arrow_forward_ios,,
   //               color: colors.textBlack,
   //             )
   //           ],

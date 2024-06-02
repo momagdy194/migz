@@ -1,4 +1,5 @@
 import 'package:gshop/domain/model/model/shop_model.dart';
+import 'package:gshop/infrastructure/repository/auth_repository.dart';
 
 import 'currency_model.dart';
 import 'notification_data.dart';
@@ -214,7 +215,8 @@ class UserModel {
     if (_email != null) map['email'] = _email;
     if (_phone != null) {
       map['phone'] =
-          _phone?.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
+          formatPhoneNumber2(_phone.toString());
+          // _phone?.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
     }
     if (_referral != null && (_referral?.isNotEmpty ?? false)) map['my_referral'] = _referral;
     if (_referralFromWithdrawPrice != null) map['referral_from_withdraw_price'] = _referralFromWithdrawPrice;

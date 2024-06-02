@@ -32,9 +32,9 @@ class _OrdersListPageState extends State<OrdersListPage>
     Tab(
       child: Text(AppHelper.getTrn(TrKeys.orders)),
     ),
-    Tab(
-      child: Text(AppHelper.getTrn(TrKeys.refundOrder)),
-    ),
+    // Tab(
+    //   child: Text(AppHelper.getTrn(TrKeys.refundOrder)),
+    // ),
   ];
 
   @override
@@ -89,11 +89,11 @@ class _OrdersListPageState extends State<OrdersListPage>
                         : state.activeOrders.isEmpty
                             ? _resultEmpty(colors)
                             : _activeOrders(context, state, colors),
-                    state.isLoadingRefund
-                        ? const Loading()
-                        : state.refundOrders.isEmpty
-                            ? _resultEmpty(colors)
-                            : _refundOrders(context, state, colors)
+                    // state.isLoadingRefund
+                    //     ? const Loading()
+                    //     : state.refundOrders.isEmpty
+                    //         ? _resultEmpty(colors)
+                    //         : _refundOrders(context, state, colors)
                   ]),
                 );
               },
@@ -104,19 +104,22 @@ class _OrdersListPageState extends State<OrdersListPage>
     );
   }
 
-
   SmartRefresher _activeOrders(
       BuildContext context, OrderState state, CustomColorSet colors) {
     return SmartRefresher(
       controller: activeRefresh,
       enablePullUp: true,
       onRefresh: () {
-        context.read<OrderBloc>().add(OrderEvent.fetchActiveOrders(
-            context: context, isRefresh: true, controller: activeRefresh));
+        context.read<OrderBloc>().add(
+              OrderEvent.fetchActiveOrders(
+                  context: context, isRefresh: true, controller: activeRefresh),
+            );
       },
       onLoading: () {
-        context.read<OrderBloc>().add(OrderEvent.fetchActiveOrders(
-            context: context, controller: activeRefresh));
+        context.read<OrderBloc>().add(
+              OrderEvent.fetchActiveOrders(
+                  context: context, controller: activeRefresh),
+            );
       },
       child: ListView.separated(
         padding: EdgeInsets.only(top: 24.r),
@@ -126,7 +129,7 @@ class _OrdersListPageState extends State<OrdersListPage>
           return OrderItem(
             index: index,
             colors: colors,
-            order:  state.activeOrders[index],
+            order: state.activeOrders[index],
           );
         },
         separatorBuilder: (BuildContext context, int index) {

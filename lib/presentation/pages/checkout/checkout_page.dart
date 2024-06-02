@@ -57,7 +57,7 @@ class _CheckoutPageState extends State<CheckoutPage>
           .read<CheckoutBloc>()
           .add(CheckoutEvent.changeStep(context: context, step: 2));
     }
-    tabController = TabController(length: 2, vsync: this)
+    tabController = TabController(length: 2, vsync: this, initialIndex: 1)
       ..addListener(() {
         if (tabController.index == 1) {
           context
@@ -79,6 +79,8 @@ class _CheckoutPageState extends State<CheckoutPage>
         ?.forEach((element) {
       comments.addAll({element.shop?.id ?? 0: TextEditingController()});
     });
+
+    // createOrder(context.read<CheckoutBloc>().state, context.read<CartBloc>().state);
 
     super.initState();
   }
@@ -147,46 +149,64 @@ class _CheckoutPageState extends State<CheckoutPage>
     return CustomScaffold(
       body: (colors) => BlocBuilder<CheckoutBloc, CheckoutState>(
         builder: (context, state) {
-          return ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              _appBar(context, colors, state),
-              if (state.step == 1)
-                ShippingScreen(
-                  markers: state.markers,
-                  isLoadingPoint: state.isLoadingPoint,
-                  colors: colors,
-                  tabController: tabController,
-                  list: listTabs,
-                  listPoints: state.deliveryPoints ?? [],
-                  selectPointId: state.selectPointId,
-                  listAddress: state.address,
-                  isLoading: state.isLoading,
-                  selectAddress: state.selectAddress,
-                ),
-              if (state.step == 2)
-                PaymentMethodsScreen(
-                  colors: colors,
-                  list: state.list ?? [],
-                  selectId: state.selectId,
-                  select: (int id) {
-                    context
-                        .read<CheckoutBloc>()
-                        .add(CheckoutEvent.changePayment(id: id));
-                  },
-                ),
-              if (state.step == 3)
-                VerifyScreen(
-                  controllers: comments,
-                  colors: colors,
-                  dateTime: state.deliveryDate,
-                ),
-            ],
-          );
+          return BlocListener<CheckoutBloc, CheckoutState>(
+              listener: (context, state) {
+                print("statestatestatestatestate ${state}");
+                if (!state.isLoading && !state.isLoadingPoint) {
+                  Future.delayed(
+                    Duration(seconds: 1),
+                    () {
+                      createOrder(context.read<CheckoutBloc>().state,
+                          context.read<CartBloc>().state);
+                    },
+                  );
+                }
+              },
+              child: Center(
+                child: CircularProgressIndicator(),
+              )
+
+              // ListView(
+              //   padding: EdgeInsets.zero,
+              //   children: [
+              //     _appBar(context, colors, state),
+              //     if (state.step == 1)
+              //       ShippingScreen(
+              //         markers: state.markers,
+              //         isLoadingPoint: state.isLoadingPoint,
+              //         colors: colors,
+              //         tabController: tabController,
+              //         list: listTabs,
+              //         listPoints: state.deliveryPoints ?? [],
+              //         selectPointId: state.selectPointId,
+              //         listAddress: state.address,
+              //         isLoading: state.isLoading,
+              //         selectAddress: state.selectAddress,
+              //       ),
+              //     if (state.step == 2)
+              //       PaymentMethodsScreen(
+              //         colors: colors,
+              //         list: state.list ?? [],
+              //         selectId: state.selectId,
+              //         select: (int id) {
+              //           context
+              //               .read<CheckoutBloc>()
+              //               .add(CheckoutEvent.changePayment(id: id));
+              //         },
+              //       ),
+              //     if (state.step == 3)
+              //       VerifyScreen(
+              //         controllers: comments,
+              //         colors: colors,
+              //         dateTime: state.deliveryDate,
+              //       ),
+              //   ],
+              // ),
+              );
         },
       ),
       floatingButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingButton: (colors) => _bottom(colors, context),
+      // floatingButton: (colors) => _bottom(colors, context),
     );
   }
 
@@ -298,7 +318,7 @@ class _CheckoutPageState extends State<CheckoutPage>
                                                 : null,
                                             pointId: state.selectPointId));
                                   }
-                                  if (state.step == 3) {
+                                  if (state.step == 1) {
                                     createOrder(state, cartState);
                                   }
 

@@ -238,7 +238,7 @@ class VerifyScreen extends StatelessWidget {
             ),
             const Spacer(),
             Icon(
-              FlutterRemix.arrow_right_s_line,
+              Icons.arrow_forward_ios,
               color: colors.textBlack,
             )
           ],

@@ -287,8 +287,10 @@ abstract class AppRoute {
           int? total,
           bool? isNewProduct,
           bool? isMostSaleProduct,
+          bool? showFilter=false,
           int? categoryId,
           int? brandId,
+          dynamic? colors,
           int? bannerId,
           int? shopId}) async =>
       await Navigator.of(context).push(
@@ -334,6 +336,8 @@ abstract class AppRoute {
               totalCount: total ?? 0,
               isMostSaleProduct: isMostSaleProduct,
               isNewProduct: isNewProduct,
+              showFilter: showFilter,
+              colors: colors,
               categoryId: categoryId,
               shopId: shopId,
               brandId: brandId,

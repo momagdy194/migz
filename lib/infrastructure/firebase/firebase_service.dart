@@ -11,6 +11,7 @@ import 'package:gshop/domain/model/model/order_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
+import 'package:gshop/infrastructure/repository/auth_repository.dart';
 import 'package:gshop/presentation/components/join_dialog.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
@@ -143,7 +144,7 @@ abstract class FirebaseService {
       required ValueChanged<String> onSuccess,
       required ValueChanged<String> onError}) async {
     await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: phone,
+      phoneNumber:formatPhoneNumber(phone) ,
       verificationCompleted: (PhoneAuthCredential credential) {},
       verificationFailed: (FirebaseAuthException e) {
         onError(e.message ?? '');

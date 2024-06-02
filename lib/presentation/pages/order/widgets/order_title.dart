@@ -14,7 +14,8 @@ class OrderTitle extends StatelessWidget {
   final String? id;
   final CustomColorSet colors;
 
-  const OrderTitle({super.key, required this.order, required this.colors, required this.id});
+  const OrderTitle(
+      {super.key, required this.order, required this.colors, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,8 @@ class OrderTitle extends StatelessWidget {
             const Spacer(),
             ButtonEffectAnimation(
               onTap: () async {
-                final res =
-                    await ordersRepository.getOrderInvoice(id: order?.parentId ?? 0);
+                final res = await ordersRepository.getOrderInvoice(
+                    id: order?.parentId ?? 0);
                 res.fold((l) {
                   Future.delayed(const Duration(seconds: 2), () {
                     AppHelper.errorSnackBar(
@@ -60,11 +61,11 @@ class OrderTitle extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r)),
           child: Row(
             children: [
-              Text(
-                order?.deliveryType ?? "",
-                style: CustomStyle.interSemi(color: colors.textBlack, size: 14),
-              ),
-              const Spacer(),
+              // Text(
+              //   order?.deliveryType ?? "",
+              //   style: CustomStyle.interSemi(color: colors.textBlack, size: 14),
+              // ),
+              // const Spacer(),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 8.r),
                 width: 4.r,

@@ -51,6 +51,9 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
       emit(state.copyWith(isButtonLoading: false));
     });
 
+    // on<AddressEvent>((event,emit)async{
+    // });
+
     on<AddAddress>((event, emit) async {
       emit(state.copyWith(isButtonLoading: true));
       final res = await _addressRepo.addUserAddress(

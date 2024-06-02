@@ -36,50 +36,50 @@ class OrderScreen extends StatelessWidget {
         isLtr: LocalStorage.getLangLtr(),
         child: Stack(
           children: [
-            Positioned(
-              top: 0,
-              child: GestureDetector(
-                onTap: () {
-                  AppRoute.goGamePage(context: context);
-                },
-                child: Container(
-                  margin: MediaQuery.viewInsetsOf(context),
-                  width: MediaQuery.sizeOf(context).width,
-                  height: 64.r,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [
-                      CustomStyle.primary,
-                      CustomStyle.starColor,
-                    ]),
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(24.r),
-                      topLeft: Radius.circular(24.r),
-                    ),
-                  ),
-                  padding: EdgeInsets.only(
-                    top: 8.r,
-                    left: 16.r,
-                    right: 16.r,
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Icon(
-                        FlutterRemix.gamepad_fill,
-                        color: CustomStyle.white,
-                      ),
-                      8.horizontalSpace,
-                      Text(
-                        AppHelper.getTrn(TrKeys.wantToPlayGame),
-                        style:
-                            CustomStyle.interNormal(color: CustomStyle.white),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            // Positioned(
+            //   top: 0,
+            //   child: GestureDetector(
+            //     onTap: () {
+            //       AppRoute.goGamePage(context: context);
+            //     },
+            //     child: Container(
+            //       margin: MediaQuery.viewInsetsOf(context),
+            //       width: MediaQuery.sizeOf(context).width,
+            //       height: 64.r,
+            //       decoration: BoxDecoration(
+            //         gradient: const LinearGradient(colors: [
+            //           CustomStyle.primary,
+            //           CustomStyle.starColor,
+            //         ]),
+            //         borderRadius: BorderRadius.only(
+            //           topRight: Radius.circular(24.r),
+            //           topLeft: Radius.circular(24.r),
+            //         ),
+            //       ),
+            //       padding: EdgeInsets.only(
+            //         top: 8.r,
+            //         left: 16.r,
+            //         right: 16.r,
+            //       ),
+            //       child: Row(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         mainAxisAlignment: MainAxisAlignment.start,
+            //         children: [
+            //           const Icon(
+            //             FlutterRemix.gamepad_fill,
+            //             color: CustomStyle.white,
+            //           ),
+            //           8.horizontalSpace,
+            //           Text(
+            //             AppHelper.getTrn(TrKeys.wantToPlayGame),
+            //             style:
+            //                 CustomStyle.interNormal(color: CustomStyle.white),
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: EdgeInsets.only(top: 32.r),
               child: Container(
@@ -205,11 +205,11 @@ class OrderScreen extends StatelessWidget {
             trackId: order?.trackId ?? "",
             trackUrl: order?.trackUrl ?? "",
           ),
-        LocationWidget(
-          colors: colors,
-          order: order,
-        ),
-        24.verticalSpace,
+        // LocationWidget(
+        //   colors: colors,
+        //   order: order,
+        // ),
+        // 24.verticalSpace,
         ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

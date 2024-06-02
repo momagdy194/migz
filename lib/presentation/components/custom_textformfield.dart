@@ -18,10 +18,12 @@ class CustomTextFormField extends StatelessWidget {
   final bool isError;
   final bool autoFocus;
   final double radius;
+  final Color? borderColor;
 
   const CustomTextFormField({
     Key? key,
     this.suffixIcon,
+    this.borderColor,
     this.prefixIcon,
     this.onTap,
     this.obscure,
@@ -33,7 +35,8 @@ class CustomTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.isError = false,
     this.hint = "",
-     this.radius =  16,  this.autoFocus = false,
+    this.radius = 16,
+    this.autoFocus = false,
   }) : super(key: key);
 
   @override
@@ -51,7 +54,7 @@ class CustomTextFormField extends StatelessWidget {
         validator: validation,
         style: CustomStyle.interNormal(
           size: 14.sp,
-          color: colors.textBlack,
+          color: colors.primary,
         ),
         cursorWidth: 1,
         cursorColor: colors.textBlack,
@@ -62,44 +65,45 @@ class CustomTextFormField extends StatelessWidget {
           counterText: "",
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16.r,vertical: 16.r),
+          contentPadding:
+              EdgeInsets.symmetric(horizontal: 16.r, vertical: 16.r),
           hintText: hint,
           hintStyle: CustomStyle.interNormal(
             size: 14.sp,
-            color: CustomStyle.textHint,
+            color:borderColor ?? CustomStyle.primary,
           ),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           fillColor: CustomStyle.black,
           filled: false,
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide.merge(
-                  const BorderSide(color: CustomStyle.icon),
-                  const BorderSide(color: CustomStyle.icon)),
+                  BorderSide(color: borderColor ?? CustomStyle.primary),
+                  BorderSide(color: borderColor ?? CustomStyle.primary)),
               borderRadius: BorderRadius.circular(radius.r)),
           errorBorder: OutlineInputBorder(
               borderSide: BorderSide.merge(
-                  const BorderSide(color: CustomStyle.icon),
-                  const BorderSide(color: CustomStyle.icon)),
+                  BorderSide(color: borderColor ?? CustomStyle.primary),
+                  BorderSide(color: borderColor ?? CustomStyle.primary)),
               borderRadius: BorderRadius.circular(radius.r)),
           border: OutlineInputBorder(
               borderSide: BorderSide.merge(
-                  const BorderSide(color: CustomStyle.icon),
-                  const BorderSide(color: CustomStyle.icon)),
+                  BorderSide(color: borderColor ?? CustomStyle.primary),
+                  BorderSide(color: borderColor ?? CustomStyle.primary)),
               borderRadius: BorderRadius.circular(radius.r)),
           focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide.merge(
-                  const BorderSide(color: CustomStyle.icon),
-                  const BorderSide(color: CustomStyle.icon)),
+                  BorderSide(color: borderColor ?? CustomStyle.primary),
+                  BorderSide(color: borderColor ?? CustomStyle.primary)),
               borderRadius: BorderRadius.circular(radius.r)),
           disabledBorder: OutlineInputBorder(
               borderSide: BorderSide.merge(
-                  const BorderSide(color: CustomStyle.icon),
-                  const BorderSide(color: CustomStyle.icon)),
+                  BorderSide(color: borderColor ?? CustomStyle.primary),
+                  BorderSide(color: borderColor ?? CustomStyle.primary)),
               borderRadius: BorderRadius.circular(radius.r)),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide.merge(
-                  const BorderSide(color: CustomStyle.icon),
-                  const BorderSide(color: CustomStyle.icon)),
+                  BorderSide(color: borderColor ?? CustomStyle.primary),
+                  BorderSide(color: borderColor ?? CustomStyle.primary)),
               borderRadius: BorderRadius.circular(radius.r)),
         ),
       );

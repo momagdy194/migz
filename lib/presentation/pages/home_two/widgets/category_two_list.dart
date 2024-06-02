@@ -32,7 +32,7 @@ class CategoryTwoList extends StatelessWidget {
                 children: [
                   16.verticalSpace,
                   Padding(
-                    padding: EdgeInsets.only(left: 16.r),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
                       AppHelper.getTrn(TrKeys.categories),
                       style: CustomStyle.interNormal(

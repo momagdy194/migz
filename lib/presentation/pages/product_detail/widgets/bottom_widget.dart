@@ -80,7 +80,7 @@ class BottomWidget extends StatelessWidget {
                     }
                     context
                         .read<MainBloc>()
-                        .add(const MainEvent.changeIndex(index: 3));
+                        .add(const MainEvent.changeIndex(index: 4));
                     context.read<CartBloc>().add(CartEvent.insertCart(
                           context: context,
                           onSuccess: () {
@@ -201,7 +201,7 @@ class BottomWidget extends StatelessWidget {
                       context: context, product: product, stock: selectStock);
                   context
                       .read<MainBloc>()
-                      .add(const MainEvent.changeIndex(index: 3));
+                      .add(const MainEvent.changeIndex(index: 4));
                   context.read<CartBloc>().add(CartEvent.insertCart(
                         context: context,
                         onSuccess: () {

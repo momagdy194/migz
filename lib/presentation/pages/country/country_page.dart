@@ -119,21 +119,22 @@ class _CountryPageState extends State<CountryPage> {
   Widget _countryItem(CustomColorSet colors, AddressState state, int index) {
     return ButtonEffectAnimation(
       onTap: () {
-        LocalStorage.deleteCartList();
-        LocalStorage.setAddress(AddressModel(
-            countryId:
-            // null,
-            state.countries[index].id,
-            regionId:
-            // null,
-            state.countries[index].regionId,
-            countryCode:
-            // null,
-            state.countries[index].code,
-            country:
-            // null
-            state.countries[index].translation?.title
-        ));
+        print("state.countries[index].id${state.countries[index].id}");
+        // LocalStorage.deleteCartList();
+        // LocalStorage.setAddress(AddressModel(
+        //     countryId:
+        //     // null,
+        //     state.countries[index].id,
+        //     regionId:
+        //     // null,
+        //     3,
+        //     countryCode:
+        //     // null,
+        //     state.countries[index].code,
+        //     country:
+        //     // null
+        //     state.countries[index].translation?.title
+        // ));
 
         // if ((state.countries[index].citiesCount ?? 0) > 0) {
         //   AppRoute.goSelectCity(

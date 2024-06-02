@@ -242,6 +242,11 @@ class ChequeWidget extends StatelessWidget {
 
                 AppRoute.goCheckoutPage(
                     context: context, fullDigital: fullDigital);
+
+
+
+
+
               })
         ],
       ),

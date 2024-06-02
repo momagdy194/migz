@@ -19,9 +19,12 @@ class AllProductList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         32.verticalSpace,
-        TitleWidget(
-          title: AppHelper.getTrn(TrKeys.allProduct),
-          titleColor: colors.textBlack,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.r),
+          child: TitleWidget(
+            title: AppHelper.getTrn(TrKeys.allProduct),
+            titleColor: colors.textBlack,
+          ),
         ),
         BlocBuilder<ProductBloc, ProductState>(
           builder: (context, state) {

@@ -17,6 +17,7 @@ import 'package:gshop/domain/model/response/profile_response.dart';
 import 'package:gshop/domain/model/response/transaction_histories_response.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
+import 'package:gshop/infrastructure/repository/auth_repository.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -64,7 +65,7 @@ class UserRepository implements UserInterface {
     final data = {
       'firstname': firstName,
       'lastname': lastName,
-     if(phone.isNotEmpty) 'phone': phone,
+     if(phone.isNotEmpty) 'phone': formatPhoneNumber2(phone),
       if(email.isNotEmpty)   'email': email,
       if (imageUrl != null) 'images': [imageUrl],
     };

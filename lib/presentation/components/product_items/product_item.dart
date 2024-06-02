@@ -74,7 +74,7 @@ class ProductItem extends StatelessWidget {
               width: width.r,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(AppHelper.getType() == 2
-                      ? 0
+                       ? 0
                       : AppHelper.getType() == 3
                           ? 8.r
                           : 24.r),
