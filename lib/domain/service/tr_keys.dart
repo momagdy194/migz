@@ -33,7 +33,16 @@ class TrKeys {
   static const String ifYouHaveAnyProblems = 'if.you.have.any.problems.please.contact.us';
   static const String onAllOrdersFrom = 'on.all.orders.from.fast.delivery.from.1.to.2.days';
   static const String groupOrderProgress = 'do.you.really.want.to.continue.your.other.members.are.not.yet.ready';
+  static const String yourOrderReady = 'your.order.is.ready.for.delivery.within.2.hours';
   static const String cart = 'cart';
+  static const String hours = 'hours';
+  static const String hoursPrefix = 'hoursPrefix';
+  static const String minutes = 'minutes';
+  static const String minutesPrefix = 'minutesPrefix';
+  static const String seconds = 'seconds';
+  static const String secondsPrefix = 'secondsPrefix';
+  static const String canceled = 'canceled';
+  static const String accepted = 'accepted';
   static const String weHaveBecome = 'we.have.become.even.closer.get.goods.near.your.home';
   static const String pointsOfIssue = 'points.of.issue';
   static const String ifYouFindLower = 'if.you.find.a.lower.price.elsewhere.we.will.pick.it.up';
@@ -307,8 +316,8 @@ class TrKeys {
   static const String orderHistory = 'order.history';
   static const String myWishlist = 'my.wishlist';
   static const String blog = 'blog';
-  static const String setting = 'setting';
-  static const String appSetting = 'app.setting';
+  static const String setting = 'settings';
+  static const String appSetting = 'app.settings';
   static const String hotline = 'hotline';
   static const String helpInfo = 'help.info';
   static const String account = 'account';

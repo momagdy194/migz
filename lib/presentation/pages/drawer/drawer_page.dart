@@ -111,7 +111,7 @@ class DrawerPage extends StatelessWidget {
                           AppRoute.goParcelList(context: context);
                         },
                       ),
-                    if (LocalStorage.getToken().isNotEmpty)
+/*                    if (LocalStorage.getToken().isNotEmpty)
                       DrawerItem(
                         colors: colors,
                         icon: FlutterRemix.file_list_3_line,
@@ -119,7 +119,7 @@ class DrawerPage extends StatelessWidget {
                         onTap: () {
                           AppRoute.goMyDigitalList(context: context);
                         },
-                      ),
+                      ),*/
                     DrawerItem(
                       colors: colors,
                       icon: FlutterRemix.heart_3_line,
@@ -133,7 +133,7 @@ class DrawerPage extends StatelessWidget {
                             ProductEvent.fetchLikeProduct(context: context));
                       },
                     ),
-                    if (LocalStorage.getToken().isNotEmpty)
+/*                    if (LocalStorage.getToken().isNotEmpty)
                       DrawerItem(
                         colors: colors,
                         icon: FlutterRemix.stack_line,
@@ -141,7 +141,7 @@ class DrawerPage extends StatelessWidget {
                         onTap: () {
                           AppRoute.goComparePage(context: context);
                         },
-                      ),
+                      ),*/
                     DrawerItem(
                       colors: colors,
                       icon: FlutterRemix.archive_line,
@@ -153,14 +153,14 @@ class DrawerPage extends StatelessWidget {
                             .add(const MainEvent.changeIndex(index: 1));
                       },
                     ),
-                    DrawerItem(
+/*                    DrawerItem(
                       colors: colors,
                       icon: FlutterRemix.message_3_line,
                       title: AppHelper.getTrn(TrKeys.blog),
                       onTap: () {
                         AppRoute.goBlog(context: context);
                       },
-                    ),
+                    ),*/
                     if (LocalStorage.getToken().isNotEmpty)
                       DrawerItem(
                         colors: colors,

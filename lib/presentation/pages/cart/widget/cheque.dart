@@ -150,8 +150,7 @@ class ChequeWidget extends StatelessWidget {
                                 color: colors.textBlack, size: 14),
                           ),
                           Text(
-                            "-${AppHelper.numberFormat(number: cart?.coupon?.fold(
-                                0.0, (previousValue, element) => (previousValue ?? 0) + (element.price ?? 0)))}",
+                            "-${AppHelper.numberFormat(number: cart?.coupon?.fold(0.0, (previousValue, element) => (previousValue ?? 0) + (element.price ?? 0)))}",
                             style: CustomStyle.interRegular(
                                 color: colors.error, size: 14),
                           ),
@@ -242,11 +241,6 @@ class ChequeWidget extends StatelessWidget {
 
                 AppRoute.goCheckoutPage(
                     context: context, fullDigital: fullDigital);
-
-
-
-
-
               })
         ],
       ),

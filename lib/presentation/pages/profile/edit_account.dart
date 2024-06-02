@@ -207,6 +207,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
 
   PhoneTextField _phoneTextFormField(CustomColorSet colors) {
     return PhoneTextField(
+      invalidNumberMessage: AppHelper.getTrn(TrKeys.invalidPhone),
       initialValue: phone.text,
       initialCountryCode: LocalStorage.getAddress()?.countryCode?.toUpperCase(),
       isRequired: false,

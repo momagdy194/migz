@@ -54,7 +54,7 @@ class _MainPageState extends State<MainPage> {
   List<IndexedStackChild> list = [
     IndexedStackChild(
         child: AppHelper.getType() == 0
-            ? const HomeTwoPage()  
+            ? const HomeTwoPage()
             : AppHelper.getType() == 1
                 ? const HomeOnePage()
                 : AppHelper.getType() == 2
@@ -265,7 +265,7 @@ class _MainPageState extends State<MainPage> {
             selectedItemColor: colors.primary,
             unselectedItemColor: colors.textHint,
             onTap: (index) {
-              print( "indexindexindex ${index}");
+              print("indexindexindex ${index}");
 
               if (index == 5) {
                 Scaffold.of(context).openDrawer();
