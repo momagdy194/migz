@@ -61,7 +61,6 @@ class _ShopsMapPageState extends State<ShopsMapPage>
   BitmapDescriptor? _otherLocationIcon;
   LatLng? _myLocation;
 
-  @override
   void initState() {
     super.initState();
     _animationController = AnimationController(vsync: this);
@@ -89,6 +88,11 @@ class _ShopsMapPageState extends State<ShopsMapPage>
   Future<void> checkPermission() async {
     check = await _locator.checkPermission();
   }
+
+  PageController _pageController = PageController(
+    initialPage: 0,
+    viewportFraction: 0.9,
+  );
 
   Future<void> getMyLocation() async {
     if (check == LocationPermission.denied ||
@@ -121,13 +125,41 @@ class _ShopsMapPageState extends State<ShopsMapPage>
     return CustomScaffold(
       body: (colors) => BlocBuilder<ShopBloc, ShopState>(
         builder: (context, state) {
-          return state.isLoadingShops
+          return (state.isLoadingShops || _myLocation == null)
               ? const Center(child: CircularProgressIndicator())
               : Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
                     GoogleMap(
-                      markers: _buildMarkers(state.shops),
+                      markers: state.shops
+                          .map((e) => Marker(
+                                markerId: MarkerId(e.uuid.toString() ?? ''),
+                                position: LatLng(
+                                  double.parse(e.latLng?.latitude ?? '0.0'),
+                                  double.parse(e.latLng?.longitude ?? '0.0'),
+                                ),
+                                icon: _otherLocationIcon ??
+                                    BitmapDescriptor.defaultMarkerWithHue(
+                                        BitmapDescriptor.hueRed),
+                                onTap: () {
+                                  print('Marker tapped with index: ${e.uuid}');
+                                  _pageController.jumpToPage(state.shops
+                                      .indexWhere(
+                                          (element) => element.uuid == e.uuid));
+
+                                  // _navigateToShopPage(shop);
+                                },
+                              ))
+                          .toSet()
+                        ..add(Marker(
+                          markerId: MarkerId('my_location'),
+                          position: _myLocation!,
+                          icon: _myLocationIcon ??
+                              BitmapDescriptor.defaultMarkerWithHue(
+                                  BitmapDescriptor.hueGreen),
+                        )),
+                      // _buildMarkers(state.shops),
+
                       tiltGesturesEnabled: false,
                       myLocationButtonEnabled: false,
                       onTap: (location) {
@@ -208,8 +240,7 @@ class _ShopsMapPageState extends State<ShopsMapPage>
                                 setState(() {});
                               },
                               scrollDirection: Axis.horizontal,
-                              controller: PageController(
-                                  viewportFraction: 0.9, initialPage: 0),
+                              controller: _pageController,
                               clipBehavior: Clip.none,
                               itemCount: state.shops.length,
                               itemBuilder: (context, index) {
@@ -262,22 +293,35 @@ class _ShopsMapPageState extends State<ShopsMapPage>
   }
 
   Set<Marker> _buildMarkers(List<ShopData> shops) {
-    final markers = shops.map<Marker>((shop) {
-      return Marker(
-        markerId: MarkerId(shop.latLng?.address ?? ''),
-        position: LatLng(double.parse(shop.latLng?.latitude ?? '0.0'),
-            double.parse(shop.latLng?.longitude ?? '0.0')),
-        icon: _otherLocationIcon ?? BitmapDescriptor.defaultMarker,
+    final markers = <Marker>{};
+
+    for (int i = 0; i < shops.length; i++) {
+      final shop = shops[i];
+      final markerId = MarkerId(shop.latLng?.address ?? '');
+      final position = LatLng(
+        double.parse(shop.latLng?.latitude ?? '0.0'),
+        double.parse(shop.latLng?.longitude ?? '0.0'),
       );
-    }).toSet();
+
+      final marker = Marker(
+        markerId: markerId,
+        position: position,
+        onTap: () {
+          print('Marker tapped with index: $i');
+          // _navigateToShopPage(shop);
+        },
+      );
+
+      markers.add(marker);
+    }
 
     if (_myLocation != null) {
-      markers.add(Marker(
-        markerId: MarkerId('my_location'),
-        position: _myLocation!,
-        icon: _myLocationIcon ??
-            BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen),
-      ));
+      markers.add(
+        Marker(
+          markerId: MarkerId('my_location'),
+          position: _myLocation!,
+        ),
+      );
     }
 
     return markers;
