@@ -10,6 +10,7 @@ import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ShopItemPage extends StatelessWidget {
   final CustomColorSet colors;
@@ -88,12 +89,20 @@ class ShopItemPage2 extends StatelessWidget {
 
   const ShopItemPage2({Key? key, required this.colors, required this.shop})
       : super(key: key);
-
+  static Future<void> openMap(String latitude, String longitude) async {
+    String googleUrl = 'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
+    if (await canLaunchUrl(Uri.parse(googleUrl))) {
+      await launchUrl(Uri.parse(googleUrl));
+    } else {
+      throw 'Could not open the map.';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return ButtonEffectAnimation(
       onTap: () {
-        AppRoute.goShopPage(context: context, shop: shop);
+        openMap(shop.latLng!.latitude.toString(), shop.latLng!.longitude.toString());
+        // AppRoute.goShopPage(context: context, shop: shop);
       },
       child: Container(
         width: MediaQuery.of(context).size.width * .9,

@@ -7,6 +7,8 @@ import 'package:gshop/application/products/product_bloc.dart';
 import 'package:gshop/domain/model/model/product_model.dart';
 import 'package:gshop/domain/model/model/review_data.dart';
 import 'package:gshop/infrastructure/local_storage/local_storage.dart';
+import 'package:gshop/presentation/components/blur_wrap.dart';
+import 'package:gshop/presentation/components/button/pop_button.dart';
 import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
@@ -80,7 +82,19 @@ class ImageScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 8.r),
                   child: Row(
                     children: [
+                      BlurWrap(
+                        radius: BorderRadius.circular(32.r),
+                        child: Container(
+                          color: CustomStyle.black.withOpacity(0.5),
+                          child: const PopButton(
+                            color: CustomStyle.white,
+                          ),
+                        ),
+                      ),
+
                       const Spacer(),
+
+
                       IconButton(
                           splashColor: CustomStyle.transparent,
                           highlightColor: CustomStyle.transparent,
@@ -94,16 +108,16 @@ class ImageScreen extends StatelessWidget {
                                 .add(const ProductDetailEvent.updateState());
                           },
                           icon: LocalStorage.getLikedProductsList()
-                                  .contains(product?.id)
+                              .contains(product?.id)
                               ? Icon(
-                                  FlutterRemix.heart_3_fill,
-                                  color: CustomStyle.red,
-                                  size: 24.r,
-                                )
+                            FlutterRemix.heart_3_fill,
+                            color: CustomStyle.red,
+                            size: 24.r,
+                          )
                               : Icon(
-                                  FlutterRemix.heart_3_line,
-                                  size: 24.r,
-                                )),
+                            FlutterRemix.heart_3_line,
+                            size: 24.r,
+                          )),
                       IconButton(
                           splashColor: CustomStyle.transparent,
                           highlightColor: CustomStyle.transparent,
@@ -114,16 +128,17 @@ class ImageScreen extends StatelessWidget {
                                 .add(const ProductDetailEvent.updateState());
                           },
                           icon: LocalStorage.getCompareList()
-                                  .contains(product?.id)
+                              .contains(product?.id)
                               ? Icon(
-                                  FlutterRemix.stack_fill,
-                                  color: CustomStyle.primary,
-                                  size: 24.r,
-                                )
+                            FlutterRemix.stack_fill,
+                            color: CustomStyle.primary,
+                            size: 24.r,
+                          )
                               : Icon(
-                                  FlutterRemix.stack_line,
-                                  size: 24.r,
-                                )),
+                            FlutterRemix.stack_line,
+                            size: 24.r,
+                          )),
+
                     ],
                   ),
                 ),

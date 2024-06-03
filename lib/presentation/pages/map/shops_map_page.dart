@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
@@ -45,6 +46,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'dart:ui' as ui;
+
 class ShopsMapPage extends StatefulWidget {
   @override
   State<ShopsMapPage> createState() => _ShopsMapPageState();
@@ -68,13 +71,25 @@ class _ShopsMapPageState extends State<ShopsMapPage>
     checkPermission().then((_) => getMyLocation());
   }
 
-  Future<void> _loadCustomMarkers() async {
-    _myLocationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(size: Size(48, 48)),
-        'assets/images/userlocation.png');
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!
+        .buffer
+        .asUint8List();
+  }
 
-    _otherLocationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(size: Size(48, 48)), 'assets/images/mylocation.png');
+  Future<void> _loadCustomMarkers() async {
+    final Uint8List markerIcon0 =
+        await getBytesFromAsset('assets/images/userlocation.png', 150);
+
+    final Uint8List markerIcon1 =
+        await getBytesFromAsset('assets/images/mylocation.png', 150);
+
+    _myLocationIcon = await BitmapDescriptor.fromBytes(markerIcon0);
+    _otherLocationIcon = await BitmapDescriptor.fromBytes(markerIcon1);
 
     setState(() {});
   }
@@ -216,7 +231,7 @@ class _ShopsMapPageState extends State<ShopsMapPage>
                       bottom: 80,
                       left: 0,
                       right: 0,
-                      child: Container(
+                      child: SizedBox(
                         height: 170,
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
@@ -257,73 +272,5 @@ class _ShopsMapPageState extends State<ShopsMapPage>
         },
       ),
     );
-  }
-
-  late CameraPosition _position;
-
-  CameraPosition _initialCameraPosition(ShopState state) {
-    if (_myLocation != null) {
-      return _position = CameraPosition(
-        bearing: 0,
-        target: _myLocation!,
-        tilt: 0,
-        zoom: 17,
-      );
-    } else if (state.shops.isNotEmpty) {
-      // If my location is not available, show the first shop's location
-      return _position = CameraPosition(
-        bearing: 0,
-        target: LatLng(
-          double.tryParse(state.shops.first.latLng?.latitude ?? "0") ?? 0,
-          double.tryParse(state.shops.first.latLng?.longitude ?? "0") ?? 0,
-        ),
-        tilt: 0,
-        zoom: 17,
-      );
-    } else {
-      // If my location and shop locations are not available, show a default location
-      return CameraPosition(
-        bearing: 0,
-        target: const LatLng(30.033333, 31.233334),
-        // Default location (Cairo coordinates)
-        tilt: 0,
-        zoom: 17,
-      );
-    }
-  }
-
-  Set<Marker> _buildMarkers(List<ShopData> shops) {
-    final markers = <Marker>{};
-
-    for (int i = 0; i < shops.length; i++) {
-      final shop = shops[i];
-      final markerId = MarkerId(shop.latLng?.address ?? '');
-      final position = LatLng(
-        double.parse(shop.latLng?.latitude ?? '0.0'),
-        double.parse(shop.latLng?.longitude ?? '0.0'),
-      );
-
-      final marker = Marker(
-        markerId: markerId,
-        position: position,
-        onTap: () {
-          print('Marker tapped with index: $i');
-          // _navigateToShopPage(shop);
-        },
-      );
-
-      markers.add(marker);
-    }
-
-    if (_myLocation != null) {
-      markers.add(
-        Marker(
-          markerId: MarkerId('my_location'),
-          position: _myLocation!,
-        ),
-      );
-    }
-
-    return markers;
   }
 }

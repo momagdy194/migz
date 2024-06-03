@@ -192,11 +192,11 @@ class ProductTitle extends StatelessWidget {
                       ),
                 10.horizontalSpace,
                 Text(
-                  "${AppHelper.getTrn(TrKeys.inStock)} - ${(selectStock?.quantity ?? 0) > 0 ? (selectStock?.quantity ?? 0) : 0} ${AppHelper.getTrn(TrKeys.products)}",
+                  "${AppHelper.getTrn(TrKeys.inStock)} - ${(selectStock?.quantity ?? 0) > 0 ? (selectStock?.quantity ?? 0) : 0} ${AppHelper.getTrn(TrKeys.product)}",
                   style: CustomStyle.interNormal(
                       color: colors.textBlack,
                       size:
-                          "${AppHelper.getTrn(TrKeys.inStock)} - ${(selectStock?.quantity ?? 0) > 0 ? (selectStock?.quantity ?? 0) : 0} ${AppHelper.getTrn(TrKeys.products)}"
+                          "${AppHelper.getTrn(TrKeys.inStock)} - ${(selectStock?.quantity ?? 0) > 0 ? (selectStock?.quantity ?? 0) : 0} ${AppHelper.getTrn(TrKeys.product)}"
                                       .length >
                                   32
                               ? 14

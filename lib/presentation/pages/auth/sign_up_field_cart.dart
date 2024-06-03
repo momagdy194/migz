@@ -76,24 +76,28 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
           child: Padding(
             padding: EdgeInsets.all(20.r),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   AppHelper.getTrn(TrKeys.signUp),
                   style: CustomStyle.interNoSemi(
-                      color: widget.colors.textBlack, size: 30),
+                      color: widget.colors.white, size: 30),
                 ),
                 32.verticalSpace,
                 CustomTextFormField(
                   validation: AppValidators.isNotEmptyValidator,
                   controller: firstName,
                   hint: AppHelper.getTrn(TrKeys.fullName),
+                  fillColor: Colors.black87,
+                  filled: true,
                 ),
                 16.verticalSpace,
                 CustomTextFormField(
                   validation: AppValidators.isNotEmptyValidator,
                   controller: userName,
                   hint: AppHelper.getTrn(TrKeys.userName),
+                  fillColor: Colors.black87,
+                  filled: true,
                 ),
                 16.verticalSpace,
                 if (!widget.isPhone)
@@ -101,6 +105,8 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                     validation: AppValidators.isNotEmptyValidator,
                     controller: phone,
                     hint: AppHelper.getTrn(TrKeys.phoneNumber),
+                    fillColor: Colors.black87,
+                    filled: true,
                   ),
                 16.verticalSpace,
                 if (widget.isPhone)
@@ -108,6 +114,8 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                     validation: AppValidators.isValidEmail,
                     controller: email,
                     hint: AppHelper.getTrn(TrKeys.email),
+                    fillColor: Colors.black87,
+                    filled: true,
                   ),
                 16.verticalSpace,
                 BlocBuilder<AuthBloc, AuthState>(
@@ -133,6 +141,8 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                         ),
                       ),
                       hint: AppHelper.getTrn(TrKeys.password),
+                      fillColor: Colors.black87,
+                      filled: true,
                     );
                   },
                 ),
@@ -161,6 +171,8 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                         ),
                       ),
                       hint: AppHelper.getTrn(TrKeys.confirmPassword),
+                      fillColor: Colors.black87,
+                      filled: true,
                     );
                   },
                 ),
@@ -168,6 +180,8 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                 CustomTextFormField(
                   controller: referral,
                   hint: AppHelper.getTrn(TrKeys.referral),
+                  fillColor: Colors.black87,
+                  filled: true,
                 ),
                 16.verticalSpace,
                 BlocBuilder<AuthBloc, AuthState>(
@@ -195,7 +209,8 @@ class _SignUpFieldCartState extends State<SignUpFieldCart> {
                                       AddressModel(
                                         // cityId: int.tryParse(cityId),
                                         countryId: 67,
-                                        regionId: 3,    // regionId: int.tryParse(regionId),
+                                        regionId:
+                                            3, // regionId: int.tryParse(regionId),
                                       ),
                                     );
 

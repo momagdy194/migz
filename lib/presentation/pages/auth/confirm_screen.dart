@@ -44,120 +44,122 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.r,
+      height: 500.r,
       decoration: BoxDecoration(
           color: widget.editPhone
               ? widget.colors.backgroundColor
               : widget.colors.transparent),
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(20.r),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                AppHelper.getTrn(TrKeys.confirmation),
-                style: CustomStyle.interNoSemi(
-                    color: widget.colors.textBlack, size: 30),
-              ),
-              16.verticalSpace,
-              Text(
-                AppHelper.getTrn(TrKeys.weAreSendOTPCodeTo),
-                style: CustomStyle.interRegular(
-                  size: 16,
-                  color: widget.colors.textBlack,
+      child: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(20.r),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  AppHelper.getTrn(TrKeys.confirmation),
+                  style: CustomStyle.interNoSemi(
+                      color: widget.colors.white, size: 30),
                 ),
-              ),
-              Text(
-                widget.phone,
-                style: CustomStyle.interRegular(
-                  size: 16,
-                  color: widget.colors.textBlack,
+                16.verticalSpace,
+                Text(
+                  AppHelper.getTrn(TrKeys.weAreSendOTPCodeTo),
+                  style: CustomStyle.interRegular(
+                    size: 16,
+                    color: widget.colors.white,
+                  ),
                 ),
-              ),
-              24.verticalSpace,
-              SizedBox(
-                height: 64,
-                child: BlocBuilder<AuthBloc, AuthState>(
-                  buildWhen: (n, l) {
-                    return n.isError != l.isError;
+                Text(
+                  widget.phone,
+                  style: CustomStyle.interRegular(
+                    size: 16,
+                    color: widget.colors.white,
+                  ),
+                ),
+                24.verticalSpace,
+                SizedBox(
+                  height: 64,
+                  child: BlocBuilder<AuthBloc, AuthState>(
+                    buildWhen: (n, l) {
+                      return n.isError != l.isError;
+                    },
+                    builder: (context, state) {
+                      return PinFieldAutoFill(
+                        codeLength: 6,
+                        controller: controller,
+                        currentCode: controller.text,
+                        onCodeSubmitted: (number) {
+                          context.read<AuthBloc>().add(AuthEvent.checkVerify(
+                              context: context,
+                              verifyId: state.verificationId,
+                              code: number));
+                        },
+                        cursor: Cursor(
+                          width: 1,
+                          height: 24,
+                          color: widget.colors.primary,
+                          enabled: true,
+                        ),
+                        decoration: BoxLooseDecoration(
+                          gapSpace: 10.r,
+                          textStyle: CustomStyle.interNormal(
+                            size: 15,
+                            color: widget.colors.primary,
+                          ),
+                          bgColorBuilder: FixedColorBuilder(
+                            Colors.black87,
+                          ),
+                          strokeColorBuilder: FixedColorBuilder(
+                            state.isError
+                                ? widget.colors.error
+                                : widget.colors.bottomBarColor,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                16.verticalSpace,
+                BlocBuilder<AuthBloc, AuthState>(
+                  buildWhen: (l, n) {
+                    return l.isLoading != n.isLoading;
                   },
                   builder: (context, state) {
-                    return PinFieldAutoFill(
-                      codeLength: 6,
-                      controller: controller,
-                      currentCode: controller.text,
-                      onCodeSubmitted: (number) {
-                        context.read<AuthBloc>().add(AuthEvent.checkVerify(
-                            context: context,
-                            verifyId: state.verificationId,
-                            code: number));
-                      },
-                      cursor: Cursor(
-                        width: 1,
-                        height: 24,
-                        color: widget.colors.textBlack,
-                        enabled: true,
-                      ),
-                      decoration: BoxLooseDecoration(
-                        gapSpace: 10.r,
-                        textStyle: CustomStyle.interNormal(
-                          size: 15,
-                          color: widget.colors.textBlack,
+                    return Row(
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: SendAgainButton(
+                              isLoading: state.isLoading,
+                              colors: widget.colors,
+                              phone: widget.phone),
                         ),
-                        bgColorBuilder: FixedColorBuilder(
-                          widget.colors.transparent,
+                        8.horizontalSpace,
+                        Expanded(
+                          flex: 2,
+                          child: CustomButton(
+                              isLoading: state.isLoading,
+                              title: AppHelper.getTrn(TrKeys.confirm),
+                              bgColor: widget.colors.primary,
+                              titleColor: CustomStyle.white,
+                              onTap: () {
+                                context.read<AuthBloc>().add(
+                                    AuthEvent.checkVerify(
+                                        editPhone: widget.editPhone,
+                                        context: context,
+                                        verifyId: state.verificationId,
+                                        code: controller.text));
+                              }),
                         ),
-                        strokeColorBuilder: FixedColorBuilder(
-                          state.isError
-                              ? widget.colors.error
-                              : widget.colors.bottomBarColor,
-                        ),
-                      ),
+                      ],
                     );
                   },
                 ),
-              ),
-              16.verticalSpace,
-              BlocBuilder<AuthBloc, AuthState>(
-                buildWhen: (l, n) {
-                  return l.isLoading != n.isLoading;
-                },
-                builder: (context, state) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: SendAgainButton(
-                            isLoading: state.isLoading,
-                            colors: widget.colors,
-                            phone: widget.phone),
-                      ),
-                      8.horizontalSpace,
-                      Expanded(
-                        flex: 2,
-                        child: CustomButton(
-                            isLoading: state.isLoading,
-                            title: AppHelper.getTrn(TrKeys.confirm),
-                            bgColor: widget.colors.primary,
-                            titleColor: CustomStyle.white,
-                            onTap: () {
-                              context.read<AuthBloc>().add(
-                                  AuthEvent.checkVerify(
-                                      editPhone: widget.editPhone,
-                                      context: context,
-                                      verifyId: state.verificationId,
-                                      code: controller.text));
-                            }),
-                      ),
-                    ],
-                  );
-                },
-              ),
-              KeyboardVisibilityBuilder(builder: (s, isKeyboard) {
-                return isKeyboard ? 270.verticalSpace : 24.verticalSpace;
-              })
-            ],
+                KeyboardVisibilityBuilder(builder: (s, isKeyboard) {
+                  return isKeyboard ? 270.verticalSpace : 24.verticalSpace;
+                })
+              ],
+            ),
           ),
         ),
       ),

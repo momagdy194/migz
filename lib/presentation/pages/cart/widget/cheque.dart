@@ -200,7 +200,7 @@ class ChequeWidget extends StatelessWidget {
           24.verticalSpace,
           CustomButton(
               title: LocalStorage.getGroupOrder().id == null
-                  ? "${AppHelper.getTrn(TrKeys.checkout)} - ${AppHelper.getTrn(TrKeys.total)} ${AppHelper.numberFormat(number: LocalStorage.getToken().isNotEmpty ? cart?.totalPrice : productCalculate?.totalPrice)}"
+                  ? "${AppHelper.getTrn(TrKeys.continueText)} - ${AppHelper.getTrn(TrKeys.total)} ${AppHelper.numberFormat(number: LocalStorage.getToken().isNotEmpty ? cart?.totalPrice : productCalculate?.totalPrice)}"
                   : ready
                       ? AppHelper.getTrn(TrKeys.cancel)
                       : AppHelper.getTrn(TrKeys.ready),
@@ -233,7 +233,8 @@ class ChequeWidget extends StatelessWidget {
                   AppRoute.goLogin(context);
                   return;
                 }
-                if (group) {
+                // if (group) {
+                if (false) {
                   AppHelper.showCustomDialog(
                       context: context, content: _checkMemberStatus(context));
                   return;

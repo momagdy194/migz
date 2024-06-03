@@ -62,7 +62,6 @@ class _AuthPageState extends State<AuthPage> {
                 16.verticalSpace,
                 Row(
                   children: [
-
                     const Spacer(),
                     BlocBuilder<AuthBloc, AuthState>(
                       buildWhen: (l, n) {
@@ -96,7 +95,7 @@ class _AuthPageState extends State<AuthPage> {
                             // cityId: int.tryParse(cityId),
                             countryId: 67,
                             regionId: 3,
-                          ), 
+                          ),
                         );
                         // LocalStorage.deleteAddress();
                         // print(LocalStorage.getAddress()?.countryId);
@@ -118,26 +117,24 @@ class _AuthPageState extends State<AuthPage> {
                 ),
                 const Spacer(),
                 Column(
-
                   children: [
-
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
                       margin: MediaQuery.viewInsetsOf(context),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            color: colors.backgroundColor.withOpacity(0.3),
+                            color: Colors.black54,
                             borderRadius: BorderRadius.circular(24.r)),
                         child: Column(
                           children: [
-
                             Text(
                               AppHelper.getAppName(),
                               style: CustomStyle.interBold(
                                   color: CustomStyle.primary, size: 30),
                             ),
-
 
                             // Text(
                             //   AppHelper.getAppName(),

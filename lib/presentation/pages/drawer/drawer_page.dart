@@ -111,15 +111,15 @@ class DrawerPage extends StatelessWidget {
                           AppRoute.goParcelList(context: context);
                         },
                       ),
-/*                    if (LocalStorage.getToken().isNotEmpty)
-                      DrawerItem(
-                        colors: colors,
-                        icon: FlutterRemix.file_list_3_line,
-                        title: AppHelper.getTrn(TrKeys.myDigitalList),
-                        onTap: () {
-                          AppRoute.goMyDigitalList(context: context);
-                        },
-                      ),*/
+                    // if (LocalStorage.getToken().isNotEmpty)
+                    //   DrawerItem(
+                    //     colors: colors,
+                    //     icon: FlutterRemix.file_list_3_line,
+                    //     title: AppHelper.getTrn(TrKeys.myDigitalList),
+                    //     onTap: () {
+                    //       AppRoute.goMyDigitalList(context: context);
+                    //     },
+                    //   ),
                     DrawerItem(
                       colors: colors,
                       icon: FlutterRemix.heart_3_line,
@@ -133,15 +133,15 @@ class DrawerPage extends StatelessWidget {
                             ProductEvent.fetchLikeProduct(context: context));
                       },
                     ),
-/*                    if (LocalStorage.getToken().isNotEmpty)
-                      DrawerItem(
-                        colors: colors,
-                        icon: FlutterRemix.stack_line,
-                        title: AppHelper.getTrn(TrKeys.compare),
-                        onTap: () {
-                          AppRoute.goComparePage(context: context);
-                        },
-                      ),*/
+                    // if (LocalStorage.getToken().isNotEmpty)
+                    //   DrawerItem(
+                    //     colors: colors,
+                    //     icon: FlutterRemix.stack_line,
+                    //     title: AppHelper.getTrn(TrKeys.compare),
+                    //     onTap: () {
+                    //       AppRoute.goComparePage(context: context);
+                    //     },
+                    //   ),
                     DrawerItem(
                       colors: colors,
                       icon: FlutterRemix.archive_line,
@@ -153,14 +153,14 @@ class DrawerPage extends StatelessWidget {
                             .add(const MainEvent.changeIndex(index: 1));
                       },
                     ),
-/*                    DrawerItem(
-                      colors: colors,
-                      icon: FlutterRemix.message_3_line,
-                      title: AppHelper.getTrn(TrKeys.blog),
-                      onTap: () {
-                        AppRoute.goBlog(context: context);
-                      },
-                    ),*/
+                    // DrawerItem(
+                    //   colors: colors,
+                    //   icon: FlutterRemix.message_3_line,
+                    //   title: AppHelper.getTrn(TrKeys.blog),
+                    //   onTap: () {
+                    //     AppRoute.goBlog(context: context);
+                    //   },
+                    // ),
                     if (LocalStorage.getToken().isNotEmpty)
                       DrawerItem(
                         colors: colors,
@@ -170,15 +170,15 @@ class DrawerPage extends StatelessWidget {
                           AppRoute.goBecomeSeller(context: context);
                         },
                       ),
-                    if (LocalStorage.getToken().isNotEmpty)
-                      DrawerItem(
-                        colors: colors,
-                        icon: FlutterRemix.team_line,
-                        title: AppHelper.getTrn(TrKeys.groupOrder),
-                        onTap: () {
-                          AppRoute.goGroupOrder(context, colors);
-                        },
-                      ),
+                    // if (LocalStorage.getToken().isNotEmpty)
+                    //   DrawerItem(
+                    //     colors: colors,
+                    //     icon: FlutterRemix.team_line,
+                    //     title: AppHelper.getTrn(TrKeys.groupOrder),
+                    //     onTap: () {
+                    //       AppRoute.goGroupOrder(context, colors);
+                    //     },
+                    //   ),
                     24.verticalSpace,
                     Text(
                       AppHelper.getTrn(TrKeys.setting).toUpperCase(),
@@ -202,14 +202,14 @@ class DrawerPage extends StatelessWidget {
                           AppRoute.goChatsList(context: context);
                         },
                       ),
-                    DrawerItem(
-                      colors: colors,
-                      icon: FlutterRemix.error_warning_line,
-                      title: AppHelper.getTrn(TrKeys.helpInfo),
-                      onTap: () {
-                        AppRoute.goHelp(context: context);
-                      },
-                    ),
+                    // DrawerItem(
+                    //   colors: colors,
+                    //   icon: FlutterRemix.error_warning_line,
+                    //   title: AppHelper.getTrn(TrKeys.helpInfo),
+                    //   onTap: () {
+                    //     AppRoute.goHelp(context: context);
+                    //   },
+                    // ),
                     DrawerItem(
                       colors: colors,
                       icon: FlutterRemix.alarm_warning_line,

@@ -16,16 +16,22 @@ class CustomTextFormField extends StatelessWidget {
   final String? initialText;
   final bool readOnly;
   final bool isError;
+  final bool filled;
   final bool autoFocus;
   final double radius;
   final Color? borderColor;
+  final Color? fillColor;
+  final Color? hintColor;
 
   const CustomTextFormField({
     Key? key,
     this.suffixIcon,
     this.borderColor,
     this.prefixIcon,
+    this.hintColor,
     this.onTap,
+    this.fillColor,
+    this.filled = false,
     this.obscure,
     this.validation,
     this.onChanged,
@@ -70,11 +76,11 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hint,
           hintStyle: CustomStyle.interNormal(
             size: 14.sp,
-            color:borderColor ?? CustomStyle.primary,
+            color: (borderColor ?? CustomStyle.primary),
           ),
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          fillColor: CustomStyle.black,
-          filled: false,
+          fillColor: fillColor ?? CustomStyle.black,
+          filled: filled,
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide.merge(
                   BorderSide(color: borderColor ?? CustomStyle.primary),

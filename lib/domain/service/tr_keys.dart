@@ -1,5 +1,6 @@
 class TrKeys {
   TrKeys._();
+
   static const String signUp = 'sign.up';
   static const String signIn = 'sign.in';
   static const String login = 'login';
@@ -28,12 +29,19 @@ class TrKeys {
   static const String wareHouse = 'warehouse';
   static const String self = 'self';
   static const String trackingId = 'tracking_id';
-  static const String thereAreNoPaymentTypesHere = 'there.are.no.payment.types.here.you.need.to.add.payment.type.other.than.cash.and.wallet';
+  static const String thereAreNoPaymentTypesHere =
+      'there.are.no.payment.types.here.you.need.to.add.payment.type.other.than.cash.and.wallet';
   static const String pleaseTryAgain = 'please.try.again.after.logging.in';
-  static const String ifYouHaveAnyProblems = 'if.you.have.any.problems.please.contact.us';
-  static const String onAllOrdersFrom = 'on.all.orders.from.fast.delivery.from.1.to.2.days';
-  static const String groupOrderProgress = 'do.you.really.want.to.continue.your.other.members.are.not.yet.ready';
-  static const String yourOrderReady = 'your.order.is.ready.for.delivery.within.2.hours';
+  static const String ifYouHaveAnyProblems =
+      'if.you.have.any.problems.please.contact.us';
+  static const String onAllOrdersFrom =
+      'on.all.orders.from.fast.delivery.from.1.to.2.days';
+  static const String groupOrderProgress =
+      'do.you.really.want.to.continue.your.other.members.are.not.yet.ready';
+
+  static const String yourOrderReady =
+      'your.order.is.ready.for.delivery.within.2.hours';
+
   static const String cart = 'cart';
   static const String hours = 'hours';
   static const String hoursPrefix = 'hoursPrefix';
@@ -43,16 +51,19 @@ class TrKeys {
   static const String secondsPrefix = 'secondsPrefix';
   static const String canceled = 'canceled';
   static const String accepted = 'accepted';
-  static const String weHaveBecome = 'we.have.become.even.closer.get.goods.near.your.home';
+  static const String weHaveBecome =
+      'we.have.become.even.closer.get.goods.near.your.home';
   static const String pointsOfIssue = 'points.of.issue';
-  static const String ifYouFindLower = 'if.you.find.a.lower.price.elsewhere.we.will.pick.it.up';
+  static const String ifYouFindLower =
+      'if.you.find.a.lower.price.elsewhere.we.will.pick.it.up';
   static const String lowestPrice = 'lowest.price';
-  static const String returnPolicyIt = 'return.policy.it.starts.the.day.you.order.your.items';
+  static const String returnPolicyIt =
+      'return.policy.it.starts.the.day.you.order.your.items';
   static const String dayReturn = 'day.return';
   static const String support = 'support.24/7';
   static const String copyCode = 'copy.code';
   static const String referral = 'referral';
-  static const String groupOrder  = 'group.order';
+  static const String groupOrder = 'group.order';
   static const String referralFaq = 'referral.faq';
   static const String looks = 'looks';
   static const String ready = 'ready';
@@ -67,7 +78,8 @@ class TrKeys {
   static const String start = 'start';
   static const String hot = 'hot';
   static const String cancel = 'cancel';
-  static const String thisFieldIsNotMinusOrZero = 'this.field.is.not.minus.or.zero';
+  static const String thisFieldIsNotMinusOrZero =
+      'this.field.is.not.minus.or.zero';
   static const String terms = 'terms';
   static const String members = 'members';
   static const String privacy = 'privacy.policy';
@@ -89,23 +101,30 @@ class TrKeys {
   static const String selectUiType = 'select.ui.type';
   static const String areYouSureDeleteAccount = 'are.you.sure.delete.account';
   static const String peopleBuyThisItem = 'people.have.bought.this.item';
-  static const String youCheckYourFileProductIsDownloaded = 'you.check.your.file.product.is.downloaded';
-  static const String youCheckYourOrderInvoiceIsDownloaded = 'you.check.your.order.invoice.is.downloaded';
-  static const String yourDigitalFileIsDownloaded = 'your.digital.file.is.downloaded';
+  static const String youCheckYourFileProductIsDownloaded =
+      'you.check.your.file.product.is.downloaded';
+  static const String youCheckYourOrderInvoiceIsDownloaded =
+      'you.check.your.order.invoice.is.downloaded';
+  static const String yourDigitalFileIsDownloaded =
+      'your.digital.file.is.downloaded';
   static const String yourDigitalListIsEmpty = 'your.digital.list.is.empty';
-  static const String thisOrderIsNotYourPersonalOrder = 'this.order.is.not.your.personal.order.maybe.it.is.an.order.attached.to.you.because.you.are.a.seller.or.a.driver.you.can.view.its.details.from.the.seller.app.or.driver.app';
+  static const String thisOrderIsNotYourPersonalOrder =
+      'this.order.is.not.your.personal.order.maybe.it.is.an.order.attached.to.you.because.you.are.a.seller.or.a.driver.you.can.view.its.details.from.the.seller.app.or.driver.app';
   static const String searchUser = 'search.user';
-  static const String youCannotPayWithCashBecauseThereTheCart = 'you.cannot.pay.with.cash.because.there.is.a.digital.product.in.your.cart.please.change.the.payment.type.or.remove.the.digital.product.from.the.cart';
+  static const String youCannotPayWithCashBecauseThereTheCart =
+      'you.cannot.pay.with.cash.because.there.is.a.digital.product.in.your.cart.please.change.the.payment.type.or.remove.the.digital.product.from.the.cart';
   static const String fillWallet = 'fill.wallet';
   static const String allProduct = 'all.product';
   static const String repeatOrder = 'repeat.order';
   static const String viewShop = 'view.shop';
   static const String viewProduct = 'view.product';
   static const String buyAllProduct = 'buy.all.product';
-  static const String youHaveAlreadyUsedTheRefundMethodForThisOrder = 'you.have.already.used.the.refund.method.for.this.order';
+  static const String youHaveAlreadyUsedTheRefundMethodForThisOrder =
+      'you.have.already.used.the.refund.method.for.this.order';
   static const String whyDoYouWantToRefund = 'why.do.you.want.to.refund';
   static const String refundOrder = 'refund.order';
-  static const String thisDriverDontEnterContact = 'this.driver.dont.enter.contact';
+  static const String thisDriverDontEnterContact =
+      'this.driver.dont.enter.contact';
   static const String cancelOrder = 'cancel.order';
   static const String myDigitalList = 'my.digital.list';
   static const String goToSellerAppOnAndroid = 'go.to.seller.app.on.android';
@@ -128,7 +147,7 @@ class TrKeys {
   static const String deliveryTimeFrom = 'delivery.time.from';
   static const String deliveryTimeTo = 'delivery.time.to';
   static const String shopName = 'shop.name';
-  static const String uploadPhoto= 'upload.photo';
+  static const String uploadPhoto = 'upload.photo';
   static const String serviceFee = 'service.fee';
   static const String totalTax = 'total.tax';
   static const String tax = 'tax';
@@ -198,7 +217,8 @@ class TrKeys {
   static const String yourChatListIsEmpty = 'your.chat.list.is.empty';
   static const String thisTimeIsNotAvailable = 'this.time.is.not.available';
   static const String dontNotifyRecipient = 'dont.notify.recipient';
-  static const String ifYouWantToUseThisService = 'if.you.want.to.use.this.service';
+  static const String ifYouWantToUseThisService =
+      'if.you.want.to.use.this.service';
   static const String notEnoughMoney = 'not.enough.money';
   static const String confirmLocation = 'confirm.location';
   static const String userName = 'user.name';
@@ -219,13 +239,17 @@ class TrKeys {
   static const String selectPickupZone = 'select.pickup.zone';
   static const String historyView = 'history.view';
   static const String relatedProducts = 'related.products';
-  static const String thereAreNoReviewsThereYet = 'there.are.no.reviews.there.yet';
-  static const String thereAreNoProductsThereYet = 'there.are.no.products.there.yet';
+  static const String thereAreNoReviewsThereYet =
+      'there.are.no.reviews.there.yet';
+  static const String thereAreNoProductsThereYet =
+      'there.are.no.products.there.yet';
   static const String reviews = 'reviews';
   static const String additionInformation = 'addition.information';
   static const String description = 'description';
-  static const String yourNotificationListIsEmpty = 'your.notification.list.is.empty';
-  static const String yourTransactionsListIsEmpty = 'your.transactions.list.is.empty';
+  static const String yourNotificationListIsEmpty =
+      'your.notification.list.is.empty';
+  static const String yourTransactionsListIsEmpty =
+      'your.transactions.list.is.empty';
   static const String yourOrderShipping = 'your.order.shipping';
   static const String thankYouPurchase = 'thank.you.purchase';
   static const String orderComment = 'order.comment';
@@ -280,6 +304,7 @@ class TrKeys {
   static const String freeShippingFreeReturn = 'free.shipping.free.return';
   static const String blogLast = 'blog.last';
   static const String products = 'products';
+  static const String product = 'product';
   static const String viewProducts = 'view.products';
   static const String filter = 'filter';
   static const String clearAll = 'clear.all';
@@ -290,7 +315,8 @@ class TrKeys {
   static const String stores = 'stores';
   static const String search = 'search';
   static const String noProduct = 'no.product';
-  static const String thereAreNoDeliveryPointsHere = 'there.are.no.delivery.points.here';
+  static const String thereAreNoDeliveryPointsHere =
+      'there.are.no.delivery.points.here';
   static const String sku = 'sku';
   static const String brand = 'brand';
   static const String unKnow = 'un.know';
@@ -304,7 +330,7 @@ class TrKeys {
   static const String noResult = 'no.result';
   static const String likedProduct = 'liked.product';
   static const String discount = 'discount';
-  static const String orderDetail = 'order.detail';
+  static const String orderDetail = 'order.details';
   static const String yourCartIsEmpty = 'your.cart.is.empty';
   static const String skip = 'skip';
   static const String appTheme = 'app.theme';
@@ -316,7 +342,7 @@ class TrKeys {
   static const String orderHistory = 'order.history';
   static const String myWishlist = 'my.wishlist';
   static const String blog = 'blog';
-  static const String setting = 'settings';
+  static const String setting = 'setting';
   static const String appSetting = 'app.settings';
   static const String hotline = 'hotline';
   static const String helpInfo = 'help.info';
@@ -357,5 +383,4 @@ class TrKeys {
   static const String star = 'star';
   static const String yourRating = 'your.rating';
   static const String outOf = 'out.of';
-
 }

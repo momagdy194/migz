@@ -63,20 +63,23 @@ class _LoginCartState extends State<LoginCart> {
                       padding: EdgeInsets.symmetric(horizontal: 20.r),
                       child: Center(
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             20.verticalSpace,
                             Text(
                               AppHelper.getTrn(TrKeys.login),
                               style: CustomStyle.interNoSemi(
-                                  color: widget.colors.textBlack, size: 30),
+                                  color: widget.colors.white, size: 30),
                             ),
                             32.verticalSpace,
                             CustomTextFormField(
                               validation: AppValidators.isNotEmptyValidator,
                               controller: phone,
                               hint: AppHelper.getTrn(TrKeys.phoneNumberOrEmail),
+                              fillColor: Colors.black87,
+                              filled: true,
+// hintColor: Colors.white,
                             ),
                             16.verticalSpace,
                             BlocBuilder<AuthBloc, AuthState>(
@@ -85,6 +88,8 @@ class _LoginCartState extends State<LoginCart> {
                               },
                               builder: (context, state) {
                                 return CustomTextFormField(
+                                  fillColor: Colors.black87,
+                                  filled: true,
                                   obscure: state.isShowPassword,
                                   controller: password,
                                   validation: AppValidators.isValidPassword,
@@ -168,8 +173,8 @@ class _LoginCartState extends State<LoginCart> {
                       },
                       child: Text(
                         AppHelper.getTrn(TrKeys.forgetPassword),
-                        style: CustomStyle.interNormal(
-                            color: widget.colors.textBlack),
+                        style:
+                            CustomStyle.interNormal(color: widget.colors.white),
                       ),
                     ),
                     16.verticalSpace,

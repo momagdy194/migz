@@ -45,15 +45,17 @@ class _SignUpCartState extends State<SignUpCart> {
             child: Padding(
               padding: EdgeInsets.all(20.r),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     AppHelper.getTrn(TrKeys.signUp),
                     style: CustomStyle.interNoSemi(
-                        color: widget.colors.textBlack, size: 30),
+                        color: widget.colors.white, size: 30),
                   ),
                   32.verticalSpace,
                   CustomTextFormField(
+                     fillColor: Colors.black87,
+                    filled: true,
                     validation: AppValidators.isNotEmptyValidator,
                     controller: widget.phone,
                     hint: AppHelper.getTrn(TrKeys.phoneNumber),
@@ -74,22 +76,25 @@ class _SignUpCartState extends State<SignUpCart> {
                             if (formKey.currentState?.validate() ?? false) {
                               if (AppHelper.checkPhone(
                                   widget.phone.text.replaceAll(" ", ""))) {
-                                context.read<AuthBloc>().add(AuthEvent.checkPhone(
-                                    context: context,
-                                    phone: widget.phone.text,
-                                    onSuccess: () {
-                                      FirebaseService.sendCode(
-                                          phone: widget.phone.text,
-                                          onSuccess: (id) {
-                                            context.read<AuthBloc>().add(
-                                                AuthEvent.setVerificationId(
-                                                    id: id));
-                                          },
-                                          onError: (e) {
-                                            AppHelper.errorSnackBar(
-                                                context: context, message: e);
-                                          });
-                                    }));
+                                context
+                                    .read<AuthBloc>()
+                                    .add(AuthEvent.checkPhone(
+                                        context: context,
+                                        phone: widget.phone.text,
+                                        onSuccess: () {
+                                          FirebaseService.sendCode(
+                                              phone: widget.phone.text,
+                                              onSuccess: (id) {
+                                                context.read<AuthBloc>().add(
+                                                    AuthEvent.setVerificationId(
+                                                        id: id));
+                                              },
+                                              onError: (e) {
+                                                AppHelper.errorSnackBar(
+                                                    context: context,
+                                                    message: e);
+                                              });
+                                        }));
                               } else {
                                 AppHelper.errorSnackBar(
                                     context: context,
@@ -118,24 +123,27 @@ class _SignUpCartState extends State<SignUpCart> {
                                     .add(AuthEvent.socialSignIn(
                                         context: context,
                                         type: e,
-                                        onSuccess: ()async {
-
-                                          await    LocalStorage.setAddress(
+                                        onSuccess: () async {
+                                          await LocalStorage.setAddress(
                                             AddressModel(
                                               // cityId: int.tryParse(cityId),
                                               countryId: 67,
-                                              regionId: 3,   // regionId: int.tryParse(regionId),
+                                              regionId:
+                                                  3, // regionId: int.tryParse(regionId),
                                             ),
                                           );
 
-
-                                          if (LocalStorage.getAddress() == null) {
+                                          if (LocalStorage.getAddress() ==
+                                              null) {
                                             AppRoute.goSelectCountry(
                                                 context: context);
                                             return;
                                           }
-                                          if(AppConstants.isDemo && LocalStorage.getUiType() == null){
-                                            AppRoute.goSelectUIType(context: context);
+                                          if (AppConstants.isDemo &&
+                                              LocalStorage.getUiType() ==
+                                                  null) {
+                                            AppRoute.goSelectUIType(
+                                                context: context);
                                             return;
                                           }
                                           AppRoute.goMain(context);

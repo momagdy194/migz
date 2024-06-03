@@ -20,10 +20,10 @@ class CongratsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               16.verticalSpace,
-              Text(
-                AppHelper.getTrn(TrKeys.checkout),
-                style: CustomStyle.interSemi(color: colors.textBlack, size: 22),
-              ),
+              // Text(
+              //   AppHelper.getTrn(TrKeys.checkout),
+              //   style: CustomStyle.interSemi(color: colors.textBlack, size: 22),
+              // ),
               42.verticalSpace,
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.r),
@@ -46,11 +46,11 @@ class CongratsPage extends StatelessWidget {
                       style: CustomStyle.interNormal(
                           color: colors.textBlack, size: 14),
                     ),
-                    Text(
-                      AppHelper.getTrn(TrKeys.yourOrderShipping),
-                      style: CustomStyle.interNormal(
-                          color: colors.textBlack, size: 14),
-                    ),
+                    // Text(
+                    //   AppHelper.getTrn(TrKeys.yourOrderShipping),
+                    //   style: CustomStyle.interNormal(
+                    //       color: colors.textBlack, size: 14),
+                    // ),
                   ],
                 ),
               ),
