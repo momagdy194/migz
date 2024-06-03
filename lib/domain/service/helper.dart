@@ -21,6 +21,7 @@ import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
 import 'package:gshop/presentation/style/theme/theme_warpper.dart';
 import 'package:intl/intl.dart';
+import 'package:cherry_toast/cherry_toast.dart';
 
 abstract class AppHelper {
   AppHelper._();
@@ -255,29 +256,35 @@ abstract class AppHelper {
       {required BuildContext context,
       required String message,
       bool typeFixed = false}) {
-    FToast.toast(context,
-        toast: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-                padding: EdgeInsets.all(16.r),
-                margin: EdgeInsets.only(
-                    bottom: MediaQuery.sizeOf(context).height / 1.5,
-                    left: 32.r,
-                    right: 32.r),
-                decoration: BoxDecoration(
-                    color: CustomStyle.primary,
-                    borderRadius: BorderRadius.circular(8.r)),
-                child: Text(
-                  message,
-                  style: CustomStyle.interNormal(
-                      color: CustomStyle.white, size: 14),
-                ))
-          ],
-        ));
+    if (message.toString().toLowerCase().contains('sqlstate')) {
+    } else {
+      // FToast.toast(context,
+      //     toast: Column(
+      //       mainAxisAlignment: MainAxisAlignment.start,
+      //       crossAxisAlignment: CrossAxisAlignment.start,
+      //       children: [
+      //         Container(
+      //             padding: EdgeInsets.all(16.r),
+      //             margin: EdgeInsets.only(
+      //                 bottom: MediaQuery.sizeOf(context).height / 1.5,
+      //                 left: 32.r,
+      //                 right: 32.r),
+      //             decoration: BoxDecoration(
+      //                 color: CustomStyle.primary,
+      //                 borderRadius: BorderRadius.circular(8.r)),
+      //             child: Text(
+      //               message,
+      //               style: CustomStyle.interNormal(
+      //                   color: CustomStyle.white, size: 14),
+      //             ))
+      //       ],
+      //     ));
+      CherryToast.error(
+        width: MediaQuery.of(context).size.width * 0.8,
+        title: Text(message, style: const TextStyle(color: Colors.black)),
+      ).show(context);
+    }
   }
-
   static void showCustomModalBottomSheet({
     required BuildContext context,
     required Widget modal,
