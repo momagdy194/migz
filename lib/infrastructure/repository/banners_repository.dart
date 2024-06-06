@@ -24,9 +24,9 @@ class BannersRepository implements BannersInterface {
         'city_id': LocalStorage.getAddress()?.cityId,
     };
     try {
-      final client = dioHttp.client(requireAuth: false);
+      final client = dioHttp.client(requireAuth: false,);
       final response = await client.get(
-        '/api/v1/rest/banners/paginate',
+        '/api/v1/rest/shops/ads/banners',
         queryParameters: data,
       );
       return left(BannersPaginateResponse.fromJson(response.data));

@@ -37,7 +37,7 @@ class _LikePageState extends State<LikePage>
         children: [
           const Icon(FlutterRemix.heart_3_fill),
           6.horizontalSpace,
-          Text(AppHelper.getTrn(TrKeys.likedProduct)),
+          Text(AppHelper.getTrn(TrKeys.likedProducts)),
         ],
       ),
     ),

@@ -239,8 +239,8 @@ class TrKeys {
   static const String selectPickupZone = 'select.pickup.zone';
   static const String historyView = 'history.view';
   static const String relatedProducts = 'related.products';
-  static const String thereAreNoReviewsThereYet =
-      'there.are.no.reviews.there.yet';
+  static const String thereAreNoReviewsYet =
+      'there.are.not.reviews.yet';
   static const String thereAreNoProductsThereYet =
       'there.are.no.products.there.yet';
   static const String reviews = 'reviews';
@@ -328,7 +328,7 @@ class TrKeys {
   static const String recently = 'recently';
   static const String shops = 'shops';
   static const String noResult = 'no.result';
-  static const String likedProduct = 'liked.product';
+  static const String likedProducts = 'liked.products';
   static const String discount = 'discount';
   static const String orderDetail = 'order.details';
   static const String yourCartIsEmpty = 'your.cart.is.empty';

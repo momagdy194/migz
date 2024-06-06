@@ -54,14 +54,14 @@ class CongratsPage extends StatelessWidget {
                   ],
                 ),
               ),
-              15.verticalSpace,
+              20.verticalSpace,
               Align(
                 alignment: Alignment.center,
                 child: Text(AppHelper.getTrn(TrKeys.yourOrderReady),
                     style: CustomStyle.interSemi(color: colors.textBlack, size: 22),
                 ),
               ),
-              10.verticalSpace,
+              15.verticalSpace,
               Align(
                 alignment: Alignment.center,
                 child: TimerCountdown(
@@ -69,6 +69,9 @@ class CongratsPage extends StatelessWidget {
                   secondsDescription: AppHelper.getTrn(TrKeys.seconds),
                   minutesDescription: AppHelper.getTrn(TrKeys.minutes),
                   hoursDescription: AppHelper.getTrn(TrKeys.hours),
+                  colonsTextStyle: CustomStyle.interSemi(color: colors.textBlack,),
+                  descriptionTextStyle: CustomStyle.interSemi(color: colors.textBlack,),
+                  timeTextStyle: CustomStyle.interSemi(color: colors.textBlack,),
                   endTime: DateTime.now().add(
                     Duration(
                       hours: 2,

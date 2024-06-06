@@ -64,7 +64,8 @@ class BannerBloc extends Bloc<BannerEvent, BannerState> {
         page = 0;
         emit(state.copyWith(banners: [], isLoadingBanner: true));
       }
-      final res = await _bannersRepo.getBannersPaginateByShopId(shopId: event.shopId!);
+      final res =
+          await _bannersRepo.getBannersPaginateByShopId(shopId: event.shopId!);
       res.fold((l) {
         List<BannerData> list = List.from(state.banners);
         list.addAll(l.data ?? []);
@@ -160,7 +161,7 @@ class BannerBloc extends Bloc<BannerEvent, BannerState> {
       });
     });
 
-    on<UpdateProduct>((event, emit)  {
+    on<UpdateProduct>((event, emit) {
       emit(state.copyWith(isLoadingProduct: true));
       emit(state.copyWith(isLoadingProduct: false));
     });

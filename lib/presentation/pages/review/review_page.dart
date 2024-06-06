@@ -120,7 +120,7 @@ class _ReviewPageState extends State<ReviewPage> {
                                     24.verticalSpace,
                                     Text(
                                       AppHelper.getTrn(
-                                          TrKeys.thereAreNoReviewsThereYet),
+                                          TrKeys.thereAreNoReviewsYet),
                                       style: CustomStyle.interNormal(
                                           color: widget.colors.textBlack),
                                     )

@@ -51,7 +51,6 @@ class _HomeOnePageState extends State<HomeOnePage> {
     }
   }
 
-
   @override
   void initState() {
     categoryRefresh = RefreshController();
@@ -95,20 +94,21 @@ class _HomeOnePageState extends State<HomeOnePage> {
                 builder: (context, state) {
                   return AnimatedContainer(
                     duration: const Duration(milliseconds: 500),
-                    height:state.isShowSearch ? 46.r : 0,
-                    child:  state.isShowSearch
-                        ?  CustomTextFormField(
-                      onTap: () {
-                        AppRoute.goSearchPage(context: context);
-                      },
-                      readOnly: true,
-                      radius: 100,
-                      prefixIcon: const Icon(
-                        FlutterRemix.search_2_line,
-                        color: CustomStyle.textHint,
-                      ),
-                      hint: AppHelper.getTrn(TrKeys.search),
-                    ) : const SizedBox.shrink(),
+                    height: state.isShowSearch ? 46.r : 0,
+                    child: state.isShowSearch
+                        ? CustomTextFormField(
+                            onTap: () {
+                              AppRoute.goSearchPage(context: context);
+                            },
+                            readOnly: true,
+                            radius: 100,
+                            prefixIcon: const Icon(
+                              FlutterRemix.search_2_line,
+                              color: CustomStyle.textHint,
+                            ),
+                            hint: AppHelper.getTrn(TrKeys.search),
+                          )
+                        : const SizedBox.shrink(),
                   );
                 },
               ),
@@ -253,9 +253,14 @@ class _HomeOnePageState extends State<HomeOnePage> {
               children: [
                 Text(
                   AppHelper.getTrn(TrKeys.deliveryAddress),
-                  style: CustomStyle.interNormal(color: colors.textHint, size: 12),
+                  style:
+                      CustomStyle.interNormal(color: colors.textHint, size: 12),
                 ),
-                Icon(Icons.arrow_forward_ios,color: colors.textHint,size: 15,)
+                Icon(
+                  Icons.arrow_forward_ios,
+                  color: colors.textHint,
+                  size: 15,
+                )
               ],
             ),
             Text(
