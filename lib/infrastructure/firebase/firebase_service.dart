@@ -79,19 +79,27 @@ abstract class FirebaseService {
   static Future<Either<UserCredential, dynamic>> socialGoogle() async {
     print('socialGoogle');
     try {
+      print('socialGoogle0000');
+
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      print('socialGoogle111');
 
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
+      print('socialGoogle222');
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
+      print('socialGoogle333');
 
       final userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
+      print('socialGoogle444');
+
       return Left(userCredential);
+
     } on Exception catch (e) {
       print('MyException=${e.toString()}');
       return Right(e.toString());
@@ -101,6 +109,7 @@ abstract class FirebaseService {
   static Future<Either<UserCredential, dynamic>> socialFacebook() async {
     final fb = FacebookLogin();
     try {
+      print("asaasasasas");
       final user = await fb.logIn(permissions: [FacebookPermission.email]);
 
       print('Facebook login status=${user.status.toString()}');

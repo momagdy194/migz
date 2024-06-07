@@ -43,6 +43,7 @@ class BannerData {
     int? productsCount,
     String? createdAt,
     String? updatedAt,
+    String? img,
     Translation? translation,
   }) {
     _id = id;
@@ -50,6 +51,7 @@ class BannerData {
     _url = url;
     _galleries = galleries;
     _active = active;
+    _img = img;
     _likes = likes;
     _productsCount = productsCount;
     _createdAt = createdAt;
@@ -61,6 +63,7 @@ class BannerData {
     _id = json['id'];
     _shopId = json['shop_id'];
     _url = json['url'];
+    _img = json['img'];
     _active = json['active'].runtimeType == int
         ? json['active'] == 1
         : json['active'];
@@ -80,6 +83,7 @@ class BannerData {
   int? _id;
   int? _shopId;
   String? _url;
+  String? _img;
   List<Galleries>? _galleries;
   bool? _active;
   int? _likes;
@@ -92,6 +96,7 @@ class BannerData {
     int? id,
     int? shopId,
     String? url,
+    String? img,
     List<Galleries>? galleries,
     bool? active,
     int? likes,
@@ -104,6 +109,7 @@ class BannerData {
         id: id ?? _id,
         shopId: shopId ?? _shopId,
         url: url ?? _url,
+        img: img ?? _img,
         galleries: galleries ?? _galleries,
         active: active ?? _active,
         likes: likes ?? _likes,
@@ -118,6 +124,7 @@ class BannerData {
   int? get shopId => _shopId;
 
   String? get url => _url;
+  String? get img => _img;
 
   List<Galleries>? get galleries => _galleries;
 
@@ -137,6 +144,7 @@ class BannerData {
     map['id'] = _id;
     map['shop_id'] = _shopId;
     map['url'] = _url;
+    map['img'] = _img;
     map['active'] = _active;
     map['likes'] = _likes;
     map['products_count'] = _productsCount;

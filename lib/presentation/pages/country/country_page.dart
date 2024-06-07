@@ -121,6 +121,18 @@ class _CountryPageState extends State<CountryPage> {
       onTap: () {
         print("state.countries[index].id${state.countries[index].id}");
         // LocalStorage.deleteCartList();
+
+
+        LocalStorage.setAddress(AddressModel(
+
+        countryId: 67,
+        regionId:
+        3, // regionId: int.tryParse(regionId)
+            country:
+            // null
+            'egypt'
+        ));
+        //
         // LocalStorage.setAddress(AddressModel(
         //     countryId:
         //     // null,
@@ -136,15 +148,15 @@ class _CountryPageState extends State<CountryPage> {
         //     state.countries[index].translation?.title
         // ));
 
-        // if ((state.countries[index].citiesCount ?? 0) > 0) {
+         // if ((state.countries[index].citiesCount ?? 0) > 0) {
         //   AppRoute.goSelectCity(
         //       context: context, countryId: state.countries[index].id ?? 0);
         //   return;
         // }
-        if (AppConstants.isDemo && LocalStorage.getUiType() == null) {
-          AppRoute.goSelectUIType(context: context);
-          return;
-        }
+        // if (AppConstants.isDemo && LocalStorage.getUiType() == null) {
+        //   AppRoute.goSelectUIType(context: context);
+        //   return;
+        // }
         AppRoute.goMain(context);
       },
       child: Column(

@@ -65,6 +65,35 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           user = await FirebaseService.socialFacebook();
           break;
       }
+
+      user?.fold((l) async {
+        String? token = await l.user?.getIdToken();
+        final res = await authRepository.loginWithSocial(
+            email: l.user?.email ?? "",
+            displayName: l.user?.displayName ?? "",
+            id: token ?? "",
+            img: l.user?.photoURL);
+
+        res.fold((l) async {
+          await LocalStorage.setToken(l.data?.accessToken ?? "");
+          LocalStorage.setUser(l.data?.user);
+          add(const AuthEvent.loadingChange());
+          event.onSuccess?.call();
+          final fcm = await FirebaseService.getFcmToken();
+          authRepository.updateFirebaseToken(fcm);
+          userRepository.setLikeProductList(
+              ids: LocalStorage.getLikedProductsList());
+
+        }, (r) {
+          add(const AuthEvent.loadingChange());
+          AppHelper.errorSnackBar(
+            context: event.context,
+            message: r,
+          );
+        });
+      }, (r) {
+        add(const AuthEvent.loadingChange());
+      });
     });
 
     on<SignUp>((event, emit) async {

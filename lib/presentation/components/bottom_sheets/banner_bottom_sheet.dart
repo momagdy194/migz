@@ -40,8 +40,9 @@ class BannerBottomSheet extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomNetworkImage(
-                  url: (banner.galleries?.first.path ?? ""),
-                  preview: banner.galleries?.first.preview,
+                  // url: (banner.galleries?.first.path ?? ""),
+                  url: (banner.img ?? ""),
+                  preview:banner.galleries?.isEmpty??true?banner.img: banner.galleries?.first.preview,
                   height: 180,
                   width: double.infinity,
                   radius: 24),

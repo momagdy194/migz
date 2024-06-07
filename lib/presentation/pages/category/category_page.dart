@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gshop/application/banner/banner_bloc.dart';
 import 'package:gshop/application/category/category_bloc.dart';
 import 'package:gshop/application/products/product_bloc.dart';
 import 'package:gshop/domain/service/helper.dart';
@@ -11,6 +12,7 @@ import 'package:gshop/presentation/components/button/filter_button.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
 import 'package:gshop/presentation/components/custom_tab_bar.dart';
 import 'package:gshop/presentation/components/custom_textformfield.dart';
+import 'package:gshop/presentation/pages/home/widgets/banner_list.dart';
 import 'package:gshop/presentation/pages/home/widgets/category_list.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
@@ -30,6 +32,9 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage>
     with SingleTickerProviderStateMixin {
   late RefreshController categoryRefresh;
+  late RefreshController bannerRefresh;
+  late PageController pageController;
+
   late RefreshController refreshController;
   late RefreshController shopsRefresh;
   late RefreshController storyRefresh;
@@ -67,6 +72,9 @@ class _CategoryPageState extends State<CategoryPage>
     // tabController = TabController(length: listTabs.length, vsync: this);
     categoryRefresh = RefreshController();
     refreshController = RefreshController();
+    bannerRefresh = RefreshController();
+    pageController = PageController();
+
     // shopsRefresh = RefreshController();
     storyRefresh = RefreshController();
     super.initState();
@@ -77,8 +85,12 @@ class _CategoryPageState extends State<CategoryPage>
     tabController.dispose();
     categoryRefresh.dispose();
     refreshController.dispose();
+    pageController.dispose();
+
     shopsRefresh.dispose();
     storyRefresh.dispose();
+    bannerRefresh.dispose();
+
     super.dispose();
   }
 
@@ -114,6 +126,8 @@ class _CategoryPageState extends State<CategoryPage>
               // ),
               20.verticalSpace,
               _search(colors),
+
+
               Expanded(
                 child:
                 _categories(colors),
@@ -190,9 +204,25 @@ class _CategoryPageState extends State<CategoryPage>
       onRefresh: () {
         context.read<CategoryBloc>().add(CategoryEvent.fetchCategory(
             context: context, controller: refreshController, isRefresh: true));
-      },
+        context.read<BannerBloc>()
+          ..add(BannerEvent.fetchBanner(
+              context: context,
+              isRefresh: true,
+              controller: refreshController));  },
       child: Column(
         children: [
+
+          20.verticalSpace,
+
+          BannerList(
+            pageController: pageController,
+            colors: colors,
+            controller: bannerRefresh,
+            onLoading: () {
+              context.read<BannerBloc>().add(BannerEvent.fetchBanner(
+                  context: context, controller: bannerRefresh));
+            },
+          ),
           20.verticalSpace,
           CategoryList(
             categoryRefresh: categoryRefresh,

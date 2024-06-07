@@ -12,13 +12,13 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../components/shimmer/banner_shimmer.dart';
 
-class BannerList extends StatelessWidget {
+class BannerList2 extends StatelessWidget {
   final PageController pageController;
   final CustomColorSet colors;
   final RefreshController controller;
   final VoidCallback onLoading;
 
-  const BannerList(
+  const BannerList2(
       {Key? key,
       required this.pageController,
       required this.colors,
@@ -122,7 +122,8 @@ class BannerList extends StatelessWidget {
           EdgeInsets.symmetric(horizontal: AppHelper.getType() == 3 ? 0 : 16.r),
       child: ButtonEffectAnimation(
         onTap: () {
-          AppRoute.goBannerBottomSheet(context, state.banners[index], colors);
+          // Navigator.push(context, MaterialPageRoute(builder: MaterialPageRoute(builder: (context) => ,)))
+          // AppRoute.goBannerBottomSheet(context, state.banners[index], colors);
         },
         child: Container(
           decoration: BoxDecoration(

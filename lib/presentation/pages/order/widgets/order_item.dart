@@ -30,7 +30,8 @@ class OrderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Calculate Current time=${DateTime.now().difference(order!.createdAt!).compareTo(Duration(hours: 2))}');
+    print(
+        'Calculate Current time=${DateTime.now().difference(order!.createdAt!).compareTo(Duration(hours: 2))}');
     print('Status=${order!.status!}');
     return ButtonEffectAnimation(
       onTap: () {
@@ -123,60 +124,93 @@ class OrderItem extends StatelessWidget {
                         ],
                       ),
                       const Spacer(),
-                       if(order?.status=='accepted') Container(
-                         alignment: Alignment.center,
-                         width: 60,
-                         height: 30,
-                         decoration: BoxDecoration(
-                           color: Colors.green,
-                           borderRadius: BorderRadius.circular(10),
-                         ),
-                         child: Text(AppHelper.getTrn(TrKeys.accepted),style: TextStyle(
-                             color: colors.white,
-                             fontWeight: FontWeight.bold,
-                             fontSize: 10
-                         ),),
-                       )
-                       else
-                         DateTime.now().difference(order!.createdAt!).compareTo(Duration(hours: 2))<0?
-                         TimerCountdown(
-                           format: CountDownTimerFormat.hoursMinutesSeconds,
-                           spacerWidth: 5,
-                           hoursDescription: AppHelper.getTrn(TrKeys.hoursPrefix),
-                           minutesDescription: AppHelper.getTrn(TrKeys.minutesPrefix),
-                           secondsDescription: AppHelper.getTrn(TrKeys.secondsPrefix),
-                           timeTextStyle: TextStyle(
-                             fontSize: 10,
-                             fontWeight: FontWeight.w900,
-                           ),
-                           descriptionTextStyle: TextStyle(
-                             fontSize: 10,
-                             fontWeight: FontWeight.w900,
-                           ),
-                           colonsTextStyle: TextStyle(
-                             fontSize: 10,
-                             fontWeight: FontWeight.w900,
-                           ),
-                           endTime: DateTime.now().add(
-                             DateTime.now().difference(order!.createdAt!),
-                           ),
-                           onEnd: () {
-                             print("Timer finished");
-                           },
-                         ) : Container(
-                           alignment: Alignment.center,
-                           width: 60,
-                           height: 30,
-                           decoration: BoxDecoration(
-                             color: colors.primary,
-                             borderRadius: BorderRadius.circular(10),
-                           ),
-                           child: Text(AppHelper.getTrn(TrKeys.canceled),style: TextStyle(
-                               color: colors.white,
-                               fontWeight: FontWeight.bold,
-                               fontSize: 10
-                           ),),
-                         ),
+                      // Text("${order?.status=="canceled"}"),
+                      (order?.status == "canceled")
+                          ? Container(
+                              alignment: Alignment.center,
+                              width: 60,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: colors.primary,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                AppHelper.getTrn(TrKeys.canceled),
+                                style: TextStyle(
+                                    color: colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 10),
+                              ),
+                            )
+                          :
+                          // if ()
+                          order?.status == 'accepted'
+                              ? Container(
+                                  alignment: Alignment.center,
+                                  width: 60,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    AppHelper.getTrn(TrKeys.accepted),
+                                    style: TextStyle(
+                                        color: colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10),
+                                  ),
+                                )
+                              : DateTime.now()
+                                          .difference(order!.createdAt!)
+                                          .compareTo(Duration(hours: 2)) <
+                                      0
+                                  ? TimerCountdown(
+                                      format: CountDownTimerFormat
+                                          .hoursMinutesSeconds,
+                                      spacerWidth: 5,
+                                      hoursDescription:
+                                          AppHelper.getTrn(TrKeys.hoursPrefix),
+                                      minutesDescription: AppHelper.getTrn(
+                                          TrKeys.minutesPrefix),
+                                      secondsDescription: AppHelper.getTrn(
+                                          TrKeys.secondsPrefix),
+                                      timeTextStyle: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                      descriptionTextStyle: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                      colonsTextStyle: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                      endTime: DateTime.now().add(
+                                        DateTime.now()
+                                            .difference(order!.createdAt!),
+                                      ),
+                                      onEnd: () {
+                                        print("Timer finished");
+                                      },
+                                    )
+                                  : Container(
+                                      alignment: Alignment.center,
+                                      width: 60,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: colors.primary,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Text(
+                                        AppHelper.getTrn(TrKeys.canceled),
+                                        style: TextStyle(
+                                            color: colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 10),
+                                      ),
+                                    ),
 
                       5.horizontalSpace,
                       Padding(

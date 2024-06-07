@@ -122,6 +122,10 @@ class _CityPageState extends State<CityPage> {
         LocalStorage.setAddress(LocalStorage.getAddress()?.copyWith(
             cityId: state.cities[index].id,
             city: state.cities[index].translation?.title));
+
+        // LocalStorage.setAddress(LocalStorage.getAddress()?.copyWith(
+        //     cityId: state.cities[index].id,
+        //     city: state.cities[index].translation?.title));
         if(AppConstants.isDemo && LocalStorage.getUiType() == null){
           AppRoute.goSelectUIType(context: context);
           return;

@@ -115,13 +115,25 @@ class _JoinDialogState extends State<JoinDialog> {
                         final regionId = region.substring(
                             region.indexOf("region_id") + 10,
                             region.indexOf("&"));
+
+
+
                         LocalStorage.setAddress(
-                          AddressModel(
-                            cityId: int.tryParse(cityId),
-                            countryId: int.tryParse(countryId),
-                            regionId: int.tryParse(regionId),
-                          ),
+                            AddressModel(
+                              // cityId: int.tryParse(cityId),
+                              countryId: 67,
+                              regionId:
+                              3, // regionId: int.tryParse(regionId),
+                            )
                         );
+                        //
+                        // LocalStorage.setAddress(
+                        //   AddressModel(
+                        //     cityId: int.tryParse(cityId),
+                        //     countryId: int.tryParse(countryId),
+                        //     regionId: int.tryParse(regionId),
+                        //   ),
+                        // );
                        await cartRepository.joinGroupOrder(
                             cartId: int.tryParse(cartId) ?? 0, name: controller.text, context: context);
                        AppRoute.goMain(context);

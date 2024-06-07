@@ -22,6 +22,7 @@ class OrderBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("${order?.status}order?.status");
     switch (order?.status) {
       case "new":
         {
@@ -41,11 +42,14 @@ class OrderBottom extends StatelessWidget {
         }
       case "delivered":
         {
-          return _refundAndRepeat(context);
+          return SizedBox();
+          // _refundAndRepeat(context);
         }
       case "canceled":
         {
-          return _refundAndRepeat(context);
+          return SizedBox();
+
+          // _refundAndRepeat(context);
         }
       default:
         return const SizedBox.shrink();
@@ -80,18 +84,19 @@ class OrderBottom extends StatelessWidget {
                       .read<MainBloc>()
                       .add(const MainEvent.changeIndex(index: 3));
                   context.read<CartBloc>().add(CartEvent.insertCart(
-                    context: context,
-                    onSuccess: () {
-                      context.read<CartBloc>().add(
-                          CartEvent.calculateCartWithCoupon(context: context));
-                      context
-                          .read<ProductBloc>()
-                          .add(const ProductEvent.updateState());
+                        context: context,
+                        onSuccess: () {
+                          context.read<CartBloc>().add(
+                              CartEvent.calculateCartWithCoupon(
+                                  context: context));
+                          context
+                              .read<ProductBloc>()
+                              .add(const ProductEvent.updateState());
 
-                      Navigator.pop(context);
-                      Navigator.pop(context);
-                    },
-                  ));
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                        },
+                      ));
                 });
           },
         ),
@@ -157,17 +162,17 @@ class OrderBottom extends StatelessWidget {
             titleColor: colors.white,
             onTap: () {
               context.read<OrderBloc>().add(
-                OrderEvent.cancelOrder(
-                  context: context,
-                  id: order?.id ?? 0,
-                  onSuccess: () {
-                    Navigator.pop(context);
-                    context.read<OrderBloc>().add(
-                        OrderEvent.fetchActiveOrders(
-                            context: context, isRefresh: true));
-                  },
-                ),
-              );
+                    OrderEvent.cancelOrder(
+                      context: context,
+                      id: order?.id ?? 0,
+                      onSuccess: () {
+                        Navigator.pop(context);
+                        context.read<OrderBloc>().add(
+                            OrderEvent.fetchActiveOrders(
+                                context: context, isRefresh: true));
+                      },
+                    ),
+                  );
             });
       },
     );

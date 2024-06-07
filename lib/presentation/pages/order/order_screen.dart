@@ -237,6 +237,7 @@ class OrderScreen extends StatelessWidget {
           ),
         24.verticalSpace,
         PriceInfo(colors: colors, order: order),
+
         OrderBottom(order: order, colors: colors),
         8.verticalSpace,
       ],
