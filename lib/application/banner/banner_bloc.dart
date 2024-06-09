@@ -32,7 +32,7 @@ class BannerBloc extends Bloc<BannerEvent, BannerState> {
         page = 0;
         emit(state.copyWith(banners: [], isLoadingBanner: true));
       }
-      final res = await _bannersRepo.getBannersPaginate(page: ++page);
+      final res = await _bannersRepo.getBannersPaginate(page: ++page,bannersType: event.bannersType);
       res.fold((l) {
         List<BannerData> list = List.from(state.banners);
         list.addAll(l.data ?? []);

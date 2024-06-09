@@ -13,10 +13,12 @@ class BannersRepository implements BannersInterface {
   @override
   Future<Either<BannersPaginateResponse, dynamic>> getBannersPaginate({
     int? page,
+    String? bannersType,
   }) async {
     final data = {
       'perPage': 50,
       'page': page,
+      'banners_of' : bannersType,
       'lang': LocalStorage.getLanguage()?.locale,
       if (LocalStorage.getAddress()?.countryId != null)
         'country_id': LocalStorage.getAddress()?.countryId,

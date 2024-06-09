@@ -214,6 +214,7 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
                       controller: productRefresh));
                   context.read<BannerBloc>()
                     ..add(BannerEvent.fetchBanner(
+                      bannersType: 'products',
                         context: context,
                         isRefresh: true,
                         controller: productRefresh))
@@ -250,6 +251,7 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
                       controller: bannerRefresh,
                       onLoading: () {
                         context.read<BannerBloc>().add(BannerEvent.fetchBanner(
+                          bannersType: 'products',
                             context: context, controller: bannerRefresh));
                       },
                     ),

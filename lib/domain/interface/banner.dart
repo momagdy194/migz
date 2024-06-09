@@ -6,6 +6,7 @@ import 'package:gshop/domain/model/response/banners_paginate_response.dart';
 abstract class BannersInterface {
   Future<Either<BannersPaginateResponse, dynamic>> getBannersPaginate({
     int? page,
+    String? bannersType,
   });
 
   Future<Either<BannersPaginateResponse, dynamic>> getBannersPaginateByShopId({

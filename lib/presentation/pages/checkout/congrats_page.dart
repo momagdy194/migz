@@ -5,6 +5,7 @@ import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 import 'package:gshop/presentation/components/button/custom_button.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
+import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
 
 class CongratsPage extends StatelessWidget {
@@ -88,16 +89,34 @@ class CongratsPage extends StatelessWidget {
       floatingButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingButton: (colors) => Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.r),
-        child: SizedBox(
-          height: 60.r,
-          child: CustomButton(
-            title: AppHelper.getTrn(TrKeys.returnHome),
-            bgColor: colors.primary,
-            titleColor: colors.white,
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SizedBox(
+              height: 60.r,
+              child: CustomButton(
+                title: AppHelper.getTrn(TrKeys.orderHistory),
+                bgColor: colors.primary,
+                titleColor: colors.white,
+                onTap: () {
+                  AppRoute.goOrdersList(context: context);
+                },
+              ),
+            ),
+            10.verticalSpace,
+            SizedBox(
+              height: 60.r,
+              child: CustomButton(
+                title: AppHelper.getTrn(TrKeys.returnHome),
+                bgColor: colors.primary,
+                titleColor: colors.white,
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -965,9 +965,9 @@ abstract class AppRoute {
                           ordersRepository, paymentsRepository, cartRepository)
                         ..add(OrderEvent.fetchActiveOrders(context: context))
                         ..add(OrderEvent.fetchRefundOrders(context: context))),
-                  BlocProvider.value(value: context.read<ProductBloc>()),
-                  BlocProvider.value(value: context.read<MainBloc>()),
-                  BlocProvider.value(value: context.read<CartBloc>()),
+                  BlocProvider.value(value: ProductBloc(productsRepository)),
+                  BlocProvider.value(value: MainBloc()),
+                  BlocProvider.value(value: CartBloc(cartRepository)),
                 ],
                 child: const OrdersListPage(),
               )),

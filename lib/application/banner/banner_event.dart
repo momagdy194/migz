@@ -5,6 +5,7 @@ abstract class BannerEvent with _$BannerEvent {
   const factory BannerEvent.fetchBanner(
       {required BuildContext context,
       bool? isRefresh,
+      String? bannersType,
       RefreshController? controller}) = FetchBanner;
 
   const factory BannerEvent.fetchBannersByShopId(

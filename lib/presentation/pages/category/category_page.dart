@@ -206,6 +206,7 @@ class _CategoryPageState extends State<CategoryPage>
             context: context, controller: refreshController, isRefresh: true));
         context.read<BannerBloc>()
           ..add(BannerEvent.fetchBanner(
+          bannersType: 'shops',
               context: context,
               isRefresh: true,
               controller: refreshController));  },
@@ -220,7 +221,7 @@ class _CategoryPageState extends State<CategoryPage>
             controller: bannerRefresh,
             onLoading: () {
               context.read<BannerBloc>().add(BannerEvent.fetchBanner(
-                  context: context, controller: bannerRefresh));
+                  context: context,bannersType: 'shops', controller: bannerRefresh));
             },
           ),
           20.verticalSpace,

@@ -2990,7 +2990,7 @@ class _$CheckoutStateImpl implements _CheckoutState {
   const _$CheckoutStateImpl(
       {this.isLoadingPoint = true,
       this.isLoading = true,
-      this.isActive = false,
+      this.isActive = true,
       this.selectAddress = 0,
       this.step = 1,
       this.selectId = -1,
