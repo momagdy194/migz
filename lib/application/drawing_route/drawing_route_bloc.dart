@@ -76,7 +76,7 @@ class DrawingRouteBloc extends Bloc<DrawingRouteEvent, DrawingRouteState> {
       final ImageCropperForMarker image = ImageCropperForMarker();
       if (event.parcel != null) {
         Map<MarkerId, Marker> list = {
-          const MarkerId("Uzmart"): Marker(
+          const MarkerId("Flon"): Marker(
               onTap: () {
                 AppHelper.showCustomModalBottomSheet(
                     context: event.context,
@@ -96,10 +96,10 @@ class DrawingRouteBloc extends Bloc<DrawingRouteEvent, DrawingRouteState> {
                                   AppConstants.demoLatitude,
                               event.parcel?.addressFrom?.longitude ??
                                   AppConstants.demoLongitude),
-                          title: "Uzmart"),
+                          title: "Flon"),
                     ));
               },
-              markerId: const MarkerId("Uzmart"),
+              markerId: const MarkerId("Flon"),
               position: LatLng(
                 event.parcel?.addressFrom?.latitude ??
                     AppConstants.demoLatitude,
@@ -182,8 +182,8 @@ class DrawingRouteBloc extends Bloc<DrawingRouteEvent, DrawingRouteState> {
         return;
       }
       Map<MarkerId, Marker> list = {
-        const MarkerId("Uzmart"): Marker(
-            markerId: const MarkerId("Uzmart"),
+        const MarkerId("Flon"): Marker(
+            markerId: const MarkerId("Flon"),
             onTap: () {
               AppHelper.showCustomModalBottomSheet(
                   context: event.context,
@@ -213,7 +213,7 @@ class DrawingRouteBloc extends Bloc<DrawingRouteEvent, DrawingRouteState> {
                                   : event.order?.shop?.location?.longitude) ??
                                   "${AppConstants.demoLongitude}"),
                         ),
-                        title: "Uzmart"),
+                        title: "Flon"),
                   ));
             },
             position: LatLng(

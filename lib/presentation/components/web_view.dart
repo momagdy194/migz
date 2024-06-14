@@ -23,10 +23,10 @@ class _WebViewPageState extends State<WebViewPage> {
           onPageFinished: (String url) {},
           onWebResourceError: (WebResourceError error) {},
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://uzmart')) {
+            if (request.url.startsWith('https://Flon')) {
               Navigator.pop(context, true);
               return NavigationDecision.prevent;
-            }
+            } 
             return NavigationDecision.navigate;
           },
         ),

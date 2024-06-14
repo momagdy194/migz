@@ -185,8 +185,10 @@ class _LoginCartState extends State<LoginCart> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: AppConstants.socialSignIn
-                          .map((e) => SocialButton(
-                                iconColor: widget.colors.textBlack,
+                          .map((e) =>
+                          
+                           SocialButton(
+                                iconColor: widget.colors.white,
                                 bgColor: widget.colors.socialButtonColor,
                                 icon: e,
                                 onTap: () {

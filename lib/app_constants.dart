@@ -17,22 +17,22 @@ class AppConstants {
   static const String webUrl = 'https://admin.flonstore.com/';
   static const String firebaseWebKey =
       'AIzaSyAV3BYPU2xncEElk74aKVJtSRTf4oPY7eE';
-  static const String urlPrefix = 'https://uzmart.page.link';
+  static const String urlPrefix = 'https://Flon.page.link';
   static const String androidPackageName = 'com.flonstores.app';
   static const String iosPackageName = 'com.gshop';
   static const String routingKey =
       '5b3ce3597851110001cf6248ed52930792d447839b83083b296b7909';
   static const String sellerAppAndroid =
-      'https://play.google.com/store/apps/details?id=uzmart.seller';
+      'https://play.google.com/store/apps/details?id=Flon.seller';
   static const String sellerAppIos =
       'https://testflight.apple.com/join/ZjHulxhx';
   static const bool isDemo = false;
 
   /// social sign-in
   static const socialSignIn = [
-    FlutterRemix.google_fill,
-    FlutterRemix.facebook_fill,
-    FlutterRemix.apple_fill,
+    FlutterRemix.google_fill,  
+    // FlutterRemix.facebook_fill,
+    FlutterRemix.apple_fill, 
   ];
 
   static const filterLayouts = [
