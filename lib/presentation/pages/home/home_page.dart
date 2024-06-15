@@ -151,8 +151,12 @@ class _HomePageState extends State<HomePage> {
                 colors: colors,
                 controller: looksRefresh,
                 onLoading: () {
-                  context.read<BannerBloc>().add(BannerEvent.fetchLooks(
-                      context: context, controller: looksRefresh));
+                  context.read<BannerBloc>().add(
+                        BannerEvent.fetchLooks(
+                          context: context,
+                          controller: looksRefresh,
+                        ),
+                      );
                 },
               ),
               BlogList(colors: colors),

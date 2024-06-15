@@ -344,7 +344,7 @@ class CartRepository implements CartInterface {
       final response = await client.post('/api/v1/rest/cart/open', data: data);
       LocalStorage.deleteCartList();
       LocalStorage.setGroupOrder(
-          UserModel(uuid: response.data["data"]["uuid"], id: cartId));
+          UserModel(uuid: response.data["data"]["uuid"], id: cartId.toString()));
       return;
     } catch (e) {
       return AppHelper.errorSnackBar(

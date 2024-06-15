@@ -82,18 +82,42 @@ class _SignUpCartState extends State<SignUpCart> {
                                         context: context,
                                         phone: widget.phone.text,
                                         onSuccess: () {
-                                          FirebaseService.sendCode(
-                                              phone: widget.phone.text,
-                                              onSuccess: (id) {
-                                                context.read<AuthBloc>().add(
-                                                    AuthEvent.setVerificationId(
-                                                        id: id));
-                                              },
-                                              onError: (e) {
-                                                AppHelper.errorSnackBar(
-                                                    context: context,
-                                                    message: e);
-                                              });
+
+                                          if (widget.phone.text.startsWith('015') ||widget.phone.text.startsWith('15') ||
+                                              widget.phone.text.startsWith('2015') ||
+                                              widget.phone.text.startsWith('+2015')) {
+                                            context.read<AuthBloc>().add(
+                                                AuthEvent.setVerificationId(
+                                                    contant: true,
+                                                    id: widget.phone.text));
+                                          } else {
+                                            FirebaseService.sendCode(
+                                                phone: widget.phone.text,
+                                                onSuccess: (id) {
+                                                  // if(phone.text.contains('015')){
+                                                  context.read<AuthBloc>().add(
+                                                      AuthEvent.setVerificationId(
+                                                          contant: true, id: id));
+                                                  // }
+                                                },
+                                                onError: (e) {
+                                                  AppHelper.errorSnackBar(
+                                                      context: context, message: e);
+                                                });
+                                          }
+
+                                          // FirebaseService.sendCode(
+                                          //     phone: widget.phone.text,
+                                          //     onSuccess: (id) {
+                                          //       context.read<AuthBloc>().add(
+                                          //           AuthEvent.setVerificationId(
+                                          //               id: id));
+                                          //     },
+                                          //     onError: (e) {
+                                          //       AppHelper.errorSnackBar(
+                                          //           context: context,
+                                          //           message: e);
+                                          //     });
                                         }));
                               } else {
                                 AppHelper.errorSnackBar(

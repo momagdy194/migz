@@ -6,7 +6,7 @@ import 'notification_data.dart';
 
 class UserModel {
   UserModel({
-    int? id,
+    String? id,
     String? uuid,
     String? firstname,
     String? lastname,
@@ -58,7 +58,7 @@ class UserModel {
   }
 
   UserModel.fromJson(dynamic json) {
-    _id = json['id'];
+    _id = json['id'].toString();
     _uuid = json['uuid'];
     _firstname = json['firstname'];
     _lastname = json['lastname'];
@@ -89,7 +89,7 @@ class UserModel {
     }
   }
 
-  int? _id;
+  String? _id;
   String? _uuid;
   String? _firstname;
   String? _lastname;
@@ -115,7 +115,7 @@ class UserModel {
   String? _referral;
 
   UserModel copyWith({
-    int? id,
+    String? id,
     String? uuid,
     String? firstname,
     String? lastname,
@@ -158,7 +158,7 @@ class UserModel {
           wallet: wallet ?? _wallet,
           notifications: notification ?? _notifications);
 
-  int? get id => _id;
+  String? get id => _id;
 
   String? get uuid => _uuid;
 

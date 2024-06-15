@@ -54,7 +54,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
           chatDocId: event.chatId ?? state.chatModel?.docId ?? "",
           message: MessageModel(
               message: event.message,
-              senderId: LocalStorage.getUser().id ?? 0,
+              senderId: int.parse(LocalStorage.getUser().id ?? '0'),
               doc: ""));
     });
 
@@ -66,7 +66,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
             chatDocId: event.chatId ?? state.chatModel?.docId ?? "",
             message: MessageModel(
                 message: image.imageData?.title,
-                senderId: LocalStorage.getUser().id ?? 0,
+                senderId:  int.parse(LocalStorage.getUser().id ?? '0'),
                 type: "image",
                 doc: ""));
         emit(state.copyWith(isButtonLoading: false));
@@ -88,7 +88,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         chatDocId: event.chatId ?? state.chatModel?.docId ?? "",
         message: MessageModel(
             message: event.message,
-            senderId: LocalStorage.getUser().id ?? 0,
+            senderId:  int.parse(LocalStorage.getUser().id ?? '0'),
             doc: "",
             replyDocId: event.messageId),
       );

@@ -57,6 +57,7 @@ class _LoginCartState extends State<LoginCart> {
             child: SingleChildScrollView(
               child: Center(
                 child: Column(
+
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
@@ -185,36 +186,36 @@ class _LoginCartState extends State<LoginCart> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: AppConstants.socialSignIn
-                          .map((e) =>
-                          
-                           SocialButton(
+                          .map((e) => SocialButton(
                                 iconColor: widget.colors.white,
                                 bgColor: widget.colors.socialButtonColor,
                                 icon: e,
                                 onTap: () {
-                                  context.read<AuthBloc>().add(AuthEvent.socialSignIn(
-                                      context: context,
-                                      type: e,
-                                      onSuccess: () async{
-                                        await LocalStorage.setAddress(
-                                          AddressModel(
-                                            // cityId: int.tryParse(cityId),
-                                            countryId: 67,
-                                            regionId:
-                                            3, // regionId: int.tryParse(regionId),
-                                          ),
-                                        );
-                                        print("asasasas");
-                                        // if (LocalStorage.getAddress() == null) {
-                                        //   AppRoute.goSelectCountry(context: context);
-                                        //   return;
-                                        // }
-                                        // if(AppConstants.isDemo && LocalStorage.getUiType() == null){
-                                        //   AppRoute.goSelectUIType(context: context);
-                                        //   return;
-                                        // }
-                                        AppRoute.goMain(context);
-                                      }));
+                                  context
+                                      .read<AuthBloc>()
+                                      .add(AuthEvent.socialSignIn(
+                                          context: context,
+                                          type: e,
+                                          onSuccess: () async {
+                                            await LocalStorage.setAddress(
+                                              AddressModel(
+                                                // cityId: int.tryParse(cityId),
+                                                countryId: 67,
+                                                regionId:
+                                                    3, // regionId: int.tryParse(regionId),
+                                              ),
+                                            );
+                                            print("asasasas");
+                                            // if (LocalStorage.getAddress() == null) {
+                                            //   AppRoute.goSelectCountry(context: context);
+                                            //   return;
+                                            // }
+                                            // if(AppConstants.isDemo && LocalStorage.getUiType() == null){
+                                            //   AppRoute.goSelectUIType(context: context);
+                                            //   return;
+                                            // }
+                                            AppRoute.goMain(context);
+                                          }));
                                 },
                               ))
                           .toList(),

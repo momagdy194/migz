@@ -34,7 +34,7 @@ mixin _$AuthEvent {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -68,7 +68,7 @@ mixin _$AuthEvent {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -102,7 +102,7 @@ mixin _$AuthEvent {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -299,7 +299,7 @@ class _$LoginImpl implements Login {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -336,7 +336,7 @@ class _$LoginImpl implements Login {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -373,7 +373,7 @@ class _$LoginImpl implements Login {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -628,7 +628,7 @@ class _$SignUpImpl implements SignUp {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -666,7 +666,7 @@ class _$SignUpImpl implements SignUp {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -704,7 +704,7 @@ class _$SignUpImpl implements SignUp {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -908,7 +908,7 @@ class _$SocialSignInImpl implements SocialSignIn {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -945,7 +945,7 @@ class _$SocialSignInImpl implements SocialSignIn {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -982,7 +982,7 @@ class _$SocialSignInImpl implements SocialSignIn {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -1083,7 +1083,7 @@ abstract class _$$SetVerificationIdImplCopyWith<$Res> {
           $Res Function(_$SetVerificationIdImpl) then) =
       __$$SetVerificationIdImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String id});
+  $Res call({String id, bool contant});
 }
 
 /// @nodoc
@@ -1098,12 +1098,17 @@ class __$$SetVerificationIdImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? contant = null,
   }) {
     return _then(_$SetVerificationIdImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      contant: null == contant
+          ? _value.contant
+          : contant // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1111,14 +1116,16 @@ class __$$SetVerificationIdImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SetVerificationIdImpl implements SetVerificationId {
-  const _$SetVerificationIdImpl({required this.id});
+  const _$SetVerificationIdImpl({required this.id, required this.contant});
 
   @override
   final String id;
+  @override
+  final bool contant;
 
   @override
   String toString() {
-    return 'AuthEvent.setVerificationId(id: $id)';
+    return 'AuthEvent.setVerificationId(id: $id, contant: $contant)';
   }
 
   @override
@@ -1126,11 +1133,12 @@ class _$SetVerificationIdImpl implements SetVerificationId {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SetVerificationIdImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.contant, contant) || other.contant == contant));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, id, contant);
 
   @JsonKey(ignore: true)
   @override
@@ -1158,7 +1166,7 @@ class _$SetVerificationIdImpl implements SetVerificationId {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -1173,7 +1181,7 @@ class _$SetVerificationIdImpl implements SetVerificationId {
         forgotPasswordAfter,
     required TResult Function() loadingChange,
   }) {
-    return setVerificationId(id);
+    return setVerificationId(id, contant);
   }
 
   @override
@@ -1195,7 +1203,7 @@ class _$SetVerificationIdImpl implements SetVerificationId {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -1210,7 +1218,7 @@ class _$SetVerificationIdImpl implements SetVerificationId {
         forgotPasswordAfter,
     TResult? Function()? loadingChange,
   }) {
-    return setVerificationId?.call(id);
+    return setVerificationId?.call(id, contant);
   }
 
   @override
@@ -1232,7 +1240,7 @@ class _$SetVerificationIdImpl implements SetVerificationId {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -1249,7 +1257,7 @@ class _$SetVerificationIdImpl implements SetVerificationId {
     required TResult orElse(),
   }) {
     if (setVerificationId != null) {
-      return setVerificationId(id);
+      return setVerificationId(id, contant);
     }
     return orElse();
   }
@@ -1314,10 +1322,12 @@ class _$SetVerificationIdImpl implements SetVerificationId {
 }
 
 abstract class SetVerificationId implements AuthEvent {
-  const factory SetVerificationId({required final String id}) =
-      _$SetVerificationIdImpl;
+  const factory SetVerificationId(
+      {required final String id,
+      required final bool contant}) = _$SetVerificationIdImpl;
 
   String get id;
+  bool get contant;
   @JsonKey(ignore: true)
   _$$SetVerificationIdImplCopyWith<_$SetVerificationIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1377,7 +1387,7 @@ class _$ShowPasswordImpl implements ShowPassword {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -1414,7 +1424,7 @@ class _$ShowPasswordImpl implements ShowPassword {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -1451,7 +1461,7 @@ class _$ShowPasswordImpl implements ShowPassword {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -1591,7 +1601,7 @@ class _$ShowConfirmPasswordImpl implements ShowConfirmPassword {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -1628,7 +1638,7 @@ class _$ShowConfirmPasswordImpl implements ShowConfirmPassword {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -1665,7 +1675,7 @@ class _$ShowConfirmPasswordImpl implements ShowConfirmPassword {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -1830,7 +1840,7 @@ class _$SwitchScreenImpl implements SwitchScreen {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -1867,7 +1877,7 @@ class _$SwitchScreenImpl implements SwitchScreen {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -1904,7 +1914,7 @@ class _$SwitchScreenImpl implements SwitchScreen {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -2106,7 +2116,7 @@ class _$CheckVerifyImpl implements CheckVerify {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -2143,7 +2153,7 @@ class _$CheckVerifyImpl implements CheckVerify {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -2180,7 +2190,7 @@ class _$CheckVerifyImpl implements CheckVerify {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -2375,7 +2385,7 @@ class _$CheckPhoneImpl implements CheckPhone {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -2412,7 +2422,7 @@ class _$CheckPhoneImpl implements CheckPhone {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -2449,7 +2459,7 @@ class _$CheckPhoneImpl implements CheckPhone {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -2660,7 +2670,7 @@ class _$ForgotPasswordAfterImpl implements ForgotPasswordAfter {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -2697,7 +2707,7 @@ class _$ForgotPasswordAfterImpl implements ForgotPasswordAfter {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -2734,7 +2744,7 @@ class _$ForgotPasswordAfterImpl implements ForgotPasswordAfter {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,
@@ -2885,7 +2895,7 @@ class _$LoadingChangeImpl implements LoadingChange {
     required TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)
         socialSignIn,
-    required TResult Function(String id) setVerificationId,
+    required TResult Function(String id, bool contant) setVerificationId,
     required TResult Function() showPassword,
     required TResult Function() showConfirmPassword,
     required TResult Function(AuthType type) switchScreen,
@@ -2922,7 +2932,7 @@ class _$LoadingChangeImpl implements LoadingChange {
     TResult? Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult? Function(String id)? setVerificationId,
+    TResult? Function(String id, bool contant)? setVerificationId,
     TResult? Function()? showPassword,
     TResult? Function()? showConfirmPassword,
     TResult? Function(AuthType type)? switchScreen,
@@ -2959,7 +2969,7 @@ class _$LoadingChangeImpl implements LoadingChange {
     TResult Function(
             BuildContext context, IconData type, VoidCallback? onSuccess)?
         socialSignIn,
-    TResult Function(String id)? setVerificationId,
+    TResult Function(String id, bool contant)? setVerificationId,
     TResult Function()? showPassword,
     TResult Function()? showConfirmPassword,
     TResult Function(AuthType type)? switchScreen,

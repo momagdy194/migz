@@ -82,7 +82,7 @@ class _SendAgainButtonState extends State<SendAgainButton> {
 
                   context
                       .read<AuthBloc>()
-                      .add(AuthEvent.setVerificationId(id: id));
+                      .add(AuthEvent.setVerificationId(id: id,contant: false));
                   startTime();
                 },
                 onError: (e) {

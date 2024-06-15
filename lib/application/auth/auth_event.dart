@@ -23,8 +23,8 @@ abstract class AuthEvent with _$AuthEvent {
       required IconData type,
       VoidCallback? onSuccess}) = SocialSignIn;
 
-  const factory AuthEvent.setVerificationId({required String id}) =
-      SetVerificationId;
+  const factory AuthEvent.setVerificationId(
+      {required String id, required bool contant}) = SetVerificationId;
 
   const factory AuthEvent.showPassword() = ShowPassword;
 

@@ -256,7 +256,14 @@ abstract class AppHelper {
       {required BuildContext context,
       required String message,
       bool typeFixed = false}) {
-    if (message.toString().toLowerCase().contains('sqlstate')) {
+    if (message.toString().toLowerCase().contains('sqlstate')) {}else
+       if (message.toString().toLowerCase().contains('selected cart')) {}else
+    if (message.toString().toLowerCase().contains('users_email_unique')) {
+      CherryToast.error(
+        width: MediaQuery.of(context).size.width * 0.8,
+        title: Text('البريد الالكتروني موجود ب الفعل',
+            style: const TextStyle(color: Colors.black)),
+      ).show(context);
     } else {
       // FToast.toast(context,
       //     toast: Column(
@@ -285,6 +292,7 @@ abstract class AppHelper {
       ).show(context);
     }
   }
+
   static void showCustomModalBottomSheet({
     required BuildContext context,
     required Widget modal,

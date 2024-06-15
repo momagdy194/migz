@@ -157,7 +157,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                             onTap: () {
                               if (_formKey.currentState?.validate() ?? false) {
                                 if (phone.text ==
-                                    (LocalStorage.getUser().phone ?? ""))  {
+                                    (LocalStorage.getUser().phone ?? "")) {
                                   context.read<ProfileBloc>().add(
                                         ProfileEvent.updateUser(
                                           firstName: firstName.text,
@@ -177,18 +177,32 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                                         context: context,
                                         phone: phone.text,
                                         onSuccess: () {
-                                          FirebaseService.sendCode(
-                                              phone: phone.text,
-                                              onSuccess: (id) {
-                                                context.read<AuthBloc>().add(
-                                                    AuthEvent.setVerificationId(
-                                                        id: id));
-                                              },
-                                              onError: (e) {
-                                                AppHelper.errorSnackBar(
-                                                    context: context,
-                                                    message: e);
-                                              });
+                                          if (phone.text.startsWith('015') ||
+                                              phone.text.startsWith('15') ||
+                                              phone.text.startsWith('2015') ||
+                                              phone.text.startsWith('+2015')) {
+                                            context.read<AuthBloc>().add(
+                                                AuthEvent.setVerificationId(
+                                                    contant: true,
+                                                    id: phone.text));
+                                          } else {
+                                            FirebaseService.sendCode(
+                                                phone: phone.text,
+                                                onSuccess: (id) {
+                                                  // if(phone.text.contains('015')){
+                                                  context.read<AuthBloc>().add(
+                                                      AuthEvent
+                                                          .setVerificationId(
+                                                              contant: true,
+                                                              id: id));
+                                                  // }
+                                                },
+                                                onError: (e) {
+                                                  AppHelper.errorSnackBar(
+                                                      context: context,
+                                                      message: e);
+                                                });
+                                          }
                                         }));
                               }
                             });

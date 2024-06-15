@@ -67,6 +67,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
 
       user?.fold((l) async {
+        print(
+            "await l.user?.getIdToken() ${await l.user?.getIdToken()}await l.user?.getIdToken()");
         String? token = await l.user?.getIdToken();
         final res = await authRepository.loginWithSocial(
             email: l.user?.email ?? "",
@@ -83,7 +85,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           authRepository.updateFirebaseToken(fcm);
           userRepository.setLikeProductList(
               ids: LocalStorage.getLikedProductsList());
-
         }, (r) {
           add(const AuthEvent.loadingChange());
           AppHelper.errorSnackBar(
@@ -106,8 +107,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               phone: event.phone,
               refreshToken: refreshToken,
               password: event.password,
-              referral: event.referral
-          ));
+              referral: event.referral));
       res.fold((l) async {
         await LocalStorage.setToken(l.token ?? "");
         LocalStorage.setUser(l.user);
@@ -126,8 +126,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
 
     on<SetVerificationId>((event, emit) async {
-      emit(state.copyWith(
-          screenType: AuthType.confirm, verificationId: event.id));
+      if (event.contant == true) {
+        emit(state.copyWith(
+            screenType: AuthType.signUpFull, verificationId: event.id));
+      } else {
+        emit(state.copyWith(
+            screenType: AuthType.confirm, verificationId: event.id));
+      }
     });
 
     on<ShowPassword>((event, emit) {
@@ -152,7 +157,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         res.fold((l) {
           Navigator.pop(event.context, true);
         }, (r) {
-           emit(state.copyWith(isLoading: false, isError: true));
+          emit(state.copyWith(isLoading: false, isError: true));
         });
       }
       res.fold((l) async {

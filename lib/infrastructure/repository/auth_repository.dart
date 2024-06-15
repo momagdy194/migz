@@ -18,9 +18,8 @@ class AuthRepository implements AuthInterface {
     dynamic data;
     if (AppHelper.checkPhone(phone.replaceAll(" ", ""))) {
       data = {
-        'phone':
-        formatPhoneNumber2(phone.toString()),
-            // phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
+        'phone': formatPhoneNumber2(phone.toString()),
+        // phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
         'password': password
       };
     } else {
@@ -49,7 +48,7 @@ class AuthRepository implements AuthInterface {
   }) async {
     final data = {
       'email': email,
-      'name': displayName,
+      'name': displayName,  
       'id': id,
       if (img != null) 'img': img,
     };
@@ -84,6 +83,10 @@ class AuthRepository implements AuthInterface {
   Future<Either<VerifyData, dynamic>> sigUpWithPhone(
       {required UserModel user}) async {
     try {
+      if(user.id==null){
+        user=user.copyWith(id: user.phone?.replaceAll('+', '0').toString()??'0');
+      }
+      print("useruseruseruseruser ${user.toJson()}");
       final client = dioHttp.client(requireAuth: false);
       final res = await client.post(
         '/api/v1/auth/verify/phone',
@@ -130,10 +133,7 @@ class AuthRepository implements AuthInterface {
 
   @override
   Future<Either<bool, dynamic>> checkPhone({required String phone}) async {
-    final data = {
-      'phone':
-      formatPhoneNumber2(phone)
-};
+    final data = {'phone': formatPhoneNumber2(phone)};
 
     print("${data} datadata");
     try {
@@ -156,9 +156,8 @@ class AuthRepository implements AuthInterface {
       required String verificationId,
       required String password}) async {
     final data = {
-      'phone':
-      formatPhoneNumber2(phone.toString()),
-          // phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
+      'phone': formatPhoneNumber2(phone.toString()),
+      // phone.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", ""),
       "id": verificationId,
       "type": "firebase",
       "password": password
@@ -196,7 +195,8 @@ class AuthRepository implements AuthInterface {
 
 String formatPhoneNumber(String input) {
   // Remove all non-numeric characters from the input
-  String numericString = input.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
+  String numericString =
+      input.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
   // Add the country code and leading zero if missing
   print("numericStringnumericStringnumericString00 ${numericString}");
 
@@ -209,13 +209,15 @@ String formatPhoneNumber(String input) {
     print("objectobjectobject${numericString}");
     numericString = '20$numericString';
   }
-print("numericStringnumericStringnumericString ${numericString}");
+  print("numericStringnumericStringnumericString ${numericString}");
   // Insert '+' before the country code
   return '+$numericString';
 }
+
 String formatPhoneNumber2(String input) {
   // Remove all non-numeric characters from the input
-  String numericString = input.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
+  String numericString =
+      input.replaceAll("+", "").replaceAll(" ", "").replaceAll("-", "");
   // Add the country code and leading zero if missing
   print("numericStringnumericStringnumericString00 ${numericString}");
 
@@ -228,7 +230,7 @@ String formatPhoneNumber2(String input) {
     print("objectobjectobject${numericString}");
     numericString = '20$numericString';
   }
-print("numericStringnumericStringnumericString ${numericString}");
+  print("numericStringnumericStringnumericString ${numericString}");
   // Insert '+' before the country code
   return '$numericString';
 }

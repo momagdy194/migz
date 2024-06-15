@@ -4,7 +4,6 @@ import 'package:gshop/domain/model/response/login_response.dart';
 import 'package:gshop/domain/model/response/verify_phone_response.dart';
 
 abstract class AuthInterface {
-
   Future<Either<bool, dynamic>> checkPhone({
     required String phone,
   });
@@ -25,13 +24,11 @@ abstract class AuthInterface {
     required UserModel user,
   });
 
-
   Future<Either<LoginResponse, dynamic>> forgotPasswordAfter({
     required String phone,
     required String verificationId,
     required String password,
   });
-
 
   Future updateSetting();
 

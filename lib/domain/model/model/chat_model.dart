@@ -33,7 +33,7 @@ class ChatModel {
 
     return ChatModel(
         senderId: list.first,
-        ownerId: LocalStorage.getUser().id ?? 0,
+        ownerId:  int.parse(LocalStorage.getUser().id ?? '0'),
         docId: doc,
         lastMessage: chat?["lastMessage"],
         lastTime: chat?["time"],

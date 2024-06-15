@@ -226,6 +226,22 @@
           }
         },
         {
+          "client_id": "832207406191-e9l3la7461co8m70a9bata1pkuoltcm7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flonstore.apps",
+            "certificate_hash": "fa7a1416dcbeef40568fd683b3033ee392bcfb26"
+          }
+        },
+        {
+          "client_id": "832207406191-sjmhp20prp50icr9ufk1nsagmmsr4mnq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flonstore.apps",
+            "certificate_hash": "704e10828af65cef386095973ef61db7aecb8363"
+          }
+        },
+        {
           "client_id": "832207406191-tsq19edu1gr8q42ardf1bt4ohqi3lngp.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -267,6 +283,14 @@
           "android_info": {
             "package_name": "com.flonstores.app",
             "certificate_hash": "704e10828af65cef386095973ef61db7aecb8363"
+          }
+        },
+        {
+          "client_id": "832207406191-vipmdrl3751r9t4b5bs2sqnrotmvo6p7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flonstores.app",
+            "certificate_hash": "fa7a1416dcbeef40568fd683b3033ee392bcfb26"
           }
         },
         {

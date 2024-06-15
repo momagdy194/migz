@@ -166,35 +166,28 @@ class OrderItem extends StatelessWidget {
                                           .compareTo(Duration(hours: 2)) <
                                       0
                                   ? TimerCountdown(
-                                      format: CountDownTimerFormat
-                                          .hoursMinutesSeconds,
-                                      spacerWidth: 5,
-                                      hoursDescription:
-                                          AppHelper.getTrn(TrKeys.hoursPrefix),
-                                      minutesDescription: AppHelper.getTrn(
-                                          TrKeys.minutesPrefix),
-                                      secondsDescription: AppHelper.getTrn(
-                                          TrKeys.secondsPrefix),
-                                      timeTextStyle: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                      descriptionTextStyle: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                      colonsTextStyle: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                      endTime: DateTime.now().add(
-                                        DateTime.now()
-                                            .difference(order!.createdAt!),
-                                      ),
-                                      onEnd: () {
-                                        print("Timer finished");
-                                      },
-                                    )
+                            format: CountDownTimerFormat.hoursMinutesSeconds,
+                            spacerWidth: 5,
+                            hoursDescription: AppHelper.getTrn(TrKeys.hoursPrefix),
+                            minutesDescription: AppHelper.getTrn(TrKeys.minutesPrefix),
+                            secondsDescription: AppHelper.getTrn(TrKeys.secondsPrefix),
+                            timeTextStyle: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            descriptionTextStyle: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            colonsTextStyle: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            endTime: order!.createdAt!.add(Duration(hours: 2)),
+                            onEnd: () {
+                              print("Timer finished");
+                            },
+                          )
                                   : Container(
                                       alignment: Alignment.center,
                                       width: 60,

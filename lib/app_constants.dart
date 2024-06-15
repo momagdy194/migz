@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter_remix/flutter_remix.dart';
@@ -29,10 +30,16 @@ class AppConstants {
   static const bool isDemo = false;
 
   /// social sign-in
-  static const socialSignIn = [
+  static  List socialSignIn =
+  Platform.isIOS?
+  [
     FlutterRemix.google_fill,  
     // FlutterRemix.facebook_fill,
     FlutterRemix.apple_fill, 
+  ]:[
+    FlutterRemix.google_fill,
+    // FlutterRemix.facebook_fill,
+    // FlutterRemix.apple_fill,
   ];
 
   static const filterLayouts = [
