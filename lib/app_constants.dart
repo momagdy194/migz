@@ -30,17 +30,17 @@ class AppConstants {
   static const bool isDemo = false;
 
   /// social sign-in
-  static  List socialSignIn =
-  Platform.isIOS?
-  [
-    FlutterRemix.google_fill,  
-    // FlutterRemix.facebook_fill,
-    FlutterRemix.apple_fill, 
-  ]:[
-    FlutterRemix.google_fill,
-    // FlutterRemix.facebook_fill,
-    // FlutterRemix.apple_fill,
-  ];
+  static List socialSignIn = Platform.isIOS
+      ? [
+          FlutterRemix.google_fill,
+          // FlutterRemix.facebook_fill,
+          FlutterRemix.apple_fill,
+        ]
+      : [
+          FlutterRemix.google_fill,
+          // FlutterRemix.facebook_fill,
+          // FlutterRemix.apple_fill,
+        ];
 
   static const filterLayouts = [
     LayoutType.twoH,

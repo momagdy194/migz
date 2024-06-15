@@ -161,15 +161,15 @@ class DrawerPage extends StatelessWidget {
                     //     AppRoute.goBlog(context: context);
                     //   },
                     // ),
-                    if (LocalStorage.getToken().isNotEmpty)
-                      DrawerItem(
-                        colors: colors,
-                        icon: FlutterRemix.store_2_line,
-                        title: AppHelper.getTrn(TrKeys.becomeSeller),
-                        onTap: () {
-                          AppRoute.goBecomeSeller(context: context);
-                        },
-                      ),
+                    // if (LocalStorage.getToken().isNotEmpty)
+                    //   DrawerItem(
+                    //     colors: colors,
+                    //     icon: FlutterRemix.store_2_line,
+                    //     title: AppHelper.getTrn(TrKeys.becomeSeller),
+                    //     onTap: () {
+                    //       AppRoute.goBecomeSeller(context: context);
+                    //     },
+                    //   ),
                     // if (LocalStorage.getToken().isNotEmpty)
                     //   DrawerItem(
                     //     colors: colors,
