@@ -193,7 +193,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                                                   context.read<AuthBloc>().add(
                                                       AuthEvent
                                                           .setVerificationId(
-                                                              contant: true,
+                                                              contant: false,
                                                               id: id));
                                                   // }
                                                 },

@@ -126,6 +126,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
 
     on<SetVerificationId>((event, emit) async {
+      print("event.contant ${event.contant}");
       if (event.contant == true) {
         emit(state.copyWith(
             screenType: AuthType.signUpFull, verificationId: event.id));

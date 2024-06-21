@@ -97,7 +97,7 @@ class _SignUpCartState extends State<SignUpCart> {
                                                   // if(phone.text.contains('015')){
                                                   context.read<AuthBloc>().add(
                                                       AuthEvent.setVerificationId(
-                                                          contant: true, id: id));
+                                                           contant: false, id: id));
                                                   // }
                                                 },
                                                 onError: (e) {
