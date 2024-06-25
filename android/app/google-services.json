@@ -286,6 +286,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "832207406191-nr44end26mbvfo29i9tptp5mi2comak7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flonstores.app",
+            "certificate_hash": "ece311968ebf86760a8b23521fce7d9e87ce6737"
+          }
+        },
+        {
           "client_id": "832207406191-vipmdrl3751r9t4b5bs2sqnrotmvo6p7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

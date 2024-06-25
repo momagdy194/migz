@@ -5,7 +5,7 @@ import 'package:flutter_remix/flutter_remix.dart';
 import 'package:gshop/domain/service/tr_keys.dart';
 
 import 'presentation/style/style.dart';
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 class AppConstants {
   AppConstants._();
 
@@ -30,7 +30,10 @@ class AppConstants {
   static const bool isDemo = false;
 
   /// social sign-in
-  static List socialSignIn = Platform.isIOS
+  static List socialSignIn =
+      kIsWeb?[]:
+
+  Platform.isIOS
       ? [
           FlutterRemix.google_fill,
           // FlutterRemix.facebook_fill,

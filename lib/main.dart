@@ -6,6 +6,8 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:gshop/presentation/app_widget.dart';
 import 'domain/di/dependency_manager.dart';
 import 'infrastructure/local_storage/local_storage.dart';
+import './firebase_options.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class DownloadClass {
   static void callback(String id, int status, int progress) {}
@@ -13,12 +15,19 @@ class DownloadClass {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  await FlutterDownloader.initialize();
-  FlutterDownloader.registerCallback(DownloadClass.callback);
+
+ if(!kIsWeb){
+   await FlutterDownloader.initialize(debug: true);
+   FlutterDownloader.registerCallback(DownloadClass.callback);
+ }
+  // await FlutterDownloader.initialize();
+  // FlutterDownloader.registerCallback(DownloadClass.callback);
   await LocalStorage.init();
   setUpDependencies();
   runApp(const AppWidget());
