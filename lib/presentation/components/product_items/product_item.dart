@@ -184,41 +184,7 @@ class ProductItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(100.r)),
           child: !AppHelper.productInclude(
                   productId: product.id, stockId: product.stocks?.first.id)
-              ? AppHelper.getType() == 3
-                  ? ButtonEffectAnimation(
-                      onTap: () {
-                        AppHelper.addProduct(
-                            context: context,
-                            product: product,
-                            stock: product.stocks?.first);
-                        onLike?.call();
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: colors.primary,
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 8.r, horizontal: 10.r),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              FlutterRemix.add_line,
-                              color: colors.white,
-                              size: 24.r,
-                            ),
-                            8.horizontalSpace,
-                            Text(
-                              AppHelper.getTrn(TrKeys.add),
-                              style: CustomStyle.interNormal(
-                                  color: colors.white, size: 14),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  : Padding(
+              ?   Padding(
                       padding: EdgeInsets.all(2.r),
                       child: ButtonEffectAnimation(
                         child: IconButton(

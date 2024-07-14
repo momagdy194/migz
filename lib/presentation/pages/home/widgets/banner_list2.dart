@@ -37,7 +37,7 @@ class BannerList2 extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8.r),
           child: Column(
             children: [
-              state.banners.isNotEmpty || state.isLoadingBanner
+              state.banners2.isNotEmpty || state.isLoadingBanner
                   ? SizedBox(
                       height: AppHelper.getType() == 0
                           ? 180.r
@@ -50,7 +50,7 @@ class BannerList2 extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              if (state.banners.isNotEmpty)
+                              if (state.banners2.isNotEmpty)
                                 Expanded(
                                   child: SmartRefresher(
                                     enablePullDown: false,
@@ -60,7 +60,7 @@ class BannerList2 extends StatelessWidget {
                                     onLoading: onLoading,
                                     child: PageView.builder(
                                         controller: pageController,
-                                        itemCount: state.banners.length,
+                                        itemCount: state.banners2.length,
                                         scrollDirection: Axis.horizontal,
                                         itemBuilder: (context, index) {
                                           return _bannerItem(
@@ -71,7 +71,7 @@ class BannerList2 extends StatelessWidget {
                               if (state.isLoadingBanner) const BannerShimmer(),
                             ],
                           ),
-                          if (state.banners.length > 2 &&
+                          if (state.banners2.length > 2 &&
                               AppHelper.getType() == 2)
                             Positioned(
                               bottom: 32.r,
@@ -80,7 +80,7 @@ class BannerList2 extends StatelessWidget {
                                   height: 20,
                                   child: SmoothPageIndicator(
                                       controller: pageController,
-                                      count: state.banners.length,
+                                      count: state.banners2.length,
                                       effect: ScrollingDotsEffect(
                                           dotWidth: 32.r,
                                           strokeWidth: 32.r,
@@ -95,12 +95,12 @@ class BannerList2 extends StatelessWidget {
                     )
                   : const SizedBox.shrink(),
               6.verticalSpace,
-              if (state.banners.length > 2 && AppHelper.getType() == 0)
+              if (state.banners2.length > 2 && AppHelper.getType() == 0)
                 SizedBox(
                     height: 20,
                     child: SmoothPageIndicator(
                         controller: pageController,
-                        count: state.banners.length,
+                        count: state.banners2.length,
                         effect: ScrollingDotsEffect(
                             dotWidth: 6.r,
                             strokeWidth: 10.r,
@@ -131,7 +131,7 @@ class BannerList2 extends StatelessWidget {
               borderRadius:
                   BorderRadius.circular(AppHelper.getType() == 3 ? 0 : 24.r)),
           child: CustomNetworkImage(
-              url:  state.banners[index].img.toString()
+              url: state.banners2[index].img.toString()
               //
               // state.banners[index].galleries?.isNotEmpty ?? false
               //     ? (state.banners[index].galleries?.first.path ?? "")

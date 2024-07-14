@@ -214,7 +214,12 @@ class _HomeTwoPageState extends State<HomeTwoPage> {
                       controller: productRefresh));
                   context.read<BannerBloc>()
                     ..add(BannerEvent.fetchBanner(
-                      bannersType: 'products',
+                bannersType: "products",
+                        context: context,
+                        isRefresh: true,
+                        controller: productRefresh))
+                    ..add(BannerEvent.fetchBanner2(
+                bannersType: "shops",
                         context: context,
                         isRefresh: true,
                         controller: productRefresh))

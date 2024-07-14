@@ -13,6 +13,7 @@ import 'package:gshop/presentation/components/custom_scaffold.dart';
 import 'package:gshop/presentation/components/custom_tab_bar.dart';
 import 'package:gshop/presentation/components/custom_textformfield.dart';
 import 'package:gshop/presentation/pages/home/widgets/banner_list.dart';
+import 'package:gshop/presentation/pages/home/widgets/banner_list2.dart';
 import 'package:gshop/presentation/pages/home/widgets/category_list.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
@@ -205,35 +206,38 @@ class _CategoryPageState extends State<CategoryPage>
         context.read<CategoryBloc>().add(CategoryEvent.fetchCategory(
             context: context, controller: refreshController, isRefresh: true));
         context.read<BannerBloc>()
-          ..add(BannerEvent.fetchBanner(
+          ..add(BannerEvent.fetchBanner2(
           bannersType: 'shops',
               context: context,
               isRefresh: true,
               controller: refreshController));  },
-      child: Column(
-        children: [
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 100),
+        child: Column(
+          children: [
 
-          20.verticalSpace,
+            20.verticalSpace,
 
-          BannerList(
-            pageController: pageController,
-            colors: colors,
-            controller: bannerRefresh,
-            onLoading: () {
-              context.read<BannerBloc>().add(BannerEvent.fetchBanner(
-                  context: context,bannersType: 'shops', controller: bannerRefresh));
-            },
-          ),
-          20.verticalSpace,
-          CategoryList(
-            categoryRefresh: categoryRefresh,
-            colors: colors,
-            onlyCategory: true,
-          ),
-          8.verticalSpace,
-          const Divider(color: CustomStyle.textHint),
-          const SubCategoryList(),
-        ],
+            BannerList2(
+              pageController: pageController,
+              colors: colors,
+              controller: bannerRefresh,
+              onLoading: () {
+                context.read<BannerBloc>().add(BannerEvent.fetchBanner2(
+                    context: context,bannersType: 'shops', controller: bannerRefresh));
+              },
+            ),
+            20.verticalSpace,
+            CategoryList(
+              categoryRefresh: categoryRefresh,
+              colors: colors,
+              onlyCategory: true,
+            ),
+            8.verticalSpace,
+            const Divider(color: CustomStyle.textHint),
+            const SubCategoryList(),
+          ],
+        ),
       ),
     );
   }

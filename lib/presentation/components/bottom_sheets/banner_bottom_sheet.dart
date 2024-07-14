@@ -48,7 +48,7 @@ class BannerBottomSheet extends StatelessWidget {
                   radius: 24),
               16.verticalSpace,
               Text(
-                banner.translation?.description ?? "",
+                banner.translation?.title ?? "",
                 style: CustomStyle.interNormal(
                   color: colors.textBlack,
                   size: 18,

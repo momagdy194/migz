@@ -4,6 +4,7 @@ part of 'banner_bloc.dart';
 class BannerState with _$BannerState {
   const factory BannerState({
     @Default([]) List<BannerData> banners,
+    @Default([]) List<BannerData> banners2,
     @Default([]) List<BannerData> adsBanners,
     @Default([]) List<BannerData> looks,
     @Default([]) List<ProductData> products,

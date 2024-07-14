@@ -318,6 +318,7 @@ class TrKeys {
   static const String thereAreNoDeliveryPointsHere =
       'there.are.no.delivery.points.here';
   static const String sku = 'sku';
+  static const String arriveFaster = 'arrive.faster';
   static const String brand = 'brand';
   static const String unKnow = 'un.know';
   static const String inStock = 'in.stock';

@@ -13,6 +13,7 @@ import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
+import 'package:gshop/url_lunch_map.dart';
 
 class ProductTitle extends StatelessWidget {
   final ProductData? product;
@@ -92,6 +93,25 @@ class ProductTitle extends StatelessWidget {
             style: CustomStyle.interNormal(color: colors.textBlack, size: 14),
           ),
           24.verticalSpace,
+          UrlLauncherMap(
+            latitude: product?.shop?.latLng?.latitude.toString() ?? '',
+            longitude: product?.shop?.latLng?.longitude.toString() ?? '',
+            address: product?.shop?.location?.address ?? '',
+            child: Row(
+              children: [
+                Icon(
+                  Icons.location_on,
+                  color: Colors.deepOrange,
+                ),
+                Text(
+                  AppHelper.getTrn(TrKeys.arriveFaster),
+                  style: CustomStyle.interNormal(
+                      color: colors.textBlack, size: 16),
+                ),
+              ],
+            ),
+          ),
+          24.verticalSpace,
           InkWell(
             onTap: () async {
               if (product?.brand != null) {
@@ -114,54 +134,20 @@ class ProductTitle extends StatelessWidget {
               padding: EdgeInsets.all(16.r),
               child: Row(
                 children: [
-                  CustomNetworkImage(
-                      url: product?.brand?.img ?? "",
-                      height: 24,
-                      width: 24,
-                      radius: 0),
-                  10.horizontalSpace,
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width/2-80.r,
-                    child: Text(
-                      "${AppHelper.getTrn(TrKeys.brand)} - ${product?.brand?.title ?? AppHelper.getTrn(TrKeys.unKnow)}",
-                      style: CustomStyle.interNormal(
-                          textDecoration: TextDecoration.underline,
-                          color: colors.textBlack,
-                          size: 14),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: 6.r,
-                    height: 6.r,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: colors.icon),
-                  ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () async {
-                      if (product?.shop != null) {
-                        await AppRoute.goShopPage(
-                            context: context, shop: product?.shop);
-                        if (context.mounted) {
-                          context
-                              .read<ProductDetailBloc>()
-                              .add(const ProductDetailEvent.updateState());
-                        }
-                      }
-                    },
+                  Expanded(
+                    flex: 2,
                     child: Row(
                       children: [
-                        Icon(
-                          FlutterRemix.store_2_fill,
-                          color: colors.textBlack,
-                        ),
-                        10.horizontalSpace,
+                        CustomNetworkImage(
+                            url: product?.brand?.img ?? "",
+                            height: 24,
+                            width: 24,
+                            radius: 0),
+                        5.horizontalSpace,
                         SizedBox(
-                          width: MediaQuery.sizeOf(context).width/2-80.r,
+                          width: MediaQuery.sizeOf(context).width / 2 - 80.r,
                           child: Text(
-                            product?.shop?.translation?.title ??
-                                AppHelper.getTrn(TrKeys.unKnow),
+                            "${AppHelper.getTrn(TrKeys.brand)} -${product?.brand?.title ?? AppHelper.getTrn(TrKeys.unKnow)}",
                             style: CustomStyle.interNormal(
                                 textDecoration: TextDecoration.underline,
                                 color: colors.textBlack,
@@ -169,6 +155,52 @@ class ProductTitle extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: InkWell(
+                      onTap: () async {
+                        if (product?.shop != null) {
+                          await AppRoute.goShopPage(
+                              context: context, shop: product?.shop);
+                          if (context.mounted) {
+                            context
+                                .read<ProductDetailBloc>()
+                                .add(const ProductDetailEvent.updateState());
+                          }
+                        }
+                      },
+                      child: Row(
+                        children: [
+                          Icon(
+                            FlutterRemix.store_2_fill,
+                            color: colors.textBlack,
+                          ),
+                          5.horizontalSpace,
+                          SizedBox(
+                            width: MediaQuery.sizeOf(context).width / 2 - 80.r,
+                            child: Text(
+                              product?.shop?.translation?.title ??
+                                  AppHelper.getTrn(TrKeys.unKnow),
+                              style: CustomStyle.interNormal(
+                                  textDecoration: TextDecoration.underline,
+                                  color: colors.textBlack,
+                                  size: 14),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  UrlLauncherMap(
+                    latitude: product?.shop?.latLng?.latitude.toString() ?? '',
+                    longitude:
+                        product?.shop?.latLng?.longitude.toString() ?? '',
+                    address: product?.shop?.location?.address ?? '',
+                    child: Icon(
+                      Icons.location_on,
+                      color: Colors.deepOrange,
                     ),
                   ),
                 ],

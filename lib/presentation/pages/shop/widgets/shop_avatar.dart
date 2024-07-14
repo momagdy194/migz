@@ -11,6 +11,7 @@ import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/route/app_route.dart';
 import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
+import 'package:gshop/url_lunch_map.dart';
 
 class ShopAvatar extends StatelessWidget {
   final CustomColorSet colors;
@@ -74,6 +75,20 @@ class ShopAvatar extends StatelessWidget {
                                         color: colors.white, size: 12),
                                   )
                                 ],
+                              ),
+                            ),
+                          ),
+                          const Spacer(),
+                          UrlLauncherMap(
+                            latitude: state.shop?.latLng?.latitude.toString() ?? '',
+                            longitude:
+                            state.shop?.latLng?.longitude.toString() ?? '',
+                            address: state.shop?.location?.address ?? '',
+                            child: CircleAvatar(
+                              backgroundColor: colors.white,
+                              child: Icon(
+                                Icons.location_on,
+                                color: Colors.deepOrange,
                               ),
                             ),
                           ),

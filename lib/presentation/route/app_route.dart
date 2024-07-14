@@ -155,6 +155,10 @@ abstract class AppRoute {
                 BlocProvider<BannerBloc>(
                   create: (context) => BannerBloc(bannersRepository)
                     ..add(BannerEvent.fetchBanner(
+                bannersType: "products",
+                        context: context, isRefresh: true))
+                    ..add(BannerEvent.fetchBanner2(
+                bannersType: "shops",
                         context: context, isRefresh: true))
                     ..add(BannerEvent.fetchAdsBanner(
                         context: context, isRefresh: true))

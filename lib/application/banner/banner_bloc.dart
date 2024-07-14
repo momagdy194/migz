@@ -56,6 +56,36 @@ class BannerBloc extends Bloc<BannerEvent, BannerState> {
         AppHelper.errorSnackBar(context: event.context, message: r);
       });
     });
+    on<FetchBanner2>((event, emit) async {
+      if (event.isRefresh ?? false) {
+        event.controller?.resetNoData();
+        page = 0;
+        emit(state.copyWith(banners2: [], isLoadingBanner: true));
+      }
+      final res = await _bannersRepo.getBannersPaginate(page: ++page,bannersType: event.bannersType);
+      res.fold((l) {
+        List<BannerData> list = List.from(state.banners2);
+        list.addAll(l.data ?? []);
+        emit(state.copyWith(isLoadingBanner: false, banners2: list));
+        if (event.isRefresh ?? false) {
+          event.controller?.refreshCompleted();
+          return;
+        } else if (l.data?.isEmpty ?? true) {
+          event.controller?.loadNoData();
+          return;
+        }
+        event.controller?.loadComplete();
+        return;
+      }, (r) {
+        emit(state.copyWith(isLoadingBanner: false));
+        if (event.isRefresh ?? false) {
+          event.controller?.refreshFailed();
+        }
+        event.controller?.loadFailed();
+
+        AppHelper.errorSnackBar(context: event.context, message: r);
+      });
+    });
 
     on<FetchBannersByShopId>((event, emit) async {
       print('MyFetchBannersByShopId');

@@ -137,6 +137,10 @@ class _LanguagePageState extends State<LanguagePage> {
                                       ..add(BannerEvent.fetchAdsBanner(
                                           context: context, isRefresh: true))
                                       ..add(BannerEvent.fetchBanner(
+                bannersType: "products",
+                                          context: context, isRefresh: true))
+                                      ..add(BannerEvent.fetchBanner2(
+                bannersType: "shops",
                                           context: context, isRefresh: true))
                                       ..add(BannerEvent.fetchLooks(
                                           context: context, isRefresh: true));

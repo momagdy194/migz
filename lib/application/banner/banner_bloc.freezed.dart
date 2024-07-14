@@ -22,6 +22,9 @@ mixin _$BannerEvent {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -43,6 +46,9 @@ mixin _$BannerEvent {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -65,6 +71,9 @@ mixin _$BannerEvent {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -86,6 +95,7 @@ mixin _$BannerEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -98,6 +108,7 @@ mixin _$BannerEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -110,6 +121,7 @@ mixin _$BannerEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -244,6 +256,9 @@ class _$FetchBannerImpl implements FetchBanner {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -268,6 +283,9 @@ class _$FetchBannerImpl implements FetchBanner {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -293,6 +311,9 @@ class _$FetchBannerImpl implements FetchBanner {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -320,6 +341,7 @@ class _$FetchBannerImpl implements FetchBanner {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -335,6 +357,7 @@ class _$FetchBannerImpl implements FetchBanner {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -350,6 +373,7 @@ class _$FetchBannerImpl implements FetchBanner {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -379,6 +403,260 @@ abstract class FetchBanner implements BannerEvent {
   RefreshController? get controller;
   @JsonKey(ignore: true)
   _$$FetchBannerImplCopyWith<_$FetchBannerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FetchBanner2ImplCopyWith<$Res> {
+  factory _$$FetchBanner2ImplCopyWith(
+          _$FetchBanner2Impl value, $Res Function(_$FetchBanner2Impl) then) =
+      __$$FetchBanner2ImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {BuildContext context,
+      bool? isRefresh,
+      String? bannersType,
+      RefreshController? controller});
+}
+
+/// @nodoc
+class __$$FetchBanner2ImplCopyWithImpl<$Res>
+    extends _$BannerEventCopyWithImpl<$Res, _$FetchBanner2Impl>
+    implements _$$FetchBanner2ImplCopyWith<$Res> {
+  __$$FetchBanner2ImplCopyWithImpl(
+      _$FetchBanner2Impl _value, $Res Function(_$FetchBanner2Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+    Object? isRefresh = freezed,
+    Object? bannersType = freezed,
+    Object? controller = freezed,
+  }) {
+    return _then(_$FetchBanner2Impl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+      isRefresh: freezed == isRefresh
+          ? _value.isRefresh
+          : isRefresh // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      bannersType: freezed == bannersType
+          ? _value.bannersType
+          : bannersType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      controller: freezed == controller
+          ? _value.controller
+          : controller // ignore: cast_nullable_to_non_nullable
+              as RefreshController?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FetchBanner2Impl implements FetchBanner2 {
+  const _$FetchBanner2Impl(
+      {required this.context,
+      this.isRefresh,
+      this.bannersType,
+      this.controller});
+
+  @override
+  final BuildContext context;
+  @override
+  final bool? isRefresh;
+  @override
+  final String? bannersType;
+  @override
+  final RefreshController? controller;
+
+  @override
+  String toString() {
+    return 'BannerEvent.fetchBanner2(context: $context, isRefresh: $isRefresh, bannersType: $bannersType, controller: $controller)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FetchBanner2Impl &&
+            (identical(other.context, context) || other.context == context) &&
+            (identical(other.isRefresh, isRefresh) ||
+                other.isRefresh == isRefresh) &&
+            (identical(other.bannersType, bannersType) ||
+                other.bannersType == bannersType) &&
+            (identical(other.controller, controller) ||
+                other.controller == controller));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, context, isRefresh, bannersType, controller);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchBanner2ImplCopyWith<_$FetchBanner2Impl> get copyWith =>
+      __$$FetchBanner2ImplCopyWithImpl<_$FetchBanner2Impl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner,
+    required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
+            String? shopId, RefreshController? controller)
+        fetchBannersByShopId,
+    required TResult Function(BuildContext context, bool? isRefresh,
+            RefreshController? controller)
+        fetchAdsBanner,
+    required TResult Function(BuildContext context, bool? isRefresh,
+            int? shopId, RefreshController? controller)
+        fetchLooks,
+    required TResult Function(BuildContext context, int id) fetchProduct,
+    required TResult Function() updateProduct,
+    required TResult Function(BuildContext context, int id) fetchAdsProduct,
+    required TResult Function(BuildContext context, bool? isRefresh,
+            int? shopId, RefreshController? controller)
+        fetchAdsListProduct,
+  }) {
+    return fetchBanner2(context, isRefresh, bannersType, controller);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
+    TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
+            RefreshController? controller)?
+        fetchBannersByShopId,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            RefreshController? controller)?
+        fetchAdsBanner,
+    TResult? Function(BuildContext context, bool? isRefresh, int? shopId,
+            RefreshController? controller)?
+        fetchLooks,
+    TResult? Function(BuildContext context, int id)? fetchProduct,
+    TResult? Function()? updateProduct,
+    TResult? Function(BuildContext context, int id)? fetchAdsProduct,
+    TResult? Function(BuildContext context, bool? isRefresh, int? shopId,
+            RefreshController? controller)?
+        fetchAdsListProduct,
+  }) {
+    return fetchBanner2?.call(context, isRefresh, bannersType, controller);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
+    TResult Function(BuildContext context, bool? isRefresh, String? shopId,
+            RefreshController? controller)?
+        fetchBannersByShopId,
+    TResult Function(BuildContext context, bool? isRefresh,
+            RefreshController? controller)?
+        fetchAdsBanner,
+    TResult Function(BuildContext context, bool? isRefresh, int? shopId,
+            RefreshController? controller)?
+        fetchLooks,
+    TResult Function(BuildContext context, int id)? fetchProduct,
+    TResult Function()? updateProduct,
+    TResult Function(BuildContext context, int id)? fetchAdsProduct,
+    TResult Function(BuildContext context, bool? isRefresh, int? shopId,
+            RefreshController? controller)?
+        fetchAdsListProduct,
+    required TResult orElse(),
+  }) {
+    if (fetchBanner2 != null) {
+      return fetchBanner2(context, isRefresh, bannersType, controller);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
+    required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
+    required TResult Function(FetchAdsBanner value) fetchAdsBanner,
+    required TResult Function(FetchLooks value) fetchLooks,
+    required TResult Function(FetchProduct value) fetchProduct,
+    required TResult Function(UpdateProduct value) updateProduct,
+    required TResult Function(FetchAdsProduct value) fetchAdsProduct,
+    required TResult Function(FetchAdsListProduct value) fetchAdsListProduct,
+  }) {
+    return fetchBanner2(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
+    TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
+    TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
+    TResult? Function(FetchLooks value)? fetchLooks,
+    TResult? Function(FetchProduct value)? fetchProduct,
+    TResult? Function(UpdateProduct value)? updateProduct,
+    TResult? Function(FetchAdsProduct value)? fetchAdsProduct,
+    TResult? Function(FetchAdsListProduct value)? fetchAdsListProduct,
+  }) {
+    return fetchBanner2?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
+    TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
+    TResult Function(FetchAdsBanner value)? fetchAdsBanner,
+    TResult Function(FetchLooks value)? fetchLooks,
+    TResult Function(FetchProduct value)? fetchProduct,
+    TResult Function(UpdateProduct value)? updateProduct,
+    TResult Function(FetchAdsProduct value)? fetchAdsProduct,
+    TResult Function(FetchAdsListProduct value)? fetchAdsListProduct,
+    required TResult orElse(),
+  }) {
+    if (fetchBanner2 != null) {
+      return fetchBanner2(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchBanner2 implements BannerEvent {
+  const factory FetchBanner2(
+      {required final BuildContext context,
+      final bool? isRefresh,
+      final String? bannersType,
+      final RefreshController? controller}) = _$FetchBanner2Impl;
+
+  BuildContext get context;
+  bool? get isRefresh;
+  String? get bannersType;
+  RefreshController? get controller;
+  @JsonKey(ignore: true)
+  _$$FetchBanner2ImplCopyWith<_$FetchBanner2Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -484,6 +762,9 @@ class _$FetchBannersByShopIdImpl implements FetchBannersByShopId {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -508,6 +789,9 @@ class _$FetchBannersByShopIdImpl implements FetchBannersByShopId {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -533,6 +817,9 @@ class _$FetchBannersByShopIdImpl implements FetchBannersByShopId {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -560,6 +847,7 @@ class _$FetchBannersByShopIdImpl implements FetchBannersByShopId {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -575,6 +863,7 @@ class _$FetchBannersByShopIdImpl implements FetchBannersByShopId {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -590,6 +879,7 @@ class _$FetchBannersByShopIdImpl implements FetchBannersByShopId {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -711,6 +1001,9 @@ class _$FetchAdsBannerImpl implements FetchAdsBanner {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -735,6 +1028,9 @@ class _$FetchAdsBannerImpl implements FetchAdsBanner {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -760,6 +1056,9 @@ class _$FetchAdsBannerImpl implements FetchAdsBanner {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -787,6 +1086,7 @@ class _$FetchAdsBannerImpl implements FetchAdsBanner {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -802,6 +1102,7 @@ class _$FetchAdsBannerImpl implements FetchAdsBanner {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -817,6 +1118,7 @@ class _$FetchAdsBannerImpl implements FetchAdsBanner {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -947,6 +1249,9 @@ class _$FetchLooksImpl implements FetchLooks {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -971,6 +1276,9 @@ class _$FetchLooksImpl implements FetchLooks {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -996,6 +1304,9 @@ class _$FetchLooksImpl implements FetchLooks {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1023,6 +1334,7 @@ class _$FetchLooksImpl implements FetchLooks {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -1038,6 +1350,7 @@ class _$FetchLooksImpl implements FetchLooks {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -1053,6 +1366,7 @@ class _$FetchLooksImpl implements FetchLooks {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -1161,6 +1475,9 @@ class _$FetchProductImpl implements FetchProduct {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -1185,6 +1502,9 @@ class _$FetchProductImpl implements FetchProduct {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1210,6 +1530,9 @@ class _$FetchProductImpl implements FetchProduct {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1237,6 +1560,7 @@ class _$FetchProductImpl implements FetchProduct {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -1252,6 +1576,7 @@ class _$FetchProductImpl implements FetchProduct {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -1267,6 +1592,7 @@ class _$FetchProductImpl implements FetchProduct {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -1337,6 +1663,9 @@ class _$UpdateProductImpl implements UpdateProduct {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -1361,6 +1690,9 @@ class _$UpdateProductImpl implements UpdateProduct {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1386,6 +1718,9 @@ class _$UpdateProductImpl implements UpdateProduct {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1413,6 +1748,7 @@ class _$UpdateProductImpl implements UpdateProduct {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -1428,6 +1764,7 @@ class _$UpdateProductImpl implements UpdateProduct {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -1443,6 +1780,7 @@ class _$UpdateProductImpl implements UpdateProduct {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -1540,6 +1878,9 @@ class _$FetchAdsProductImpl implements FetchAdsProduct {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -1564,6 +1905,9 @@ class _$FetchAdsProductImpl implements FetchAdsProduct {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1589,6 +1933,9 @@ class _$FetchAdsProductImpl implements FetchAdsProduct {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1616,6 +1963,7 @@ class _$FetchAdsProductImpl implements FetchAdsProduct {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -1631,6 +1979,7 @@ class _$FetchAdsProductImpl implements FetchAdsProduct {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -1646,6 +1995,7 @@ class _$FetchAdsProductImpl implements FetchAdsProduct {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -1775,6 +2125,9 @@ class _$FetchAdsListProductImpl implements FetchAdsListProduct {
             String? bannersType, RefreshController? controller)
         fetchBanner,
     required TResult Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)
+        fetchBanner2,
+    required TResult Function(BuildContext context, bool? isRefresh,
             String? shopId, RefreshController? controller)
         fetchBannersByShopId,
     required TResult Function(BuildContext context, bool? isRefresh,
@@ -1799,6 +2152,9 @@ class _$FetchAdsListProductImpl implements FetchAdsListProduct {
     TResult? Function(BuildContext context, bool? isRefresh,
             String? bannersType, RefreshController? controller)?
         fetchBanner,
+    TResult? Function(BuildContext context, bool? isRefresh,
+            String? bannersType, RefreshController? controller)?
+        fetchBanner2,
     TResult? Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1824,6 +2180,9 @@ class _$FetchAdsListProductImpl implements FetchAdsListProduct {
     TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
             RefreshController? controller)?
         fetchBanner,
+    TResult Function(BuildContext context, bool? isRefresh, String? bannersType,
+            RefreshController? controller)?
+        fetchBanner2,
     TResult Function(BuildContext context, bool? isRefresh, String? shopId,
             RefreshController? controller)?
         fetchBannersByShopId,
@@ -1851,6 +2210,7 @@ class _$FetchAdsListProductImpl implements FetchAdsListProduct {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchBanner value) fetchBanner,
+    required TResult Function(FetchBanner2 value) fetchBanner2,
     required TResult Function(FetchBannersByShopId value) fetchBannersByShopId,
     required TResult Function(FetchAdsBanner value) fetchAdsBanner,
     required TResult Function(FetchLooks value) fetchLooks,
@@ -1866,6 +2226,7 @@ class _$FetchAdsListProductImpl implements FetchAdsListProduct {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchBanner value)? fetchBanner,
+    TResult? Function(FetchBanner2 value)? fetchBanner2,
     TResult? Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult? Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult? Function(FetchLooks value)? fetchLooks,
@@ -1881,6 +2242,7 @@ class _$FetchAdsListProductImpl implements FetchAdsListProduct {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchBanner value)? fetchBanner,
+    TResult Function(FetchBanner2 value)? fetchBanner2,
     TResult Function(FetchBannersByShopId value)? fetchBannersByShopId,
     TResult Function(FetchAdsBanner value)? fetchAdsBanner,
     TResult Function(FetchLooks value)? fetchLooks,
@@ -1916,6 +2278,7 @@ abstract class FetchAdsListProduct implements BannerEvent {
 /// @nodoc
 mixin _$BannerState {
   List<BannerData> get banners => throw _privateConstructorUsedError;
+  List<BannerData> get banners2 => throw _privateConstructorUsedError;
   List<BannerData> get adsBanners => throw _privateConstructorUsedError;
   List<BannerData> get looks => throw _privateConstructorUsedError;
   List<ProductData> get products => throw _privateConstructorUsedError;
@@ -1937,6 +2300,7 @@ abstract class $BannerStateCopyWith<$Res> {
   @useResult
   $Res call(
       {List<BannerData> banners,
+      List<BannerData> banners2,
       List<BannerData> adsBanners,
       List<BannerData> looks,
       List<ProductData> products,
@@ -1960,6 +2324,7 @@ class _$BannerStateCopyWithImpl<$Res, $Val extends BannerState>
   @override
   $Res call({
     Object? banners = null,
+    Object? banners2 = null,
     Object? adsBanners = null,
     Object? looks = null,
     Object? products = null,
@@ -1972,6 +2337,10 @@ class _$BannerStateCopyWithImpl<$Res, $Val extends BannerState>
       banners: null == banners
           ? _value.banners
           : banners // ignore: cast_nullable_to_non_nullable
+              as List<BannerData>,
+      banners2: null == banners2
+          ? _value.banners2
+          : banners2 // ignore: cast_nullable_to_non_nullable
               as List<BannerData>,
       adsBanners: null == adsBanners
           ? _value.adsBanners
@@ -2015,6 +2384,7 @@ abstract class _$$BannerStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {List<BannerData> banners,
+      List<BannerData> banners2,
       List<BannerData> adsBanners,
       List<BannerData> looks,
       List<ProductData> products,
@@ -2036,6 +2406,7 @@ class __$$BannerStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? banners = null,
+    Object? banners2 = null,
     Object? adsBanners = null,
     Object? looks = null,
     Object? products = null,
@@ -2048,6 +2419,10 @@ class __$$BannerStateImplCopyWithImpl<$Res>
       banners: null == banners
           ? _value._banners
           : banners // ignore: cast_nullable_to_non_nullable
+              as List<BannerData>,
+      banners2: null == banners2
+          ? _value._banners2
+          : banners2 // ignore: cast_nullable_to_non_nullable
               as List<BannerData>,
       adsBanners: null == adsBanners
           ? _value._adsBanners
@@ -2086,6 +2461,7 @@ class __$$BannerStateImplCopyWithImpl<$Res>
 class _$BannerStateImpl implements _BannerState {
   const _$BannerStateImpl(
       {final List<BannerData> banners = const [],
+      final List<BannerData> banners2 = const [],
       final List<BannerData> adsBanners = const [],
       final List<BannerData> looks = const [],
       final List<ProductData> products = const [],
@@ -2094,6 +2470,7 @@ class _$BannerStateImpl implements _BannerState {
       this.isLoadingBanner = true,
       this.isLoadingProduct = true})
       : _banners = banners,
+        _banners2 = banners2,
         _adsBanners = adsBanners,
         _looks = looks,
         _products = products,
@@ -2107,6 +2484,15 @@ class _$BannerStateImpl implements _BannerState {
     if (_banners is EqualUnmodifiableListView) return _banners;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_banners);
+  }
+
+  final List<BannerData> _banners2;
+  @override
+  @JsonKey()
+  List<BannerData> get banners2 {
+    if (_banners2 is EqualUnmodifiableListView) return _banners2;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_banners2);
   }
 
   final List<BannerData> _adsBanners;
@@ -2163,7 +2549,7 @@ class _$BannerStateImpl implements _BannerState {
 
   @override
   String toString() {
-    return 'BannerState(banners: $banners, adsBanners: $adsBanners, looks: $looks, products: $products, shopAds: $shopAds, shopListAds: $shopListAds, isLoadingBanner: $isLoadingBanner, isLoadingProduct: $isLoadingProduct)';
+    return 'BannerState(banners: $banners, banners2: $banners2, adsBanners: $adsBanners, looks: $looks, products: $products, shopAds: $shopAds, shopListAds: $shopListAds, isLoadingBanner: $isLoadingBanner, isLoadingProduct: $isLoadingProduct)';
   }
 
   @override
@@ -2172,6 +2558,7 @@ class _$BannerStateImpl implements _BannerState {
         (other.runtimeType == runtimeType &&
             other is _$BannerStateImpl &&
             const DeepCollectionEquality().equals(other._banners, _banners) &&
+            const DeepCollectionEquality().equals(other._banners2, _banners2) &&
             const DeepCollectionEquality()
                 .equals(other._adsBanners, _adsBanners) &&
             const DeepCollectionEquality().equals(other._looks, _looks) &&
@@ -2189,6 +2576,7 @@ class _$BannerStateImpl implements _BannerState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_banners),
+      const DeepCollectionEquality().hash(_banners2),
       const DeepCollectionEquality().hash(_adsBanners),
       const DeepCollectionEquality().hash(_looks),
       const DeepCollectionEquality().hash(_products),
@@ -2207,6 +2595,7 @@ class _$BannerStateImpl implements _BannerState {
 abstract class _BannerState implements BannerState {
   const factory _BannerState(
       {final List<BannerData> banners,
+      final List<BannerData> banners2,
       final List<BannerData> adsBanners,
       final List<BannerData> looks,
       final List<ProductData> products,
@@ -2217,6 +2606,8 @@ abstract class _BannerState implements BannerState {
 
   @override
   List<BannerData> get banners;
+  @override
+  List<BannerData> get banners2;
   @override
   List<BannerData> get adsBanners;
   @override

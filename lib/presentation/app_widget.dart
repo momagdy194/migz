@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,7 +41,7 @@ Future<int> getOtherTranslation(int arg) async {
   res.fold((l) {
     l.data?.forEach((e) async {
       final translations =
-      await settingsRepository.getMobileTranslations(lang: e.locale);
+          await settingsRepository.getMobileTranslations(lang: e.locale);
       translations.fold((d) {
         LocalStorage.setOtherTranslations(
             translations: d.data, key: e.id.toString());
@@ -60,8 +59,7 @@ class AppWidget extends StatefulWidget {
 }
 
 class _AppWidgetState extends State<AppWidget> {
-
-  Future isolate()  {
+  Future isolate() {
     return FlutterIsolate.spawn(getOtherTranslation, 0);
   }
 
@@ -96,8 +94,6 @@ class _AppWidgetState extends State<AppWidget> {
       settingsRepository.getCurrencies();
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -191,7 +187,10 @@ class _AppWidgetState extends State<AppWidget> {
         ),
         BlocProvider<BannerBloc>(
           create: (context) => BannerBloc(bannersRepository)
-            ..add(BannerEvent.fetchBanner(context: context, isRefresh: true))
+            ..add(BannerEvent.fetchBanner(
+                bannersType: "products", context: context, isRefresh: true))
+            ..add(BannerEvent.fetchBanner2(
+                bannersType: "shops", context: context, isRefresh: true))
             ..add(BannerEvent.fetchAdsBanner(context: context, isRefresh: true))
             ..add(BannerEvent.fetchLooks(context: context, isRefresh: true))
             ..add(BannerEvent.fetchAdsListProduct(
@@ -199,11 +198,11 @@ class _AppWidgetState extends State<AppWidget> {
         ),
         LocalStorage.getToken().isNotEmpty
             ? BlocProvider<CartBloc>(
-          create: (context) => CartBloc(cartRepository)
-            ..add(CartEvent.getCart(context: context)),
-        )
+                create: (context) => CartBloc(cartRepository)
+                  ..add(CartEvent.getCart(context: context)),
+              )
             : BlocProvider<CartBloc>(
-            create: (context) => CartBloc(cartRepository)),
+                create: (context) => CartBloc(cartRepository)),
         if (LocalStorage.getToken().isNotEmpty)
           BlocProvider<NotificationBloc>(
               create: (context) => NotificationBloc(userRepository)
@@ -220,6 +219,6 @@ class _AppWidgetState extends State<AppWidget> {
 class MyBehavior extends ScrollBehavior {
   @override
   Widget buildOverscrollIndicator(
-      BuildContext context, Widget child, ScrollableDetails details) =>
+          BuildContext context, Widget child, ScrollableDetails details) =>
       child;
 }

@@ -142,6 +142,11 @@ class _CurrencyPageState extends State<CurrencyPage> {
                                               context: context,
                                               isRefresh: true))
                                           ..add(BannerEvent.fetchBanner(
+                bannersType: "products",
+                                              context: context,
+                                              isRefresh: true))
+                                          ..add(BannerEvent.fetchBanner2(
+                bannersType: "shops",
                                               context: context,
                                               isRefresh: true))
                                           ..add(BannerEvent.fetchLooks(
