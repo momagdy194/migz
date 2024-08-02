@@ -49,7 +49,7 @@ class CategoryList extends StatelessWidget {
                               child: onlyCategory
                                   ? ListView.builder(
                                       key: const PageStorageKey<String>("list"),
-                                      shrinkWrap: true,
+                                      // shrinkWrap: true,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 16.r),
                                       scrollDirection: Axis.horizontal,

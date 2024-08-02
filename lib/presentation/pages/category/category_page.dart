@@ -1,3 +1,4 @@
+import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
@@ -98,57 +99,54 @@ class _CategoryPageState extends State<CategoryPage>
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      body: (colors) => SafeArea(
-        left: false,
-        right: false,
-        bottom: false,
-        child: Padding(
-          padding: EdgeInsets.only(top: 8.r),
-          child: Column(
-            children: [
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+      body: (colors) =>
+          SafeArea(
+            left: false,
+            right: false,
+            bottom: false,
+            child: Padding(
+              padding: EdgeInsets.only(top: 8.r),
+              child: Column(
                 children: [
-                  const Icon(FlutterRemix.layout_4_fill),
-                  10.horizontalSpace,
-                  Text(AppHelper.getTrn(TrKeys.categories)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Icon(FlutterRemix.layout_4_fill),
+                      10.horizontalSpace,
+                      Text(AppHelper.getTrn(TrKeys.categories)),
+                    ],
+                  ),
+
+                  // Padding(
+                  //   padding: EdgeInsets.symmetric(horizontal: 16.r),
+                  //   child: CustomTabBar(
+                  //     tabController: tabController,
+                  //     tabs: listTabs,
+                  //   ),
+                  // ),
+                  20.verticalSpace,
+                  _search(colors),
+
+                  Expanded(
+                    child: _categories(colors),
+
+                    // TabBarView(
+                    //   controller: tabController,
+                    //   children: [
+                    //     _categories(colors),
+                    //     // ShopsList(
+                    //     //   colors: colors,
+                    //     //   shopsRefresh: shopsRefresh,
+                    //     //   storyRefresh: storyRefresh,
+                    //     // ),
+                    //   ],
+                    // ),
+                  )
                 ],
               ),
-
-
-              // Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: 16.r),
-              //   child: CustomTabBar(
-              //     tabController: tabController,
-              //     tabs: listTabs,
-              //   ),
-              // ),
-              20.verticalSpace,
-              _search(colors),
-
-
-              Expanded(
-                child:
-                _categories(colors),
-
-                // TabBarView(
-                //   controller: tabController,
-                //   children: [
-                //     _categories(colors),
-                //     // ShopsList(
-                //     //   colors: colors,
-                //     //   shopsRefresh: shopsRefresh,
-                //     //   storyRefresh: storyRefresh,
-                //     // ),
-                //   ],
-                // ),
-              )
-            ],
+            ),
           ),
-        ),
-      ),
     );
   }
 
@@ -176,22 +174,25 @@ class _CategoryPageState extends State<CategoryPage>
             ),
           ),
           8.horizontalSpace,
-          FilterButton(colors: colors, onTap: () async{
-            await AppRoute.goProductList(
-              context: context,
-              // list: state.mostSaleProduct,
-              showFilter: true,
+          FilterButton(
               colors: colors,
-              title: "",
-              // total: state.mostSaleProductCount,
-              isNewProduct: false,
-              isMostSaleProduct: true,
-            );
-            if (context.mounted) {
-              context.read<ProductBloc>().add(
-                  const ProductEvent.updateState());
-            }
-          })
+              onTap: () async {
+                await AppRoute.goProductList(
+                  context: context,
+                  // list: state.mostSaleProduct,
+                  showFilter: true,
+                  colors: colors,
+                  title: "",
+                  // total: state.mostSaleProductCount,
+                  isNewProduct: false,
+                  isMostSaleProduct: true,
+                );
+                if (context.mounted) {
+                  context
+                      .read<ProductBloc>()
+                      .add(const ProductEvent.updateState());
+                }
+              })
         ],
       ),
     );
@@ -207,37 +208,50 @@ class _CategoryPageState extends State<CategoryPage>
             context: context, controller: refreshController, isRefresh: true));
         context.read<BannerBloc>()
           ..add(BannerEvent.fetchBanner2(
-          bannersType: 'shops',
+              bannersType: 'shops',
               context: context,
               isRefresh: true,
-              controller: refreshController));  },
-      child: SingleChildScrollView(
-        padding: EdgeInsets.only(bottom: 100),
-        child: Column(
-          children: [
+              controller: refreshController));
+      },
+      child:
 
-            20.verticalSpace,
+      ExtendedNestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) {
+            return [
 
-            BannerList2(
-              pageController: pageController,
-              colors: colors,
-              controller: bannerRefresh,
-              onLoading: () {
-                context.read<BannerBloc>().add(BannerEvent.fetchBanner2(
-                    context: context,bannersType: 'shops', controller: bannerRefresh));
-              },
-            ),
-            20.verticalSpace,
-            CategoryList(
-              categoryRefresh: categoryRefresh,
-              colors: colors,
-              onlyCategory: true,
-            ),
-            8.verticalSpace,
-            const Divider(color: CustomStyle.textHint),
-            const SubCategoryList(),
-          ],
-        ),
+
+              SliverToBoxAdapter(child: Column(children: [
+
+                20.verticalSpace,
+                BannerList2(
+                  pageController: pageController,
+                  colors: colors,
+                  controller: bannerRefresh,
+                  onLoading: () {
+                    context.read<BannerBloc>().add(BannerEvent.fetchBanner2(
+                        context: context,
+                        bannersType: 'shops',
+                        controller: bannerRefresh));
+                  },
+                ),
+                20.verticalSpace,
+              ],),),
+
+            ];
+          }, body:
+      Column(
+      children: [
+
+      CategoryList(
+      categoryRefresh: categoryRefresh,
+      colors: colors,
+      onlyCategory: true,
+    ),
+    8.verticalSpace,
+    const Divider(color: CustomStyle.textHint),
+    Expanded(child: const SubCategoryList()),
+    ],
+    )
       ),
     );
   }

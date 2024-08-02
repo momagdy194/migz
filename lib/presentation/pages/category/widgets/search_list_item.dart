@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gshop/domain/model/model/shop_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/presentation/components/button/animation_button_effect.dart';
 import 'package:gshop/presentation/style/style.dart';
@@ -49,16 +50,40 @@ class SearchItem extends StatelessWidget {
                         return ButtonEffectAnimation(
                           onTap: () {
                             onTap.call(index);
+
+                            // print(list[index].runtimeType);
+                            //
+                            // String imagePath = '';
+                            // if (list[index].runtimeType == ShopData) {
+                            //   imagePath = list[index].logoImg;
+                            // } else {
+                            //   print(list[index].img);
+                            // }
+                            // CategoryData.       img
                           },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AppHelper.getSearchResultText(
-                                  isBrand
-                                      ? list[index].title
-                                      : list[index].translation?.title ?? "",
-                                  query,
-                                  colors),
+                              Row(
+                                children: [
+                                  Image.network(
+                                    list[index].runtimeType == ShopData
+                                        ? list[index].logoImg
+                                        : list[index].img!,
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                  Expanded(
+                                    child: AppHelper.getSearchResultText(
+                                        isBrand
+                                            ? list[index].title
+                                            : list[index].translation?.title ??
+                                                "",
+                                        query,
+                                        colors),
+                                  ),
+                                ],
+                              ),
                               Divider(
                                 color: colors.textHint,
                               )

@@ -12,6 +12,7 @@ import 'package:gshop/infrastructure/local_storage/local_storage.dart';
 import 'package:gshop/presentation/components/button/animation_button_effect.dart';
 import 'package:gshop/presentation/components/custom_scaffold.dart';
 import 'package:gshop/presentation/pages/home/widgets/banner_list.dart';
+import 'package:gshop/presentation/pages/home_two/widgets/looks_list_two.dart';
 import 'package:gshop/presentation/pages/shop/widgets/most_products_shop.dart';
 import 'package:gshop/presentation/pages/shop/widgets/new_products_shop.dart';
 import 'package:gshop/presentation/route/app_route.dart';
@@ -91,16 +92,26 @@ class _ShopPageState extends State<ShopPage> {
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   children: [
-                    BannerList(
-                      pageController: pageController,
+
+
+                    LooksListTwo(
                       colors: colors,
                       controller: bannerRefresh,
                       onLoading: () {
                         context.read<BannerBloc>().add(BannerEvent.fetchBannersByShopId(
-                          shopId: widget.shopUid,
-                            context: context, controller: bannerRefresh));
-                      },
+                            shopId: widget.shopUid,
+                            context: context, controller: bannerRefresh));      },
                     ),
+                    // BannerList(
+                    //   pageController: pageController,
+                    //   colors: colors,
+                    //   controller: bannerRefresh,
+                    //   onLoading: () {
+                    //     context.read<BannerBloc>().add(BannerEvent.fetchBannersByShopId(
+                    //       shopId: widget.shopUid,
+                    //         context: context, controller: bannerRefresh));
+                    //   },
+                    // ),
                     MostShopProductList(
                       colors: colors,
                       shopId: widget.shopId,

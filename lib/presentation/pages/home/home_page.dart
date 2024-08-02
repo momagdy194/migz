@@ -118,7 +118,8 @@ class _HomePageState extends State<HomePage> {
                 context: context, controller: productRefresh));
           },
           child: ListView(
-            shrinkWrap: true,
+
+            shrinkWrap: false,
             padding: EdgeInsets.symmetric(vertical: 16.r),
             children: [
               if (LocalStorage.getUser().firstname != null) _hello(colors),

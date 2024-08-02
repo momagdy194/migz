@@ -38,7 +38,7 @@ class CategoryRepository implements CategoryInterface {
   Future<Either<CategoriesPaginateResponse, dynamic>> getAllCategoriesByShop(
       {required int page, required int shopId}) async {
     final data = {
-      'per_page': 10,
+      'per_page': 20,
       "page": page,
       "type": "main",
       'lang': LocalStorage.getLanguage()?.locale,

@@ -13,9 +13,9 @@ class SubCategoryList extends StatelessWidget {
       builder: (context, state) {
         return (state.selectCategoryTwo?.children?.isNotEmpty ?? false)
             ? GridView.builder(
-            shrinkWrap: true,
+            // shrinkWrap: true,
             padding: EdgeInsets.all(16.r),
-            physics: const NeverScrollableScrollPhysics(),
+            // physics: const NeverScrollableScrollPhysics(),
             gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
