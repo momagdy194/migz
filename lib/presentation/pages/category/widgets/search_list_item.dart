@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gshop/domain/model/model/shop_model.dart';
 import 'package:gshop/domain/service/helper.dart';
 import 'package:gshop/presentation/components/button/animation_button_effect.dart';
+import 'package:gshop/presentation/components/custom_network_image.dart';
 import 'package:gshop/presentation/style/style.dart';
 import 'package:gshop/presentation/style/theme/theme.dart';
 
@@ -66,13 +67,17 @@ class SearchItem extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  Image.network(
-                                    list[index].runtimeType == ShopData
-                                        ? list[index].logoImg
-                                        : list[index].img!,
-                                    height: 100,
-                                    width: 100,
-                                  ),
+                                  CustomNetworkImage(
+                                      url:       list[index].runtimeType == ShopData
+                                          ? list[index].logoImg
+                                           : list[index].img!,
+                                      height: 100,
+                                      width: 100,
+                                      radius: 0,fit: BoxFit.contain,),
+
+
+
+
                                   Expanded(
                                     child: AppHelper.getSearchResultText(
                                         isBrand

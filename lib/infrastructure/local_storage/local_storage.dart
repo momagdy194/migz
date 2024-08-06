@@ -352,6 +352,15 @@ abstract class LocalStorage {
       await local!.setStringList(AppConstants.keySearchStores, list);
     }
   }
+  static Future<void> setSearchRecentlyImegeList(String title) async {
+    List<String> list = getSearchRecentlyList();
+    if (!list.contains(title)) {
+      list.add(title);
+    }
+    if (local != null) {
+      await local!.setStringList(AppConstants.keySearchStores, list);
+    }
+  }
 
   static Future<void> removeSearchRecentlyList(String title) async {
     List<String> list = getSearchRecentlyList();

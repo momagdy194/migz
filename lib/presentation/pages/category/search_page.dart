@@ -205,7 +205,7 @@ class _SearchPageState extends State<SearchPage> {
           Expanded(
               child: ListView.builder(
                   padding: EdgeInsets.symmetric(horizontal: 16.r),
-                  shrinkWrap: true,
+                  // shrinkWrap: true,
                   itemCount: list.length,
                   itemBuilder: (context, index) {
                     return ButtonEffectAnimation(
@@ -234,6 +234,8 @@ class _SearchPageState extends State<SearchPage> {
                                 color: colors.textBlack,
                               ),
                               8.horizontalSpace,
+
+
                               Text(
                                 list[index],
                                 style: CustomStyle.interNormal(
