@@ -61,8 +61,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         case FlutterRemix.google_fill:
           user = await FirebaseService.socialGoogle();
           break;
-        case FlutterRemix.facebook_fill:
-          user = await FirebaseService.socialFacebook();
+        // case FlutterRemix.facebook_fill:
+        //   user = await FirebaseService.socialFacebook();
           break;
       }
 

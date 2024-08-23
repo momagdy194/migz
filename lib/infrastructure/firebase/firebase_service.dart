@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_login_facebook/flutter_login_facebook.dart';
+// import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:gshop/domain/model/model/order_model.dart';
 import 'package:gshop/domain/service/helper.dart';
@@ -106,24 +106,24 @@ abstract class FirebaseService {
     }
   }
 
-  static Future<Either<UserCredential, dynamic>> socialFacebook() async {
-    final fb = FacebookLogin();
-    try {
-      print("asaasasasas");
-      final user = await fb.logIn(permissions: [FacebookPermission.email]);
-
-      print('Facebook login status=${user.status.toString()}');
-      final OAuthCredential credential =
-          FacebookAuthProvider.credential(user.accessToken?.token ?? "");
-
-      final userObj =
-          await FirebaseAuth.instance.signInWithCredential(credential);
-      return left(userObj);
-    } catch (e) {
-      print('MyCatch=${e.toString()}');
-      return right(e.toString());
-    }
-  }
+  // static Future<Either<UserCredential, dynamic>> socialFacebook() async {
+  //   // final fb = FacebookLogin();
+  //   // try {
+  //   //   print("asaasasasas");
+  //   //   final user = await fb.logIn(permissions: [FacebookPermission.email]);
+  //   //
+  //   //   print('Facebook login status=${user.status.toString()}');
+  //   //   final OAuthCredential credential =
+  //   //       FacebookAuthProvider.credential(user.accessToken?.token ?? "");
+  //   //
+  //   //   final userObj =
+  //   //       await FirebaseAuth.instance.signInWithCredential(credential);
+  //   //   return left(userObj);
+  //   // } catch (e) {
+  //   //   print('MyCatch=${e.toString()}');
+  //   //   return right(e.toString());
+  //   // }
+  // }
 
   static Future<Either<UserCredential, dynamic>> socialApple() async {
     try {
